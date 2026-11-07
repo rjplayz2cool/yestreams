@@ -51,8 +51,8 @@ const sel2026=()=>{const a=yrs.querySelector('[aria-selected=true]');return !!a&
 function loadShows(){if(shows)return Promise.resolve(shows);return new Promise(res=>{const go=()=>{shows=(window.TOUR_SHOWS||[]).filter(s=>String(s.date).startsWith('2026')).sort((a,b)=>a.date<b.date?-1:1);res(shows)};if(window.TOUR_SHOWS)return go();const s=document.createElement('script');s.src='tour-data.js';s.onload=go;s.onerror=()=>{shows=[];res(shows)};document.head.appendChild(s)})}
 const city=c=>String(c||'').split(',')[0].trim();
 const dstr=d=>{const [y,m,dd]=d.split('-').map(Number);return dd+' '+MON[m-1]+' '+y};
-function rowHTML(s){const id=REC[s.date],past=s.date<new Date().toISOString().slice(0,10),cityN=city(s.city);
- const b=id?`<button type="button" class="yzB" data-rec="${id}">Recording</button>`:`<button type="button" class="yzB off" disabled>${s.upcoming||!past?'Upcoming':'No recording'}</button>`;
+function rowHTML(s){const id=REC[s.date],past=s.date<(d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'))(new Date()),cityN=city(s.city);
+ const b=id?`<button type="button" class="yzB" data-rec="${id}">Recording</button>`:`<button type="button" class="yzB off" disabled>${past?'No recording':'Upcoming'}</button>`;
  return `<div class="yzRow${past?' past':''}"><div><p>${esc(cityN)}</p><p>${esc(s.venue)}</p><p>${esc(dstr(s.date))}</p></div>${b}</div>`}
 function paint(){if(!ov)return;
  const body=tab==='tour'?`<div id="yzList">${shows?shows.map(rowHTML).join(''):'<div class="yzSub">Loading…</div>'}</div>`:`<div id="yzStore"><div class="yzSub">Loading…</div></div>`;
