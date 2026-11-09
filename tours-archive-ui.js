@@ -144,7 +144,7 @@ function show(i){if(i<0||i>=SC.length||i===cur)return;const dir=i<cur;cur=i;
  scrollTo({top:0});if(i>0)ensure().then(()=>render())}
 SC[0].btn.setAttribute('aria-current','true');eL.hidden=true;eR.setAttribute('aria-label','Go to Recordings');
 function ensure(){if(A)return Promise.resolve();if(loading)return loading;
- loading=new Promise((res,rej)=>{const s=document.createElement('script');s.src='tours-archive.js?v=1794244058';s.onload=()=>{A=window.TOUR_ARCHIVE;year=Object.keys(A).sort().pop();res()};s.onerror=()=>{loading=null;rej()};document.head.appendChild(s)})
+ loading=new Promise((res,rej)=>{const s=document.createElement('script');s.src='tours-archive.js?v=1794261438';s.onload=()=>{A=window.TOUR_ARCHIVE;year=Object.keys(A).sort().pop();res()};s.onerror=()=>{loading=null;rej()};document.head.appendChild(s)})
   .catch(()=>{[recScr,merScr].forEach(e=>e.innerHTML='<div class="tEmpty">Could not load the archive. Refresh and try again.</div>')});return loading}
 document.addEventListener('keydown',e=>{if(pg.hidden||modal&&!modal.hidden||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;if(e.key==='ArrowRight')show(cur+1);if(e.key==='ArrowLeft')show(cur-1)});
 new MutationObserver(()=>{[eL,eR].forEach(b=>b.style.display=pg.hidden?'none':'')}).observe(pg,{attributes:true,attributeFilter:['hidden']});[eL,eR].forEach(b=>b.style.display=pg.hidden?'none':'');
