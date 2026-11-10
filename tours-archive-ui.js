@@ -144,7 +144,7 @@ function show(i){if(i<0||i>=SC.length||i===cur)return;const dir=i<cur;cur=i;
  scrollTo({top:0});if(i>0)ensure().then(()=>render())}
 SC[0].btn.setAttribute('aria-current','true');eL.hidden=true;eR.setAttribute('aria-label','Go to Recordings');
 function ensure(){if(A)return Promise.resolve();if(loading)return loading;
- loading=new Promise((res,rej)=>{const s=document.createElement('script');s.src='tours-archive.js?v=1794261438';s.onload=()=>{A=window.TOUR_ARCHIVE;year=Object.keys(A).sort().pop();res()};s.onerror=()=>{loading=null;rej()};document.head.appendChild(s)})
+ loading=new Promise((res,rej)=>{const s=document.createElement('script');s.src='tours-archive.js?v=1794354103';s.onload=()=>{A=window.TOUR_ARCHIVE;year=Object.keys(A).sort().pop();res()};s.onerror=()=>{loading=null;rej()};document.head.appendChild(s)})
   .catch(()=>{[recScr,merScr].forEach(e=>e.innerHTML='<div class="tEmpty">Could not load the archive. Refresh and try again.</div>')});return loading}
 document.addEventListener('keydown',e=>{if(pg.hidden||modal&&!modal.hidden||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;if(e.key==='ArrowRight')show(cur+1);if(e.key==='ArrowLeft')show(cur-1)});
 new MutationObserver(()=>{[eL,eR].forEach(b=>b.style.display=pg.hidden?'none':'')}).observe(pg,{attributes:true,attributeFilter:['hidden']});[eL,eR].forEach(b=>b.style.display=pg.hidden?'none':'');
@@ -265,7 +265,7 @@ function pump(){while(run<4&&Qm.length){const img=Qm.shift();run++;
 const mio='IntersectionObserver'in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){mio.unobserve(e.target);Qm.push(e.target);pump()}}),{rootMargin:'400px'}):null;
 function watchImgs(scope){scope.querySelectorAll('img[data-u]').forEach(i=>{if(mio)mio.observe(i);else{Qm.push(i);pump()}})}
 
-function mUrls(y,v,file){const e=encodeURIComponent,f=/^https?:/.test(file)?null:file.split('/').map(e).join('/'),H='https://media.yetour.xyz/';
+function mUrls(y,v,file){if(/^assets\//.test(file))return [file];const e=encodeURIComponent,f=/^https?:/.test(file)?null:file.split('/').map(e).join('/'),H='https://media.yetour.xyz/';
  if(!f)return [file];
  if(y==='2021')return [H+'donda/merch/'+f];
  if(y==='2023')return [H+'vultures/2023/merch/'+f];
