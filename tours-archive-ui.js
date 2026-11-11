@@ -144,7 +144,7 @@ function show(i){if(i<0||i>=SC.length||i===cur)return;const dir=i<cur;cur=i;
  scrollTo({top:0});if(i>0)ensure().then(()=>render())}
 SC[0].btn.setAttribute('aria-current','true');eL.hidden=true;eR.setAttribute('aria-label','Go to Recordings');
 function ensure(){if(A)return Promise.resolve();if(loading)return loading;
- loading=new Promise((res,rej)=>{const s=document.createElement('script');s.src='tours-archive.js?v=1794356174';s.onload=()=>{A=window.TOUR_ARCHIVE;year=Object.keys(A).sort().pop();res()};s.onerror=()=>{loading=null;rej()};document.head.appendChild(s)})
+ loading=new Promise((res,rej)=>{const s=document.createElement('script');s.src='tours-archive.js?v=1794356441';s.onload=()=>{A=window.TOUR_ARCHIVE;year=Object.keys(A).sort().pop();res()};s.onerror=()=>{loading=null;rej()};document.head.appendChild(s)})
   .catch(()=>{[recScr,merScr].forEach(e=>e.innerHTML='<div class="tEmpty">Could not load the archive. Refresh and try again.</div>')});return loading}
 document.addEventListener('keydown',e=>{if(pg.hidden||modal&&!modal.hidden||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;if(e.key==='ArrowRight')show(cur+1);if(e.key==='ArrowLeft')show(cur-1)});
 new MutationObserver(()=>{[eL,eR].forEach(b=>b.style.display=pg.hidden?'none':'')}).observe(pg,{attributes:true,attributeFilter:['hidden']});[eL,eR].forEach(b=>b.style.display=pg.hidden?'none':'');
@@ -164,7 +164,8 @@ const ytName={};
 function ytTitle(url){if(ytName[url]!==undefined)return Promise.resolve(ytName[url]);
  try{const c=localStorage.getItem('ytn:'+url);if(c){ytName[url]=c;return Promise.resolve(c)}}catch{}
  return fetch('https://noembed.com/embed?url='+encodeURIComponent(url)).then(r=>r.json()).then(j=>{const n=j.author_name||'';ytName[url]=n;try{if(n)localStorage.setItem('ytn:'+url,n)}catch{}return n}).catch(()=>{ytName[url]='';return ''})}
-function credHTML(s){return s.cr?`Credit · <a href="${esc(s.cr)}" target="_blank" rel="noopener noreferrer" ${s.cn?'':`data-yt="${esc(s.cr)}"`}>${s.cn?esc(s.cn)+' (YouTube)':'YouTube'}</a>`:(s.c==='visualizer'?'Official visualizer from Ye':'Official stream from Ye')}
+function srcName(u){try{const h=new URL(u).hostname.replace(/^www\./,'');return /youtube|youtu\.be/.test(h)?'YouTube':/reddit/.test(h)?'Reddit':/archive\.org/.test(h)?'Internet Archive':h}catch{return 'source'}}
+function credHTML(s){const yt=s.cr&&srcName(s.cr)==='YouTube';return s.cr?`Credit · <a href="${esc(s.cr)}" target="_blank" rel="noopener noreferrer" ${s.cn||!yt?'':`data-yt="${esc(s.cr)}"`}>${s.cn?esc(s.cn)+' ('+srcName(s.cr)+')':srcName(s.cr)}</a>`:(s.c==='visualizer'?'Official visualizer from Ye':'Official stream from Ye')}
 /* 2026 live-show covers: a still frame taken from inside the recording itself (poster stays until the frame is ready) */
 const fio='IntersectionObserver'in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){fio.unobserve(e.target);startFrame(e.target)}}),{rootMargin:'300px'}):null;
 function startFrame(v){const u=v.dataset.src;if(!u)return;
@@ -191,7 +192,7 @@ function openModal(s){if(!modal){modal=document.createElement('div');modal.class
  const box=modal.firstChild;
  box.innerHTML=`<div class="rcMTop"><div><h3>${esc(s.n)}</h3><small>${esc([CAT[s.c]||s.c,s.sp,year].filter(Boolean).join(' · '))}</small></div><button type="button" class="rcX" aria-label="Close">✕</button></div>
  ${s.dr?`<div class="rcYt"><iframe title="${esc(s.n)}" src="https://drive.google.com/file/d/${esc(s.dr)}/preview" allow="autoplay; fullscreen" allowfullscreen referrerpolicy="no-referrer"></iframe></div>`:s.yt?`<div class="rcYt"><iframe title="${esc(s.n)}" src="https://www.youtube-nocookie.com/embed/${esc(s.yt)}?rel=0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>`:`<video controls playsinline preload="metadata" poster="${esc(s.img)}" src="${esc(s.v)}"></video>`}<div class="rcErr" hidden>This video could not be played here. <a href="https://yetour.xyz/" target="_blank" rel="noopener noreferrer" style="color:#fff">Open it on yetour.xyz</a>.</div>
- <div class="rcMCred"><b>Credits</b>${s.cr?`Video by <a href="${esc(s.cr)}" target="_blank" rel="noopener noreferrer" ${s.cn?'':`data-yt="${esc(s.cr)}"`}>${s.cn?esc(s.cn)+' on YouTube':'the original uploader on YouTube'}</a>`:(s.c==='visualizer'?'Official visualizer from Ye.':s.c==='event'?'Full runway show video.':'Official stream from Ye.')}</div>
+ <div class="rcMCred"><b>Credits</b>${s.cr?`Video by <a href="${esc(s.cr)}" target="_blank" rel="noopener noreferrer" ${s.cn||srcName(s.cr)!=='YouTube'?'':`data-yt="${esc(s.cr)}"`}>${s.cn?esc(s.cn)+' on '+srcName(s.cr):'the original uploader on '+srcName(s.cr)}</a>`:(s.c==='visualizer'?'Official visualizer from Ye.':s.c==='event'?'Full runway show video.':'Official stream from Ye.')}</div>
  ${(s.ts||[]).length?`<div class="rcTs"><b>Timestamps</b><div class="rcTsL">${s.ts.map(t=>`<button type="button" data-t="${secs(t[1])}"><span>${esc(t[0])}</span><i>${esc(t[1])}</i></button>`).join('')}</div></div>`:''}`;
  const v=box.querySelector('video'),fr=box.querySelector('iframe');if(v)v.onerror=()=>{box.querySelector('.rcErr').hidden=false};
  box.querySelector('.rcX').onclick=closeModal;
