@@ -4,8 +4,8 @@
 (()=>{
 const pg=document.getElementById('pg-albums'),root=document.getElementById('alScreen');if(!pg||!root)return;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const KIND={reworked:['Reworked','#ffd84d'],released:['Released','#b6ff39'],collab:['Collab','#6bd0ff'],unreleased:['Unreleased','#ff6a70'],produced:['Produced','#ffb86b'],pre:['Early work','#d4d4d4']};
-const FILTERS=[['all','All'],['released','Released'],['unreleased','Unreleased'],['reworked','Reworked'],['collab','Collabs'],['produced','Produced'],['pre','Early work']];
+const KIND={ongoing:['Ongoing','#7dffb2'],reworked:['Reworked','#ffd84d'],released:['Released','#b6ff39'],collab:['Collab','#6bd0ff'],unreleased:['Unreleased','#ff6a70'],produced:['Produced','#ffb86b'],pre:['Early work','#d4d4d4']};
+const FILTERS=[['all','All'],['released','Released'],['unreleased','Unreleased'],['reworked','Reworked'],['ongoing','Ongoing'],['collab','Collabs'],['produced','Produced'],['pre','Early work']];
 const SECS=['Unreleased','Recent','Best Of','Special','Worst Of','Grails/Wanted','Stems','Album Copies'];
 const LISTEN=['Special','Best Of','Worst Of','Grails/Wanted','Unreleased','Recent'];
 const keyOf=v=>String(v||'').replace(/\([^)]*\)/g,m=>/^\(\d{4}\)$/.test(m)?m:'').replace(/\s+/g,' ').trim().toLowerCase();
@@ -219,7 +219,7 @@ function firstLast(a){
 function render(){
   const a=cur,tg=tagsOf(a),rel=albumRelease(a),al=official(a);
   const covs=coversOf(a),ready=!!idx,files=ready?SECS.reduce((n,s)=>n+rowsFor(a,s).length,0):null;
-  const facts=[['Years worked on',a.years||'—'],['Rumored release',a.rumored||'—'],['Announced',a.announced||'—'],['Actual release',rel?fmtDate(rel):(tg.includes('released')||tg.includes('produced')?'—':tg.includes('reworked')?'Reworked into a later version':'Never released')]];
+  const facts=[['Years worked on',a.years||'—'],['Rumored release',a.rumored||'—'],['Announced',a.announced||'—'],['Actual release',rel?fmtDate(rel):(tg.includes('released')||tg.includes('produced')?'—':tg.includes('reworked')?'Reworked into a later version':tg.includes('ongoing')?'Not out yet':'Never released')]];
   if(al&&al.streams)facts.push(['Spotify streams',num(al.streams)]);
   const tabs=[['overview','Overview'],['tracklist','Tracklist'],['listen','Listen'],['files','Files'],['art','Art']];
   root.innerHTML=`<button type="button" class="alBtn alBack" id="alBack">‹ All albums</button>
