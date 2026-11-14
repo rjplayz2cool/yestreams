@@ -113,13 +113,21 @@ const st=document.createElement('style');st.textContent=`
 .alRow.open .alPlay{animation:alPulse 1.4s ease-in-out infinite}
 @keyframes alPulse{0%,100%{box-shadow:0 0 0 0 #ffffff66}50%{box-shadow:0 0 0 9px #ffffff00}}
 .alEmbed{animation:alFade .35s ease}
+
+.alCovWrap{position:relative}
+.alCovNav{position:absolute;left:0;right:0;bottom:10px;display:flex;align-items:center;justify-content:center;gap:8px;pointer-events:none}
+.alCovNav button{pointer-events:auto;width:30px;height:30px;border-radius:50%;border:1px solid #ffffff55;background:#000b;color:#fff;font:700 16px/1 system-ui,sans-serif;cursor:pointer;display:grid;place-items:center;backdrop-filter:blur(6px);transition:transform .2s,background .2s}
+.alCovNav button:hover{background:#000;transform:scale(1.12)}
+.alCovNav span{pointer-events:none;background:#000b;border-radius:999px;padding:6px 10px;font:700 11px/1 system-ui,sans-serif;letter-spacing:.08em;backdrop-filter:blur(6px)}
+.alCovCap{margin:8px 2px 0;font-size:12px;color:#ffffff99;min-height:16px;line-height:1.35}
+.alCov img.swap{animation:alFade .35s ease}
 @media(prefers-reduced-motion:reduce){.alScreen *{animation:none!important;transition:none!important}}
 @media(max-width:720px){.alScreen{padding:76px 16px 90px}.alHero{grid-template-columns:1fr}.alHero .alCov{max-width:260px}.alGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.alRow{grid-template-columns:auto minmax(0,1fr)}.alRow .alMeta{grid-column:2;text-align:left;white-space:normal}.alTabs{top:56px}}
 `;document.head.appendChild(st);
 
 /* ---------- data ---------- */
 const META=()=>window.ALBUMS_META||[];
-let archive=null,archiveP=null,hosted=null,idx=null;
+let archive=null,archiveP=null,hosted=null,idx=null,artLinks={},coverI=0;
 async function loadArchive(){
   if(archive)return archive;if(archiveP)return archiveP;
   archiveP=(async()=>{
@@ -128,6 +136,7 @@ async function loadArchive(){
     const bin=atob((await r.text()).trim()),bytes=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
     const data=JSON.parse(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text());
     let h={};try{const hr=await fetch('data/hosted-audio.json');if(hr.ok)h=(await hr.json()).files||{}}catch{}
+    try{const ar=await fetch('data/art-links.json');if(ar.ok)artLinks=await ar.json()}catch{}
     hosted=h;archive=data;buildIndex();return archive;
   })().catch(e=>{archiveP=null;throw e});return archiveP;
 }
@@ -174,8 +183,30 @@ function list(){
 
 /* ---------- detail ---------- */
 function open(id,t){
-  const a=META().find(x=>x.id===id);if(!a)return;cur=a;tab=t||'overview';scrollTo({top:0});render();
+  const a=META().find(x=>x.id===id);if(!a)return;cur=a;coverI=0;tab=t||'overview';scrollTo({top:0});render();
   if(!idx)loadArchive().then(()=>{if(cur===a)render()}).catch(e=>{if(cur===a)root.querySelector('#alBody').innerHTML=`<p class="alLoad">${esc(e.message)}</p>`});
+}
+const IMG=/\.(jpe?g|png|webp|gif)(\?|$)|mzstatic\.com|genius\.com|i\.postimg\.cc|media\.giphy|i\.scdn\.co|i\.ibb\.co|upload\.wikimedia/i;
+const imgFor=l=>artLinks[l]||(IMG.test(l)?l:'');
+function coversOf(a){
+  const out=[];if(a.cover)out.push({src:a.cover,label:'Main cover'});
+  if(!idx)return out;const seen=new Set(out.map(x=>x.src));
+  for(const r of rowsFor(a,'Art')){
+    const kind=txt(r.cells[5]?.[0]),use=txt(r.cells[6]?.[0]);
+    if(!/cover|single|art/i.test(kind+' '+r.title))continue;
+    const src=r.links.map(imgFor).find(Boolean);if(!src||seen.has(src))continue;seen.add(src);
+    out.push({src,label:[r.title,kind,use].filter(Boolean).join(' · ')});
+  }
+  return out;
+}
+function showCover(covs,first){
+  coverI=Math.min(coverI,covs.length-1);const c=covs[coverI],box=root.querySelector('#alCovBox');if(!box||!c)return;
+  let img=box.querySelector('img');
+  if(!img){box.querySelector('.alFb')?.remove();img=document.createElement('img');box.prepend(img)}
+  if(!first)img.classList.remove('swap');img.src=c.src;img.alt='';void img.offsetWidth;if(!first)img.classList.add('swap');
+  img.onerror=()=>{covs.splice(coverI,1);if(covs.length<2){render();return}coverI%=covs.length;showCover(covs)};
+  root.querySelector('#alCovCount').textContent=(coverI+1)+' / '+covs.length;
+  root.querySelector('#alCovCap').textContent=c.label;
 }
 function firstLast(a){
   const ys=[];for(const sec of ['Unreleased','Recent','Special','Best Of','Worst Of','Grails/Wanted'])for(const r of rowsFor(a,sec)){const m=/(\d{4})/.exec(r.leak);if(m)ys.push(r.leak)}
@@ -183,12 +214,12 @@ function firstLast(a){
 }
 function render(){
   const a=cur,[kl,kc]=KIND[a.kind]||KIND.unreleased,rel=albumRelease(a),al=official(a);
-  const ready=!!idx,files=ready?SECS.reduce((n,s)=>n+rowsFor(a,s).length,0):null;
+  const covs=coversOf(a),ready=!!idx,files=ready?SECS.reduce((n,s)=>n+rowsFor(a,s).length,0):null;
   const facts=[['Years worked on',a.years||'—'],['Rumored release',a.rumored||'—'],['Announced',a.announced||'—'],['Actual release',rel?fmtDate(rel):(a.kind==='released'||a.kind==='produced'||a.kind==='collab'?'—':'Never released')]];
   if(al&&al.streams)facts.push(['Spotify streams',num(al.streams)]);
   const tabs=[['overview','Overview'],['tracklist','Tracklist'],['listen','Listen'],['files','Files'],['art','Art']];
   root.innerHTML=`<button type="button" class="alBtn alBack" id="alBack">‹ All albums</button>
-  <section class="alHero"><div class="alCov">${logo(a)}<span class="alBadge" style="--c:${kc}">${kl}</span></div>
+  <section class="alHero"><div class="alCovWrap"><div class="alCov" id="alCovBox">${logo(a)}<span class="alBadge" style="--c:${kc}">${kl}</span>${covs.length>1?`<div class="alCovNav"><button type="button" id="alCovPrev" aria-label="Previous cover">‹</button><span id="alCovCount"></span><button type="button" id="alCovNext" aria-label="Next cover">›</button></div>`:''}</div><div class="alCovCap" id="alCovCap"></div></div>
   <div><div class="eyebrow">${esc(kl.toUpperCase())}</div><h2>${esc(a.name)}</h2>
   ${a.alt.length?`<div class="alAlt">${a.alt.map((x,i)=>`<span style="--i:${i}">${esc(x)}</span>`).join('')}</div>`:''}
   ${a.blurb?`<p class="muted">${esc(a.blurb)}</p>`:''}
@@ -197,6 +228,7 @@ function render(){
   <nav class="alTabs" role="tablist">${tabs.map(([k,l])=>`<button type="button" role="tab" data-t="${k}" class="${k===tab?'on':''}">${l}</button>`).join('')}</nav>
   <div class="alPane" id="alBody"></div>`;
   root.querySelector('#alBack').onclick=list;
+  if(covs.length>1){const go=n=>{coverI=(coverI+n+covs.length)%covs.length;showCover(covs)};root.querySelector('#alCovPrev').onclick=()=>go(-1);root.querySelector('#alCovNext').onclick=()=>go(1);showCover(covs,true)}
   root.querySelector('#alTrk').onclick=()=>toTracker(a);
   root.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{tab=b.dataset.t;root.querySelectorAll('[data-t]').forEach(x=>x.classList.toggle('on',x===b));pane()});
   pane();
@@ -289,7 +321,8 @@ function files(el,a){
 function art(el,a){
   const rs=rowsFor(a,'Art');if(!rs.length){el.innerHTML='<p class="alNote">No artwork is listed for this era yet.</p>';return}
   el.innerHTML=`<p class="alNote">Covers, alternate covers and other art listed in the Tracker for this era.</p><div class="alList">${rs.map(r=>{const href=r.links[0];const c=r.cells;const info=[txt(c[4]?.[0]),txt(c[5]?.[0]),txt(c[6]?.[0])].filter(Boolean).join(' · ');
-    return `<div class="alRow"><span></span><div><b>${esc(r.title)}</b><small>${esc((r.notes||'').slice(0,220))}${info?' — '+esc(info):''}</small></div><div class="alMeta">${href?`<a href="${esc(href)}" target="_blank" rel="noopener noreferrer" style="color:var(--accent2)">View ↗</a>`:''}</div></div>`}).join('')}</div>`;
+    const im=r.links.map(imgFor).find(Boolean);
+    return `<div class="alRow">${im?`<img src="${esc(im)}" alt="" loading="lazy" style="width:44px;height:44px;border-radius:8px;object-fit:cover" onerror="this.replaceWith(document.createElement('span'))">`:'<span></span>'}<div><b>${esc(r.title)}</b><small>${esc((r.notes||'').slice(0,220))}${info?' — '+esc(info):''}</small></div><div class="alMeta">${href?`<a href="${esc(href)}" target="_blank" rel="noopener noreferrer" style="color:var(--accent2)">View ↗</a>`:''}</div></div>`}).join('')}</div>`;
 }
 
 /* ---------- jump into the Ye Tracker ---------- */
