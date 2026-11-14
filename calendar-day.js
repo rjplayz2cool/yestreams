@@ -10,6 +10,14 @@ const st=document.createElement('style');st.textContent=`
 @media(min-width:701px){#calDayPC{position:fixed;inset:0;z-index:10001;background:#0b0b0e;display:none;flex-direction:column;color:#fff}#calDayPC.on{display:flex}}
 @media(max-width:700px){#calDayPC{display:none!important}}
 body.cdpOpen{overflow:hidden}
+@keyframes cdpIn{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+@keyframes cdpUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes cdpSl{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:none}}
+#calDayPC.on{animation:cdpIn .3s var(--ease,ease)}
+.cdpItem{animation:cdpSl .4s var(--ease,ease) backwards;animation-delay:calc(var(--i,0)*40ms + .1s);transition:border-color .2s,background .2s,transform .2s}.cdpItem:hover{transform:translateX(3px)}
+.cdpHero>*,.cdpFacts div{animation:cdpUp .45s var(--ease,ease) backwards}.cdpFacts div{animation-delay:calc(var(--i,0)*60ms + .15s)}
+.cdpImg{animation:cdpIn .5s var(--ease,ease) backwards}
+@media(prefers-reduced-motion:reduce){#calDayPC,#calDayPC *{animation:none!important}}
 .cdpTop{display:flex;align-items:center;gap:14px;padding:16px 28px;border-bottom:1px solid #ffffff1a;background:#101014}
 .cdpTop h2{margin:0;font-size:24px;font-weight:900;letter-spacing:-.02em;flex:1;min-width:0}
 .cdpTop h2 small{display:block;font-size:12px;color:#ffffff88;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-top:4px}
@@ -57,7 +65,7 @@ function openDay(k){
   const d=fmtKey(k);
   o.querySelector('#cdpTitle').innerHTML=`${esc(new Intl.DateTimeFormat('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'}).format(d))}<small>${list.length} event${list.length===1?'':'s'}</small>`;
   const L=o.querySelector('#cdpList');
-  L.innerHTML=list.map((e,i)=>`<button type="button" class="cdpItem${e.achieved?' achieved':''}${i===0?' on':''}" data-i="${i}">${e.cover?`<img src="${esc(e.cover)}" alt="" onerror="this.outerHTML='<span class=cdpNo></span>'">`:'<span class="cdpNo"></span>'}<div><b>${esc(e.title)}</b><span>${esc(sub(e))}</span></div></button>`).join('')||'<p class="cdpEmpty">Nothing scheduled for this day.</p>';
+  L.innerHTML=list.map((e,i)=>`<button type="button" style="--i:${Math.min(i,14)}" class="cdpItem${e.achieved?' achieved':''}${i===0?' on':''}" data-i="${i}">${e.cover?`<img src="${esc(e.cover)}" alt="" onerror="this.outerHTML='<span class=cdpNo></span>'">`:'<span class="cdpNo"></span>'}<div><b>${esc(e.title)}</b><span>${esc(sub(e))}</span></div></button>`).join('')||'<p class="cdpEmpty">Nothing scheduled for this day.</p>';
   L.querySelectorAll('.cdpItem').forEach(b=>b.onclick=()=>pick(+b.dataset.i));
   o.classList.add('on');document.body.classList.add('cdpOpen');L.scrollTop=0;detail();
 }
@@ -79,7 +87,7 @@ function detail(){
   const al=findAlbum(e.title);
   D.innerHTML=`<div class="cdpHero"><div class="cdpImg">${e.cover?`<img src="${esc(e.cover)}" alt="" onerror="this.replaceWith(document.createElement('i'))">`:'<i>♪</i>'}</div>
   <div><span class="cdpTag" style="--c:${kc}">${esc(kl)}</span><h3>${esc(e.title)}</h3><p class="muted" style="color:#ffffffb0;margin:0">${esc(sub(e))}</p>
-  <div class="cdpFacts">${facts.map(([a,b])=>`<div><small>${esc(a)}</small><span>${esc(b)}</span></div>`).join('')}</div>
+  <div class="cdpFacts">${facts.map(([a,b],i)=>`<div style="--i:${i}"><small>${esc(a)}</small><span>${esc(b)}</span></div>`).join('')}</div>
   <div class="cdpActs">${yr&&window.Eras?`<button type="button" data-a="era">See ${yr} in Eras</button>`:''}${al?`<button type="button" class="ghost" data-a="album">View ${esc(al.name)} album</button>`:''}${e.target?`<button type="button" class="ghost" data-a="streams">Go to Streams</button>`:''}</div></div></div>
 `;
   D.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{const a=b.dataset.a;close();

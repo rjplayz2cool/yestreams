@@ -20,8 +20,8 @@ const st=document.createElement('style');st.textContent=`
 .alScreen h1.title{font-size:clamp(40px,6vw,76px);font-weight:900;letter-spacing:-.055em;margin:4px 0}
 .alScreen .muted{color:#bbb}
 .alTools{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:18px 0 8px}
-.alTools input{flex:1 1 260px;min-width:0;background:#ffffff0f;border:1px solid #ffffff2e;border-radius:999px;padding:12px 18px;color:#fff;font:500 15px system-ui,sans-serif;outline:none}
-.alTools input:focus{border-color:#ffffff80}
+.alTools input{flex:1 1 260px;min-width:0;background:#ffffff0f url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23ffffff99' stroke-width='2.4' stroke-linecap='round'><circle cx='11' cy='11' r='7'/><path d='M20 20l-3.5-3.5'/></svg>") no-repeat 16px center;border:1px solid #ffffff2e;border-radius:14px;padding:13px 18px 13px 46px;color:#fff;font:500 15px system-ui,sans-serif;outline:none;transition:border-color .2s,box-shadow .2s,background-color .2s}
+.alTools input:focus{border-color:#ffffffa0;box-shadow:0 0 0 4px #ffffff14;background-color:#ffffff14}
 .alChips{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 18px}
 .alChips button,.alTabs button,.alBtn{border:1px solid #ffffff40;background:#ffffff0d;color:#fff;border-radius:999px;padding:8px 16px;font:600 12px/1 system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
 .alChips button:hover,.alTabs button:hover,.alBtn:hover{background:#ffffff24}
@@ -41,11 +41,14 @@ const st=document.createElement('style');st.textContent=`
 .alHero h2{font-size:clamp(32px,5vw,60px);font-weight:900;letter-spacing:-.045em;line-height:1;margin:6px 0 10px}
 .alAlt{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
 .alAlt span{background:#ffffff14;border:1px solid #ffffff26;border-radius:999px;padding:5px 11px;font-size:12px;color:#ffffffd0}
-.alFacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}
-.alFacts div{background:#ffffff0c;border:1px solid #ffffff1a;border-radius:10px;padding:11px 13px;min-width:0}
+.alFacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:16px 0}
+.alFacts div{background:linear-gradient(160deg,#ffffff12,#ffffff06);border:1px solid #ffffff1c;border-radius:12px;padding:13px 15px;min-width:0;min-height:76px;display:flex;flex-direction:column;justify-content:space-between;gap:8px;transition:transform .25s,border-color .25s}
+.alFacts div:hover{transform:translateY(-2px);border-color:#ffffff48}
+.alFacts div.nil span{color:#ffffff55}
 .alFacts small{display:block;color:#ffffff88;font:700 10px/1 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
-.alFacts span{font-size:14px;line-height:1.3;overflow-wrap:anywhere}
-.alTabs{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0 16px;position:sticky;top:64px;z-index:5;padding:8px 0;background:#0a0a0aeb;backdrop-filter:blur(8px);border-radius:0 0 12px 12px}
+.alFacts span{font-size:15px;font-weight:650;line-height:1.3;overflow-wrap:anywhere}
+.alFacts small{margin:0!important}
+.alTabs{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0 16px;position:sticky;top:64px;z-index:5;padding:8px 0;background:none}
 .alPane h3{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#ffffffa0;margin:22px 0 10px}
 .alPane h3:first-child{margin-top:4px}
 .alChipsRow{display:flex;flex-wrap:wrap;gap:7px}
@@ -82,6 +85,35 @@ const st=document.createElement('style');st.textContent=`
 .alGo.ghost{background:#ffffff14;color:#fff;border:1px solid #ffffff40}
 .alNote{color:#ffffff99;font-size:13px;margin:6px 0 14px;line-height:1.5}
 .alLoad{padding:30px 0;color:#ffffffa0}
+
+@keyframes alUp{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes alFade{from{opacity:0}to{opacity:1}}
+@keyframes alSlide{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
+@keyframes alZoom{from{opacity:0;transform:scale(.92) rotate(-1.5deg)}to{opacity:1;transform:none}}
+.alScreen .eyebrow,.alScreen h1.title,.alScreen>p.muted{animation:alUp .6s var(--ease,ease) backwards}
+.alScreen h1.title{animation-delay:.05s}.alScreen>p.muted{animation-delay:.1s}
+.alTools,.alChips{animation:alUp .55s var(--ease,ease) .15s backwards}
+.alCard{animation:alUp .55s var(--ease,ease) backwards;animation-delay:calc(var(--i,0)*28ms + .2s)}
+.alCard .alCov img{transition:transform .5s var(--ease,ease)}
+.alCard:hover .alCov img{transform:scale(1.07)}
+.alCard:hover .alCov{box-shadow:0 14px 34px #0009}
+.alHero .alCov{animation:alZoom .65s var(--ease,ease) backwards}
+.alHero h2{animation:alUp .55s var(--ease,ease) .08s backwards}
+.alAlt span{animation:alUp .45s var(--ease,ease) backwards;animation-delay:calc(var(--i,0)*45ms + .2s)}
+.alFacts div{animation:alUp .5s var(--ease,ease) backwards;animation-delay:calc(var(--i,0)*60ms + .2s)}
+.alBack{animation:alSlide .4s var(--ease,ease) backwards}
+.alGo{transition:transform .2s,box-shadow .2s}.alGo:hover{transform:translateY(-2px);box-shadow:0 8px 22px #0007}
+.alChips button,.alTabs button{transition:background .2s,color .2s,transform .2s}.alChips button:active,.alTabs button:active{transform:scale(.95)}
+.alPane>*{animation:alUp .45s var(--ease,ease) backwards}
+.alPane .alList .alRow,.alPane .alTL li,.alPane .alTLcard{animation:alSlide .4s var(--ease,ease) backwards;animation-delay:calc(var(--n,0)*22ms)}
+.alChipsRow span{animation:alUp .4s var(--ease,ease) backwards;animation-delay:calc(var(--n,0)*18ms)}
+.alStats div{animation:alUp .45s var(--ease,ease) backwards;animation-delay:calc(var(--n,0)*50ms)}
+.alRow{transition:border-color .2s,background .2s,transform .2s}.alRow:hover{background:#ffffff12;transform:translateX(3px)}
+.alPlay{transition:transform .2s}.alPlay:hover{transform:scale(1.12)}
+.alRow.open .alPlay{animation:alPulse 1.4s ease-in-out infinite}
+@keyframes alPulse{0%,100%{box-shadow:0 0 0 0 #ffffff66}50%{box-shadow:0 0 0 9px #ffffff00}}
+.alEmbed{animation:alFade .35s ease}
+@media(prefers-reduced-motion:reduce){.alScreen *{animation:none!important;transition:none!important}}
 @media(max-width:720px){.alScreen{padding:76px 16px 90px}.alHero{grid-template-columns:1fr}.alHero .alCov{max-width:260px}.alGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.alRow{grid-template-columns:auto minmax(0,1fr)}.alRow .alMeta{grid-column:2;text-align:left;white-space:normal}.alTabs{top:56px}}
 `;document.head.appendChild(st);
 
@@ -132,7 +164,7 @@ function list(){
   root.innerHTML=`<div class="eyebrow">DISCOGRAPHY</div><h1 class="title">ALBUMS</h1><p class="muted">Every album Ye has worked on: released, scrapped, collabs and projects he produced. Pick one for dates, alt names, tracklists, files and songs you can play.</p>
   <div class="alTools"><input id="alQ" type="search" placeholder="Search albums or old titles…" value="${esc(q)}" aria-label="Search albums"></div>
   <div class="alChips">${FILTERS.map(([k,l])=>`<button type="button" data-f="${k}" class="${k===filter?'on':''}">${l}</button>`).join('')}</div>
-  <div class="alGrid">${items.map(a=>{const [kl,kc]=KIND[a.kind]||KIND.unreleased,c=countOf(a);return `<button type="button" class="alCard" data-id="${esc(a.id)}"><div class="alCov">${logo(a)}<span class="alBadge" style="--c:${kc}">${kl}</span></div><b>${esc(a.name)}</b><small>${esc(a.years||'')}${c?` · ${num(c)} files`:''}</small></button>`}).join('')||'<p class="muted">No albums match.</p>'}</div>`;
+  <div class="alGrid">${items.map((a,i)=>{const [kl,kc]=KIND[a.kind]||KIND.unreleased,c=countOf(a);return `<button type="button" class="alCard" data-id="${esc(a.id)}" style="--i:${Math.min(i,24)}"><div class="alCov">${logo(a)}<span class="alBadge" style="--c:${kc}">${kl}</span></div><b>${esc(a.name)}</b><small>${esc(a.years||'')}${c?` · ${num(c)} files`:''}</small></button>`}).join('')||'<p class="muted">No albums match.</p>'}</div>`;
   const qi=root.querySelector('#alQ');
   qi.oninput=()=>{q=qi.value;const pos=qi.selectionStart;list();const n=root.querySelector('#alQ');n.focus();n.setSelectionRange(pos,pos)};
   root.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{filter=b.dataset.f;list()});
@@ -154,14 +186,13 @@ function render(){
   const ready=!!idx,files=ready?SECS.reduce((n,s)=>n+rowsFor(a,s).length,0):null;
   const facts=[['Years worked on',a.years||'—'],['Rumored release',a.rumored||'—'],['Announced',a.announced||'—'],['Actual release',rel?fmtDate(rel):(a.kind==='released'||a.kind==='produced'||a.kind==='collab'?'—':'Never released')]];
   if(al&&al.streams)facts.push(['Spotify streams',num(al.streams)]);
-  if(ready)facts.push(['Files in the Tracker',num(files)]);
   const tabs=[['overview','Overview'],['tracklist','Tracklist'],['listen','Listen'],['files','Files'],['art','Art']];
   root.innerHTML=`<button type="button" class="alBtn alBack" id="alBack">‹ All albums</button>
   <section class="alHero"><div class="alCov">${logo(a)}<span class="alBadge" style="--c:${kc}">${kl}</span></div>
   <div><div class="eyebrow">${esc(kl.toUpperCase())}</div><h2>${esc(a.name)}</h2>
-  ${a.alt.length?`<div class="alAlt">${a.alt.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}
+  ${a.alt.length?`<div class="alAlt">${a.alt.map((x,i)=>`<span style="--i:${i}">${esc(x)}</span>`).join('')}</div>`:''}
   ${a.blurb?`<p class="muted">${esc(a.blurb)}</p>`:''}
-  <div class="alFacts">${facts.map(([k,v])=>`<div><small>${esc(k)}</small><span>${esc(v)}</span></div>`).join('')}</div>
+  <div class="alFacts">${facts.map(([k,v],i)=>`<div class="${v==='—'?'nil':''}" style="--i:${i}"><small>${esc(k)}</small><span>${v==='—'?'Not known yet':esc(v)}</span></div>`).join('')}</div>
   <button type="button" class="alGo" id="alTrk">Open all files in Ye Tracker ↗</button>${al?`<a class="alGo ghost" href="${esc(al.spotify)}" target="_blank" rel="noopener noreferrer">Open on Spotify ↗</a>`:''}</div></section>
   <nav class="alTabs" role="tablist">${tabs.map(([k,l])=>`<button type="button" role="tab" data-t="${k}" class="${k===tab?'on':''}">${l}</button>`).join('')}</nav>
   <div class="alPane" id="alBody"></div>`;
@@ -174,6 +205,7 @@ function pane(){
   const el=root.querySelector('#alBody');if(!el||!cur)return;stopAudio();
   if(!idx){el.innerHTML='<p class="alLoad">Loading the Ye Tracker archive…</p>';return}
   ({overview,tracklist,listen,files,art}[tab]||overview)(el,cur);
+  el.querySelectorAll('.alRow,.alTL li,.alTLcard,.alChipsRow span,.alStats div').forEach((n,i)=>n.style.setProperty('--n',Math.min(i,30)));
 }
 function top(map,n){return Object.entries(map).sort((x,y)=>y[1]-x[1]).slice(0,n)}
 function splitNames(s){return s.split(/\s*(?:,|&|\band\b|\+|;)\s*/i).map(x=>x.replace(/^(feat\.?|ft\.?|with)\s+/i,'').trim()).filter(x=>x&&x.length<40&&!/^\d/.test(x))}
