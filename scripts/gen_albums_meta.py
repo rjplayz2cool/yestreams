@@ -1,5 +1,5 @@
 """Builds data/albums-meta.js: one entry per Ye Tracker era, with curated details layered over values computed from the tracker archive."""
-import base64,gzip,json,re,html,statistics,sys
+import os,base64,gzip,json,re,html,statistics,sys
 from collections import Counter,defaultdict
 ROOT=__file__.rsplit('/scripts',1)[0]
 t=open(ROOT+'/data/ye-tracker-archive.txt').read().strip()
@@ -115,6 +115,7 @@ for k in order:
     ls=dates_for(k)
     entry=dict(id=({'¥$':'yen-dollar'}.get(k) or re.sub(r'[^a-z0-9]+','-',k).strip('-') or 'x'),name=name,era=name,kind=c.get('kind','unreleased'),alt=[x for x in alts.get(k,[]) if x.lower()!=name.lower()],years=yrs,
       cover=c.get('cover',''),official=c.get('official',''),released=c.get('released',''),announced=c.get('announced',''),rumored=c.get('rumored',''),blurb=c.get('blurb',''))
+    if not entry['cover'] and os.path.exists(ROOT+'/assets/album-covers/'+entry['id']+'.jpg'):entry['cover']='assets/album-covers/'+entry['id']+'.jpg'
     albums.append(entry)
 open(ROOT+'/data/albums-meta.js','w').write('window.ALBUMS_META='+json.dumps(albums,ensure_ascii=False,separators=(',',':'))+';\n')
 print(len(albums));[print(x['id'],x['years'],x['kind'],x['alt'][:3]) for x in albums]
