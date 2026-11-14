@@ -95,7 +95,7 @@ a('NEVER STOP',kind='unreleased',blurb='Unreleased project from the 2025 session
 a('BULLY [V2]',kind='released',cover='covers/bully-deluxe.jpg',official='BULLY - DELUXE',blurb='Second version of BULLY.')
 a('Ongoing',kind='unreleased',blurb='Current work in progress.')
 
-TAGS={'Ongoing':['ongoing'],'NASIR':['produced','released'],'K.T.S.E.':['produced','released'],'DONDA 2 [V1]':['reworked'],'DONDA 2 [V2]':['released'],'BULLY [V1]':['reworked'],'NEVER STOP':['released','collab'],'Hitler':['reworked'],'SWISH':['reworked'],
+TAGS={'Ongoing':['ongoing'],'NASIR':['produced','released'],'DAYTONA':['produced','released'],'K.T.S.E.':['produced','released'],'DONDA 2 [V1]':['reworked'],'DONDA 2 [V2]':['released'],'BULLY [V1]':['reworked'],'NEVER STOP':['released','collab'],'Hitler':['reworked'],'SWISH':['reworked'],
 'DONDA [V1]':['reworked'],'Donda [V2]':['reworked'],'First World Problematic':['unreleased','collab'],'Watch The Throne':['released','collab'],'Cruel Summer':['released','collab'],
 'KIDS SEE GHOSTS':['released','collab'],'Good Ass Job (2018)':['unreleased','collab'],'WAR':['unreleased','collab'],'¥$':['unreleased','collab'],'VULTURES 3':['unreleased','collab'],
 'CARTI YE':['unreleased','collab'],'VULTURES 1':['released','collab'],'VULTURES 2':['released','collab']}
