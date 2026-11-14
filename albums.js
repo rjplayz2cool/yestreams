@@ -4,8 +4,8 @@
 (()=>{
 const pg=document.getElementById('pg-albums'),root=document.getElementById('alScreen');if(!pg||!root)return;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const KIND={released:['Released','#b6ff39'],collab:['Collab','#6bd0ff'],unreleased:['Unreleased','#ff6a70'],produced:['Produced','#ffb86b'],pre:['Early work','#d4d4d4']};
-const FILTERS=[['all','All'],['released','Released'],['unreleased','Unreleased'],['collab','Collabs'],['produced','Produced'],['pre','Early work']];
+const KIND={reworked:['Reworked','#ffd84d'],released:['Released','#b6ff39'],collab:['Collab','#6bd0ff'],unreleased:['Unreleased','#ff6a70'],produced:['Produced','#ffb86b'],pre:['Early work','#d4d4d4']};
+const FILTERS=[['all','All'],['released','Released'],['unreleased','Unreleased'],['reworked','Reworked'],['collab','Collabs'],['produced','Produced'],['pre','Early work']];
 const SECS=['Unreleased','Recent','Best Of','Special','Worst Of','Grails/Wanted','Stems','Album Copies'];
 const LISTEN=['Special','Best Of','Worst Of','Grails/Wanted','Unreleased','Recent'];
 const keyOf=v=>String(v||'').replace(/\([^)]*\)/g,m=>/^\(\d{4}\)$/.test(m)?m:'').replace(/\s+/g,' ').trim().toLowerCase();
@@ -32,7 +32,8 @@ const st=document.createElement('style');st.textContent=`
 .alCard:hover .alCov,.alCard:focus-visible .alCov{transform:translateY(-3px);border-color:#ffffff66}
 .alCov img{width:100%;height:100%;object-fit:cover;display:block}
 .alFb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:14px;text-align:center;font:900 clamp(18px,2.2vw,26px)/1.05 'Big Shoulders Display',Impact,Arial Narrow,sans-serif;letter-spacing:.01em;text-transform:uppercase;word-break:break-word}
-.alBadge{position:absolute;left:8px;top:8px;font:800 9px/1 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;padding:5px 7px;border-radius:5px;background:#000c;color:var(--c)}
+.alBadges{position:absolute;left:8px;top:8px;right:8px;display:flex;flex-wrap:wrap;gap:4px;z-index:2;pointer-events:none}
+.alBadges span{font:800 9px/1 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;padding:5px 7px;border-radius:5px;background:#000c;color:var(--c)}
 .alCard b{font-size:15px;line-height:1.2}
 .alCard small{color:#ffffff99;font-size:12px;margin-top:-6px}
 .alBack{margin-bottom:14px}
@@ -155,8 +156,11 @@ function buildIndex(){
       (idx[k]||(idx[k]={}))[sec.name]=(idx[k][sec.name]||[]).concat(rec);
     })});
 }
-const rowsFor=(a,sec)=>(idx&&idx[keyOf(a.era)]&&idx[keyOf(a.era)][sec])||[];
-const countOf=a=>{if(!idx)return null;const o=idx[keyOf(a.era)]||{};return(o['Unreleased']||[]).length+(o['Recent']||[]).length};
+const erasOf=a=>(a.eras&&a.eras.length?a.eras:[a.era]).map(keyOf);
+const rowsFor=(a,sec)=>idx?erasOf(a).flatMap(k=>(idx[k]&&idx[k][sec])||[]):[];
+const countOf=a=>{if(!idx)return null;return rowsFor(a,'Unreleased').length+rowsFor(a,'Recent').length};
+const tagsOf=a=>(a.tags&&a.tags.length?a.tags:[a.kind||'unreleased']);
+const badges=a=>`<div class="alBadges">${tagsOf(a).map(t=>{const[l,c]=KIND[t]||KIND.unreleased;return `<span style="--c:${c}">${l}</span>`}).join('')}</div>`;
 function official(a){
   if(!a.official||!window.KWORB_DB||!window.Catalog)return null;
   const al=(KWORB_DB.albums||[]).find(x=>x.name===a.official);return al||null;
@@ -169,11 +173,11 @@ const logo=(a)=>{const fb=`<div class="alFb">${esc(a.name)}</div>`;return a.cove
 function list(){
   cur=null;
   const qq=q.trim().toLowerCase();
-  const items=META().filter(a=>(filter==='all'||a.kind===filter)&&(!qq||(a.name+' '+a.alt.join(' ')+' '+a.years).toLowerCase().includes(qq)));
+  const items=META().filter(a=>(filter==='all'||tagsOf(a).includes(filter))&&(!qq||(a.name+' '+a.alt.join(' ')+' '+a.years).toLowerCase().includes(qq)));
   root.innerHTML=`<div class="eyebrow">DISCOGRAPHY</div><h1 class="title">ALBUMS</h1><p class="muted">Every album Ye has worked on: released, scrapped, collabs and projects he produced. Pick one for dates, alt names, tracklists, files and songs you can play.</p>
   <div class="alTools"><input id="alQ" type="search" placeholder="Search albums or old titles…" value="${esc(q)}" aria-label="Search albums"></div>
   <div class="alChips">${FILTERS.map(([k,l])=>`<button type="button" data-f="${k}" class="${k===filter?'on':''}">${l}</button>`).join('')}</div>
-  <div class="alGrid">${items.map((a,i)=>{const [kl,kc]=KIND[a.kind]||KIND.unreleased,c=countOf(a);return `<button type="button" class="alCard" data-id="${esc(a.id)}" style="--i:${Math.min(i,24)}"><div class="alCov">${logo(a)}<span class="alBadge" style="--c:${kc}">${kl}</span></div><b>${esc(a.name)}</b><small>${esc(a.years||'')}${c?` · ${num(c)} files`:''}</small></button>`}).join('')||'<p class="muted">No albums match.</p>'}</div>`;
+  <div class="alGrid">${items.map((a,i)=>{const c=countOf(a);return `<button type="button" class="alCard" data-id="${esc(a.id)}" style="--i:${Math.min(i,24)}"><div class="alCov">${logo(a)}${badges(a)}</div><b>${esc(a.name)}</b><small>${esc(a.years||'')}${c?` · ${num(c)} files`:''}</small></button>`}).join('')||'<p class="muted">No albums match.</p>'}</div>`;
   const qi=root.querySelector('#alQ');
   qi.oninput=()=>{q=qi.value;const pos=qi.selectionStart;list();const n=root.querySelector('#alQ');n.focus();n.setSelectionRange(pos,pos)};
   root.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{filter=b.dataset.f;list()});
@@ -213,14 +217,14 @@ function firstLast(a){
   return ys;
 }
 function render(){
-  const a=cur,[kl,kc]=KIND[a.kind]||KIND.unreleased,rel=albumRelease(a),al=official(a);
+  const a=cur,tg=tagsOf(a),rel=albumRelease(a),al=official(a);
   const covs=coversOf(a),ready=!!idx,files=ready?SECS.reduce((n,s)=>n+rowsFor(a,s).length,0):null;
-  const facts=[['Years worked on',a.years||'—'],['Rumored release',a.rumored||'—'],['Announced',a.announced||'—'],['Actual release',rel?fmtDate(rel):(a.kind==='released'||a.kind==='produced'||a.kind==='collab'?'—':'Never released')]];
+  const facts=[['Years worked on',a.years||'—'],['Rumored release',a.rumored||'—'],['Announced',a.announced||'—'],['Actual release',rel?fmtDate(rel):(tg.includes('released')||tg.includes('produced')?'—':tg.includes('reworked')?'Reworked into a later version':'Never released')]];
   if(al&&al.streams)facts.push(['Spotify streams',num(al.streams)]);
   const tabs=[['overview','Overview'],['tracklist','Tracklist'],['listen','Listen'],['files','Files'],['art','Art']];
   root.innerHTML=`<button type="button" class="alBtn alBack" id="alBack">‹ All albums</button>
-  <section class="alHero"><div class="alCovWrap"><div class="alCov" id="alCovBox">${logo(a)}<span class="alBadge" style="--c:${kc}">${kl}</span>${covs.length>1?`<div class="alCovNav"><button type="button" id="alCovPrev" aria-label="Previous cover">‹</button><span id="alCovCount"></span><button type="button" id="alCovNext" aria-label="Next cover">›</button></div>`:''}</div><div class="alCovCap" id="alCovCap"></div></div>
-  <div><div class="eyebrow">${esc(kl.toUpperCase())}</div><h2>${esc(a.name)}</h2>
+  <section class="alHero"><div class="alCovWrap"><div class="alCov" id="alCovBox">${logo(a)}${badges(a)}${covs.length>1?`<div class="alCovNav"><button type="button" id="alCovPrev" aria-label="Previous cover">‹</button><span id="alCovCount"></span><button type="button" id="alCovNext" aria-label="Next cover">›</button></div>`:''}</div><div class="alCovCap" id="alCovCap"></div></div>
+  <div><div class="eyebrow">${esc(tg.map(t=>(KIND[t]||KIND.unreleased)[0]).join(' · ').toUpperCase())}</div><h2>${esc(a.name)}</h2>
   ${a.alt.length?`<div class="alAlt">${a.alt.map((x,i)=>`<span style="--i:${i}">${esc(x)}</span>`).join('')}</div>`:''}
   ${a.blurb?`<p class="muted">${esc(a.blurb)}</p>`:''}
   <div class="alFacts">${facts.map(([k,v],i)=>`<div class="${v==='—'?'nil':''}" style="--i:${i}"><small>${esc(k)}</small><span>${v==='—'?'Not known yet':esc(v)}</span></div>`).join('')}</div>
@@ -263,7 +267,7 @@ function tracklist(el,a){
   if(al&&window.Catalog){
     let songs=[];try{songs=Catalog.songsForAlbum(al)||[]}catch{}
     if(songs.length)out+=`<h3>Official tracklist</h3><ol class="alTL">${songs.map(s=>`<li><span>${esc(s._displayTitle||s.name)}</span><em>${s.streams?num(s.streams)+' streams':''}</em></li>`).join('')}</ol>`;
-  }else if(a.kind==='produced'||a.kind==='collab'){
+  }else if(tagsOf(a).includes('produced')||tagsOf(a).includes('collab')){
     const rs=rowsFor(a,'Released').filter(r=>r.type==='Album Track'||true).slice(0,60);
     if(rs.length)out+=`<h3>Released tracks</h3><ol class="alTL">${rs.map(r=>`<li><span>${esc(r.title)}</span><em>${esc(r.rel)}</em></li>`).join('')}</ol>`;
   }

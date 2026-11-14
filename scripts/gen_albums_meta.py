@@ -76,10 +76,10 @@ a('Yandhi [V2]',kind='unreleased',cover='covers/unreleased-yandhi.webp',blurb='R
 a('JESUS IS KING',kind='released',announced='Sep 27, 2019 (missed)',years='2018–2019',cover='covers/jesus-is-king.jpg',official='JESUS IS KING')
 a('JESUS IS KING: The Dr. Dre Version',kind='unreleased',cover='assets/era-covers/jesus-is-king-dr-dre.webp',blurb='Planned Dr. Dre-produced version, also called JESUS IS KING II.')
 a("God's Country",kind='unreleased',cover='assets/era-covers/gods-country.webp',blurb='The 2020 sessions that grew into DONDA.')
-a('DONDA [V1]',kind='unreleased',rumored='Jul 24, 2020 (announced, missed)',years='2020',cover='covers/donda.jpg',blurb='First version of the DONDA sessions.')
-a('Donda [V2]',kind='unreleased',cover='covers/donda.jpg',blurb='Second version of DONDA, including the Atlanta listening-party tracklists.')
+a('DONDA [V1]',kind='unreleased',rumored='Jul 24, 2020 (announced, missed)',years='2020',blurb='First version of the DONDA sessions.')
+a('Donda [V2]',kind='unreleased',blurb='Second version of DONDA, including the Atlanta listening-party tracklists.')
 a('Donda [V3]',kind='released',years='2021',cover='covers/donda.jpg',official='Donda',blurb='Third and final version of DONDA, the retail album.')
-a('DONDA 2 [V1]',kind='released',announced='Feb 22, 2022 (Miami listening event, Stem Player)',years='2021–2022',cover='covers/donda-2.jpg',official='DONDA 2',blurb='Released on the Stem Player in February 2022.',released='2022-02-22')
+a('DONDA 2 [V1]',kind='unreleased',years='2021–2022',cover='covers/donda-2.jpg',blurb='The 2021-22 version, previewed at the Feb 22, 2022 Miami listening event. It was reworked into the later release.')
 a('WAR',kind='unreleased',blurb='Unreleased 2022 project. Also appears as a Donda 2 title.')
 a('YEBU',kind='unreleased',blurb='Unreleased 2022-23 project (also Ye 3 / Y3).')
 a('¥$',kind='collab',years='2023',cover='assets/era-covers/yen-dollar.webp',blurb='Collaboration with Ty Dolla $ign, before the VULTURES albums (also Bad Bitch Playbook).')
@@ -89,20 +89,26 @@ a('VULTURES 3',kind='unreleased',blurb='Planned third volume of the VULTURES ser
 a('BULLY [V1]',kind='unreleased',cover='covers/bully.jpg',official='BULLY',blurb='First version of BULLY.')
 a('CARTI YE',kind='unreleased',blurb='Planned collaboration with Playboi Carti.')
 a('CUCK',kind='unreleased',blurb='Unreleased project from the 2024-25 sessions.')
-a('DONDA 2 [V2]',kind='unreleased',cover='covers/donda-2.jpg',blurb='Later version of DONDA 2.')
-a('DONDA 2 (2025)',kind='unreleased',years='2025',cover='covers/donda-2.jpg',blurb='2025 revival of DONDA 2.')
+a('DONDA 2 [V2]',kind='released',cover='covers/donda-2.jpg',official='DONDA 2',released='2022-02-22',announced='Feb 22, 2022 (Miami listening event, Stem Player)',years='2024–2025',blurb='Combines the DONDA 2 [V2] and DONDA 2 (2025) eras.')
 a('IN A PERFECT WORLD',kind='unreleased',blurb='Unreleased 2025 project.')
 a('NEVER STOP',kind='unreleased',blurb='Unreleased project from the 2025 sessions.')
 a('BULLY [V2]',kind='released',cover='covers/bully-deluxe.jpg',official='BULLY - DELUXE',blurb='Second version of BULLY.')
 a('Ongoing',kind='unreleased',blurb='Current work in progress.')
+
+TAGS={'DONDA 2 [V1]':['reworked'],'DONDA 2 [V2]':['released'],'BULLY [V1]':['reworked'],'NEVER STOP':['released','collab'],'Hitler':['reworked'],'SWISH':['reworked'],
+'DONDA [V1]':['reworked'],'Donda [V2]':['reworked'],'First World Problematic':['unreleased','collab'],'Watch The Throne':['released','collab'],'Cruel Summer':['released','collab'],
+'KIDS SEE GHOSTS':['released','collab'],'Good Ass Job (2018)':['unreleased','collab'],'WAR':['unreleased','collab'],'¥$':['unreleased','collab'],'VULTURES 3':['unreleased','collab'],
+'CARTI YE':['unreleased','collab'],'VULTURES 1':['released','collab'],'VULTURES 2':['released','collab']}
+TAGS={k.lower():v for k,v in TAGS.items()}
+MERGE={'donda 2 (2025)':'donda 2 [v2]'}
 order=[]
 for r in S['Unreleased']['rows']:
     k=key(r['era'])
-    if k and k not in order:order.append(k)
+    if k and k not in order and k not in MERGE:order.append(k)
 for s in D:
     for r in s['rows']:
         k=key(r['era'])
-        if k and k not in order and k!='multi-era':order.append(k)
+        if k and k not in order and k!='multi-era' and k not in MERGE:order.append(k)
 albums=[]
 for k in order:
     c=C.get(k,{})
@@ -116,6 +122,11 @@ for k in order:
     entry=dict(id=({'¥$':'yen-dollar'}.get(k) or re.sub(r'[^a-z0-9]+','-',k).strip('-') or 'x'),name=name,era=name,kind=c.get('kind','unreleased'),alt=[x for x in alts.get(k,[]) if x.lower()!=name.lower()],years=yrs,
       cover=c.get('cover',''),official=c.get('official',''),released=c.get('released',''),announced=c.get('announced',''),rumored=c.get('rumored',''),blurb=c.get('blurb',''))
     if not entry['cover'] and os.path.exists(ROOT+'/assets/album-covers/'+entry['id']+'.jpg'):entry['cover']='assets/album-covers/'+entry['id']+'.jpg'
+    tg=TAGS.get(k) or [entry['kind']]
+    entry['tags']=tg;entry['kind']=tg[0]
+    if k=='donda 2 [v2]':
+        entry['eras']=[name,'DONDA 2 (2025)'];entry['alt']=entry['alt']+[x for x in alts.get('donda 2 (2025)',[]) if x not in entry['alt']]
+    else:entry['eras']=[name]
     albums.append(entry)
 open(ROOT+'/data/albums-meta.js','w').write('window.ALBUMS_META='+json.dumps(albums,ensure_ascii=False,separators=(',',':'))+';\n')
 print(len(albums));[print(x['id'],x['years'],x['kind'],x['alt'][:3]) for x in albums]
