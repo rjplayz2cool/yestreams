@@ -266,7 +266,7 @@ function tracklist(el,a){
   let out='';const al=official(a);
   if(al&&window.Catalog){
     let songs=[];try{songs=Catalog.songsForAlbum(al)||[]}catch{}
-    if(songs.length)out+=`<h3>Official tracklist</h3><ol class="alTL">${songs.map(s=>`<li><span>${esc(s._displayTitle||s.name)}</span><em>${s.streams?num(s.streams)+' streams':''}</em></li>`).join('')}</ol>`;
+    if(songs.length)out+=`<h3>Official tracklist</h3><ol class="alTL">${songs.map(s=>{const nm=s._displayTitle||s.name,ad=(a.added||[]).some(x=>nm.toLowerCase().startsWith(x.toLowerCase()));return `<li><span>${esc(nm)}${ad?' <b style="font-size:10px;letter-spacing:.12em;color:#b6ff39;margin-left:6px">ADDED IN DELUXE</b>':''}</span><em>${s.streams?num(s.streams)+' streams':''}</em></li>`}).join('')}</ol>`;
   }else if(tagsOf(a).includes('produced')||tagsOf(a).includes('collab')){
     const rs=rowsFor(a,'Released').filter(r=>r.type==='Album Track'||true).slice(0,60);
     if(rs.length)out+=`<h3>Released tracks</h3><ol class="alTL">${rs.map(r=>`<li><span>${esc(r.title)}</span><em>${esc(r.rel)}</em></li>`).join('')}</ol>`;

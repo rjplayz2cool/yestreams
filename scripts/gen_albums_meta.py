@@ -128,5 +128,11 @@ for k in order:
         entry['eras']=[name,'DONDA 2 (2025)'];entry['alt']=entry['alt']+[x for x in alts.get('donda 2 (2025)',[]) if x not in entry['alt']]
     else:entry['eras']=[name]
     albums.append(entry)
+# Donda (Deluxe): same sessions/files as the main release, plus five added songs
+i=next(n for n,x in enumerate(albums) if x['id']=='donda-v3')
+d=dict(albums[i]);d.update(id='donda-deluxe',name='DONDA (Deluxe)',era='Donda [V3]',eras=['Donda [V3]'],official='Donda (Deluxe)',released='',announced='',rumored='',alt=[],
+  blurb='Expanded edition of DONDA that added five songs. Files for this album are the same as DONDA, since they share one era in the Tracker.',
+  added=['Life Of The Party','Up From The Ashes','Never Abandon Your Family','Remote Control pt 2','Keep My Spirit Alive pt 2'],tags=['released'],kind='released',years='2021')
+albums.insert(i+1,d)
 open(ROOT+'/data/albums-meta.js','w').write('window.ALBUMS_META='+json.dumps(albums,ensure_ascii=False,separators=(',',':'))+';\n')
 print(len(albums));[print(x['id'],x['years'],x['kind'],x['alt'][:3]) for x in albums]
