@@ -1,5 +1,5 @@
 /* Instagram tab: Ye's archived Instagram (993 posts, 2016-2026) as a profile grid with a post viewer.
-   Data: data/instagram.txt = base64(gzip(manifest JSON)). Media is served from the archive host in manifest.media_root (yetour.xyz). */
+   Data: data/instagram.txt = base64(gzip(manifest JSON)). */
 (()=>{
 const pg=document.getElementById('pg-instagram'),root=document.getElementById('igScreen');if(!pg||!root)return;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -20,12 +20,12 @@ const st0=document.createElement('style');st0.textContent=`
 .igStats{display:flex;gap:clamp(14px,4vw,36px);margin:14px 0;font-size:15px;flex-wrap:wrap}
 .igStats b{font-weight:700}
 .igBio{font-size:14px;line-height:1.4;color:#d8d8d8}
-.igTools{position:sticky;top:64px;z-index:5;background:#000d;backdrop-filter:blur(10px);padding:10px 0;border-block:1px solid #262626;display:flex;flex-direction:column;gap:10px;margin-bottom:4px}
+.igTools{position:sticky;top:64px;z-index:5;background:#000d;backdrop-filter:blur(10px);padding:10px 0;border-bottom:1px solid #262626;display:flex;flex-direction:column;gap:10px;margin-bottom:4px}
 .igRow{display:flex;gap:8px;flex-wrap:wrap}
-.igTools input,.igTools select{background:#1a1a1a;border:1px solid #363636;color:#f5f5f5;border-radius:10px;padding:9px 13px;font:500 14px system-ui,sans-serif;min-width:0;outline:0}
+.igTools input,.igTools select{background:#1a1a1a;border:1px solid transparent;color:#f5f5f5;border-radius:10px;padding:9px 13px;font:500 14px system-ui,sans-serif;min-width:0;outline:0}
 .igTools input{flex:1 1 180px}.igTools input:focus,.igTools select:focus{border-color:#8e8e8e}
 .igChips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}.igChips::-webkit-scrollbar{display:none}
-.igChips button{flex:none;border:1px solid #363636;background:none;color:#f5f5f5;border-radius:999px;padding:6px 13px;font:600 13px system-ui,sans-serif;cursor:pointer}
+.igChips button{flex:none;border:0;background:#1a1a1a;color:#f5f5f5;border-radius:999px;padding:6px 13px;font:600 13px system-ui,sans-serif;cursor:pointer}
 .igChips button.on{background:#f5f5f5;color:#000;border-color:#f5f5f5}
 .igCount{color:#a8a8a8;font-size:13px;padding:10px 0}
 .igGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
@@ -38,11 +38,11 @@ const st0=document.createElement('style');st0.textContent=`
 .igCell .cap{position:absolute;left:8px;right:8px;bottom:8px;font-size:12px;font-weight:600;color:#fff;opacity:0;transition:opacity .2s;z-index:2;text-shadow:0 1px 4px #000;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .igCell:hover .cap{opacity:1}
 .igBadge{position:absolute;top:8px;right:8px;z-index:2;color:#fff;filter:drop-shadow(0 1px 3px #000);font-size:18px;line-height:1}
-.igMore{display:block;margin:20px auto;border:1px solid #363636;background:#1a1a1a;color:#f5f5f5;border-radius:999px;padding:11px 26px;font:700 14px system-ui,sans-serif;cursor:pointer}
+.igMore{display:block;margin:20px auto;border:0;background:#1a1a1a;color:#f5f5f5;border-radius:999px;padding:11px 26px;font:700 14px system-ui,sans-serif;cursor:pointer}
 .igEmpty{padding:60px 0;text-align:center;color:#a8a8a8;grid-column:1/-1}
 .igLb{position:fixed;inset:0;z-index:300;background:#000e;display:flex;align-items:center;justify-content:center;padding:18px;animation:igIn .2s both}
 .igLb[hidden]{display:none}
-.igBox{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,1fr);width:min(1100px,100%);max-height:calc(100dvh - 36px);background:#121212;border:1px solid #262626;border-radius:12px;overflow:hidden}
+.igBox{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,1fr);width:min(1100px,100%);max-height:calc(100dvh - 36px);background:#121212;border-radius:12px;overflow:hidden}
 .igMed{position:relative;background:#000;display:flex;align-items:center;justify-content:center;min-height:300px;max-height:calc(100dvh - 38px)}
 .igMed img,.igMed video{max-width:100%;max-height:calc(100dvh - 38px);display:block;object-fit:contain}
 .igNav{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;border:0;background:#fffc;color:#000;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center}
@@ -58,7 +58,7 @@ const st0=document.createElement('style');st0.textContent=`
 .igSide .alt{font-size:13px;color:#a8a8a8;border-left:2px solid #363636;padding-left:10px}
 .igX{position:absolute;top:12px;right:16px;z-index:2;border:0;background:none;color:#fff;font-size:30px;cursor:pointer}
 .igPN{display:flex;gap:8px;margin-top:auto}
-.igPN button{flex:1;border:1px solid #363636;background:#1a1a1a;color:#f5f5f5;border-radius:8px;padding:9px;cursor:pointer;font:600 13px system-ui,sans-serif}
+.igPN button{flex:1;border:0;background:#1a1a1a;color:#f5f5f5;border-radius:8px;padding:9px;cursor:pointer;font:600 13px system-ui,sans-serif}
 @media(max-width:760px){.igBox{grid-template-columns:1fr;overflow-y:auto}.igMed{max-height:60dvh;min-height:200px}.igMed img,.igMed video{max-height:60dvh}.igScreen{padding-top:76px}.igTools{top:56px}}
 @media(prefers-reduced-motion:reduce){.igCell,.igLb{animation:none}}
 `;document.head.appendChild(st0);
@@ -110,7 +110,7 @@ function step(d){const idx=view.indexOf(cur)+d;if(idx<0||idx>=view.length)return
 function shell(){
   const years=[...new Set(POSTS.map(p=>p.caption_date.slice(0,4)))].sort().reverse();
   root.innerHTML=`<div class="eyebrow">ARCHIVE</div><h1 class="title">Instagram</h1>
-  <div class="igProf"><img src="${PFP}" alt="" onerror="this.onerror=null;this.src='${FB}'"><div><h2>ye</h2><div class="igStats"><span><b>${POSTS.length.toLocaleString()}</b> posts</span><span><b>20.4M</b> followers</span><span><b>1</b> following</span></div><div class="igBio">Archived feed · ${years[years.length-1]}–${years[0]}<br>Source: yetour.xyz Instagram archive</div></div></div>
+  <div class="igProf"><img src="${PFP}" alt="" onerror="this.onerror=null;this.src='${FB}'"><div><h2>ye</h2><div class="igStats"><span><b>${POSTS.length.toLocaleString()}</b> posts</span><span><b>20.4M</b> followers</span><span><b>1</b> following</span></div><div class="igBio">Archived feed · ${years[years.length-1]}–${years[0]}</div></div></div>
   <div class="igTools"><div class="igRow"><input id="igQ" type="search" placeholder="Search captions" aria-label="Search captions"><select id="igSort" aria-label="Sort"><option value="new">Newest</option><option value="old">Oldest</option></select><select id="igYear" aria-label="Year"><option value="all">All years</option>${years.map(y=>`<option>${y}</option>`).join('')}</select></div>
   <div class="igChips" id="igChips">${FILTERS.map(([v,l])=>`<button type="button" data-f="${v}"${v==='all'?' class="on"':''}>${l}</button>`).join('')}</div></div>
   <div class="igCount" id="igCount"></div><div class="igGrid" id="igGrid"></div><button class="igMore" id="igMore" type="button">Show more</button>

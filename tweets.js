@@ -1,5 +1,5 @@
 /* Tweets tab: Ye's full Twitter/X archive (5,900+ posts, 2010-2026) styled like X, with sorting, filters and search.
-   Data: data/tweets.txt = base64(gzip(JSON array)), loaded lazily on first visit. Archive source: yzy-twts.com. */
+   Data: data/tweets.txt = base64(gzip(JSON array)), loaded lazily on first visit. */
 (()=>{
 const pg=document.getElementById('pg-tweets'),root=document.getElementById('twScreen');if(!pg||!root)return;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -18,18 +18,18 @@ const st0=document.createElement('style');st0.textContent=`
 .twHead{padding:0 16px}
 .twScreen .eyebrow{color:var(--accent2);font-weight:800;letter-spacing:.18em;font-size:12px}
 .twScreen h1.title{font-size:clamp(34px,6vw,56px);font-weight:900;letter-spacing:-.05em;margin:4px 0}
-.twProf{display:flex;gap:14px;align-items:center;padding:14px 16px;border:1px solid #2f3336;border-radius:16px;margin:14px 16px;background:#000a}
+.twProf{display:flex;gap:14px;align-items:center;padding:6px 16px 16px}
 .twProf img{width:64px;height:64px;border-radius:50%;object-fit:cover;background:#222}
 .twProf b{display:flex;align-items:center;gap:4px;font-size:19px}
 .twProf small{color:#71767b;display:block;font-size:14px}
-.twTools{position:sticky;top:64px;z-index:5;background:#000d;backdrop-filter:blur(10px);padding:10px 16px;border-block:1px solid #2f3336;display:flex;flex-direction:column;gap:10px}
+.twTools{position:sticky;top:64px;z-index:5;background:#000d;backdrop-filter:blur(10px);padding:10px 16px;border-bottom:1px solid #2f3336;display:flex;flex-direction:column;gap:10px}
 .twRow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.twTools input,.twTools select{background:#16181c;border:1px solid #2f3336;color:#e7e9ea;border-radius:999px;padding:9px 14px;font:500 14px system-ui,sans-serif;min-width:0;outline:0}
+.twTools input,.twTools select{background:#16181c;border:1px solid transparent;color:#e7e9ea;border-radius:999px;padding:9px 14px;font:500 14px system-ui,sans-serif;min-width:0;outline:0}
 .twTools input{flex:1 1 180px}.twTools input:focus,.twTools select:focus{border-color:#1d9bf0}
 .twTools select{cursor:pointer}
 .twChips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
 .twChips::-webkit-scrollbar{display:none}
-.twChips button{flex:none;border:1px solid #2f3336;background:none;color:#e7e9ea;border-radius:999px;padding:6px 13px;font:600 13px system-ui,sans-serif;cursor:pointer}
+.twChips button{flex:none;border:0;background:#16181c;color:#e7e9ea;border-radius:999px;padding:6px 13px;font:600 13px system-ui,sans-serif;cursor:pointer}
 .twChips button.on{background:#e7e9ea;color:#000;border-color:#e7e9ea}
 .twCount{scroll-margin-top:150px;color:#71767b;font-size:13px;padding:10px 16px}
 .tw{display:flex;gap:12px;padding:12px 16px;border-bottom:1px solid #2f3336;animation:twIn .35s both}
@@ -46,7 +46,7 @@ const st0=document.createElement('style');st0.textContent=`
 .twTx{font-size:15px;line-height:1.35;white-space:pre-wrap;overflow-wrap:anywhere;margin:2px 0 8px}
 .twTx a,.twTx i{color:#1d9bf0;text-decoration:none;font-style:normal}
 .twTx a:hover{text-decoration:underline}
-.twMedia{display:grid;gap:2px;border-radius:16px;overflow:hidden;border:1px solid #2f3336;margin:4px 0 8px;max-height:520px}
+.twMedia{display:grid;gap:2px;border-radius:14px;overflow:hidden;margin:4px 0 8px;max-height:520px}
 .twMedia.n1{grid-template-columns:1fr}.twMedia.n2,.twMedia.n4{grid-template-columns:1fr 1fr}.twMedia.n3{grid-template-columns:1fr 1fr}
 .twMedia.n3>*:first-child{grid-row:span 2}
 .twMedia img,.twMedia video{min-height:0;width:100%;height:100%;object-fit:cover;display:block;background:#111;max-height:520px}
@@ -54,7 +54,7 @@ const st0=document.createElement('style');st0.textContent=`
 .twMedia a{display:block;position:relative;min-height:0}
 .twPlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:38px;color:#fff;text-shadow:0 2px 10px #000;pointer-events:none}
 .twEmbT{position:absolute;left:0;right:0;bottom:0;padding:18px 10px 8px;background:linear-gradient(transparent,#000c);font-size:13px;color:#fff}
-.twQ{border:1px solid #2f3336;border-radius:16px;padding:10px 12px;margin:4px 0 8px}
+.twQ{background:#ffffff08;border-radius:14px;padding:10px 12px;margin:4px 0 8px}
 .twQ .twTop{font-size:14px}.twQ .twTx{font-size:14px;margin-bottom:4px}
 .twPoll{display:flex;flex-direction:column;gap:6px;margin:4px 0 8px}
 .twPoll div{position:relative;border-radius:6px;background:#16181c;overflow:hidden;padding:8px 10px;display:flex;justify-content:space-between;font-size:14px}
@@ -66,7 +66,7 @@ const st0=document.createElement('style');st0.textContent=`
 .twAct svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8}
 .twAct .rt{color:#00ba7c}.twAct .lk{color:#f91880}
 .twBang{color:#ffd400;font-size:12px;font-weight:700;letter-spacing:.04em}
-.twMore{display:block;margin:18px auto;border:1px solid #2f3336;background:#16181c;color:#e7e9ea;border-radius:999px;padding:11px 26px;font:700 14px system-ui,sans-serif;cursor:pointer}
+.twMore{display:block;margin:18px auto;border:0;background:#16181c;color:#e7e9ea;border-radius:999px;padding:11px 26px;font:700 14px system-ui,sans-serif;cursor:pointer}
 .twMore:hover{background:#22262b}
 .twEmpty{padding:60px 16px;text-align:center;color:#71767b}
 @media(max-width:700px){.twScreen{padding-top:76px}.twTools{top:56px}}
