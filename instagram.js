@@ -3,7 +3,7 @@
 (()=>{
 const pg=document.getElementById('pg-instagram'),root=document.getElementById('igScreen');if(!pg||!root)return;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const PFP='https://insta.yetour.xyz/archive/profile/ye-current-instagram.jpg';
+const PFP="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Crect width=%2740%27 height=%2740%27 fill=%27%23242424%27/%3E%3Ctext x=%2720%27 y=%2726%27 font-size=%2716%27 font-weight=%27800%27 fill=%27%23fff%27 text-anchor=%27middle%27 font-family=%27Arial%27%3Eye%3C/text%3E%3C/svg%3E";
 const FB="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Crect width=%2740%27 height=%2740%27 fill=%27%23222%27/%3E%3Ctext x=%2720%27 y=%2726%27 font-size=%2716%27 font-weight=%27800%27 fill=%27%23fff%27 text-anchor=%27middle%27 font-family=%27Arial%27%3Eye%3C/text%3E%3C/svg%3E";
 const FILTERS=[['all','All'],['image','Photos'],['video','Videos'],['carousel','Carousels']];
 const PAGE=60,VID=/\.(mp4|webm|mov)$/i,COV=/_cover\.(jpg|jpeg|png)$/i;
@@ -20,14 +20,14 @@ const st0=document.createElement('style');st0.textContent=`
 .igStats{display:flex;gap:clamp(14px,4vw,36px);margin:14px 0;font-size:15px;flex-wrap:wrap}
 .igStats b{font-weight:700}
 .igBio{font-size:14px;line-height:1.4;color:#d8d8d8}
-.igTools{position:sticky;top:64px;z-index:5;background:#000d;backdrop-filter:blur(10px);padding:10px 0;border-bottom:1px solid #262626;display:flex;flex-direction:column;gap:10px;margin-bottom:4px}
+.igTools{padding:6px 0 10px;display:flex;flex-direction:column;gap:10px}
 .igRow{display:flex;gap:8px;flex-wrap:wrap}
 .igTools input,.igTools select{background:#1a1a1a;border:1px solid transparent;color:#f5f5f5;border-radius:10px;padding:9px 13px;font:500 14px system-ui,sans-serif;min-width:0;outline:0}
 .igTools input{flex:1 1 180px}.igTools input:focus,.igTools select:focus{border-color:#8e8e8e}
 .igChips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}.igChips::-webkit-scrollbar{display:none}
 .igChips button{flex:none;border:0;background:#1a1a1a;color:#f5f5f5;border-radius:999px;padding:6px 13px;font:600 13px system-ui,sans-serif;cursor:pointer}
 .igChips button.on{background:#f5f5f5;color:#000;border-color:#f5f5f5}
-.igCount{color:#a8a8a8;font-size:13px;padding:10px 0}
+.igCount{color:#a8a8a8;font-size:13px;padding:10px 0;scroll-margin-top:90px}
 .igGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
 .igCell{position:relative;aspect-ratio:1;background:#161616;border:0;padding:0;cursor:pointer;overflow:hidden;display:block;animation:igIn .35s both}
 @keyframes igIn{from{opacity:0}}
@@ -59,7 +59,7 @@ const st0=document.createElement('style');st0.textContent=`
 .igX{position:absolute;top:12px;right:16px;z-index:2;border:0;background:none;color:#fff;font-size:30px;cursor:pointer}
 .igPN{display:flex;gap:8px;margin-top:auto}
 .igPN button{flex:1;border:0;background:#1a1a1a;color:#f5f5f5;border-radius:8px;padding:9px;cursor:pointer;font:600 13px system-ui,sans-serif}
-@media(max-width:760px){.igBox{grid-template-columns:1fr;overflow-y:auto}.igMed{max-height:60dvh;min-height:200px}.igMed img,.igMed video{max-height:60dvh}.igScreen{padding-top:76px}.igTools{top:56px}}
+@media(max-width:760px){.igBox{grid-template-columns:1fr;overflow-y:auto}.igMed{max-height:60dvh;min-height:200px}.igMed img,.igMed video{max-height:60dvh}.igScreen{padding-top:76px}}
 @media(prefers-reduced-motion:reduce){.igCell,.igLb{animation:none}}
 `;document.head.appendChild(st0);
 const mk=r=>{

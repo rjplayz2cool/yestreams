@@ -3,7 +3,7 @@
 (()=>{
 const pg=document.getElementById('pg-tweets'),root=document.getElementById('twScreen');if(!pg||!root)return;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const AV='https://pbs.twimg.com/profile_images/2070188288367902720/bGVHntzg_400x400.png';
+const AV="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Crect width=%2740%27 height=%2740%27 fill=%27%23242424%27/%3E%3Ctext x=%2720%27 y=%2726%27 font-size=%2716%27 font-weight=%27800%27 fill=%27%23fff%27 text-anchor=%27middle%27 font-family=%27Arial%27%3Eye%3C/text%3E%3C/svg%3E";
 const SORTS=[['new','Newest'],['old','Oldest'],['likes','Most liked'],['rts','Most retweeted'],['replies','Most replies'],['views','Most views']];
 const FILTERS=[['all','All'],['posts','Posts'],['replies','Replies'],['media','Media'],['quotes','Quotes'],['polls','Polls'],['bangers','Bangers']];
 const PAGE=40;
@@ -22,7 +22,7 @@ const st0=document.createElement('style');st0.textContent=`
 .twProf img{width:64px;height:64px;border-radius:50%;object-fit:cover;background:#222}
 .twProf b{display:flex;align-items:center;gap:4px;font-size:19px}
 .twProf small{color:#71767b;display:block;font-size:14px}
-.twTools{position:sticky;top:64px;z-index:5;background:#000d;backdrop-filter:blur(10px);padding:10px 16px;border-bottom:1px solid #2f3336;display:flex;flex-direction:column;gap:10px}
+.twTools{padding:6px 16px 10px;display:flex;flex-direction:column;gap:10px}
 .twRow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .twTools input,.twTools select{background:#16181c;border:1px solid transparent;color:#e7e9ea;border-radius:999px;padding:9px 14px;font:500 14px system-ui,sans-serif;min-width:0;outline:0}
 .twTools input{flex:1 1 180px}.twTools input:focus,.twTools select:focus{border-color:#1d9bf0}
@@ -31,7 +31,7 @@ const st0=document.createElement('style');st0.textContent=`
 .twChips::-webkit-scrollbar{display:none}
 .twChips button{flex:none;border:0;background:#16181c;color:#e7e9ea;border-radius:999px;padding:6px 13px;font:600 13px system-ui,sans-serif;cursor:pointer}
 .twChips button.on{background:#e7e9ea;color:#000;border-color:#e7e9ea}
-.twCount{scroll-margin-top:150px;color:#71767b;font-size:13px;padding:10px 16px}
+.twCount{scroll-margin-top:90px;border-top:1px solid #2f3336;color:#71767b;font-size:13px;padding:10px 16px}
 .tw{display:flex;gap:12px;padding:12px 16px;border-bottom:1px solid #2f3336;animation:twIn .35s both}
 .tw:hover{background:#ffffff08}
 @keyframes twIn{from{opacity:0;transform:translateY(8px)}}
@@ -69,7 +69,7 @@ const st0=document.createElement('style');st0.textContent=`
 .twMore{display:block;margin:18px auto;border:0;background:#16181c;color:#e7e9ea;border-radius:999px;padding:11px 26px;font:700 14px system-ui,sans-serif;cursor:pointer}
 .twMore:hover{background:#22262b}
 .twEmpty{padding:60px 16px;text-align:center;color:#71767b}
-@media(max-width:700px){.twScreen{padding-top:76px}.twTools{top:56px}}
+@media(max-width:700px){.twScreen{padding-top:76px}}
 @media(prefers-reduced-motion:reduce){.tw{animation:none}}
 `;document.head.appendChild(st0);
 const VER='<svg class="twV" viewBox="0 0 22 22"><path fill="#f1c40f" d="M20.4 11l-1.6-1.9.2-2.5-2.5-.6-1.3-2.2-2.3 1-2.3-1-1.3 2.2-2.5.6.2 2.5L3.4 11l1.7 1.9-.2 2.5 2.5.6 1.3 2.2 2.3-1 2.3 1 1.3-2.2 2.5-.6-.2-2.5z"/><path fill="#000" d="M9.7 14.7l-2.6-2.6 1-1 1.6 1.6 4.2-4.2 1 1z"/></svg>';
