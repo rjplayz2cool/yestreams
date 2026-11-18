@@ -721,7 +721,7 @@ select:disabled{opacity:.5;cursor:not-allowed}
 </head>
 <body>
 <div class="scrim" id="scrim"></div>
-<nav class="island" id="island" data-open="false" style="--n:11" aria-label="Pages">
+<nav class="island" id="island" data-open="false" style="--n:12" aria-label="Pages">
   <button class="ihead" id="ihead" type="button" aria-expanded="false" aria-controls="imenu"><span class="dot"></span><span id="ilabel">Streams</span><span class="chev"></span></button>
   <ul class="imenu" id="imenu">
     <li><button type="button" data-go="streams" aria-current="page"><i>♪</i>Streams<small>Tracker</small></button></li>
@@ -735,6 +735,7 @@ select:disabled{opacity:.5;cursor:not-allowed}
     <li><button type="button" data-go="eras"><i>◈</i>Eras<small>Map</small></button></li>
     <li><button type="button" data-go="albums"><i>◉</i>Albums<small>New</small></button></li>
     <li><button type="button" data-go="tweets"><i>𝕏</i>Tweets<small>Archive</small></button></li>
+    <li><button type="button" data-go="instagram"><i>◐</i>Instagram<small>Archive</small></button></li>
   </ul>
 </nav>
 <header><a class="mark" href="https://www.instagram.com/ye_streams/" target="_blank" rel="noopener noreferrer" aria-label="YE Streams on Instagram">YE<i>/</i>STREAMS</a><div class="hdrR"><div class="live"><span class="dot"></span><span id="upd">Live estimate</span></div><button id="acctBtn" class="acctBtn" type="button" aria-haspopup="true" aria-expanded="false"><span>Account</span></button><div id="acctMenu" class="acctMenu" hidden></div></div></header>
@@ -801,6 +802,7 @@ select:disabled{opacity:.5;cursor:not-allowed}
 <div class="page" id="pg-eras" hidden><main id="erScreen" aria-label="Eras"></main></div>
 <div class="page" id="pg-albums" hidden><main id="alScreen" class="wrap alScreen" aria-label="Albums"></main></div>
 <div class="page" id="pg-tweets" hidden><main id="twScreen" class="wrap twScreen" aria-label="Tweets"></main></div>
+<div class="page" id="pg-instagram" hidden><main id="igScreen" class="wrap igScreen" aria-label="Instagram"></main></div>
 <div class="page" id="pg-clothing" hidden><main id="clScreen" class="wrap clScreen" aria-label="Clothing"></main></div>
 <div class="page" id="pg-ai" hidden><main id="aiScreen" class="aiScreen" aria-label="Ye AI">
 <div class="aiTop"><div class="eyebrow">ASK ANYTHING</div><h1 class="title">YE AI</h1></div>
@@ -2080,7 +2082,7 @@ if(!window.KWORB_DB){const n=$('note');n.hidden=false;n.textContent='Preview mod
 const isl=$('island'),scrim=$('scrim');
 const wordsHTML=t=>{let k=0;return t.split(' ').map(w=>`<span class="w">${[...w].map(c=>`<span style="--i:${k++}">${esc(c)}</span>`).join('')}</span>`).join(' ')};
 window.wordsHTML=wordsHTML;
-const PAGES={streams:'Streams',sf:'Singles & Features',all:'All Songs',roll:'Daily Roll',games:'Games',calendar:'Calendar',tours:'Tours',tracker:'Ye Tracker',ai:'Ye AI',clothing:'Clothing',eras:'Eras',albums:'Albums',tweets:'Tweets',profile:'Profile'},ORDER=['streams','sf','all','roll','calendar','tours','games','tracker','ai','clothing','eras','albums','tweets'];let page='streams',busy=false;
+const PAGES={streams:'Streams',sf:'Singles & Features',all:'All Songs',roll:'Daily Roll',games:'Games',calendar:'Calendar',tours:'Tours',tracker:'Ye Tracker',ai:'Ye AI',clothing:'Clothing',eras:'Eras',albums:'Albums',tweets:'Tweets',instagram:'Instagram',profile:'Profile'},ORDER=['streams','sf','all','roll','calendar','tours','games','tracker','ai','clothing','eras','albums','tweets','instagram'];let page='streams',busy=false;
 // Singles = songs that are not on any album tracklist. Features = songs flagged as features in the Kworb data.
 let sfTab='singles',sfSort='streams',sfQ='',sfShown=40,sfCur=[],SF=null,sfAnim=0,sfHero={streams:0,daily:0,t:0};
 function sfSets(){const songs=(DB.songs||[]).filter(x=>x.kind==='song'&&x.streams!=null),on=new Set();
@@ -3706,7 +3708,7 @@ function wire(){
 let hlPinned=false,timer=0;
 window.PH=window.PH||{};
 PH.tours={show(){$('toursScreen').classList.add('activeScreen');if(!built){built=true;wire()}paint();clearInterval(timer);timer=setInterval(()=>{paintNext();paintLists();paintPins();setHL(hl)},60000)},hide(){$('toursScreen').classList.remove('activeScreen');clearInterval(timer)}};
-})();</script><script src="tours-archive-ui.js?v=1794356441" defer></script><script src="tours-yz.js?v=1794068192" defer></script><script src="data/eras-extra.js?v=1793748819" defer></script><script src="eras.js?v=1793676599" defer></script><script src="data/albums-meta.js?v=1794952295" defer></script><script src="albums.js?v=1794952295" defer></script><script src="tweets.js?v=1794967622" defer></script><script src="calendar-day.js?v=1794622682" defer></script><script src="clothing.js?v=1794243793" defer></script><script>(()=>{
+})();</script><script src="tours-archive-ui.js?v=1794356441" defer></script><script src="tours-yz.js?v=1794068192" defer></script><script src="data/eras-extra.js?v=1793748819" defer></script><script src="eras.js?v=1793676599" defer></script><script src="data/albums-meta.js?v=1794952295" defer></script><script src="albums.js?v=1794952295" defer></script><script src="tweets.js?v=1794967622" defer></script><script src="instagram.js?v=1794967958" defer></script><script src="calendar-day.js?v=1794622682" defer></script><script src="clothing.js?v=1794243793" defer></script><script>(()=>{
 const CLS='ddW';let open=null;
 const lbl=s=>{const o=s.options[s.selectedIndex];return o?o.textContent:''};
 function close(){if(!open)return;open.menu.remove();open.btn.setAttribute('aria-expanded','false');open.wrap.classList.remove('open');open=null}
