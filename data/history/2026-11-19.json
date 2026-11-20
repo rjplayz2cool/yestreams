@@ -1,0 +1,4019 @@
+{
+  "updated": "2026/11/19",
+  "songs": [
+    {
+      "name": "Heartless",
+      "spotify": "https://open.spotify.com/track/4EWCNWgDS8707fNSZ1oaA5",
+      "streams": 2170458957,
+      "daily": 926133,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Flashing Lights",
+      "spotify": "https://open.spotify.com/track/5TRPicyLGbAF2LGBFbHGvO",
+      "streams": 1980991136,
+      "daily": 1308735,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Ni**as In Paris",
+      "spotify": "https://open.spotify.com/track/1auxYwYrFRqZP7t3s7w4um",
+      "streams": 1942191896,
+      "daily": 692906,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Stronger",
+      "spotify": "https://open.spotify.com/track/0j2T0R9dR9qdJYsB7ciXhf",
+      "streams": 1932544248,
+      "daily": 690668,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Gold Digger",
+      "spotify": "https://open.spotify.com/track/3QHPHLAkYV5cQBUYs6rowx",
+      "streams": 1594612590,
+      "daily": 414122,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Father Stretch My Hands Pt. 1",
+      "spotify": "https://open.spotify.com/track/4KW1lqgSr8TKrvBII0Brf8",
+      "streams": 1557052552,
+      "daily": 437239,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Bound 2",
+      "spotify": "https://open.spotify.com/track/3sNVsP50132BTNlImLx70i",
+      "streams": 1457578299,
+      "daily": 545979,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "FourFiveSeconds",
+      "spotify": "https://open.spotify.com/track/78TTtXnFQPzwqlbtbwqN0y",
+      "streams": 1413572493,
+      "daily": 326818,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Runaway",
+      "spotify": "https://open.spotify.com/track/3DK6m7It6Pw857FcQftMds",
+      "streams": 1307785159,
+      "daily": 780810,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "POWER",
+      "spotify": "https://open.spotify.com/track/2gZUPNdnz5Y45eiGxpHGSc",
+      "streams": 1260269386,
+      "daily": 432360,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "I Wonder",
+      "spotify": "https://open.spotify.com/track/7rbECVPkY5UODxoOUVKZnA",
+      "streams": 1260155467,
+      "daily": 564548,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "All Falls Down",
+      "spotify": "https://open.spotify.com/track/5SkRLpaGtvYPhw02vZhQQ9",
+      "streams": 1193293287,
+      "daily": 532286,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "American Boy",
+      "spotify": "https://open.spotify.com/track/6etwirSInfuJrSOlogS6Sh",
+      "streams": 1188195556,
+      "daily": 541484,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Homecoming",
+      "spotify": "https://open.spotify.com/track/4iz9lGMjU1lXS51oPmUmTe",
+      "streams": 1184130479,
+      "daily": 758751,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Can't Tell Me Nothing",
+      "spotify": "https://open.spotify.com/track/0mEdbdeRFQwBhN4xfyIeUM",
+      "streams": 1132827865,
+      "daily": 787896,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "All Of The Lights",
+      "spotify": "https://open.spotify.com/track/22L7bfCiAkJo5xGSQgmiIO",
+      "streams": 1037005265,
+      "daily": 508999,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Violent Crimes",
+      "spotify": "https://open.spotify.com/track/3s7MCdXyWmwjdcWh7GWXas",
+      "streams": 1009240973,
+      "daily": 356366,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "CARNIVAL",
+      "spotify": "https://open.spotify.com/track/2McT2fkH0VDqPsbiB9HWPq",
+      "streams": 965850042,
+      "daily": 358607,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Run This Town",
+      "spotify": "https://open.spotify.com/track/7LR85XLWw2yXqKBSI5brbG",
+      "streams": 858788177,
+      "daily": 448916,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Ghost Town",
+      "spotify": "https://open.spotify.com/track/7vgTNTaEz3CsBZ1N4YQalM",
+      "streams": 846835001,
+      "daily": 424895,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Forever",
+      "spotify": "https://open.spotify.com/track/4O3nAQfOC9PN5ElMEcAJb9",
+      "streams": 827756967,
+      "daily": 345957,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "I Love It (& Lil Pump)",
+      "spotify": "https://open.spotify.com/track/4S8d14HvHb70ImctNgVzQQ",
+      "streams": 784644782,
+      "daily": 96737,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Devil In A New Dress",
+      "spotify": "https://open.spotify.com/track/1UGD3lW3tDmgZfAVDh6w7r",
+      "streams": 772597130,
+      "daily": 396528,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Black Skinhead",
+      "spotify": "https://open.spotify.com/track/722tgOgdIbNe3BEyLnejw4",
+      "streams": 739967286,
+      "daily": 162262,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Famous",
+      "spotify": "https://open.spotify.com/track/19a3JfW8BQwqHWUMbcqSx8",
+      "streams": 727998247,
+      "daily": 175822,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "No Church In The Wild",
+      "spotify": "https://open.spotify.com/track/7r6PigmGzlB3YPB7wvBBbi",
+      "streams": 660374748,
+      "daily": 869143,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Good Life",
+      "spotify": "https://open.spotify.com/track/4ZPdLEztrlZqbJkgHNw54L",
+      "streams": 643433954,
+      "daily": 254462,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Touch The Sky",
+      "spotify": "https://open.spotify.com/track/2pRyjmTGkz5i8xemOtJ7pG",
+      "streams": 603425399,
+      "daily": 282000,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Praise God",
+      "spotify": "https://open.spotify.com/track/32ZGcotUVtU3Zfz9lmM8Mi",
+      "streams": 595509910,
+      "daily": 155918,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "All Mine",
+      "spotify": "https://open.spotify.com/track/3U21A07gAloCc4P7J8rxcn",
+      "streams": 594163798,
+      "daily": 70988,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Follow God",
+      "spotify": "https://open.spotify.com/track/2QpGZOhTCHHiKmpSO9FW4h",
+      "streams": 551900141,
+      "daily": 97821,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Waves",
+      "spotify": "https://open.spotify.com/track/3nAq2hCr1oWsIU54tS98pL",
+      "streams": 543251726,
+      "daily": 120467,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Through The Wire",
+      "spotify": "https://open.spotify.com/track/4mmkhcEm1Ljy1U9nwtsxUo",
+      "streams": 531798413,
+      "daily": 202385,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Mercy",
+      "spotify": "https://open.spotify.com/track/4qikXelSRKvoCqFcHLB2H2",
+      "streams": 506166324,
+      "daily": 197058,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Knock You Down",
+      "spotify": "https://open.spotify.com/track/4sHCzDfrrc3Xs47xbGIrSp",
+      "streams": 505841055,
+      "daily": 250372,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Monster",
+      "spotify": "https://open.spotify.com/track/1ZHYJ2Wwgxes4m8Ba88PeK",
+      "streams": 501922608,
+      "daily": 161986,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Mixed Personalities (feat. Kanye West)",
+      "spotify": "https://open.spotify.com/track/6vWEAOUSxohKxhp0K1BsxL",
+      "streams": 500393837,
+      "daily": 94962,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Hurricane",
+      "spotify": "https://open.spotify.com/track/0TAUAUIEtq06TdQDVlUSxW",
+      "streams": 494397152,
+      "daily": 94777,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Good Morning",
+      "spotify": "https://open.spotify.com/track/6MXXY2eiWkpDCezVCc0cMH",
+      "streams": 443727885,
+      "daily": 154910,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "True Love",
+      "spotify": "https://open.spotify.com/track/06JvOZ39sK8D8SqiqfaxDU",
+      "streams": 436708464,
+      "daily": 144777,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Ultralight Beam",
+      "spotify": "https://open.spotify.com/track/1eQBEelI2NCy7AUTerX0KS",
+      "streams": 411715587,
+      "daily": 59216,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Moon",
+      "spotify": "https://open.spotify.com/track/0tffNoL4418lhzZmJJFNB7",
+      "streams": 401738827,
+      "daily": 88509,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Erase Me - Main",
+      "spotify": "https://open.spotify.com/track/6XkuklKiHYVTlVvWlTgQYP",
+      "streams": 394101372,
+      "daily": 74192,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Everything I Am",
+      "spotify": "https://open.spotify.com/track/0NrtwAmRAdLxua31SzHvXr",
+      "streams": 392767275,
+      "daily": 157952,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Champion",
+      "spotify": "https://open.spotify.com/track/4UQMOPSUVJVicIQzjAcRRZ",
+      "streams": 376034723,
+      "daily": 142599,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Clique",
+      "spotify": "https://open.spotify.com/track/65rRB2mspD309xE6YimZTl",
+      "streams": 370819309,
+      "daily": 54722,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "E.T.",
+      "spotify": "https://open.spotify.com/track/1CUk09iecf4kLvLuhxerdS",
+      "streams": 358568021,
+      "daily": 171722,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Jesus Walks",
+      "spotify": "https://open.spotify.com/track/5g1vtHqi9uV7xtYeCcFOBx",
+      "streams": 356204600,
+      "daily": 114129,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Otis",
+      "spotify": "https://open.spotify.com/track/14I61w6cyYUHiV2n28IYdP",
+      "streams": 347876067,
+      "daily": 111529,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Jukebox Joints (feat. Joe Fox & Kanye West)",
+      "spotify": "https://open.spotify.com/track/2gAGWaK4wvt2xrFUlR4mK8",
+      "streams": 347346340,
+      "daily": 194391,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Put On - Album Version (Edited)",
+      "spotify": "https://open.spotify.com/track/2dwkQCPCzhQZ65zM1mlU8I",
+      "streams": 345276783,
+      "daily": 161599,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "No More Parties In LA",
+      "spotify": "https://open.spotify.com/track/0zLClc0emc6qUeV1p5nc99",
+      "streams": 340072947,
+      "daily": 109260,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Off The Grid",
+      "spotify": "https://open.spotify.com/track/0YYMXRKWFKESvU7XVK5JlE",
+      "streams": 337231848,
+      "daily": 68283,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Slow Jamz",
+      "spotify": "https://open.spotify.com/track/3A4cpTBPaIQdtPFb5JxtaX",
+      "streams": 334151143,
+      "daily": 164635,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Wolves",
+      "spotify": "https://open.spotify.com/track/432hUIl3ISDeytYW5XBQ5h",
+      "streams": 330220940,
+      "daily": 61383,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Champions",
+      "spotify": "https://open.spotify.com/track/2nBI3iWLhupR7LyAJ5GGkE",
+      "streams": 326535357,
+      "daily": 49160,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Don't Like.1",
+      "spotify": "https://open.spotify.com/track/3YqJ0iaDWM0aqEDQExd2j3",
+      "streams": 311166021,
+      "daily": 148969,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Gotta Have It",
+      "spotify": "https://open.spotify.com/track/2aqe2NgAwmMlPgtf1MnGoy",
+      "streams": 308347983,
+      "daily": 87270,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Dark Fantasy",
+      "spotify": "https://open.spotify.com/track/7yNK27ZTpHew0c55VvIJgm",
+      "streams": 307390425,
+      "daily": 145182,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Gorgeous",
+      "spotify": "https://open.spotify.com/track/23SZWX2IaDnxmhFsSLvkG2",
+      "streams": 306698144,
+      "daily": 122536,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "BURN",
+      "spotify": "https://open.spotify.com/track/7BPadP3q9qwMkho3IMPU99",
+      "streams": 306205044,
+      "daily": 130721,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "God Is",
+      "spotify": "https://open.spotify.com/track/6xRWoYwfwIKnT8bQGzKbxR",
+      "streams": 299690708,
+      "daily": 147017,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Saint Pablo",
+      "spotify": "https://open.spotify.com/track/1o0kWPueYo94LIjPYOE5Nf",
+      "streams": 285118383,
+      "daily": 140700,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Fade",
+      "spotify": "https://open.spotify.com/track/3cCxoOgfi6hgt8MNteuiiD",
+      "streams": 282583720,
+      "daily": 51296,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Pt. 2",
+      "spotify": "https://open.spotify.com/track/1Wsbr1d2BouNGk2q92mIj7",
+      "streams": 282576359,
+      "daily": 35004,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "On Sight",
+      "spotify": "https://open.spotify.com/track/1gqkRc9WtOpnGIqxf2Hvzr",
+      "streams": 267132245,
+      "daily": 134163,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Yikes",
+      "spotify": "https://open.spotify.com/track/1qsHYUd2c1wFGcn7e63QmG",
+      "streams": 258180549,
+      "daily": 31860,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Why I Love You",
+      "spotify": "https://open.spotify.com/track/4bDPr2VAjcfgUDmN9dGOC3",
+      "streams": 257734321,
+      "daily": 98390,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "FML",
+      "spotify": "https://open.spotify.com/track/30Zcjs7pgEkmJA1lEbGSWT",
+      "streams": 255765553,
+      "daily": 33892,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Love Lockdown",
+      "spotify": "https://open.spotify.com/track/1kxeWHF9PrCVZHvVskv8lg",
+      "streams": 248820713,
+      "daily": 59756,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "THat Part",
+      "spotify": "https://open.spotify.com/track/2yJ9GVCLMmzBBfQAnfzlwr",
+      "streams": 248070714,
+      "daily": 28749,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "FUK SUMN",
+      "spotify": "https://open.spotify.com/track/0cbVD7WpHVdHUKwoolzhCZ",
+      "streams": 247358045,
+      "daily": 74017,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Real Friends",
+      "spotify": "https://open.spotify.com/track/66Q3fAmSX5eHamgbKa9alP",
+      "streams": 242325125,
+      "daily": 35188,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Blood On The Leaves",
+      "spotify": "https://open.spotify.com/track/42GcjriRK6srwHkfbkBqVl",
+      "streams": 236651869,
+      "daily": 61331,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Watch (feat. Lil Uzi Vert & Kanye West)",
+      "spotify": "https://open.spotify.com/track/3DoBTwfr8yi2LN08SBpFkN",
+      "streams": 229058205,
+      "daily": 19226,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Amazing",
+      "spotify": "https://open.spotify.com/track/0m3Ze0cy8qBHSsV2exAfCw",
+      "streams": 204339569,
+      "daily": 58125,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Heard 'Em Say",
+      "spotify": "https://open.spotify.com/track/2PFNTHR4sA8m9rPPtYXhl7",
+      "streams": 200982694,
+      "daily": 90215,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Ego Death (feat. Kanye West, FKA twigs & Skrillex)",
+      "spotify": "https://open.spotify.com/track/1mtLPUyH34kolgEy1VOBc0",
+      "streams": 187440898,
+      "daily": 36570,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "All Day",
+      "spotify": "https://open.spotify.com/track/79reBHqpRoWXaQbjBBY3UC",
+      "streams": 187110453,
+      "daily": 35157,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "New Slaves",
+      "spotify": "https://open.spotify.com/track/4cAgkb0ifwn0FSHGXnr4F6",
+      "streams": 187009801,
+      "daily": 66167,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "All We Got (feat. Kanye West & Chicago Children's Choir)",
+      "spotify": "https://open.spotify.com/track/3ZLyt2ndLFBh148XRYjYYZ",
+      "streams": 184743427,
+      "daily": 15071,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "SMUCKERS (feat. Lil Wayne & Kanye West)",
+      "spotify": "https://open.spotify.com/track/078C2jXg7XsMgW78Gfx1JA",
+      "streams": 180688473,
+      "daily": 26591,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Family Business",
+      "spotify": "https://open.spotify.com/track/5DBmXF7QO43Cuy9yqva116",
+      "streams": 172806634,
+      "daily": 79207,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Hold My Liquor",
+      "spotify": "https://open.spotify.com/track/5nIu0VwPOsjkF61zfevLKh",
+      "streams": 168832859,
+      "daily": 70673,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Drunk in Love Remix (feat. JAŸ-Z & Kanye West)",
+      "spotify": "https://open.spotify.com/track/0FZmAvivvifvtN3pZScbw1",
+      "streams": 162016032,
+      "daily": 50928,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Believe What I Say",
+      "spotify": "https://open.spotify.com/track/3F2XxZ8aFAHxYhTeTsIiNZ",
+      "streams": 161445997,
+      "daily": 36734,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Jail",
+      "spotify": "https://open.spotify.com/track/6d8HN8MqqbqrEUI2bvx0aG",
+      "streams": 160425001,
+      "daily": 26575,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "One Man Can Change The World",
+      "spotify": "https://open.spotify.com/track/731Pa6Gt7GAdADATMSEL0N",
+      "streams": 158050946,
+      "daily": 10205,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Go2DaMoon (feat. Kanye West)",
+      "spotify": "https://open.spotify.com/track/0F13K9dwYH2zpTWiR8d628",
+      "streams": 155846350,
+      "daily": 24658,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "30 Hours",
+      "spotify": "https://open.spotify.com/track/2CHmgtK8OCL28WtIK96u4N",
+      "streams": 154502486,
+      "daily": 55475,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Hell Of A Life",
+      "spotify": "https://open.spotify.com/track/3rCNmRonlHN1TXQLcG3dSk",
+      "streams": 154469117,
+      "daily": 100336,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "MAMA (feat. Nicki Minaj & Kanye West)",
+      "spotify": "https://open.spotify.com/track/5SOYmkRawOJrpufdWsAfo8",
+      "streams": 152244440,
+      "daily": 9860,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Lost In The World",
+      "spotify": "https://open.spotify.com/track/2Im64pIz6m0EJKdUe6eZ8r",
+      "streams": 145932299,
+      "daily": 60355,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Spaceship",
+      "spotify": "https://open.spotify.com/track/1ko2NuvWlQdxtNRc8QQzmT",
+      "streams": 145731968,
+      "daily": 50909,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "I Love Kanye",
+      "spotify": "https://open.spotify.com/track/5CGS4UovzA7ftCJkLVXQju",
+      "streams": 143464064,
+      "daily": 29492,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Drive Slow",
+      "spotify": "https://open.spotify.com/track/5AMekX6PigBBeBRHvB4MfZ",
+      "streams": 142700563,
+      "daily": 71421,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "City of Gods",
+      "spotify": "https://open.spotify.com/track/4huBDGP4I3S0pYI0EaRN1c",
+      "streams": 142618386,
+      "daily": 20961,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Feedback",
+      "spotify": "https://open.spotify.com/track/49fT6owWuknekShh9utsjv",
+      "streams": 142536644,
+      "daily": 25513,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "BACK TO ME",
+      "spotify": "https://open.spotify.com/track/3g9UquSEBErZiXSDa02YfG",
+      "streams": 141653700,
+      "daily": 60841,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Hey Mama",
+      "spotify": "https://open.spotify.com/track/1gFovJQ7w2We3AoU3ybhzU",
+      "streams": 141486193,
+      "daily": 45449,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "We Don't Care",
+      "spotify": "https://open.spotify.com/track/0IW0qaeyxL5Et4UG2MrJKB",
+      "streams": 141474435,
+      "daily": 51321,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Paranoid",
+      "spotify": "https://open.spotify.com/track/0w2piYWj1F2bzUftzGJgK9",
+      "streams": 140095105,
+      "daily": 60183,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Closed On Sunday",
+      "spotify": "https://open.spotify.com/track/3JWiDGQX2eTlFvKj3Yssj3",
+      "streams": 139907243,
+      "daily": 19938,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Wouldn't Leave",
+      "spotify": "https://open.spotify.com/track/1nGoy0cEj0extAwXYNYTWd",
+      "streams": 139427040,
+      "daily": 19542,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "No Mistakes",
+      "spotify": "https://open.spotify.com/track/35KV2Nuib6jPMVN00O8iba",
+      "streams": 137915151,
+      "daily": 35534,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "The Glory",
+      "spotify": "https://open.spotify.com/track/0lWjRSzq5chA9fps3pM8Zr",
+      "streams": 137274432,
+      "daily": 55779,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Mercy.1",
+      "spotify": "https://open.spotify.com/track/671XaUBmifTMXDbZK5CB1M",
+      "streams": 132351370,
+      "daily": 18522,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "No Child Left Behind",
+      "spotify": "https://open.spotify.com/track/6ynrKyFuLEVeSk6QiJsYhB",
+      "streams": 131201384,
+      "daily": 33454,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "I Thought About Killing You",
+      "spotify": "https://open.spotify.com/track/0yhxBvedRdGxsPZHJNI4VA",
+      "streams": 128123490,
+      "daily": 21783,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Only One",
+      "spotify": "https://open.spotify.com/track/0j35X8cTq543QDYLOyqB8W",
+      "streams": 121437210,
+      "daily": 15830,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Highlights",
+      "spotify": "https://open.spotify.com/track/4qYLPta5HZ36idWiXtqh7B",
+      "streams": 121400239,
+      "daily": 16863,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Eazy",
+      "spotify": "https://open.spotify.com/track/5NDad2eRVKQug7eO2RikcU",
+      "streams": 119910912,
+      "daily": 16582,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Make Her Say",
+      "spotify": "https://open.spotify.com/track/7dZAPeA3Of5j5Vaef0DQ6M",
+      "streams": 119537593,
+      "daily": 27289,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "The New Workout Plan",
+      "spotify": "https://open.spotify.com/track/1Vp4St7JcXaUoJcIahtf3L",
+      "streams": 119166803,
+      "daily": 33242,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Roses",
+      "spotify": "https://open.spotify.com/track/51w2uhHVvzmqCd3leyDIY2",
+      "streams": 118837408,
+      "daily": 54140,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Who Gon Stop Me",
+      "spotify": "https://open.spotify.com/track/22ngk2DRBy7audIugfYDKd",
+      "streams": 118093044,
+      "daily": 24025,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "So Appalled",
+      "spotify": "https://open.spotify.com/track/6K07Ahf6V7CAQn0ikrOztl",
+      "streams": 116883584,
+      "daily": 34035,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Slow Jamz (feat. Kanye West & Jamie Foxx)",
+      "spotify": "https://open.spotify.com/track/0HGk5Btyhr1Qu6z4x2S29T",
+      "streams": 116014107,
+      "daily": 62431,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Selah",
+      "spotify": "https://open.spotify.com/track/39JRmdKFka1Oe09FoOCPI4",
+      "streams": 115396889,
+      "daily": 15184,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Blame Game",
+      "spotify": "https://open.spotify.com/track/4EndPA8b6FDWYp1RgsnLEB",
+      "streams": 115377275,
+      "daily": 37057,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Tell The Vision (feat. Kanye West & Pusha T)",
+      "spotify": "https://open.spotify.com/track/6I80JNodEEhGR001HhoYDC",
+      "streams": 114521751,
+      "daily": 14783,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "DO IT",
+      "spotify": "https://open.spotify.com/track/1oNaDXXu9I4UCJ8Fh0Hfjg",
+      "streams": 114233895,
+      "daily": 42396,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "On God",
+      "spotify": "https://open.spotify.com/track/2SasoXZyv82yYgHiVOvxQn",
+      "streams": 113334201,
+      "daily": 17110,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Hot Shit (feat. Ye & Lil Durk)",
+      "spotify": "https://open.spotify.com/track/3uJFmluXzYedoJcvhpC1AW",
+      "streams": 113112893,
+      "daily": 11162,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Pure Souls",
+      "spotify": "https://open.spotify.com/track/3KXh1h4Yy3YEtB8Hhyfk6k",
+      "streams": 112598245,
+      "daily": 26275,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Heaven and Hell",
+      "spotify": "https://open.spotify.com/track/1RBDuitibQKdeZOgiebP8X",
+      "streams": 110745081,
+      "daily": 18112,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "We Major",
+      "spotify": "https://open.spotify.com/track/16psbAyzJJ0YZyaJiOohtX",
+      "streams": 110160958,
+      "daily": 62098,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Lift Yourself",
+      "spotify": "https://open.spotify.com/track/3uYDO9dPLTVrgfwg7EYXSf",
+      "streams": 108912299,
+      "daily": 22842,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Use This Gospel",
+      "spotify": "https://open.spotify.com/track/0oPOuDmmkVp3h6puekhs6P",
+      "streams": 108804007,
+      "daily": 15981,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Facts (Charlie Heat Version)",
+      "spotify": "https://open.spotify.com/track/3MnbXlC1N7GdS9M8HzA6no",
+      "streams": 108634573,
+      "daily": 16198,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Street Lights",
+      "spotify": "https://open.spotify.com/track/6j8gTlbhj9KJSeypNcNAS9",
+      "streams": 108512701,
+      "daily": 37133,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "FATHER (feat. Travis Scott)",
+      "spotify": "https://open.spotify.com/track/5pfn68duSmBKo4FhYknOms",
+      "streams": 107366688,
+      "daily": 178515,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Never Let Me Down",
+      "spotify": "https://open.spotify.com/track/34j4OxJxKznBs88cjSL2j9",
+      "streams": 107342626,
+      "daily": 37315,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Diamonds From Sierra Leone - Remix",
+      "spotify": "https://open.spotify.com/track/4ZLNj4Zlp6XZ3WAVpPQEnq",
+      "streams": 107046697,
+      "daily": 46902,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "ALL THE LOVE (feat. Andre Troutman)",
+      "spotify": "https://open.spotify.com/track/2SjnvpedDUU0Ga69bxnoCa",
+      "streams": 106405943,
+      "daily": 207634,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Welcome To Heartbreak",
+      "spotify": "https://open.spotify.com/track/3F18I7LhWKxlf1PytSoTBH",
+      "streams": 104830366,
+      "daily": 30938,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Big Brother",
+      "spotify": "https://open.spotify.com/track/2L47m9erkB5KBZcaqWtYen",
+      "streams": 103585785,
+      "daily": 42576,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "I Won (feat. Kanye West)",
+      "spotify": "https://open.spotify.com/track/2T4JE91t7Js1DJ4rSHltcQ",
+      "streams": 102866376,
+      "daily": 15295,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "STARS",
+      "spotify": "https://open.spotify.com/track/5ogdIq5F70xEPB3kwiiecr",
+      "streams": 101892613,
+      "daily": 28092,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "I Am A God",
+      "spotify": "https://open.spotify.com/track/0HMCdlOPJkAGlB0MlSWIcO",
+      "streams": 99413552,
+      "daily": 26396,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Everything We Need",
+      "spotify": "https://open.spotify.com/track/24bnCCysWnbNRNUT4LpHcP",
+      "streams": 99334202,
+      "daily": 12458,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Life Of The Party (with André 3000)",
+      "spotify": "https://open.spotify.com/track/2yBb1CRq98SSWRuDSn36SZ",
+      "streams": 98036702,
+      "daily": 38799,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "24",
+      "spotify": "https://open.spotify.com/track/37Tw2Q4aDxHafSy0Nej9va",
+      "streams": 96526171,
+      "daily": 17465,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Frank's Track",
+      "spotify": "https://open.spotify.com/track/20r94xA0bsYNLtYSiOE6r3",
+      "streams": 96004262,
+      "daily": 12531,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Barry Bonds",
+      "spotify": "https://open.spotify.com/track/7387VaiHpOsSIZ5nmjseya",
+      "streams": 94593168,
+      "daily": 29473,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Freestyle 4",
+      "spotify": "https://open.spotify.com/track/6wfzokDylbrJzrJcpnBkcy",
+      "streams": 93349956,
+      "daily": 12213,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Birthday Song",
+      "spotify": "https://open.spotify.com/track/5qkWTBmDmZjogwIvbKtJQv",
+      "streams": 92942420,
+      "daily": 18825,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "All Of The Lights (Interlude)",
+      "spotify": "https://open.spotify.com/track/4D6TpthzUVNTjWQqfBW5Kb",
+      "streams": 90974561,
+      "daily": 19197,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Glow",
+      "spotify": "https://open.spotify.com/track/28irpKCCK9nn9DZSik2zEx",
+      "streams": 90227980,
+      "daily": 10181,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Alors On Danse",
+      "spotify": "https://open.spotify.com/track/4I2ENHg65RuKifEHdD0kMu",
+      "streams": 88624571,
+      "daily": 76798,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Come to Life",
+      "spotify": "https://open.spotify.com/track/14VMRC6EbRfeub5SkIXiad",
+      "streams": 87728979,
+      "daily": 25946,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Two Words",
+      "spotify": "https://open.spotify.com/track/62wtttQzoIA9HnNmGVd9Yq",
+      "streams": 86688402,
+      "daily": 39259,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Selfish",
+      "spotify": "https://open.spotify.com/track/3Z3Fs0QhlvrJVRBHwzAFnQ",
+      "streams": 85929021,
+      "daily": 41501,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "One Minute (feat. Kanye West & Travis Barker)",
+      "spotify": "https://open.spotify.com/track/0T6RSXxFhW8dRTWHI604ld",
+      "streams": 85329311,
+      "daily": 17078,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Wash Us In The Blood",
+      "spotify": "https://open.spotify.com/track/7mEUjhl6aTztdHCrxoTgBG",
+      "streams": 82646931,
+      "daily": 7216,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Jonah",
+      "spotify": "https://open.spotify.com/track/1JMp4KfBdxYRh7mFKA6Cbo",
+      "streams": 82109216,
+      "daily": 10521,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Drunk and Hot Girls",
+      "spotify": "https://open.spotify.com/track/7DRuzSlhjKadgdsQRYZ0tr",
+      "streams": 81667841,
+      "daily": 27869,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Still Dreaming",
+      "spotify": "https://open.spotify.com/track/72nLaDnt2dfxCA3ZAiEC2c",
+      "streams": 81041214,
+      "daily": 80907,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Send It Up",
+      "spotify": "https://open.spotify.com/track/3RKblQNJs8HPvWBgXmq6nn",
+      "streams": 79448691,
+      "daily": 16962,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "I'm In It",
+      "spotify": "https://open.spotify.com/track/52NmkyHsGsHGb1UX8fTkMg",
+      "streams": 79233970,
+      "daily": 16873,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "TALKING",
+      "spotify": "https://open.spotify.com/track/2os3F2ZKbj02ZWXWAdWGFD",
+      "streams": 79104985,
+      "daily": 25117,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Remote Control",
+      "spotify": "https://open.spotify.com/track/5dLAbJZQpnyClhMI84oyOU",
+      "streams": 79027827,
+      "daily": 10573,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Jail",
+      "spotify": "https://open.spotify.com/track/0pZjPa9tKXRF3j4Y9IqhTJ",
+      "streams": 78223195,
+      "daily": 17262,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Lift Off",
+      "spotify": "https://open.spotify.com/track/4TRUsIZw92IhJjAtxtiC4e",
+      "streams": 77395150,
+      "daily": 22734,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "New Again",
+      "spotify": "https://open.spotify.com/track/2ZV2BPm2SmqCZEGCfjQdpX",
+      "streams": 77024418,
+      "daily": 18152,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Get Em High",
+      "spotify": "https://open.spotify.com/track/5b2FFKC64kxqcfaFnIZxoM",
+      "streams": 77017867,
+      "daily": 19795,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Last Call",
+      "spotify": "https://open.spotify.com/track/7iOhWWYjhhQiXzF4o4HhXN",
+      "streams": 75704428,
+      "daily": 39209,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Low Lights",
+      "spotify": "https://open.spotify.com/track/36o4taPyOdnOMf01ERmn9a",
+      "streams": 75435159,
+      "daily": 9150,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "VULTURES",
+      "spotify": "https://open.spotify.com/track/3w9WvHLKSXOsW6aAw0yr1n",
+      "streams": 74759633,
+      "daily": 31502,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Guilt Trip",
+      "spotify": "https://open.spotify.com/track/5nPOM0nFRAJ3XI8xCxNAzO",
+      "streams": 72881411,
+      "daily": 32373,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Keep My Spirit Alive",
+      "spotify": "https://open.spotify.com/track/5zO3iS6KgrXA20ZXc9zMdI",
+      "streams": 72671699,
+      "daily": 11835,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "PAID",
+      "spotify": "https://open.spotify.com/track/1OFgEELgwfTOt3WcBuOPxk",
+      "streams": 72296044,
+      "daily": 15021,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Junya",
+      "spotify": "https://open.spotify.com/track/6yapX2xaCTlMixwkk5S8P7",
+      "streams": 71031058,
+      "daily": 9237,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Murder To Excellence",
+      "spotify": "https://open.spotify.com/track/3Gjc2FE6BEMMHURUjlMXvX",
+      "streams": 70874566,
+      "daily": 21003,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Blessings - Extended Version",
+      "spotify": "https://open.spotify.com/track/4UaWrzY75h1tAvlxa4NKP9",
+      "streams": 69964968,
+      "daily": 9704,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "H•A•M",
+      "spotify": "https://open.spotify.com/track/2TK4NQXWehLphjpXTYxu1H",
+      "streams": 69304642,
+      "daily": 12518,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Wouldn't Get Far",
+      "spotify": "https://open.spotify.com/track/39yRhjDdSTP4A7VehxBXDb",
+      "streams": 68618166,
+      "daily": 32239,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Addiction",
+      "spotify": "https://open.spotify.com/track/6B6bbawvTbCFyzFIxuMJQI",
+      "streams": 68240326,
+      "daily": 29723,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "PROMOTION",
+      "spotify": "https://open.spotify.com/track/6bSfeCXlUaGa3eWCy5qPTb",
+      "streams": 68091516,
+      "daily": 26173,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Ok Ok",
+      "spotify": "https://open.spotify.com/track/5LuXsO34x6KVlL8OWsxRqk",
+      "streams": 67402009,
+      "daily": 6231,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Every Hour",
+      "spotify": "https://open.spotify.com/track/1WnqWQcWcuQbVzgE7ecfCY",
+      "streams": 67328032,
+      "daily": 9315,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Lord I Need You",
+      "spotify": "https://open.spotify.com/track/2pLgJ5ygFlbIABtKrDpqaA",
+      "streams": 67083503,
+      "daily": 10908,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Water",
+      "spotify": "https://open.spotify.com/track/454Epa1vrCGFddHXKyC1kb",
+      "streams": 66110222,
+      "daily": 8829,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Gone",
+      "spotify": "https://open.spotify.com/track/6vQTNCP1Ifp8xiyQULwZ69",
+      "streams": 65639889,
+      "daily": 21397,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Diamonds From Sierra Leone",
+      "spotify": "https://open.spotify.com/track/3V8VqH4EmTU8VFVu00Ir9T",
+      "streams": 65505789,
+      "daily": 39531,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "All Your Fault",
+      "spotify": "https://open.spotify.com/track/30CZcZ0NpTXjVJJa5X5nwf",
+      "streams": 65350162,
+      "daily": 8575,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "PAPERWORK",
+      "spotify": "https://open.spotify.com/track/2jf0ooqmXMqaGqh0bdYsHR",
+      "streams": 64984061,
+      "daily": 13319,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Coldest Winter",
+      "spotify": "https://open.spotify.com/track/2RRFTLIglxHgAYQzsSLI4Y",
+      "streams": 63733845,
+      "daily": 20043,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Good Night",
+      "spotify": "https://open.spotify.com/track/3bhyo2ED5Yd4RLydQBDtD6",
+      "streams": 63704238,
+      "daily": 34286,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "530",
+      "spotify": "https://open.spotify.com/track/2tPNj9sUt3FbjEUqBzZazv",
+      "streams": 63244983,
+      "daily": 36447,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Hands On",
+      "spotify": "https://open.spotify.com/track/7r6aR2f57resC5r93LwMfK",
+      "streams": 62781637,
+      "daily": 8737,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Dreamin Of The Past (feat. Kanye West)",
+      "spotify": "https://open.spotify.com/track/3Wx98ijEDnsxyMYePCuFNI",
+      "streams": 62317257,
+      "daily": 18514,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Swagga Like Us",
+      "spotify": "https://open.spotify.com/track/6N6bpwA4iiq7HtKToeVH0c",
+      "streams": 61902548,
+      "daily": 21050,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Say You Will",
+      "spotify": "https://open.spotify.com/track/5e5MKPtJuFb8NaeSEyV5gD",
+      "streams": 60428978,
+      "daily": 20119,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Down And Out",
+      "spotify": "https://open.spotify.com/track/6UfHd4LzflgUhFQvAVbOGy",
+      "streams": 60400875,
+      "daily": 19322,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "PREACHER MAN",
+      "spotify": "https://open.spotify.com/track/0fD7KBtQgPR1YCtuPAsyZJ",
+      "streams": 60351500,
+      "daily": 48247,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Tiimmy Turner - Remix",
+      "spotify": "https://open.spotify.com/track/2vwvGMStv1nEuoOTd4xgMu",
+      "streams": 59886469,
+      "daily": 5414,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Piss On Your Grave (feat. Kanye West)",
+      "spotify": "https://open.spotify.com/track/5H25xsIuRWUI8GwcoAoeSG",
+      "streams": 59476423,
+      "daily": 10582,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Jesus Lord",
+      "spotify": "https://open.spotify.com/track/1LwdWIbfuqlOo8vlHxkyna",
+      "streams": 59009186,
+      "daily": 9121,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Late",
+      "spotify": "https://open.spotify.com/track/7r74CyCSe3DuBczLSZCUzR",
+      "streams": 58786282,
+      "daily": 31677,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "KANGA (feat. Kanye West)",
+      "spotify": "https://open.spotify.com/track/0FWuoZiZygtNkeJqF9tXZC",
+      "streams": 58364301,
+      "daily": 3166,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "God Breathed",
+      "spotify": "https://open.spotify.com/track/1nGNm9hTNOcM1rA4SVS4zj",
+      "streams": 58349371,
+      "daily": 6209,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "BEG FORGIVENESS",
+      "spotify": "https://open.spotify.com/track/2anbsZVE7y9yhI4KD7QYI0",
+      "streams": 58345459,
+      "daily": 20107,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "PROBLEMATIC",
+      "spotify": "https://open.spotify.com/track/7wOpdeL1e8nsK5fQwj40Ox",
+      "streams": 58173074,
+      "daily": 24003,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Marvin & Chardonnay",
+      "spotify": "https://open.spotify.com/track/7aHK5phEahf0v5K0hfXvVe",
+      "streams": 58149538,
+      "daily": 8635,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "New Day",
+      "spotify": "https://open.spotify.com/track/0x367gcUm6nsEoMXXFfEMy",
+      "streams": 57602585,
+      "daily": 21726,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "VULTURES",
+      "spotify": "https://open.spotify.com/track/4dOIsPkLABpsM0LZz2Ymxo",
+      "streams": 56828519,
+      "daily": 7261,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "RoboCop",
+      "spotify": "https://open.spotify.com/track/02LAK7qT1wya0klSeNO96f",
+      "streams": 55753327,
+      "daily": 19264,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "See You In My Nightmares",
+      "spotify": "https://open.spotify.com/track/5zuoz1NBnpoHK6g5sbEH8F",
+      "streams": 54992497,
+      "daily": 15652,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "School Spirit",
+      "spotify": "https://open.spotify.com/track/1th3G3okofWlvGWAAR7Y4V",
+      "streams": 52411138,
+      "daily": 14966,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "KEEP IT BURNIN (feat. Kanye West)",
+      "spotify": "https://open.spotify.com/track/7rWCWzPRftzZTZtIyQtaDU",
+      "streams": 52252598,
+      "daily": 8900,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Jesus Is Lord",
+      "spotify": "https://open.spotify.com/track/7sBgFMWqDWQgrsNSpIBoe8",
+      "streams": 52087185,
+      "daily": 7670,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "OK (feat. Don Toliver)",
+      "spotify": "https://open.spotify.com/track/5UNo2nitxVTkBA9QYmnHJx",
+      "streams": 50556705,
+      "daily": 243762,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "KEYS TO MY LIFE",
+      "spotify": "https://open.spotify.com/track/4iVmy1j5C3XNxpN11RXRaO",
+      "streams": 50326248,
+      "daily": 10333,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Breathe In Breathe Out",
+      "spotify": "https://open.spotify.com/track/4KFY4EEv9CN6ivrzD6vEvg",
+      "streams": 48776114,
+      "daily": 13175,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "What Would Meek Do?",
+      "spotify": "https://open.spotify.com/track/5vnuJ8EopkP5dHukpOmT3L",
+      "streams": 48694971,
+      "daily": 4947,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Bad News",
+      "spotify": "https://open.spotify.com/track/1nNPoG2hygEvrFGlHdhvJ9",
+      "streams": 48567520,
+      "daily": 12880,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "That's My Bitch",
+      "spotify": "https://open.spotify.com/track/1BMzxGds8WSK39p4y432fl",
+      "streams": 47021957,
+      "daily": 17139,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Siiiiiiiiilver Surffffeeeeer Intermission",
+      "spotify": "https://open.spotify.com/track/1ZnA4VYOlYIShuGt60LmCs",
+      "streams": 47010897,
+      "daily": 5382,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Made In America",
+      "spotify": "https://open.spotify.com/track/0qM9UF4CbazQ5xa8PCTopE",
+      "streams": 45937832,
+      "daily": 18133,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Diamonds - Remix",
+      "spotify": "https://open.spotify.com/track/2DCCA7AwEslJ7jEaEX4Frf",
+      "streams": 44134301,
+      "daily": 28662,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Sanctified",
+      "spotify": "https://open.spotify.com/track/7mngLA9NZEB7mZqfbOvEPS",
+      "streams": 43474995,
+      "daily": 3858,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "BEAUTY AND THE BEAST",
+      "spotify": "https://open.spotify.com/track/6pxHjkpwGmg97Yn5HcwNTn",
+      "streams": 43255941,
+      "daily": 33595,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Castro (feat. Kanye West, Big Sean, Quavo & 2 Chainz)",
+      "spotify": "https://open.spotify.com/track/0rHJxNaQRMGK6Y4TUx3xRO",
+      "streams": 43154000,
+      "daily": 878,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "My Way Home",
+      "spotify": "https://open.spotify.com/track/4e6WcZIII1aNRiCAGLxZUH",
+      "streams": 43127612,
+      "daily": 11209,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Who Will Survive In America",
+      "spotify": "https://open.spotify.com/track/4e5IPJxSGVWPsaxQzdRseN",
+      "streams": 43052559,
+      "daily": 9874,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "KING",
+      "spotify": "https://open.spotify.com/track/4LP6bmyAxdMNrqUrMpaVQ8",
+      "streams": 42876396,
+      "daily": 57990,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Donda",
+      "spotify": "https://open.spotify.com/track/3xaoZLMCII9FjSqM3YNKTG",
+      "streams": 42189989,
+      "daily": 3921,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "SLIDE",
+      "spotify": "https://open.spotify.com/track/5MGMXOhVvwzCjFgdQsFokR",
+      "streams": 41663938,
+      "daily": 22124,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Crack Music",
+      "spotify": "https://open.spotify.com/track/2m1c56EF3xB78la1Xh9Yqb",
+      "streams": 41641216,
+      "daily": 11747,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Pussy Print (feat. Kanye West)",
+      "spotify": "https://open.spotify.com/track/5QrT8pNtw1UnjqFuSUsenv",
+      "streams": 41273954,
+      "daily": 1830,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "HOODRAT",
+      "spotify": "https://open.spotify.com/track/0Ah7O76JL0pyn84jI7NPbr",
+      "streams": 40593832,
+      "daily": 8413,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "I'll Fly Away",
+      "spotify": "https://open.spotify.com/track/6MgGapP3EPFm9kYUvYBTZR",
+      "streams": 40059228,
+      "daily": 9333,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "RIVER",
+      "spotify": "https://open.spotify.com/track/5RzSnxqTx4vYEp9re5E0ud",
+      "streams": 39309732,
+      "daily": 39840,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Welcome To The Jungle",
+      "spotify": "https://open.spotify.com/track/0y0imMk6KsO90MaHG4MVAl",
+      "streams": 39297428,
+      "daily": 9375,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Celebration",
+      "spotify": "https://open.spotify.com/track/29DTGRE8gUAPYZmThH5wXh",
+      "streams": 38913004,
+      "daily": 14909,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "HIGHS AND LOWS",
+      "spotify": "https://open.spotify.com/track/565G1vHZu2xoxrnTyF06Qw",
+      "streams": 38912061,
+      "daily": 59610,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "PUNCH DRUNK",
+      "spotify": "https://open.spotify.com/track/4bWZz15GR1EE8E8x23rDWV",
+      "streams": 38580716,
+      "daily": 41676,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Bring Me Down",
+      "spotify": "https://open.spotify.com/track/1JwSazdPkEpDZug2adVBU8",
+      "streams": 38186464,
+      "daily": 12503,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Graduation Day",
+      "spotify": "https://open.spotify.com/track/7wL7Lb8Q3aYyq6gmRL0PZq",
+      "streams": 38132543,
+      "daily": 9579,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Junya pt 2",
+      "spotify": "https://open.spotify.com/track/1jxtPdcRycy87IAnkq2HT3",
+      "streams": 37895895,
+      "daily": 6569,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "KING",
+      "spotify": "https://open.spotify.com/track/0KXIsj1KjSNlGvNora6BA4",
+      "streams": 37275301,
+      "daily": 9611,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Runaway",
+      "spotify": "https://open.spotify.com/track/50HCj9kEXIonBwRLXFWCr8",
+      "streams": 37061293,
+      "daily": 28727,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Figure It Out",
+      "spotify": "https://open.spotify.com/track/70qcixcRoSfqDAMmSOTazd",
+      "streams": 37056119,
+      "daily": 2383,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "FRIED",
+      "spotify": "https://open.spotify.com/track/4Qay2jEWJYjXmJ8eNOGtaD",
+      "streams": 37055255,
+      "daily": 20072,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Rock N Roll (feat. Kanye West & Kid Cudi)",
+      "spotify": "https://open.spotify.com/track/1ZM8toCOlnfBKJdvR8GqUq",
+      "streams": 36135866,
+      "daily": 7023,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Ok Ok",
+      "spotify": "https://open.spotify.com/track/4nqw8c0IQJu5rEo2529ymO",
+      "streams": 35699670,
+      "daily": 4431,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "New God Flow",
+      "spotify": "https://open.spotify.com/track/1DbeslBYnckTqqTcc1Y2Tg",
+      "streams": 35264687,
+      "daily": 9928,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "WHATEVER WORKS",
+      "spotify": "https://open.spotify.com/track/7GVuAK4EmYP7gvlXA4JXqU",
+      "streams": 34302978,
+      "daily": 34998,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "DEAD",
+      "spotify": "https://open.spotify.com/track/488lIy4J0jJdPUiWqa0doB",
+      "streams": 33248876,
+      "daily": 11036,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Primetime",
+      "spotify": "https://open.spotify.com/track/32oaQIN08rnsdSP8xuW0Vt",
+      "streams": 32706249,
+      "daily": 16643,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "DAMN",
+      "spotify": "https://open.spotify.com/track/4dm2VMjIs1JlGZp2TePJaE",
+      "streams": 31914705,
+      "daily": 23021,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Thank You",
+      "spotify": "https://open.spotify.com/track/2x5YsiXAqOEqSZ1iHWITHS",
+      "streams": 30603579,
+      "daily": 5234,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Tell The Vision",
+      "spotify": "https://open.spotify.com/track/2czzDTZuEHmz1y6kQR7rnn",
+      "streams": 30422601,
+      "daily": 2702,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Donda Chant",
+      "spotify": "https://open.spotify.com/track/3xQTo7wPYHZtFbHAoygz2c",
+      "streams": 30293840,
+      "daily": 2349,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "THIS A MUST",
+      "spotify": "https://open.spotify.com/track/41e8XO5tcG6Uesk2FhdsWm",
+      "streams": 30204790,
+      "daily": 32551,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "BULLY (feat. CeeLo Green)",
+      "spotify": "https://open.spotify.com/track/6KhDb86ThnlKirRw1UBZGb",
+      "streams": 29850851,
+      "daily": 32666,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Wake Up Mr. West",
+      "spotify": "https://open.spotify.com/track/5z7jLkkBza2b9CHL0P6QVk",
+      "streams": 29268727,
+      "daily": 7857,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "I Wish You Would",
+      "spotify": "https://open.spotify.com/track/0n0HybfiBU3YDQNVtWugtm",
+      "streams": 28900939,
+      "daily": 3511,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "SISTERS AND BROTHERS",
+      "spotify": "https://open.spotify.com/track/1FpjiEapAG8XJdVSI0tvdc",
+      "streams": 27654609,
+      "daily": 31492,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Start It Up",
+      "spotify": "https://open.spotify.com/track/37qcaCXw7TlBsDD5BgDoCf",
+      "streams": 27406201,
+      "daily": 4650,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Hurry",
+      "spotify": "https://open.spotify.com/track/6NqbN00vLmWfrQSx2wjD4z",
+      "streams": 27244223,
+      "daily": 1299,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "USE THIS GOSPEL (feat. Kanye West & Eminem) - REMIX",
+      "spotify": "https://open.spotify.com/track/2u5jKAjyvyEDmsWTtfQzNf",
+      "streams": 26941089,
+      "daily": 5758,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "TRUE LOVE",
+      "spotify": "https://open.spotify.com/track/3WbuQIjkR1mIKdwSNlgqpp",
+      "streams": 26892522,
+      "daily": 29400,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Number One",
+      "spotify": "https://open.spotify.com/track/3r4U9UpHaFurMtq1oCZoAp",
+      "streams": 26710926,
+      "daily": 9712,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Because Of You - Remix",
+      "spotify": "https://open.spotify.com/track/0C4P84KFU7yjFncTbXMxO9",
+      "streams": 26412699,
+      "daily": 17047,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Jesus Lord pt 2",
+      "spotify": "https://open.spotify.com/track/360VkSTITvF55weIKoaNTw",
+      "streams": 26213322,
+      "daily": 3360,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "530",
+      "spotify": "https://open.spotify.com/track/79mEFisvTUZcVGUxPM0dYc",
+      "streams": 25774896,
+      "daily": 29482,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "MAMA’S FAVORITE (feat. Nine Vicious)",
+      "spotify": "https://open.spotify.com/track/25fLIFbAV7zBetOH077pDl",
+      "streams": 25739825,
+      "daily": 27633,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Workout Plan",
+      "spotify": "https://open.spotify.com/track/2a1JSfTePKhysdIif2bzut",
+      "streams": 25429137,
+      "daily": 5534,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Supernova",
+      "spotify": "https://open.spotify.com/track/4W70choH6HolKiz1F8FIat",
+      "streams": 25274889,
+      "daily": 4296,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "New God Flow.1",
+      "spotify": "https://open.spotify.com/track/62h8709cQe3S3nOWvFExpN",
+      "streams": 25265520,
+      "daily": 7283,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Feel Me (feat. Kanye West)",
+      "spotify": "https://open.spotify.com/track/6OOQbiHF6cxdpuzW41XTvy",
+      "streams": 24902766,
+      "daily": 1039,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Cops Shot The Kid",
+      "spotify": "https://open.spotify.com/track/1vi9adPJiD4d22ybGp25hy",
+      "streams": 24882451,
+      "daily": 2025,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "WHITE LINES (feat. Andre Troutman)",
+      "spotify": "https://open.spotify.com/track/3bbjDFVu9BtFtGD2fZpVfz",
+      "streams": 24768527,
+      "daily": 26635,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "I CAN’T WAIT",
+      "spotify": "https://open.spotify.com/track/163l4Itf8oDEK7ZYdVm22N",
+      "streams": 24420386,
+      "daily": 18837,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Back Like That - Remix",
+      "spotify": "https://open.spotify.com/track/1h7zVRtI6g1IYCj9cdrNWD",
+      "streams": 24206286,
+      "daily": 7768,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Back Like That Remix - Remix",
+      "spotify": "https://open.spotify.com/track/5Eabv11BXm5f79tHiBERdq",
+      "streams": 24060511,
+      "daily": 6728,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "TIME MOVING SLOW",
+      "spotify": "https://open.spotify.com/track/0JgassGI6jNxpX82jGpcuJ",
+      "streams": 23815010,
+      "daily": 7953,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "M.P.A.",
+      "spotify": "https://open.spotify.com/track/09W3YKEDiMFsX7QxWJm2zX",
+      "streams": 23629806,
+      "daily": 2267,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Skit #1 (Kanye West/Late Registration)",
+      "spotify": "https://open.spotify.com/track/6fT7bHVzfU9u7UByS3sLbU",
+      "streams": 23624039,
+      "daily": 4988,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Pinocchio Story",
+      "spotify": "https://open.spotify.com/track/6giHsGo1eSYZSXKdNwTC62",
+      "streams": 23282030,
+      "daily": 5132,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "LAST BREATH (feat. Peso Pluma)",
+      "spotify": "https://open.spotify.com/track/13CvK7typ0qYle19p9Vahn",
+      "streams": 23201664,
+      "daily": 19524,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Cold",
+      "spotify": "https://open.spotify.com/track/4eOJxoVUcN0kFX3ymAoREV",
+      "streams": 23128842,
+      "daily": 6937,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "THIS ONE HERE",
+      "spotify": "https://open.spotify.com/track/7uGrdyEErKPSA3oiJQHxQ6",
+      "streams": 23060576,
+      "daily": 29977,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Skit #2 (Kanye West/Late Registration)",
+      "spotify": "https://open.spotify.com/track/2QE7F4OzNUHsFaNhzzR9qZ",
+      "streams": 22858471,
+      "daily": 4638,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Deuces Remix (feat. Drake, T.I., Kanye West, Fabolous, Rick Ross & André 3000)",
+      "spotify": "https://open.spotify.com/track/6EC5hHjYlwVmj8cpjSjJWA",
+      "streams": 22483490,
+      "daily": 14985,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "The Joy",
+      "spotify": "https://open.spotify.com/track/7huc9zi62N3uBYkJOmAhTf",
+      "streams": 22119999,
+      "daily": 5815,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Ye vs. the People (starring TI as the People)",
+      "spotify": "https://open.spotify.com/track/69b0SDYOymaqYwm3la237H",
+      "streams": 21394208,
+      "daily": 1110,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Christmas In Harlem",
+      "spotify": "https://open.spotify.com/track/00HMEiBMDkbNCHLJL6zqVk",
+      "streams": 21106276,
+      "daily": 7503,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "American Boy - Lost Frequencies Remix",
+      "spotify": "https://open.spotify.com/track/2q25rEzfmIoHbGnrSVBjJU",
+      "streams": 20868003,
+      "daily": 2429,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Blazin",
+      "spotify": "https://open.spotify.com/track/3g8IZkTL7EYqtmKCfxvHq3",
+      "streams": 20085074,
+      "daily": 2932,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Ego (feat. Kanye West) - Remix",
+      "spotify": "https://open.spotify.com/track/7M4F4e8lI8Dkod0IEtBx7x",
+      "streams": 20063032,
+      "daily": 3655,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "SKY CITY",
+      "spotify": "https://open.spotify.com/track/7a0tTD7xdvKsNcJfMIDWp4",
+      "streams": 19866225,
+      "daily": 19047,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Fade",
+      "spotify": "https://open.spotify.com/track/3jxbd8H8XyzrWmOL8JX0Uk",
+      "streams": 19521772,
+      "daily": 918,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "School Spirit Skit 1",
+      "spotify": "https://open.spotify.com/track/25mwJPzWVmS2yronBNQJF1",
+      "streams": 19489416,
+      "daily": 4387,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "They Say",
+      "spotify": "https://open.spotify.com/track/5GO4rpfnM2lghVqEulTJUf",
+      "streams": 19485459,
+      "daily": 9321,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Cold.1",
+      "spotify": "https://open.spotify.com/track/7jCkMZdvs8ABVd7fAHyQHM",
+      "streams": 19396791,
+      "daily": 4481,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "everything",
+      "spotify": "https://open.spotify.com/track/3XaNHbNa9Chz9plhRpcaof",
+      "streams": 19315163,
+      "daily": 2001,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "FOREVER ROLLING",
+      "spotify": "https://open.spotify.com/track/1MTpRBLniy6298BCdyKUfQ",
+      "streams": 19181782,
+      "daily": 9238,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Feel A Way (feat. Kanye West & Brent Faiyaz)",
+      "spotify": "https://open.spotify.com/track/1GxoFQZxD7tFhQFUD9F0dD",
+      "streams": 19177539,
+      "daily": 2180,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Lil Jimmy Skit",
+      "spotify": "https://open.spotify.com/track/4BhwlQ9mTwhFGXpQvP9JTV",
+      "streams": 18575289,
+      "daily": 4231,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Illest Motherf**ker Alive",
+      "spotify": "https://open.spotify.com/track/4DOoissGiO2oc7vtGkhAib",
+      "streams": 18399905,
+      "daily": 124,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "No Face",
+      "spotify": "https://open.spotify.com/track/4C397XtpxJdRNCEmVav0gX",
+      "streams": 18112509,
+      "daily": 4154,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "CIRCLES",
+      "spotify": "https://open.spotify.com/track/1udGa2Ww3YIVSp5X4OMHFQ",
+      "streams": 18057244,
+      "daily": 17228,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "School Spirit Skit 2",
+      "spotify": "https://open.spotify.com/track/5MAY7XyW322jMwLDtBQgsZ",
+      "streams": 17794286,
+      "daily": 3995,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Deuces Remix (feat. Drake, Kanye West & André 3000)",
+      "spotify": "https://open.spotify.com/track/4QKMuKPhCK8Aji8MaeJL4T",
+      "streams": 17518033,
+      "daily": 1637,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Number One (feat. Kanye West)",
+      "spotify": "https://open.spotify.com/track/3zQGmJ4k3JeqwAjfrEcwHp",
+      "streams": 16981620,
+      "daily": 3343,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Smack DVD [Feat. Kanye West]",
+      "spotify": "https://open.spotify.com/track/0PrbJfU9aZp0kb1WNDL2EW",
+      "streams": 16968713,
+      "daily": 849,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "To The World",
+      "spotify": "https://open.spotify.com/track/4OeQM6VKvF8QQLaqvhP3qo",
+      "streams": 16884114,
+      "daily": 1990,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "XTCY",
+      "spotify": "https://open.spotify.com/track/64wdPpi4OeCQF4W2oMZ9Wt",
+      "streams": 16484135,
+      "daily": 2779,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "BOMB",
+      "spotify": "https://open.spotify.com/track/2kgxyflhiicDbF8SDrBxqy",
+      "streams": 15989021,
+      "daily": 5026,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Track 6 (feat. Kanye West, Anderson .Paak & Thundercat)",
+      "spotify": "https://open.spotify.com/track/4XPzNUDXrSRjpFbd8CcQVu",
+      "streams": 15418461,
+      "daily": 2801,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "BROKEN ROAD",
+      "spotify": "https://open.spotify.com/track/4RXIqq6AWKGQIEXd9il5mB",
+      "streams": 15300688,
+      "daily": 14581,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Jesus Piece",
+      "spotify": "https://open.spotify.com/track/1dMWXOfuFCt8a7dZPhlvQM",
+      "streams": 15253349,
+      "daily": 3005,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Remote Control pt 2",
+      "spotify": "https://open.spotify.com/track/5TRekQsv96kQezYd8TkilW",
+      "streams": 14357860,
+      "daily": 4185,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Confessions Part II Remix (feat. Shyne, Twista & Kanye West)",
+      "spotify": "https://open.spotify.com/track/6xcz5MXwY36hItZg5PZj78",
+      "streams": 14309771,
+      "daily": 2893,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "LOSING YOUR MIND",
+      "spotify": "https://open.spotify.com/track/3zUNCyezZQ7Wg2wYcsjGN4",
+      "streams": 13652755,
+      "daily": 11253,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Talk About Our Love (feat. Kanye West)",
+      "spotify": "https://open.spotify.com/track/6tvOzCdhzkrJo3ASWwbSPZ",
+      "streams": 13564437,
+      "daily": 4330,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Skit #4 (Kanye West/Late Registration)",
+      "spotify": "https://open.spotify.com/track/29z9CnCfnBTsXEsglul2jC",
+      "streams": 13096605,
+      "daily": 2716,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Maybach Music 2",
+      "spotify": "https://open.spotify.com/track/1PSOEWhJXNJ0NpjgedMqZ6",
+      "streams": 12839399,
+      "daily": 3422,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Up From The Ashes",
+      "spotify": "https://open.spotify.com/track/6MTtOV150uwitRZz4anI2h",
+      "streams": 12518011,
+      "daily": 3478,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "KEEP THE FLOWERS",
+      "spotify": "https://open.spotify.com/track/0JTtEdWbdFmqgHPq7i6DnJ",
+      "streams": 12466432,
+      "daily": 10507,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "The One",
+      "spotify": "https://open.spotify.com/track/6uG4BxL4qqSIOXfEiGdpBf",
+      "streams": 12413660,
+      "daily": 1866,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "CITY OF GOD",
+      "spotify": "https://open.spotify.com/track/1yJqk94FvUxZ7F3SWhcwHz",
+      "streams": 12175699,
+      "daily": 27346,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "HUSBAND",
+      "spotify": "https://open.spotify.com/track/6LHeisjoP8eHrtu45UbTPO",
+      "streams": 11797722,
+      "daily": 2163,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Billie Jean (2008 Kanye West Mix) (feat. Kanye West) - Thriller 25th Anniversary Remix",
+      "spotify": "https://open.spotify.com/track/17bgTUPOnLLVavmeS2Pc0B",
+      "streams": 10852015,
+      "daily": 4213,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "I CAN’T WAIT (feat. Ms. Lauryn Hill)",
+      "spotify": "https://open.spotify.com/track/6ImNhLq3RabOnEHfoRdvd4",
+      "streams": 10759056,
+      "daily": 30640,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "LIFESTYLE",
+      "spotify": "https://open.spotify.com/track/40FRxwg8SEMO3fbMjFfphU",
+      "streams": 10693616,
+      "daily": 5933,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Hate",
+      "spotify": "https://open.spotify.com/track/4GL8l2w8FmIVFOJFPStfWI",
+      "streams": 10413946,
+      "daily": 1969,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Buy U A Drank (Shawty Snappin') (feat. Kanye West) - Remix",
+      "spotify": "https://open.spotify.com/track/6xtl2LJgxi25EqLf3l3zLz",
+      "streams": 10399571,
+      "daily": 4482,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "No Apologies",
+      "spotify": "https://open.spotify.com/track/7CwRY5cWBqNblDqu9EoOzD",
+      "streams": 10131333,
+      "daily": 4559,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Nobody (feat. Kanye West)",
+      "spotify": "https://open.spotify.com/track/29u1m2qYmOheREg0yL1Zcb",
+      "streams": 9634515,
+      "daily": 1871,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Never Abandon Your Family",
+      "spotify": "https://open.spotify.com/track/2dz1JB89afkeSv509J5Po7",
+      "streams": 9585598,
+      "daily": 1994,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Walkin' On The Moon",
+      "spotify": "https://open.spotify.com/track/4WLrIia6HbBFr5yi4E7fcg",
+      "streams": 9355358,
+      "daily": 2071,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Welcome To The World",
+      "spotify": "https://open.spotify.com/track/0puFmcIvB53ZUtvVP78o0e",
+      "streams": 9096360,
+      "daily": 1805,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "The Killing Season (feat. Kanye West, Consequence & Talib Kweli)",
+      "spotify": "https://open.spotify.com/track/0ztZ65BrWKvcPuQPR6LTZw",
+      "streams": 9006908,
+      "daily": 1111,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "The Bounce",
+      "spotify": "https://open.spotify.com/track/6oHpLl0XdlbYJuGLDiREfe",
+      "streams": 8982780,
+      "daily": 4182,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Down (feat. Kanye West)",
+      "spotify": "https://open.spotify.com/track/5nEQdBH5SryRPFolMZZWDm",
+      "streams": 8776547,
+      "daily": 1760,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Mula",
+      "spotify": "https://open.spotify.com/track/1u0J77I265Ukrp9phG9qi5",
+      "streams": 8750453,
+      "daily": 1128,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "TOO EASY",
+      "spotify": "https://open.spotify.com/track/5JDu5HkUyhcwJHU69ysMvD",
+      "streams": 8583758,
+      "daily": 5440,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "American Boy - Brooks Remix",
+      "spotify": "https://open.spotify.com/track/1owQcOxm2rbvenVNRMdSTh",
+      "streams": 8451095,
+      "daily": 371,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Ego (feat. Kanye West)",
+      "spotify": "https://open.spotify.com/track/7psZtgEwG20HDigY0BLKOx",
+      "streams": 8410883,
+      "daily": 1009,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Make Her Say",
+      "spotify": "https://open.spotify.com/track/16Dh2buZVDH3XTBRXJp8f0",
+      "streams": 8361389,
+      "daily": 1803,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "No Bad News (feat. Kanye West)",
+      "spotify": "https://open.spotify.com/track/5XsAOpPWPJLrwC9sgtigTp",
+      "streams": 8240670,
+      "daily": 3825,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Live Fast, Die Young",
+      "spotify": "https://open.spotify.com/track/4L0dkLS6mpsf6zRKVSwfWY",
+      "streams": 8174520,
+      "daily": 5177,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "GEMINI SEASON",
+      "spotify": "https://open.spotify.com/track/46qZ2dq0jsXHtwsLaI9tl1",
+      "streams": 8155851,
+      "daily": 10446,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Through The Wire",
+      "spotify": "https://open.spotify.com/track/5awFsxOECAVPdOUMIjepQ3",
+      "streams": 8088369,
+      "daily": 1163,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "act iii: on god? (she like) (feat. Kanye West) - remix",
+      "spotify": "https://open.spotify.com/track/1CayJq3tFfNMRv7HihVFlo",
+      "streams": 7973117,
+      "daily": 1981,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "BURN EVERYTHING",
+      "spotify": "https://open.spotify.com/track/4mVBfQgc0bpA3eLNEpzv2F",
+      "streams": 7452317,
+      "daily": 6230,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Everyone Nose (All The Girls Standing In The Line For The Bathroom) - Remix",
+      "spotify": "https://open.spotify.com/track/0VVJkld0IvkEXAAOsx70sh",
+      "streams": 7287000,
+      "daily": 2655,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "FIRST TIME IN A LONG TIME",
+      "spotify": "https://open.spotify.com/track/7aUzsxDB0DYz7IHX83b2b4",
+      "streams": 7277959,
+      "daily": 13266,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Lollipop - Remix",
+      "spotify": "https://open.spotify.com/track/5bL85GxaST0NRaBlguhkUa",
+      "streams": 7222847,
+      "daily": 2898,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "FOREVER",
+      "spotify": "https://open.spotify.com/track/1Cxq3u0RQ0tEBbVofZ9Mma",
+      "streams": 7195960,
+      "daily": 3274,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "GET LOST",
+      "spotify": "https://open.spotify.com/track/4lUBWLqTFEWx3X6qcjWN2A",
+      "streams": 7085362,
+      "daily": 4815,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "VULTURES - Havoc Version",
+      "spotify": "https://open.spotify.com/track/1AmRnoLEaq7E38IlFDjQRl",
+      "streams": 6930690,
+      "daily": 2265,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "JESSE",
+      "spotify": "https://open.spotify.com/track/1FwCGiIiWy3zpLavmMYQfD",
+      "streams": 6824125,
+      "daily": 4389,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "SCIFI",
+      "spotify": "https://open.spotify.com/track/3OEvHAJQiJSxw076rUF1SN",
+      "streams": 6784585,
+      "daily": 5475,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Love Yourself",
+      "spotify": "https://open.spotify.com/track/7IX1XFoYc8QtGMYUCHG4bm",
+      "streams": 6772251,
+      "daily": 247,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Ballin (feat. Kanye West)",
+      "spotify": "https://open.spotify.com/track/0buyhEEXmVoNHeq0Pc9Vz5",
+      "streams": 6473335,
+      "daily": 209,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Jesus Lord pt 2",
+      "spotify": "https://open.spotify.com/track/3UlYBTkShcEsMYSXtC5Vu1",
+      "streams": 6209984,
+      "daily": 2144,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Wouldn't You Like To…",
+      "spotify": "https://open.spotify.com/track/4o5C0nLaBZbMxUrejb5FUV",
+      "streams": 5917300,
+      "daily": 4094,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Pray 4 Me [Feat. Kanye West]",
+      "spotify": "https://open.spotify.com/track/3fucTapQmYWK4LrNEOXutK",
+      "streams": 5610859,
+      "daily": 926,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Illest Motherf***** Alive",
+      "spotify": "https://open.spotify.com/track/7t259tTXkuNVfxdQcnEagh",
+      "streams": 5574192,
+      "daily": 8641,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Jesus Lord",
+      "spotify": "https://open.spotify.com/track/7ArMa3vL5il1ngyxkEFQh0",
+      "streams": 5368863,
+      "daily": 1939,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "MY SOUL",
+      "spotify": "https://open.spotify.com/track/3bTkWuPGJ1ueGXBHWVUwAI",
+      "streams": 5298023,
+      "daily": 3315,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Deuces Remix (feat. Drake & Kanye West)",
+      "spotify": "https://open.spotify.com/track/6itZrLa5l4giFBbjNi9zUt",
+      "streams": 5149852,
+      "daily": 2625,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "LORD LIFT ME UP",
+      "spotify": "https://open.spotify.com/track/1RopXkbl5fE7gf7fjQIKRf",
+      "streams": 5113150,
+      "daily": 4150,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Amen",
+      "spotify": "https://open.spotify.com/track/3axVR1ayqtT1UIqjsRtOqp",
+      "streams": 4613876,
+      "daily": 517,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Wouldn't You Like to Ride",
+      "spotify": "https://open.spotify.com/track/0a6q5XK264I3qDt5gmFNSf",
+      "streams": 4498784,
+      "daily": 8172,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "CITY OF CHI",
+      "spotify": "https://open.spotify.com/track/5YHnlCyJPAzSQ4D1n7mSs5",
+      "streams": 4283010,
+      "daily": 3071,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Where They At",
+      "spotify": "https://open.spotify.com/track/00pHGPHFMMTLkHfoqIhpvS",
+      "streams": 4279760,
+      "daily": 835,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "SECURITY",
+      "spotify": "https://open.spotify.com/track/005Xv5eX9qBquZFVKvRt0E",
+      "streams": 4219573,
+      "daily": 4534,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "LOUIE BAGS",
+      "spotify": "https://open.spotify.com/track/5bu1Sbx3E2nNHzQUYXeAAj",
+      "streams": 4152095,
+      "daily": 6446,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Diamonds From Sierra Leone - Remix feat. Jay-Z",
+      "spotify": "https://open.spotify.com/track/290DH5BclWLihECLilse0o",
+      "streams": 4150323,
+      "daily": 1085,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Ok Ok pt 2",
+      "spotify": "https://open.spotify.com/track/76JygoN64nFFsgOEAPVlzO",
+      "streams": 4111106,
+      "daily": 1213,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "MISSION CONTROL (feat. The WRLDFMS Tony Williams)",
+      "spotify": "https://open.spotify.com/track/040LDuJ8MWKKhV9Fdwc64N",
+      "streams": 4072657,
+      "daily": 11028,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "SUZY",
+      "spotify": "https://open.spotify.com/track/1u1rZu5iTVoNtddc4yqvn4",
+      "streams": 4033016,
+      "daily": 5583,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Impossible - Radio Edit",
+      "spotify": "https://open.spotify.com/track/3Z3jFLon3nr1lpfinkMDbR",
+      "streams": 4001653,
+      "daily": 1382,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Extravaganza (feat. Kanye West)",
+      "spotify": "https://open.spotify.com/track/2BysX1CIcrQuY7b97Z6Nzo",
+      "streams": 3965929,
+      "daily": 871,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "LAST BREATH (feat. Peso Pluma)",
+      "spotify": "https://open.spotify.com/track/1ci8ZFaGfVbN8bgLhJwLad",
+      "streams": 3819537,
+      "daily": 12398,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Fortunate (Feat. Kanye West, Dreezy & CHLLER)",
+      "spotify": "https://open.spotify.com/track/365eCTLl2eaWqrCGhnZu4e",
+      "streams": 3658671,
+      "daily": 1315,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "My Baby",
+      "spotify": "https://open.spotify.com/track/6EkkjpqMVDwi3rQdCFMufV",
+      "streams": 3535965,
+      "daily": 1104,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Kinda Like a Big Deal (feat. Kanye West)",
+      "spotify": "https://open.spotify.com/track/7kXEraNzzctTNCJ2Ta6FU4",
+      "streams": 3473733,
+      "daily": 1176,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "MAINTENANCE",
+      "spotify": "https://open.spotify.com/track/72AZ3V52rs9NfgMNhALxln",
+      "streams": 3451718,
+      "daily": 2018,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Go Hard (Remix)",
+      "spotify": "https://open.spotify.com/track/7anxSM0LSfHScmmfwcLKS9",
+      "streams": 3366446,
+      "daily": 730,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Guard Down (feat. Kanye West & Diddy)",
+      "spotify": "https://open.spotify.com/track/6IZj5g48mZnFQ1d1HECaIv",
+      "streams": 3327839,
+      "daily": 317,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "We Can Make It Better",
+      "spotify": "https://open.spotify.com/track/3NR4gpFhwBWJgUtkl8woeY",
+      "streams": 3321585,
+      "daily": 1231,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "HAPPY",
+      "spotify": "https://open.spotify.com/track/2QenFYgqiJnSXUznQw1jfb",
+      "streams": 3250131,
+      "daily": 2148,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "This Ain't A Scene, It's An Arms Race - Kanye West Remix (Explicit Main Verson)",
+      "spotify": "https://open.spotify.com/track/7DTY2W3mt43AAXKn8EeUMz",
+      "streams": 3135762,
+      "daily": 1069,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Diamonds From Sierra Leone - Live At Abbey Road Studios",
+      "spotify": "https://open.spotify.com/track/0gBPIT136F1kfN5F40d2h2",
+      "streams": 3090319,
+      "daily": 743,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Touch The Sky - Live At Abbey Road Studios",
+      "spotify": "https://open.spotify.com/track/0Xvbqfjc2sivTVj9SHIOIR",
+      "streams": 3033576,
+      "daily": 570,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Can't Tell Me Nothing - Remix feat. Young Jeezy",
+      "spotify": "https://open.spotify.com/track/5h6etq1aoh4wUY7pRsSwst",
+      "streams": 2988992,
+      "daily": 440,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Southside",
+      "spotify": "https://open.spotify.com/track/6cWzj4jGLLEpjszTyZPg29",
+      "streams": 2986468,
+      "daily": 2171,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Hold On - Remix / Extended Version",
+      "spotify": "https://open.spotify.com/track/6Qvpa87llLt3iEvZ3QiPd1",
+      "streams": 2881481,
+      "daily": 5365,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Hold On - Radio Edit",
+      "spotify": "https://open.spotify.com/track/2KWKlNrgm3UNE65W6TumF6",
+      "streams": 2850270,
+      "daily": 11013,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Gold Digger - AOL Sessions",
+      "spotify": "https://open.spotify.com/track/6sppiVa0w9Lfi7m8NVwTsf",
+      "streams": 2824278,
+      "daily": 381,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Digital Girl (feat. Kanye West & The-Dream)",
+      "spotify": "https://open.spotify.com/track/7LCqlFC22Q2LgKwGHYsLQ6",
+      "streams": 2788448,
+      "daily": 1424,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "All Falls Down - Live At Abbey Road Studios",
+      "spotify": "https://open.spotify.com/track/1Mj2wJxQaMq00HfYAkLCz6",
+      "streams": 2770829,
+      "daily": 541,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Heard 'Em Say - Live At Abbey Road Studios",
+      "spotify": "https://open.spotify.com/track/3CVu4NHRrnMzTP6ybDbyrk",
+      "streams": 2722952,
+      "daily": 2120,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Through The Wire - Live At Abbey Road Studios",
+      "spotify": "https://open.spotify.com/track/5FRNP7NPI6DWvAkSJeH2eY",
+      "streams": 2661772,
+      "daily": 755,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Stand United",
+      "spotify": "https://open.spotify.com/track/004CtGzXJLis7oAURAHyrj",
+      "streams": 2586739,
+      "daily": 590,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Gettin' It In",
+      "spotify": "https://open.spotify.com/track/6xcztpu0UjeMQq7ksXaHHu",
+      "streams": 2523444,
+      "daily": 1478,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "40 Nights",
+      "spotify": "https://open.spotify.com/track/2CTwK5KZryhCTxLwv0TAJg",
+      "streams": 2489784,
+      "daily": 7483,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Punch Drunk Love",
+      "spotify": "https://open.spotify.com/track/74WvIWOGgBUPKtlpGAgiqw",
+      "streams": 2426444,
+      "daily": 590,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "If I Ain't Got You - Kanye West Radio Mix #1",
+      "spotify": "https://open.spotify.com/track/0phwXxX9m9BDm8Y4d7IFdR",
+      "streams": 2405905,
+      "daily": 555,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Side 2 Side (feat. Kayne West & Project Pat)",
+      "spotify": "https://open.spotify.com/track/4ixfyfQg8KkUAv1qiWvRYU",
+      "streams": 2392335,
+      "daily": 435,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Therapy (feat. Kanye West)",
+      "spotify": "https://open.spotify.com/track/77xNCHWYXTT8RMOu0Z2WKa",
+      "streams": 2362575,
+      "daily": 389,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "One Man Can Change The World - Rudimental Remix",
+      "spotify": "https://open.spotify.com/track/0mvIIjHNSFBXIRXxdLvqyS",
+      "streams": 2356107,
+      "daily": 153,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "American Boy - Brooks Remix / Extended",
+      "spotify": "https://open.spotify.com/track/0VvGZHIe0A8FeA1CVma67Q",
+      "streams": 2270686,
+      "daily": 66,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Plain Jane",
+      "spotify": "https://open.spotify.com/track/1zfJDw2SQQxAomLWtBgdOO",
+      "streams": 2222342,
+      "daily": 304,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "CARNIVAL - INSTRUMENTAL",
+      "spotify": "https://open.spotify.com/track/1EV7jgI71aoP0oHa23zLto",
+      "streams": 2196067,
+      "daily": 1361,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Eyez Closed",
+      "spotify": "https://open.spotify.com/track/3ivA11RU2okPSaEnlnPEaA",
+      "streams": 2074625,
+      "daily": 1233,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Jesus Walks - Live At Abbey Road Studios",
+      "spotify": "https://open.spotify.com/track/1vJvwNUE99zqvu62iKCzJd",
+      "streams": 1935811,
+      "daily": 477,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "LA Monster",
+      "spotify": "https://open.spotify.com/track/1qm3M8J8lssVFLahS12OAE",
+      "streams": 1844796,
+      "daily": 5277,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "In For The Kill",
+      "spotify": "https://open.spotify.com/track/3EZbf3QwZ9XgXHDPN6A0Ju",
+      "streams": 1744381,
+      "daily": 429,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "American Boy - Lost Frequencies Remix / Extended",
+      "spotify": "https://open.spotify.com/track/17VVcXCA8A0rauz4kgwJrz",
+      "streams": 1675538,
+      "daily": 82,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Let's Get Married (feat. Kanye West) - Reception Remix",
+      "spotify": "https://open.spotify.com/track/5UPkeYgH1v93fXUvxwkPNF",
+      "streams": 1559397,
+      "daily": 1498,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Drive Slow - Live At Abbey Road Studios",
+      "spotify": "https://open.spotify.com/track/0hk24xUpnTjJdXUQQEPQLe",
+      "streams": 1541593,
+      "daily": 301,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Workout Plan - Live At Abbey Road Studios",
+      "spotify": "https://open.spotify.com/track/6BMWL1t7ED3UwULK9CiO7g",
+      "streams": 1500443,
+      "daily": 309,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "CARNIVAL (feat. Rich The Kid, Playboi Carti) - ACAPELLA",
+      "spotify": "https://open.spotify.com/track/3lsdkkYWt2VRSxrFkKE3F5",
+      "streams": 1470720,
+      "daily": 141,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Gone - Live At Abbey Road Studios",
+      "spotify": "https://open.spotify.com/track/5YPQPhF6Y0ZuNCxX6fFxiL",
+      "streams": 1467124,
+      "daily": 279,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Put On - Album Version (Edited)",
+      "spotify": "https://open.spotify.com/track/1fBKBZ3EibF2IT5hMIVlLg",
+      "streams": 1463016,
+      "daily": 2375,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Bring Me Down - Live At Abbey Road Studios",
+      "spotify": "https://open.spotify.com/track/2QUSPP2mVuUt08tW0lUry6",
+      "streams": 1354505,
+      "daily": 310,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Crack Music - Live At Abbey Road Studios",
+      "spotify": "https://open.spotify.com/track/1Afi8OBrtXj9iNWK0UiQqt",
+      "streams": 1316146,
+      "daily": 279,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Stronger - A-Trak Remix (Explicit)",
+      "spotify": "https://open.spotify.com/track/0Nlb2F9h5XS7Vn4oejbpEu",
+      "streams": 1180045,
+      "daily": 225,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Start The Show",
+      "spotify": "https://open.spotify.com/track/6ucp0SZdqDlkfyaaHfM6cA",
+      "streams": 1156545,
+      "daily": 419,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Late - Live At Abbey Road Studios",
+      "spotify": "https://open.spotify.com/track/0LGYz76x0fE2JeUcKDpcvc",
+      "streams": 1074715,
+      "daily": 298,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Stronger - Andrew Dawson Remix (Explicit)",
+      "spotify": "https://open.spotify.com/track/1TSCCoHudcsR7KXXUD7VDH",
+      "streams": 952935,
+      "daily": 181,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Spaceship - Live Version",
+      "spotify": "https://open.spotify.com/track/70pWPybRdcgcMSjk5DgW0W",
+      "streams": 890826,
+      "daily": 41,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Heavy Hitters - Dirty",
+      "spotify": "https://open.spotify.com/track/5fBDppqLHDC1VQ8x4UxMru",
+      "streams": 746028,
+      "daily": 421,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Knock You Down - Bimbo Jones Radio Remix",
+      "spotify": "https://open.spotify.com/track/5EvGaqPnATT045f40sAFhr",
+      "streams": 709262,
+      "daily": 23,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "CARNIVAL - HOOLIGANS VERSION",
+      "spotify": "https://open.spotify.com/track/6rfYkkRw4tPSNKYlhbrrQg",
+      "streams": 675376,
+      "daily": 137,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "All Falls Down - Live From The House of Blues/2004",
+      "spotify": "https://open.spotify.com/track/1V7mKfA04Mj0dZWUs8DmYQ",
+      "streams": 662455,
+      "daily": 71,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Southside - Edited Album Version",
+      "spotify": "https://open.spotify.com/track/6peEj0fQkNJolfPXTNfhe6",
+      "streams": 572024,
+      "daily": 61,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Paranoid - NEW Mix",
+      "spotify": "https://open.spotify.com/track/3BWHyuFpeNlbPLSyxNuTjp",
+      "streams": 570786,
+      "daily": 223,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Birthday Song - Chopped Not Slopped",
+      "spotify": "https://open.spotify.com/track/0HrXn5eWwmXrwNRI0Aywbm",
+      "streams": 550126,
+      "daily": 26,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Marvin & Chardonnay (10th Anniversary) feat. Kanye West & Roscoe Dash",
+      "spotify": "https://open.spotify.com/track/4HBD9r66ges8Ol0STAZAaX",
+      "streams": 544873,
+      "daily": 329,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Jesus Walks - Live Version",
+      "spotify": "https://open.spotify.com/track/2X2llNEsjqYeUXRHMOoZqk",
+      "streams": 524471,
+      "daily": 77,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "The New Workout Plan - Live Version",
+      "spotify": "https://open.spotify.com/track/3rYmBIZZ0GFnSVE01HsOqk",
+      "streams": 478793,
+      "daily": 48,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Touch The Sky - Instrumental",
+      "spotify": "https://open.spotify.com/track/69wpickx8Jrn7kuMxeQuhz",
+      "streams": 454555,
+      "daily": 247,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Gold Digger - Instrumental",
+      "spotify": "https://open.spotify.com/track/3E1bKL1OVlpb2DBCB6uaVb",
+      "streams": 445230,
+      "daily": 7,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Hot Shit (feat. Ye & Lil Durk) - Instrumental",
+      "spotify": "https://open.spotify.com/track/20Pmf6KFmi3CLJJQLa2AN4",
+      "streams": 380838,
+      "daily": 56,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Wouldn't You Like to Ride (S&S Remixes) - Nick Ahrn Remix",
+      "spotify": "https://open.spotify.com/track/2mOSCqagszScGlz6PMyDxg",
+      "streams": 368798,
+      "daily": 58,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Heard 'Em Say - Live from Abbey Road",
+      "spotify": "https://open.spotify.com/track/5nywSmOIkTX7sOBzkoiySl",
+      "streams": 368191,
+      "daily": 337,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Knock You Down - Moto Blanco Club Remix",
+      "spotify": "https://open.spotify.com/track/5W7U4TBW4RdRtRxnTxW7Ve",
+      "streams": 331135,
+      "daily": 17,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "We Don't Care - Live Version",
+      "spotify": "https://open.spotify.com/track/47pHEVlvc3GnFjJwKu7B7B",
+      "streams": 325422,
+      "daily": 59,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "KEEP IT BURNIN (feat. Kanye West) - Instrumental",
+      "spotify": "https://open.spotify.com/track/4GMNr7rodrimoHxHcOzM1B",
+      "streams": 314044,
+      "daily": 83,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Through The Wire - Live - From the House Of Blues",
+      "spotify": "https://open.spotify.com/track/5GzOtF3eA1vICj2WDRQ0FY",
+      "streams": 304329,
+      "daily": 60,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Drive Slow (feat. Kanye West and GLC) - Screwed and Chopped",
+      "spotify": "https://open.spotify.com/track/0YPB8desC4cNwYOvr311KM",
+      "streams": 286025,
+      "daily": 83,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Wouldn't You Like to Ride (S&S Remixes) - KitSch 2.0 & Stephane B Remix",
+      "spotify": "https://open.spotify.com/track/3RXAu6QPcFgWsW0P4fTXbc",
+      "streams": 269588,
+      "daily": 60,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "What It Is (feat. Kanye West & Lil Wayne)",
+      "spotify": "https://open.spotify.com/track/2NpIyVugApOhbnrNt80YGY",
+      "streams": 235163,
+      "daily": 11,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Wouldn't You Like to Ride (S&S Remixes) - The House Moguls Remix",
+      "spotify": "https://open.spotify.com/track/5hQ5tdFKnOYk7rhg55gfYW",
+      "streams": 229964,
+      "daily": 81,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Wouldn't You Like to Ride (S&S Remixes) - Paul Anthony & ZXX Remix",
+      "spotify": "https://open.spotify.com/track/5bsvBQKkb8Rkysw4n8aNWl",
+      "streams": 221861,
+      "daily": 86,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "I'ma Get You",
+      "spotify": "https://open.spotify.com/track/2Il2Ya5GO13ziVQXjksHK5",
+      "streams": 213136,
+      "daily": 60,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Wouldn't You Like to Ride (S&S Remixes) - Jez Pereira & Madoc Remix",
+      "spotify": "https://open.spotify.com/track/2cTSoA77K4Upw20JKcrQjm",
+      "streams": 204478,
+      "daily": 56,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Wouldn't You Like to Ride (S&S Remixes) - Nick Ahrn Remix Instrumental",
+      "spotify": "https://open.spotify.com/track/0wQtsGm2sKPLnbx7sEze7R",
+      "streams": 184678,
+      "daily": 37,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "See Me Now - Exclusive Bonus Track (Edited)",
+      "spotify": "https://open.spotify.com/track/2IpsD4mKVOJ5SJKLdx2vjG",
+      "streams": 158656,
+      "daily": 110,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "I Aint Goin' Nowhere",
+      "spotify": "https://open.spotify.com/track/6qMDVW2IaELH3XKdLZaoQi",
+      "streams": 145730,
+      "daily": 2,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Kanye West Vodaphone Mixtape",
+      "spotify": "https://open.spotify.com/track/1a5AaaY7MwgC938pphQ1IU",
+      "streams": 141790,
+      "daily": 35,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Back To Basics - International Bonus",
+      "spotify": "https://open.spotify.com/track/45TDP8ApJQJQ0phO6qJocY",
+      "streams": 131988,
+      "daily": 21,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Intro",
+      "spotify": "https://open.spotify.com/track/7lIr3vVhpDkU5mQEDcnA0S",
+      "streams": 127102,
+      "daily": 25,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Knock You Down - Electrolitz Remix feat. Rye Rye - Main Mix",
+      "spotify": "https://open.spotify.com/track/2n67iAYjxd57rKqmtzMhrI",
+      "streams": 127062,
+      "daily": 5,
+      "feature": true,
+      "kind": "song"
+    },
+    {
+      "name": "Diamonds from Sierra Leone - Live at Live 8, Benjamin Franklin Parkway, Philadelphia, 2nd July 2005",
+      "spotify": "https://open.spotify.com/track/2w3IL6Op2LeMG63FdYXn7c",
+      "streams": 118724,
+      "daily": 97,
+      "feature": false,
+      "kind": "song"
+    },
+    {
+      "name": "Reborn",
+      "spotify": "https://open.spotify.com/track/4RVbK6cV0VqWdpCDcx3hiT",
+      "streams": 364363355,
+      "daily": 59689,
+      "feature": false,
+      "kind": "song",
+      "_ksg": true
+    },
+    {
+      "name": "4th Dimension",
+      "spotify": "https://open.spotify.com/track/6JyEh4kl9DLwmSAoNDRn5b",
+      "streams": 241865170,
+      "daily": 30936,
+      "feature": false,
+      "kind": "song",
+      "_ksg": true
+    },
+    {
+      "name": "Feel The Love",
+      "spotify": "https://open.spotify.com/track/3aUFrxO1B8EW63QchEl3wX",
+      "streams": 145734378,
+      "daily": 14770,
+      "feature": false,
+      "kind": "song",
+      "_ksg": true
+    },
+    {
+      "name": "Cudi Montage",
+      "spotify": "https://open.spotify.com/track/4kUZvXB3LC3an3HX6h0s17",
+      "streams": 126906663,
+      "daily": 22695,
+      "feature": false,
+      "kind": "song",
+      "_ksg": true
+    },
+    {
+      "name": "Fire",
+      "spotify": "https://open.spotify.com/track/7oHkit3F3vimtsBbnZkU0G",
+      "streams": 100925350,
+      "daily": 13618,
+      "feature": false,
+      "kind": "song",
+      "_ksg": true
+    },
+    {
+      "name": "Kids See Ghosts",
+      "spotify": "https://open.spotify.com/track/2I3dW2dCBZAJGj5X21E53k",
+      "streams": 95002232,
+      "daily": 11590,
+      "feature": false,
+      "kind": "song",
+      "_ksg": true
+    },
+    {
+      "name": "Freeee (Ghost Town Pt. 2)",
+      "spotify": "https://open.spotify.com/track/7GRTrWsP3yo2Fx8umJfA1X",
+      "streams": 84356936,
+      "daily": 11748,
+      "feature": false,
+      "kind": "song",
+      "_ksg": true
+    }
+  ],
+  "albums": [
+    {
+      "name": "Graduation",
+      "spotify": "https://open.spotify.com/album/4SZko61aMnmgvNhfhgTuD3",
+      "streams": 9827438496,
+      "daily": 5010504,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "The Life Of Pablo",
+      "spotify": "https://open.spotify.com/album/7gsWAHLeT0w7es6FofOXk1",
+      "streams": 6241019419,
+      "daily": 1442284,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "My Beautiful Dark Twisted Fantasy (Edited Version)",
+      "spotify": "https://open.spotify.com/album/555YaDGJyzG0QkdImBtPFD",
+      "streams": 6160516168,
+      "daily": 2809365,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "My Beautiful Dark Twisted Fantasy",
+      "spotify": "https://open.spotify.com/album/20r762YmB5HeofjMCiPMLv",
+      "streams": 6160357512,
+      "daily": 2809255,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "The Life Of Pablo",
+      "spotify": "https://open.spotify.com/album/7u6Q36bDPiNegcQ7u69bKq",
+      "streams": 5692839088,
+      "daily": 1251206,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "Watch The Throne (Deluxe)",
+      "spotify": "https://open.spotify.com/album/1YwzJz7CrV9fd9Qeb6oo1d",
+      "streams": 4115278372,
+      "daily": 2028473,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "Watch The Throne (Deluxe)",
+      "spotify": "https://open.spotify.com/album/2if1gb3t6IkhiKzrtS9Glc",
+      "streams": 4102452659,
+      "daily": 2036990,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "Watch The Throne",
+      "spotify": "https://open.spotify.com/album/0OcMap99vLEeGkBCfCwRwS",
+      "streams": 3972747577,
+      "daily": 1993373,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "Donda",
+      "spotify": "https://open.spotify.com/album/5CnpZV3q5BcESefcB3WJmz",
+      "streams": 3604195394,
+      "daily": 725429,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "The College Dropout",
+      "spotify": "https://open.spotify.com/album/4Uv86qWpGTxf7fU7lG5X6F",
+      "streams": 3602174859,
+      "daily": 1428917,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "Late Registration",
+      "spotify": "https://open.spotify.com/album/0Ds6i3h0F9RcYIKAD5Olum",
+      "streams": 3531495643,
+      "daily": 1260475,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "Late Registration",
+      "spotify": "https://open.spotify.com/album/5ll74bqtkcXlKE7wwkMq4g",
+      "streams": 3528174058,
+      "daily": 1259244,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "Donda (Deluxe)",
+      "spotify": "https://open.spotify.com/album/2Wiyo7LzdeBCsVZiRA6vVZ",
+      "streams": 3519557195,
+      "daily": 751156,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "Yeezus",
+      "spotify": "https://open.spotify.com/album/7D2NdGvBHIavgLhmcwhluK",
+      "streams": 3388149983,
+      "daily": 1133179,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "808s & Heartbreak",
+      "spotify": "https://open.spotify.com/album/3WFTGIO6E3Xh4paEOBY9OU",
+      "streams": 3283815608,
+      "daily": 1265358,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "ye",
+      "spotify": "https://open.spotify.com/album/2Ek1q2haOnxVqhvVKqMvJe",
+      "streams": 3113886002,
+      "daily": 960968,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "VULTURES 1",
+      "spotify": "https://open.spotify.com/album/4DOsPwJtokv6HEifZ6t5j6",
+      "streams": 2413051976,
+      "daily": 852100,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "JESUS IS KING",
+      "spotify": "https://open.spotify.com/album/0FgZKfoU2Br5sHOfvZKTI9",
+      "streams": 1676674467,
+      "daily": 360060,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "CARNIVAL PACK (feat. Rich The Kid, Playboi Carti)",
+      "spotify": "https://open.spotify.com/album/2FLz63qfDw9vBi9WJflQms",
+      "streams": 970192205,
+      "daily": 360246,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "Forever (International Version)",
+      "spotify": "https://open.spotify.com/album/5AfFklBKJwKxHaPPQMMCRk",
+      "streams": 827756967,
+      "daily": 345957,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "BULLY - DELUXE",
+      "spotify": "https://open.spotify.com/album/3hwveWhYFxGDLy6K6xlwFh",
+      "streams": 752511305,
+      "daily": 1181296,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "BULLY",
+      "spotify": "https://open.spotify.com/album/5poA9SAx0Xiz1cf17fWBLS",
+      "streams": 730925400,
+      "daily": 921829,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "VULTURES 2",
+      "spotify": "https://open.spotify.com/album/5RV2TNyjylqWJNxQyHBTeJ",
+      "streams": 396479001,
+      "daily": 211642,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "VULTURES 2",
+      "spotify": "https://open.spotify.com/album/5JNF1AS6WH5J7yUXmU4Syi",
+      "streams": 396453416,
+      "daily": 211641,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "Champions",
+      "spotify": "https://open.spotify.com/album/1xuSorM2dDIiB5zhftB5NY",
+      "streams": 326535357,
+      "daily": 49160,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "VULTURES 2",
+      "spotify": "https://open.spotify.com/album/2LaSVrn1EJc9ouFyp69g4e",
+      "streams": 277060190,
+      "daily": 120161,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "DONDA 2",
+      "spotify": "https://open.spotify.com/album/1ZkGNUz1un0b3Z7EsJl3ci",
+      "streams": 161870905,
+      "daily": 176733,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "VULTURES PACK",
+      "spotify": "https://open.spotify.com/album/28pcV1bRvJ8WoVDFcF2Rl9",
+      "streams": 138518842,
+      "daily": 41028,
+      "feature": false,
+      "kind": "album"
+    },
+    {
+      "name": "Late Orchestration",
+      "spotify": "https://open.spotify.com/album/0veuYKXCayS7oIfyqlibeR",
+      "streams": 27294063,
+      "daily": 7363,
+      "feature": false,
+      "kind": "album"
+    }
+  ],
+  "source": {
+    "songs": "https://kworb.net/spotify/artist/5K4W6rqBFWDnAN6FQUkS6x_songs.html",
+    "albums": "https://kworb.net/spotify/artist/5K4W6rqBFWDnAN6FQUkS6x_albums.html",
+    "kidSeeGhostsSongs": "https://kworb.net/spotify/artist/2hPgGN4uhvXAxiXQBIXOmE_songs.html"
+  }
+}
