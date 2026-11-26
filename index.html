@@ -1,5 +1,35 @@
 <!doctype html>
-<html lang="en"><head><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script><script>window.__YE_LIVE=!!(window.supabase&&window.YE_SUPABASE&&YE_SUPABASE.url&&YE_SUPABASE.anonKey&&!String(YE_SUPABASE.url).includes("YOUR_"))</script><meta charset="utf-8">
+<html lang="en"><head>
+<style>
+/* World Tour full-screen background coverage fix */
+#worldTourScreen {
+  background: #080d19 !important;
+  min-height: 100vh !important;
+  min-height: 100dvh !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  width: 100% !important;
+  max-width: none !important;
+  overflow: hidden !important;
+  position: relative !important;
+  isolation: isolate;
+}
+#worldTourScreen iframe,
+#worldTourScreen .worldTourFrame,
+#worldTourScreen .tourFrame {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100vh !important;
+  min-height: 100dvh !important;
+  border: 0 !important;
+  background: #080d19 !important;
+}
+body:has(#worldTourScreen.activeScreen) {
+  background: #080d19 !important;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script><script>window.__YE_LIVE=!!(window.supabase&&window.YE_SUPABASE&&YE_SUPABASE.url&&YE_SUPABASE.anonKey&&!String(YE_SUPABASE.url).includes("YOUR_"))</script><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>YE Streams</title>
 <link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0a0a0a"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="YE Streams"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
