@@ -1,1 +1,0 @@
-Start safe index recovery. Original index.html remains untouched.
