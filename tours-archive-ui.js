@@ -159,7 +159,7 @@ function bindYear(el){const box=el.querySelector('.tYSel'),btn=box.querySelector
 function render(){if(!A)return;if(cur===1)renderRec();if(cur===2)renderMerch()}
 
 /* ---- Recordings ---- */
-const CAT={live:'Live',visualizer:'Visualizer',event:'Event'};
+const CAT={live:'Live',visualizer:'Visualizer',event:'Event',musicvideo:'Music Video',audio:'Audio'};
 const ytName={};
 function ytTitle(url){if(ytName[url]!==undefined)return Promise.resolve(ytName[url]);
  try{const c=localStorage.getItem('ytn:'+url);if(c){ytName[url]=c;return Promise.resolve(c)}}catch{}
