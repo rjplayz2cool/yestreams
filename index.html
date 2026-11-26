@@ -808,7 +808,6 @@ select:disabled{opacity:.5;cursor:not-allowed}
   <div>
     <h1 class="era" id="eraName" aria-live="polite"></h1>
     <div class="total"><b id="total">0</b><small id="totalNote"></small></div>
-    <button class="nsPill" id="nextShowPill" type="button" data-go="tours" hidden aria-label="Next show countdown"></button>
   </div>
   <div class="coverWrap"><div class="cover" id="cover"><img id="coverImg" alt="" onerror="this.style.display='none'"></div></div>
 </section>
@@ -3876,7 +3875,7 @@ function wire(){
 let hlPinned=false,timer=0;
 window.PH=window.PH||{};
 function paintPill(){const p=$('nextShowPill');if(!p)return;const up=nextShow();if(!up){p.hidden=true;return}p.hidden=false;p.innerHTML='<small>Next show</small><b>'+esc(up.flag)+' '+esc(up.city)+'</b><i></i>';tickCount()}
-paintPill();setInterval(()=>{if(!$('nextShowPill').hidden||$('tcS'))tickCount()},1000);setInterval(paintPill,36e5);
+paintPill();setInterval(()=>{if($('tcS'))tickCount()},1000);setInterval(paintPill,36e5);
 PH.tours={show(){$('toursScreen').classList.add('activeScreen');if(!built){built=true;wire()}paint();clearInterval(timer);timer=setInterval(()=>{paintNext();paintLists();paintPins();setHL(hl)},60000)},hide(){$('toursScreen').classList.remove('activeScreen');clearInterval(timer)}};
 })();</script><script src="tours-archive-ui.js?v=1795669476" defer></script><script src="tours-yz.js?v=1794068192" defer></script><script src="data/eras-extra.js?v=1793748819" defer></script><script src="eras.js?v=1793676599" defer></script><script src="data/albums-meta.js?v=1794952295" defer></script><script src="albums.js?v=1794952295" defer></script><script src="tweets.js?v=1794967622" defer></script><script src="instagram.js?v=1794967958" defer></script><script src="calendar-day.js?v=1794622682" defer></script><script src="clothing.js?v=1794243793" defer></script><script>(()=>{
 const CLS='ddW';let open=null;
