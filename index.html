@@ -474,8 +474,8 @@ header{position:relative;z-index:auto}
 .pfAbout{padding:0 22px 20px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}.pfBio{margin:0;line-height:1.5;opacity:.92;max-width:62ch;overflow-wrap:anywhere}
 .pfChips{display:flex;gap:8px;flex-wrap:wrap}.pfChips span{padding:6px 12px;border-radius:999px;background:#ffffff12;font-size:13px}.pfChips i{font-style:normal;opacity:.55;margin-right:6px;letter-spacing:.08em;text-transform:uppercase;font-size:10px}
 .pfLink{color:var(--pa);text-decoration:none;font-size:14px}.pfLink:hover{text-decoration:underline}
-.pfTabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:4px 0 14px;padding-bottom:2px}.pfTabs::-webkit-scrollbar{display:none}
-.pfTab{flex:none;border:0;background:#ffffff0f;color:#fffc;border-radius:999px;padding:9px 18px;font:700 14px 'Hanken Grotesk',inherit;cursor:pointer;display:flex;gap:8px;align-items:center;transition:background .2s}
+.frBadge[hidden]{display:none!important}.pfTabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:4px 0 14px;padding-bottom:2px}.pfTabs::-webkit-scrollbar{display:none}
+.pfTab{flex:0 0 auto;width:auto;min-width:0;justify-content:center;white-space:nowrap;border:0;background:#ffffff0f;color:#fffc;border-radius:999px;padding:9px 18px;font:700 14px 'Hanken Grotesk',inherit;cursor:pointer;display:flex;gap:8px;align-items:center;transition:background .2s}
 .pfTab:hover{background:#ffffff1c}.pfTab.on{background:var(--pa);color:#000}
 .pfPane{animation:pfIn .3s both}@keyframes pfIn{from{opacity:0;transform:translateY(6px)}}
 .pfBlock{border-radius:16px;background:#0009;border:1px solid #ffffff1f;padding:18px 20px;margin:10px 0}.pfBlock h3{margin:0 0 12px;font:800 17px 'Hanken Grotesk',inherit}
@@ -495,6 +495,11 @@ header{position:relative;z-index:auto}
 .pfSec[open] summary::after{rotate:225deg;margin-top:4px}.pfBody{padding:0 20px 20px}
 .pfRow{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.pfRow input{flex:1;min-width:160px;margin:0!important}
 .pfHint{font-size:13px;opacity:.7;margin:10px 0 0;line-height:1.45}
+.lfFoot{margin:14px 0 0;font-size:12px;opacity:.65}.lfLink{background:none;border:0;padding:0;color:inherit;text-decoration:underline;cursor:pointer;font:inherit}.lfLink:hover{opacity:.8}
+.bcBack{position:fixed;inset:0;z-index:9000;background:#000c;display:flex;align-items:center;justify-content:center;padding:16px}.bcBox{width:min(720px,100%);background:#0d0d0d;border:1px solid #ffffff1f;border-radius:20px;padding:18px;display:grid;gap:14px;max-height:100%;overflow:auto}
+.bcBox h3{margin:0;font:800 18px 'Hanken Grotesk',inherit}.bcBox p{margin:0;font-size:13px;opacity:.65}
+.bcStage{position:relative;border-radius:12px;overflow:hidden;background:#000;touch-action:none;cursor:grab;user-select:none;outline:2px solid #ffffff55}.bcStage:active{cursor:grabbing}.bcStage canvas{display:block;width:100%;height:auto}
+.bcRow{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.bcRow input[type=range]{flex:1;min-width:140px;accent-color:var(--pa,#fff)}.bcRow .sp{flex:1}
 .pfBans{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
 .pfBan{height:58px;border-radius:12px;border:0;background-origin:border-box;background-repeat:no-repeat;background-size:100% 100%;overflow:hidden;box-shadow:inset 0 0 0 1px #ffffff26;cursor:pointer;color:#fff;font:700 11px 'Hanken Grotesk',inherit;text-shadow:0 1px 6px #000c;padding:6px;display:flex;align-items:flex-end;text-align:left}
 .pfBan.on{box-shadow:inset 0 0 0 2px #fff}.pfBan:focus-visible{outline:3px solid #fff}
@@ -2567,7 +2572,7 @@ function paintProfile(){
       <div class="pfLbl">Page style<div class="pfSeg" id="cuTheme">${PF_THEMES.map(x=>`<button type="button" data-v="${x[0]}" class="${(c.theme||'dark')===x[0]?'on':''}">${x[1]}</button>`).join('')}</div></div>
       <div class="pfLbl">Profile picture<div class="pfRow">${me.avatar?`<img class="pfAv sm" src="${esc(me.avatar)}" alt="">`:`<div class="pfAv sm ph">${esc(me.username[0]||'?')}</div>`}<label class="acctGo ghost fileBtn">Choose a picture<input id="pfAvIn" type="file" accept="image/*" hidden></label></div><div id="pfAvM" class="acctMsg"></div></div>
       <div class="pfLbl">Banner<div class="pfBans">${E.map((e,i)=>`<button type="button" class="pfBan ${me.banner==='era:'+i?'on':''}" data-ban="era:${i}" title="${esc(e[0])}" style="background:linear-gradient(110deg,${e[2]},${e[3]})"><span>${esc(e[0])}</span></button>`).join('')}</div>
-      <div class="pfRow" style="margin-top:10px"><label class="acctGo ghost fileBtn">Upload your own<input id="pfBnIn" type="file" accept="image/*" hidden></label></div><div id="pfBnM" class="acctMsg"></div></div></div>
+      <div class="pfRow" style="margin-top:10px"><label class="acctGo ghost fileBtn">Upload your own<input id="pfBnIn" type="file" accept="image/*" hidden></label><button type="button" class="acctGo ghost" id="pfBnCrop">Crop current banner</button></div><div id="pfBnM" class="acctMsg"></div></div></div>
     <div class="pfBlock"><h3>What others see</h3>
       ${[['showBadges','Show badges'],['showLastfm','Show my Last.fm listening'],['showScores','Show my game scores to friends'],['showFriends','Show my friends count']].map(x=>`<label class="pfTog"><input type="checkbox" data-k="${x[0]}" ${c[x[0]]===false?'':'checked'}><span>${x[1]}</span></label>`).join('')}</div>
     <div class="pfSave"><button class="acctGo" id="cuSave" type="button">Save changes</button><button class="acctGo ghost" id="cuReset" type="button">Reset to default</button><div id="cuM" class="acctMsg" aria-live="polite"></div></div>
@@ -2596,7 +2601,23 @@ function paintProfile(){
   $('cuReset').onclick=async()=>{const m=$('cuM');say(m,'Resetting…',true);try{me.custom={};await saveCustom({});paintProfile();pfTab('customize')}catch(x){say(m,x.message||'Could not reset.')}};
   $('pfUBtn').onclick=changeName;
   $('pfAvIn').onchange=async e=>{const f=e.target.files[0],m=$('pfAvM');if(!f)return;say(m,'Uploading…',true);try{const d=await toData(f,256,256);me.avatar=await saveMedia('avatar',d);if(!LIVE){const r=demoUsers.get(me.email.toLowerCase());if(r)r.avatar=me.avatar}paintBtn();paintProfile();pfTab('customize')}catch(x){say(m,x.message||'Could not upload that picture.')}};
-  $('pfBnIn').onchange=async e=>{const f=e.target.files[0],m=$('pfBnM');if(!f)return;say(m,'Uploading…',true);try{const d=await toData(f,1200,400,.85),url=await saveMedia('banner',d);me.banner=url;if(!LIVE){const r=demoUsers.get(me.email.toLowerCase());if(r)r.banner=url}paintProfile();pfTab('customize')}catch(x){say(m,x.message||'Could not upload that banner.')}};
+  const applyBanner=async d=>{const m=$('pfBnM');say(m,'Saving…',true);try{const url=await saveMedia('banner',d);me.banner=url;if(!LIVE){const r=demoUsers.get(me.email.toLowerCase());if(r)r.banner=url}paintProfile();pfTab('customize')}catch(x){say(m,x.message||'Could not save that banner.')}};
+  const openCrop=src=>{const bn=$('pfBanner'),asp=Math.max(2,Math.min(6,(bn?bn.clientWidth/bn.clientHeight:3.5))),OW=1400,OH=Math.round(OW/asp);
+    const im=new Image();im.crossOrigin='anonymous';im.onerror=()=>say($('pfBnM'),'Could not open that image for cropping. Try uploading it again.');
+    im.onload=()=>{const back=document.createElement('div');back.className='bcBack';back.innerHTML=`<div class="bcBox" role="dialog" aria-label="Crop banner"><h3>Crop your banner</h3><p>Drag to move the picture, use the slider to zoom. The frame matches how your banner shows on your profile.</p><div class="bcStage"><canvas></canvas></div><div class="bcRow"><span>Zoom</span><input type="range" min="1" max="4" step="0.01" value="1"></div><div class="bcRow"><button type="button" class="acctGo ghost" data-a="x">Cancel</button><span class="sp"></span><button type="button" class="acctGo ghost" data-a="r">Reset</button><button type="button" class="acctGo" data-a="ok">Use this crop</button></div></div>`;
+      document.body.append(back);const cv=back.querySelector('canvas'),st=back.querySelector('.bcStage'),zr=back.querySelector('input'),W=Math.min(720,innerWidth-70);cv.width=W*2;cv.height=Math.round(W*2/asp);
+      let z=1,cx=im.width/2,cy=im.height/2;const sc=(w,h)=>Math.max(w/im.width,h/im.height)*z;
+      const clamp=(w,h)=>{const r=sc(w,h),vw=w/r,vh=h/r;cx=Math.min(im.width-vw/2,Math.max(vw/2,cx));cy=Math.min(im.height-vh/2,Math.max(vh/2,cy))};
+      const draw=(c,w,h)=>{clamp(w,h);const r=sc(w,h),vw=w/r,vh=h/r,x=c.getContext('2d');x.fillStyle='#000';x.fillRect(0,0,w,h);x.drawImage(im,cx-vw/2,cy-vh/2,vw,vh,0,0,w,h)};
+      const paint=()=>draw(cv,cv.width,cv.height);paint();
+      let drag=null;st.onpointerdown=e=>{drag={x:e.clientX,y:e.clientY};st.setPointerCapture(e.pointerId)};st.onpointermove=e=>{if(!drag)return;const r=sc(cv.width,cv.height)*(cv.clientWidth/cv.width);cx-=(e.clientX-drag.x)/r;cy-=(e.clientY-drag.y)/r;drag={x:e.clientX,y:e.clientY};paint()};st.onpointerup=st.onpointercancel=()=>{drag=null};
+      zr.oninput=()=>{z=+zr.value;paint()};st.onwheel=e=>{e.preventDefault();z=Math.min(4,Math.max(1,z-e.deltaY/600));zr.value=z;paint()};
+      const close=()=>back.remove();back.onclick=e=>{if(e.target===back)close()};
+      back.querySelector('[data-a=x]').onclick=close;back.querySelector('[data-a=r]').onclick=()=>{z=1;cx=im.width/2;cy=im.height/2;zr.value=1;paint()};
+      back.querySelector('[data-a=ok]').onclick=()=>{const o=document.createElement('canvas');o.width=OW;o.height=OH;draw(o,OW,OH);let d;try{d=o.toDataURL('image/jpeg',.85)}catch(e){say($('pfBnM'),'That image blocks cropping.');close();return}close();applyBanner(d)}};
+    im.src=src};
+  $('pfBnIn').onchange=e=>{const f=e.target.files[0];e.target.value='';if(!f)return;const fr=new FileReader();fr.onload=()=>openCrop(fr.result);fr.readAsDataURL(f)};
+  $('pfBnCrop').onclick=()=>{const i=$('pfBanner')&&$('pfBanner').querySelector('img');if(i)openCrop(i.currentSrc||i.src)};
   root.querySelectorAll('[data-ban]').forEach(b=>b.onclick=async()=>{try{await saveBanner(b.dataset.ban);$('pfBanner').innerHTML=bannerHTML(me.banner);root.querySelectorAll('.pfBan').forEach(x=>x.classList.toggle('on',x===b))}catch(x){say($('pfBnM'),x.message||'Could not save the banner.')}});
   if(show('showLastfm'))paintLf();
   pfTab(pfTabNow);
@@ -2628,7 +2649,7 @@ async function loadLb(){
 const ord=n=>{const v=n%100,s=['th','st','nd','rd'];return n+(s[(v-20)%10]||s[v]||s[0])};
 const ago=ts=>{const d=Math.max(0,Date.now()/1e3-ts);if(d<90)return 'just now';if(d<3600)return Math.round(d/60)+' min ago';if(d<86400)return Math.round(d/3600)+' h ago';if(d<7*86400)return Math.round(d/86400)+' d ago';return when(new Date(ts*1e3))};
 const LFKEY=CFG.lastfmKey||'fa9f06ec86352f78bd77c226dd1d38b2';
-async function lf(method,params){const u=new URL('https://ws.audioscrobbler.com/2.0/');u.search=new URLSearchParams({method,api_key:LFKEY,format:'json',...params});const r=await fetch(u),j=await r.json();if(j.error)throw new Error(j.message||'Last.fm error '+j.error);return j}
+async function lf(method,params){const u=new URL('https://ws.audioscrobbler.com/2.0/');u.search=new URLSearchParams({method,api_key:LFKEY,format:'json',...params});let j;for(let a=0;a<4;a++){try{const r=await fetch(u);j=await r.json()}catch(e){j={error:0,message:'Network error'}}if(!j.error)return j;if(![0,8,11,16,29].includes(j.error))break;await new Promise(r=>setTimeout(r,500*(a+1)))}throw new Error(j.message||'Last.fm error '+j.error)}
 const stars=u=>!u||/2a96cbd8b46e442fc41c2b86b821562f/.test(u)?'':u;
 async function lfLive(user){
   const [info,rec]=await Promise.all([lf('user.getInfo',{user}),lf('user.getRecentTracks',{user,limit:50})]);
@@ -2658,10 +2679,10 @@ async function paintLf(){
       say(m,'Connecting…',true);try{if(LIVE){if(!LFKEY)return say(m,'Last.fm is not set up on this site yet.');await lf('user.getInfo',{user:u});const r=await sb.rpc('update_profile_media',{p_lastfm:u});if(r.error)return say(m,r.error.message)}
         else{const r=demoUsers.get(me.email.toLowerCase());if(r)r.lastfm=u}me.lastfm=u;paintLf()}catch(x){say(m,x.message||'Could not find that Last.fm user.')}};return}
   box.innerHTML='<p class="pfHint">Loading your scrobbles…</p>';
-  let d;try{d=await lfGet(me.lastfm)}catch(x){box.innerHTML=`<p class="pfHint">Could not load Last.fm data (${esc(x.message)}).</p><div class="pfRow"><button class="acctGo ghost" id="lfOff" type="button">Disconnect</button></div>`;$('lfOff').onclick=disc;return}
+  let d;try{d=await lfGet(me.lastfm)}catch(x){box.innerHTML=`<p class="pfHint">Last.fm isn't responding right now, so your listening can't load. This is usually on Last.fm's side and clears up on its own.</p><div class="pfRow"><button class="acctGo ghost" id="lfRef" type="button">Try again</button></div><p class="lfFoot">Connected as <b>${esc(me.lastfm)}</b> · <button type="button" class="lfLink" id="lfOff">Disconnect</button></p>`;$('lfRef').onclick=paintLf;$('lfOff').onclick=disc;return}
   box.innerHTML=`<div class="lfTop">${d.avatar?`<img class="pfAv sm" src="${esc(d.avatar)}" alt="">`:`<div class="pfAv sm ph">♫</div>`}<div><b>${esc(d.name)}</b><small>${Number(d.scrobbles).toLocaleString()} scrobbles</small></div>
-    <span class="sp"></span><button class="acctGo ghost" id="lfRef" type="button">Refresh</button><button class="acctGo ghost" id="lfOff" type="button">Disconnect</button></div>
-    <div class="lfList">${lfRows(d.tracks)}</div>${d.demo?'<p class="pfHint">Preview data, not real Last.fm data.</p>':''}`;
+    <span class="sp"></span><button class="acctGo ghost" id="lfRef" type="button">Refresh</button></div>
+    <div class="lfList">${lfRows(d.tracks)}</div>${d.demo?'<p class="pfHint">Preview data, not real Last.fm data.</p>':''}<p class="lfFoot">Connected as <b>${esc(me.lastfm)}</b> · <button type="button" class="lfLink" id="lfOff">Disconnect</button></p>`;
   $('lfRef').onclick=paintLf;$('lfOff').onclick=disc}
 async function disc(){try{if(LIVE){const r=await sb.rpc('update_profile_media',{p_clear_lastfm:true});if(r.error)throw r.error}else{const r=demoUsers.get(me.email.toLowerCase());if(r)r.lastfm=null}me.lastfm=null;paintLf()}catch(x){alert(x.message)}}
 
