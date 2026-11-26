@@ -97,6 +97,7 @@ const css=`
 .mcI img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .3s}
 .mcI img.bk{opacity:0}.mc.flip .mcI img.bk,.mc:hover .mcI img.bk.h{opacity:1}.mc.flip .mcI img.fr,.mc:hover .mcI img.fr.h{opacity:0}
 .mcI img.thr{filter:url(#tWhiteOut)}.mcI.x{display:grid;place-items:center;color:#fff6;font:700 10px/1 system-ui,sans-serif;letter-spacing:.12em}.mcI.x img{display:none}
+.pGrid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}.pI{aspect-ratio:3/4;background:#111}.pI img{object-fit:cover}.pSub{display:block;margin-top:4px;opacity:.6;font-weight:600;letter-spacing:.04em}
 .mcN{padding:9px 10px 11px;font:700 11px/1.25 system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase}
 .mcF{position:absolute;right:7px;top:7px;font:700 9px/1 system-ui,sans-serif;letter-spacing:.1em;background:#000a;padding:4px 6px;border-radius:6px}
 .mcF{display:none}.mc{cursor:pointer}
@@ -125,8 +126,10 @@ const mapScr=document.createElement('div');mapScr.className='tScr on';mapScr.dat
 [...root.children].forEach(ch=>{if(ch!==top)mapScr.appendChild(ch)});
 const recScr=document.createElement('div');recScr.className='tScr';recScr.dataset.s='rec';
 const merScr=document.createElement('div');merScr.className='tScr';merScr.dataset.s='merch';
-root.append(mapScr,recScr,merScr);
-const SC=[{k:'map',n:'Map',el:mapScr},{k:'rec',n:'Recordings',el:recScr},{k:'merch',n:'Merch',el:merScr}];
+const posScr=document.createElement('div');posScr.className='tScr';posScr.dataset.s='posters';
+const proScr=document.createElement('div');proScr.className='tScr';proScr.dataset.s='promo';
+root.append(mapScr,recScr,merScr,posScr,proScr);
+const SC=[{k:'map',n:'Map',el:mapScr},{k:'rec',n:'Recordings',el:recScr},{k:'merch',n:'Merch',el:merScr},{k:'posters',n:'Posters',el:posScr},{k:'promo',n:'Promo',el:proScr}];
 const nav=document.createElement('div');nav.className='tNav';nav.setAttribute('role','tablist');
 SC.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.textContent=s.n;b.onclick=()=>show(i);nav.appendChild(b);s.btn=b});
 top.after(nav);
@@ -144,8 +147,8 @@ function show(i){if(i<0||i>=SC.length||i===cur)return;const dir=i<cur;cur=i;
  scrollTo({top:0});if(i>0)ensure().then(()=>render())}
 SC[0].btn.setAttribute('aria-current','true');eL.hidden=true;eR.setAttribute('aria-label','Go to Recordings');
 function ensure(){if(A)return Promise.resolve();if(loading)return loading;
- loading=new Promise((res,rej)=>{const s=document.createElement('script');s.src='tours-archive.js?v=1794356441';s.onload=()=>{A=window.TOUR_ARCHIVE;year=Object.keys(A).sort().pop();res()};s.onerror=()=>{loading=null;rej()};document.head.appendChild(s)})
-  .catch(()=>{[recScr,merScr].forEach(e=>e.innerHTML='<div class="tEmpty">Could not load the archive. Refresh and try again.</div>')});return loading}
+ loading=new Promise((res,rej)=>{const s=document.createElement('script');s.src='tours-archive.js?v=1795667137';s.onload=()=>{A=window.TOUR_ARCHIVE;year=Object.keys(A).sort().pop();res()};s.onerror=()=>{loading=null;rej()};document.head.appendChild(s)})
+  .catch(()=>{[recScr,merScr,posScr,proScr].forEach(e=>e.innerHTML='<div class="tEmpty">Could not load the archive. Refresh and try again.</div>')});return loading}
 document.addEventListener('keydown',e=>{if(pg.hidden||modal&&!modal.hidden||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;if(e.key==='ArrowRight')show(cur+1);if(e.key==='ArrowLeft')show(cur-1)});
 new MutationObserver(()=>{[eL,eR].forEach(b=>b.style.display=pg.hidden?'none':'')}).observe(pg,{attributes:true,attributeFilter:['hidden']});[eL,eR].forEach(b=>b.style.display=pg.hidden?'none':'');
 
@@ -156,7 +159,14 @@ function bindYear(el){const box=el.querySelector('.tYSel'),btn=box.querySelector
  btn.onclick=e=>{e.stopPropagation();setOpen(menu.hidden)};
  items.forEach((li,i)=>{li.onclick=e=>{e.stopPropagation();pick(li)};li.onkeydown=e=>{if(e.key==='ArrowDown'){e.preventDefault();items[Math.min(i+1,items.length-1)].focus()}else if(e.key==='ArrowUp'){e.preventDefault();items[Math.max(i-1,0)].focus()}else if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(li)}else if(e.key==='Escape'||e.key==='Tab'){e.stopPropagation();setOpen(false);btn.focus()}}});
  const away=e=>{if(!box.isConnected){document.removeEventListener('click',away);return}if(!box.contains(e.target))setOpen(false)};document.addEventListener('click',away)}
-function render(){if(!A)return;if(cur===1)renderRec();if(cur===2)renderMerch()}
+function render(){if(!A)return;if(cur===1)renderRec();if(cur===2)renderMerch();if(cur===3)renderPosters();if(cur===4)renderPromo()}
+function renderPosters(){const X=window.TOUR_ARCHIVE_EXTRA;if(!X)return;
+ posScr.innerHTML=`<div class="tHead"><div><h2>Tour Posters</h2><p>${X.posters.length} posters · 75 × 50 cm · 2026</p></div></div><div class="mGrid pGrid">${X.posters.map((p,i)=>`<button type="button" class="mc" data-i="${i}" aria-label="${esc(p.n)}"><div class="mcI pI"><img loading="lazy" referrerpolicy="no-referrer" alt="${esc(p.n)}" src="${esc(p.p)}"></div><div class="mcN">${esc(p.n)}<br><span class="pSub">${esc(p.w)}${p.cr?' · '+esc(p.cr):''}</span></div></button>`).join('')}</div>`;
+ posScr.querySelectorAll('.mc').forEach(c=>c.onclick=()=>{const p=X.posters[+c.dataset.i];openViewer({n:p.n},[p.f,p.p])})}
+function renderPromo(){const X=window.TOUR_ARCHIVE_EXTRA;if(!X)return;
+ const tot=X.promo.reduce((a,c)=>a+c.i.length,0);
+ proScr.innerHTML=`<div class="tHead"><div><h2>Promotional Media</h2><p>${tot} images · 2026</p></div></div>${X.promo.map((c,ci)=>`<section class="mSec"><h3>${esc(c.n)}</h3><div class="mGrid pGrid">${c.p.map((u,k)=>`<button type="button" class="mc" data-c="${ci}" data-k="${k}" aria-label="${esc(c.n)} ${k+1}"><div class="mcI pI"><img loading="lazy" referrerpolicy="no-referrer" alt="${esc(c.n)}" src="${esc(u)}"></div></button>`).join('')}</div></section>`).join('')}`;
+ proScr.querySelectorAll('.mc').forEach(b=>b.onclick=()=>{const c=X.promo[+b.dataset.c];openViewer({n:c.n},c.i)})}
 
 /* ---- Recordings ---- */
 const CAT={live:'Live',visualizer:'Visualizer',event:'Event',musicvideo:'Music Video',audio:'Audio'};
