@@ -436,6 +436,29 @@ header{position:relative;z-index:auto}
 .pfAv{width:112px;height:112px;border-radius:50%;object-fit:cover;border:4px solid #0a0a0a;margin-top:-56px;background:linear-gradient(135deg,var(--a),var(--b));flex:none}
 .pfAv.ph{display:grid;place-items:center;font:900 44px 'Big Shoulders Display';color:#fff}.pfAv.sm{width:64px;height:64px;margin:0;border-width:2px}.pfAv.sm.ph{font-size:26px}
 .pfHead>div:not(.pfAv){flex:1;min-width:0;padding-top:12px}.pfName{display:block;font:900 30px 'Big Shoulders Display';letter-spacing:.02em}.pfHead small{opacity:.65}
+.pfWrap{--pa:#fff}.pfWrap[data-theme=glow]{background:radial-gradient(900px 340px at 50% -40px,color-mix(in srgb,var(--pa) 26%,transparent),transparent 70%)}
+.pfWrap[data-theme=glow] .pfCard{box-shadow:0 0 0 1px color-mix(in srgb,var(--pa) 45%,transparent),0 18px 60px -18px var(--pa)}
+.pfWrap[data-theme=clean] .pfCard,.pfWrap[data-theme=clean] .pfBlock{border-color:transparent;background:#ffffff0d}
+.pfAv{border-color:var(--pa,#0a0a0a)}.pfAv.rounded{border-radius:26%}.pfAv.square{border-radius:6px}
+.pfWho{flex:1;min-width:0;padding-top:12px}.pfStatus{display:inline-block;margin-top:8px;padding:5px 12px;border-radius:999px;background:color-mix(in srgb,var(--pa) 18%,transparent);border:1px solid color-mix(in srgb,var(--pa) 40%,transparent);font-size:13px}
+.pfAbout{padding:0 22px 20px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}.pfBio{margin:0;line-height:1.5;opacity:.92;max-width:62ch;overflow-wrap:anywhere}
+.pfChips{display:flex;gap:8px;flex-wrap:wrap}.pfChips span{padding:6px 12px;border-radius:999px;background:#ffffff12;font-size:13px}.pfChips i{font-style:normal;opacity:.55;margin-right:6px;letter-spacing:.08em;text-transform:uppercase;font-size:10px}
+.pfLink{color:var(--pa);text-decoration:none;font-size:14px}.pfLink:hover{text-decoration:underline}
+.pfTabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:4px 0 14px;padding-bottom:2px}.pfTabs::-webkit-scrollbar{display:none}
+.pfTab{flex:none;border:0;background:#ffffff0f;color:#fffc;border-radius:999px;padding:9px 18px;font:700 14px 'Hanken Grotesk',inherit;cursor:pointer;display:flex;gap:8px;align-items:center;transition:background .2s}
+.pfTab:hover{background:#ffffff1c}.pfTab.on{background:var(--pa);color:#000}
+.pfPane{animation:pfIn .3s both}@keyframes pfIn{from{opacity:0;transform:translateY(6px)}}
+.pfBlock{border-radius:16px;background:#0009;border:1px solid #ffffff1f;padding:18px 20px;margin:10px 0}.pfBlock h3{margin:0 0 12px;font:800 17px 'Hanken Grotesk',inherit}
+.pfBadges{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}.pfBadges span{padding:6px 12px;border-radius:8px;background:color-mix(in srgb,var(--pa) 16%,transparent);border:1px solid color-mix(in srgb,var(--pa) 35%,transparent);font:700 12px 'Hanken Grotesk',inherit;letter-spacing:.04em}
+.pfFavs{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:8px 0}.pfFav{display:flex;gap:12px;align-items:center;padding:12px;border-radius:14px;background:#ffffff0d;border:1px solid #ffffff14}.pfFav img{width:56px;height:56px;border-radius:8px;object-fit:cover}.pfFav small{display:block;opacity:.55;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px}.pfFav b{font-size:15px}
+.pfLbl{display:flex;flex-direction:column;gap:6px;margin:0 0 14px;font:700 13px 'Hanken Grotesk',inherit;letter-spacing:.04em}.pfLbl small{opacity:.5;align-self:flex-end;font-weight:500}
+.pfLbl input:not([type=color]):not([type=file]),.pfLbl textarea,.pfLbl select{background:#ffffff0f;border:1px solid #ffffff1f;color:#fff;border-radius:10px;padding:10px 12px;font:500 14px inherit;resize:vertical;min-width:0}
+.pfLbl input:focus,.pfLbl textarea:focus,.pfLbl select:focus{outline:0;border-color:var(--pa)}.pfLbl select option{background:#111}
+.pfSw{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.pfSw button{width:32px;height:32px;border-radius:50%;border:2px solid transparent;background:var(--c);cursor:pointer;box-shadow:inset 0 0 0 1px #0006}.pfSw button.on{border-color:#fff;outline:2px solid var(--c);outline-offset:2px}.pfWrap .pfSw input[type=color]{width:38px!important;min-width:38px;flex:none;height:32px;border:0!important;background:none!important;padding:0!important;cursor:pointer}
+.pfSeg{display:inline-flex;background:#ffffff0f;border-radius:999px;padding:3px;align-self:flex-start}.pfSeg button{border:0;background:none;color:#fffc;padding:7px 16px;border-radius:999px;font:700 13px inherit;cursor:pointer}.pfSeg button.on{background:var(--pa);color:#000}
+.pfTog{display:flex;gap:10px;align-items:center;padding:8px 0;cursor:pointer;font-size:14px}.pfTog input{width:18px;height:18px;accent-color:var(--pa)}
+.pfSave{position:sticky;bottom:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:12px 16px;border-radius:16px;background:#000d;backdrop-filter:blur(12px);border:1px solid #ffffff1f;margin-top:12px}
+@media(max-width:760px){.pfAbout,.pfHead{padding-left:16px;padding-right:16px}}
 .pfSec{border-radius:16px;background:#0009;border:1px solid #ffffff1f;margin:10px 0;overflow:hidden}
 .pfSec summary{cursor:pointer;list-style:none;padding:16px 20px;font:800 17px 'Hanken Grotesk',inherit;display:flex;justify-content:space-between;align-items:center}
 .pfSec summary::-webkit-details-marker{display:none}.pfSec summary::after{content:'';width:9px;height:9px;border-right:2px solid #fff;border-bottom:2px solid #fff;rotate:45deg;transition:rotate .25s;margin:-4px 4px 0 0}
@@ -2421,7 +2444,7 @@ const validName=u=>/^[A-Za-z0-9_]{3,20}$/.test(u);
 async function fetchProfile(user){
   let p=null;try{const r=await sb.from('profiles').select('*').eq('id',user.id).maybeSingle();p=r.data}catch(e){}
   const name=p?.username||user.user_metadata?.username||(user.email||'player').split('@')[0];
-  return {id:user.id,email:user.email,username:name,avatar:p?.avatar_url||'',banner:p?.banner||'era:0',changed:p?.username_changed_at?new Date(p.username_changed_at):null,lastfm:p?.lastfm_username||null,created:new Date(p?.created_at||user.created_at||Date.now())}}
+  return {id:user.id,email:user.email,username:name,avatar:p?.avatar_url||'',banner:p?.banner||'era:0',changed:p?.username_changed_at?new Date(p.username_changed_at):null,lastfm:p?.lastfm_username||null,custom:(p&&p.custom&&typeof p.custom==='object')?p.custom:{},created:new Date(p?.created_at||user.created_at||Date.now())}}
 function setMe(m){me=m;window.currentUser=m?{id:m.id,username:m.username}:null;paintBtn();if(!$('pg-profile').hidden)paintProfile()}
 $('suF').onsubmit=async e=>{e.preventDefault();const m=$('suM'),u=$('suU').value.trim(),em=$('suE').value.trim(),pw=$('suP').value;
   if(!validName(u))return say(m,'Usernames are 3-20 letters, numbers or underscores.');
@@ -2459,41 +2482,91 @@ async function saveMedia(kind,dataUrl){
 async function saveBanner(v){if(LIVE&&v.startsWith('era:')){const r=await sb.rpc('update_profile_media',{p_banner:v});if(r.error)throw r.error}if(!LIVE){const r=demoUsers.get(me.email.toLowerCase());if(r)r.banner=v}me.banner=v}
 const nextChange=()=>me.changed?new Date(me.changed.getTime()+COOL):null;
 
+const PF_ACC=['#ff4d4d','#ff8a3d','#f1c40f','#3ddc84','#27c6da','#4d8dff','#9b6bff','#ff5cb8','#ffffff'];
+const PF_SHAPES=[['circle','Circle'],['rounded','Rounded'],['square','Square']],PF_THEMES=[['dark','Dark'],['glow','Glow'],['clean','Clean']];
+const pfAcc=c=>/^#[0-9a-f]{6}$/i.test(c&&c.accent||'')?c.accent:'#ffffff';
+const pfAlbums=()=>{try{return (window.ALBUMS_META||[]).map(a=>({id:a.id,name:a.name,cover:a.cover||''}))}catch(e){return[]}};
+function pfBadges(u,c){const out=[],days=(Date.now()-u.created.getTime())/864e5;out.push('Joined '+u.created.getFullYear());if(days>=90)out.push('OG member');if(u.lastfm)out.push('Last.fm linked');if(u.avatar&&c.bio)out.push('Profile complete');if(c.favAlbum||c.favEra)out.push('Has a favorite');return out}
+function pfHero(u,c,own){
+  const shape=c.shape||'circle',av=u.avatar?`<img class="pfAv ${shape}" src="${esc(u.avatar)}" alt="">`:`<div class="pfAv ${shape} ph">${esc((u.username||'?')[0])}</div>`;
+  const chips=[c.favEra?['Era',c.favEra]:null,c.favAlbum?['Album',c.favAlbum]:null,c.favSong?['Song',c.favSong]:null].filter(Boolean);
+  return `<div class="pfCard"><div class="pfBanner" id="pfBanner">${bannerHTML(u.banner)}</div>
+   <div class="pfHead">${av}<div class="pfWho"><b class="pfName">${esc(u.username)}</b><small>@${esc(u.username)} · Joined ${when(u.created)}${own&&!LIVE?' · preview account':''}</small>
+   ${c.status?`<span class="pfStatus">${esc(c.status)}</span>`:''}</div>
+   ${own?'<button class="acctGo ghost" id="pfOut" type="button">Sign out</button>':''}</div>
+   ${c.bio||chips.length||c.link?`<div class="pfAbout">${c.bio?`<p class="pfBio">${esc(c.bio)}</p>`:''}${chips.length?`<div class="pfChips">${chips.map(x=>`<span><i>${x[0]}</i>${esc(x[1])}</span>`).join('')}</div>`:''}${c.link?`<a class="pfLink" href="${esc(c.link)}" target="_blank" rel="noopener noreferrer nofollow">${esc(c.link.replace(/^https?:\/\/(www\.)?/,'').slice(0,40))} ↗</a>`:''}</div>`:''}</div>`}
+const pfApply=(root,c)=>{root.style.setProperty('--pa',pfAcc(c));root.dataset.theme=c.theme||'dark'};
+async function saveCustom(patch){
+  const next={...(me.custom||{}),...patch};Object.keys(next).forEach(k=>{if(next[k]===''||next[k]==null)delete next[k]});
+  if(LIVE){const r=await sb.rpc('update_profile_custom',{p_custom:next});if(r.error)throw r.error}
+  else{const r=demoUsers.get(me.email.toLowerCase());if(r)r.custom=next}
+  me.custom=next}
+let pfTabNow='overview';
+function pfTab(name){pfTabNow=name;const r=$('pfRoot');if(!r)return;r.querySelectorAll('[data-pftab]').forEach(b=>{const on=b.dataset.pftab===name;b.classList.toggle('on',on);b.setAttribute('aria-selected',on)});r.querySelectorAll('[data-pfpane]').forEach(p=>p.hidden=p.dataset.pfpane!==name);
+  if(name==='stats'&&!r._lb){r._lb=1;loadLb()}if(name==='friends')paintFr()}
 function paintProfile(){
   const root=$('pfRoot');if(!me){root.innerHTML='<p class="rlEmpty">Log in from the Account button to see your profile.</p>';return}
-  const nc=nextChange(),locked=nc&&nc>new Date(),E=eras();
+  const nc=nextChange(),locked=nc&&nc>new Date(),E=eras(),c=me.custom||{},AL=pfAlbums(),show=k=>c[k]!==false;
   $('pfTitle').innerHTML=window.wordsHTML?wordsHTML(me.username):esc(me.username);
-  root.innerHTML=`<div class="pfCard"><div class="pfBanner" id="pfBanner">${bannerHTML(me.banner)}</div>
-   <div class="pfHead">${me.avatar?`<img class="pfAv" src="${esc(me.avatar)}" alt="">`:`<div class="pfAv ph">${esc(me.username[0]||'?')}</div>`}
-   <div><b class="pfName">${esc(me.username)}</b><small>Joined ${when(me.created)}${LIVE?'':' · preview account'}</small></div>
-   <button class="acctGo ghost" id="pfOut" type="button">Sign out</button></div></div>
+  pfApply(root,c);root._lb=0;
+  const badges=pfBadges(me,c),alb=AL.find(a=>a.name===c.favAlbum);
+  root.innerHTML=`<div id="pfHeroBox">${pfHero(me,c,true)}</div>
+  <div class="pfTabs" role="tablist">${[['overview','Overview'],['customize','Customize'],['stats','Stats'],['friends','Friends'],['account','Account']].map(t=>`<button type="button" role="tab" class="pfTab" data-pftab="${t[0]}" aria-selected="false">${t[1]}<span class="frBadge" data-fb hidden></span></button>`).join('')}</div>
 
-  <details class="pfSec" open><summary>Username</summary><div class="pfBody">
+  <section class="pfPane" data-pfpane="overview">
+    ${show('showBadges')?`<div class="pfBadges">${badges.map(b=>`<span>${esc(b)}</span>`).join('')}</div>`:''}
+    ${(c.favEra||c.favAlbum||c.favSong)?`<div class="pfFavs">${alb?`<div class="pfFav">${alb.cover?`<img src="${esc(alb.cover)}" alt="" onerror="this.remove()">`:''}<div><small>Favorite album</small><b>${esc(alb.name)}</b></div></div>`:(c.favAlbum?`<div class="pfFav"><div><small>Favorite album</small><b>${esc(c.favAlbum)}</b></div></div>`:'')}${c.favEra?`<div class="pfFav"><div><small>Favorite era</small><b>${esc(c.favEra)}</b></div></div>`:''}${c.favSong?`<div class="pfFav"><div><small>Favorite song</small><b>${esc(c.favSong)}</b></div></div>`:''}</div>`:'<p class="pfHint">Nothing on your showcase yet. Open Customize to add a bio, favorites and an accent color.</p>'}
+    ${show('showLastfm')?`<div class="pfBlock"><h3>Listening</h3><div id="pfLf"></div></div>`:''}
+  </section>
+
+  <section class="pfPane" data-pfpane="customize" hidden>
+    <div class="pfBlock"><h3>About you</h3>
+      <label class="pfLbl">Bio<textarea id="cuBio" maxlength="160" rows="3" placeholder="Tell people what you're into">${esc(c.bio||'')}</textarea><small id="cuBioN">${(c.bio||'').length}/160</small></label>
+      <label class="pfLbl">Status<input id="cuStatus" maxlength="60" value="${esc(c.status||'')}" placeholder="Listening to Donda on repeat"></label>
+      <label class="pfLbl">Link<input id="cuLink" maxlength="120" value="${esc(c.link||'')}" placeholder="https://"></label></div>
+    <div class="pfBlock"><h3>Favorites</h3>
+      <label class="pfLbl">Favorite era<select id="cuEra"><option value="">None</option>${E.map(e=>`<option ${c.favEra===e[0]?'selected':''}>${esc(e[0])}</option>`).join('')}</select></label>
+      <label class="pfLbl">Favorite album<select id="cuAlb"><option value="">None</option>${AL.map(a=>`<option ${c.favAlbum===a.name?'selected':''}>${esc(a.name)}</option>`).join('')}</select></label>
+      <label class="pfLbl">Favorite song<input id="cuSong" maxlength="60" value="${esc(c.favSong||'')}" placeholder="Song name"></label></div>
+    <div class="pfBlock"><h3>Look</h3>
+      <div class="pfLbl">Accent color<div class="pfSw" id="cuAcc">${PF_ACC.map(x=>`<button type="button" class="${pfAcc(c).toLowerCase()===x?'on':''}" data-c="${x}" style="--c:${x}" aria-label="${x}"></button>`).join('')}<input type="color" id="cuCol" value="${pfAcc(c)}" aria-label="Custom color"></div></div>
+      <div class="pfLbl">Profile picture shape<div class="pfSeg" id="cuShape">${PF_SHAPES.map(x=>`<button type="button" data-v="${x[0]}" class="${(c.shape||'circle')===x[0]?'on':''}">${x[1]}</button>`).join('')}</div></div>
+      <div class="pfLbl">Page style<div class="pfSeg" id="cuTheme">${PF_THEMES.map(x=>`<button type="button" data-v="${x[0]}" class="${(c.theme||'dark')===x[0]?'on':''}">${x[1]}</button>`).join('')}</div></div>
+      <div class="pfLbl">Profile picture<div class="pfRow">${me.avatar?`<img class="pfAv sm" src="${esc(me.avatar)}" alt="">`:`<div class="pfAv sm ph">${esc(me.username[0]||'?')}</div>`}<label class="acctGo ghost fileBtn">Choose a picture<input id="pfAvIn" type="file" accept="image/*" hidden></label></div><div id="pfAvM" class="acctMsg"></div></div>
+      <div class="pfLbl">Banner<div class="pfBans">${E.map((e,i)=>`<button type="button" class="pfBan ${me.banner==='era:'+i?'on':''}" data-ban="era:${i}" title="${esc(e[0])}" style="background:linear-gradient(110deg,${e[2]},${e[3]})"><span>${esc(e[0])}</span></button>`).join('')}</div>
+      <div class="pfRow" style="margin-top:10px"><label class="acctGo ghost fileBtn">Upload your own<input id="pfBnIn" type="file" accept="image/*" hidden></label></div><div id="pfBnM" class="acctMsg"></div></div></div>
+    <div class="pfBlock"><h3>What others see</h3>
+      ${[['showBadges','Show badges'],['showLastfm','Show my Last.fm listening'],['showScores','Show my game scores to friends'],['showFriends','Show my friends count']].map(x=>`<label class="pfTog"><input type="checkbox" data-k="${x[0]}" ${c[x[0]]===false?'':'checked'}><span>${x[1]}</span></label>`).join('')}</div>
+    <div class="pfSave"><button class="acctGo" id="cuSave" type="button">Save changes</button><button class="acctGo ghost" id="cuReset" type="button">Reset to default</button><div id="cuM" class="acctMsg" aria-live="polite"></div></div>
+  </section>
+
+  <section class="pfPane" data-pfpane="stats" hidden><div class="pfBlock"><h3>Game leaderboard scores</h3><div id="pfLb"><p class="pfHint">Loading…</p></div></div></section>
+
+  <section class="pfPane" data-pfpane="friends" hidden><div class="pfBlock"><h3>Friends</h3><div id="pfFr"><p class="pfHint">Loading…</p></div></div></section>
+
+  <section class="pfPane" data-pfpane="account" hidden><div class="pfBlock"><h3>Username</h3>
     <div class="pfRow"><input id="pfU" value="${esc(me.username)}" maxlength="20" aria-label="New username"><button class="acctGo" id="pfUBtn" type="button" ${locked?'disabled':''}>Change username</button></div>
-    <p class="pfHint">${locked?`You changed your username recently. You can change it again on <b>${when(nc)}</b>.`:'You can change your username once every 14 days.'}</p><div id="pfUM" class="acctMsg" aria-live="polite"></div></div></details>
-
-  <details class="pfSec"><summary>Profile picture</summary><div class="pfBody"><div class="pfRow">
-    ${me.avatar?`<img class="pfAv sm" src="${esc(me.avatar)}" alt="">`:`<div class="pfAv sm ph">${esc(me.username[0]||'?')}</div>`}
-    <label class="acctGo ghost fileBtn">Choose a picture<input id="pfAvIn" type="file" accept="image/*" hidden></label></div>
-    <p class="pfHint">Square pictures work best. It's cropped to a circle and resized for you.</p><div id="pfAvM" class="acctMsg"></div></div></details>
-
-  <details class="pfSec"><summary>Banner</summary><div class="pfBody">
-    <div class="pfBans">${E.map((e,i)=>`<button type="button" class="pfBan ${me.banner==='era:'+i?'on':''}" data-ban="era:${i}" title="${esc(e[0])}" style="background:linear-gradient(110deg,${e[2]},${e[3]})"><span>${esc(e[0])}</span></button>`).join('')}</div>
-    <div class="pfRow" style="margin-top:12px"><label class="acctGo ghost fileBtn">Upload your own<input id="pfBnIn" type="file" accept="image/*" hidden></label></div><div id="pfBnM" class="acctMsg"></div></div></details>
-
-  <details class="pfSec" id="pfLbSec"><summary>Game leaderboard scores</summary><div class="pfBody" id="pfLb"><p class="pfHint">Loading…</p></div></details>
-
-  <details class="pfSec" id="pfLfSec"><summary>Last.fm</summary><div class="pfBody" id="pfLf"></div></details>
-
-  <details class="pfSec" id="pfFrSec"><summary>Friends</summary><div class="pfBody" id="pfFr"><p class="pfHint">Loading…</p></div></details>`;
-  $('pfOut').onclick=async()=>{if(LIVE)await sb.auth.signOut();setMe(null);go('streams')};
+    <p class="pfHint">${locked?`You changed your username recently. You can change it again on <b>${when(nc)}</b>.`:'You can change your username once every 14 days.'}</p><div id="pfUM" class="acctMsg" aria-live="polite"></div></div>
+    <div class="pfBlock"><h3>Session</h3><button class="acctGo ghost" id="pfOut2" type="button">Sign out</button></div></section>`;
+  const out=async()=>{if(LIVE)await sb.auth.signOut();setMe(null);go('streams')};
+  $('pfOut').onclick=out;$('pfOut2').onclick=out;
+  root.querySelectorAll('[data-pftab]').forEach(b=>b.onclick=()=>pfTab(b.dataset.pftab));
+  /* customize: live preview */
+  const draft=()=>({...c,bio:$('cuBio').value.trim(),status:$('cuStatus').value.trim(),link:$('cuLink').value.trim(),favEra:$('cuEra').value,favAlbum:$('cuAlb').value,favSong:$('cuSong').value.trim(),accent:$('cuCol').value,shape:(root.querySelector('#cuShape .on')||{dataset:{v:'circle'}}).dataset.v,theme:(root.querySelector('#cuTheme .on')||{dataset:{v:'dark'}}).dataset.v,...Object.fromEntries([...root.querySelectorAll('[data-k]')].map(i=>[i.dataset.k,i.checked]))});
+  const preview=()=>{const d=draft();pfApply(root,d);$('pfHeroBox').innerHTML=pfHero(me,d,true);$('pfOut').onclick=out;$('cuBioN').textContent=d.bio.length+'/160'};
+  root.querySelectorAll('#pfRoot [data-pfpane=customize] input:not([type=file]),[data-pfpane=customize] textarea,[data-pfpane=customize] select').forEach(i=>i.addEventListener('input',preview));
+  $('cuAcc').onclick=e=>{const b=e.target.closest('button[data-c]');if(!b)return;$('cuCol').value=b.dataset.c;$('cuAcc').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));preview()};
+  $('cuCol').addEventListener('input',()=>{$('cuAcc').querySelectorAll('button').forEach(x=>x.classList.remove('on'))});
+  ['cuShape','cuTheme'].forEach(id=>$(id).onclick=e=>{const b=e.target.closest('button[data-v]');if(!b)return;$(id).querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));preview()});
+  $('cuSave').onclick=async()=>{const m=$('cuM'),d=draft();if(d.link&&!/^https?:\/\//i.test(d.link))return say(m,'The link must start with http:// or https://');say(m,'Saving…',true);
+    try{await saveCustom({bio:d.bio,status:d.status,link:d.link,favEra:d.favEra,favAlbum:d.favAlbum,favSong:d.favSong,accent:d.accent,shape:d.shape,theme:d.theme,showBadges:d.showBadges,showLastfm:d.showLastfm,showScores:d.showScores,showFriends:d.showFriends});paintProfile();pfTab('customize');say($('cuM'),'Saved.',true)}catch(x){say(m,x.message||'Could not save your changes.')}};
+  $('cuReset').onclick=async()=>{const m=$('cuM');say(m,'Resetting…',true);try{me.custom={};await saveCustom({});paintProfile();pfTab('customize')}catch(x){say(m,x.message||'Could not reset.')}};
   $('pfUBtn').onclick=changeName;
-  $('pfAvIn').onchange=async e=>{const f=e.target.files[0],m=$('pfAvM');if(!f)return;say(m,'Uploading…',true);try{const d=await toData(f,256,256);me.avatar=await saveMedia('avatar',d);if(!LIVE){const r=demoUsers.get(me.email.toLowerCase());if(r)r.avatar=me.avatar}paintBtn();paintProfile();$('pfAvIn')}catch(x){say(m,x.message||'Could not upload that picture.')}};
-  $('pfBnIn').onchange=async e=>{const f=e.target.files[0],m=$('pfBnM');if(!f)return;say(m,'Uploading…',true);try{const d=await toData(f,1200,400,.85),url=await saveMedia('banner',d);await (async()=>{me.banner=url;if(!LIVE){const r=demoUsers.get(me.email.toLowerCase());if(r)r.banner=url}})();paintProfile()}catch(x){say(m,x.message||'Could not upload that banner.')}};
+  $('pfAvIn').onchange=async e=>{const f=e.target.files[0],m=$('pfAvM');if(!f)return;say(m,'Uploading…',true);try{const d=await toData(f,256,256);me.avatar=await saveMedia('avatar',d);if(!LIVE){const r=demoUsers.get(me.email.toLowerCase());if(r)r.avatar=me.avatar}paintBtn();paintProfile();pfTab('customize')}catch(x){say(m,x.message||'Could not upload that picture.')}};
+  $('pfBnIn').onchange=async e=>{const f=e.target.files[0],m=$('pfBnM');if(!f)return;say(m,'Uploading…',true);try{const d=await toData(f,1200,400,.85),url=await saveMedia('banner',d);me.banner=url;if(!LIVE){const r=demoUsers.get(me.email.toLowerCase());if(r)r.banner=url}paintProfile();pfTab('customize')}catch(x){say(m,x.message||'Could not upload that banner.')}};
   root.querySelectorAll('[data-ban]').forEach(b=>b.onclick=async()=>{try{await saveBanner(b.dataset.ban);$('pfBanner').innerHTML=bannerHTML(me.banner);root.querySelectorAll('.pfBan').forEach(x=>x.classList.toggle('on',x===b))}catch(x){say($('pfBnM'),x.message||'Could not save the banner.')}});
-  $('pfLbSec').addEventListener('toggle',e=>{if(e.target.open)loadLb()},{once:true});
-  $('pfLfSec').addEventListener('toggle',e=>{if(e.target.open)paintLf()},{once:true});
-  $('pfFrSec').addEventListener('toggle',e=>{if(e.target.open)paintFr()});
+  if(show('showLastfm'))paintLf();
+  pfTab(pfTabNow);
   FR.list().then(l=>{frData=l;frBadge()}).catch(()=>{});
 }
 async function changeName(){
@@ -2582,12 +2655,12 @@ const FR={
     if(LIVE){const r=await sb.rpc('remove_friend',{p_user:id});if(r.error)throw r.error;return}
     const l=demoList(),i=l.findIndex(f=>f.id===id);if(i>=0)l.splice(i,1)},
   async profile(id){
-    if(LIVE){const r=await sb.rpc('get_friend_profile',{p_user:id});if(r.error)throw r.error;const d=r.data;return {id:d.id,username:d.username,avatar:d.avatar_url,banner:d.banner,created:new Date(d.created_at),lastfm:d.lastfm_username,scores:d.scores||{}}}
+    if(LIVE){const r=await sb.rpc('get_friend_profile',{p_user:id});if(r.error)throw r.error;const d=r.data;return {id:d.id,username:d.username,avatar:d.avatar_url,banner:d.banner,created:new Date(d.created_at),lastfm:d.lastfm_username,custom:d.custom||{},scores:d.scores||{}}}
     const p=PEOPLE.find(x=>x.id===id);return {...p}}
 };
 const avHTML=(f,cls)=>f.avatar?`<img class="pfAv ${cls||''}" src="${esc(f.avatar)}" alt="">`:`<div class="pfAv ${cls||''} ph">${esc((f.username||'?')[0])}</div>`;
 let frData=[];
-function frBadge(){const n=frData.filter(f=>f.direction==='incoming').length,s=document.querySelector('#pfFrSec>summary');if(s)s.innerHTML='Friends'+(n?` <span class="frBadge">${n}</span>`:'')}
+function frBadge(){const n=frData.filter(f=>f.direction==='incoming').length,s=document.querySelector('[data-pftab=friends] [data-fb]');if(s){s.hidden=!n;s.textContent=n||''}}
 async function paintFr(){
   const box=$('pfFr');if(!box)return;
   try{frData=await FR.list()}catch(x){box.innerHTML=`<p class="pfHint">Could not load friends (${esc(x.message||x)}). Has the friends SQL been run?</p>`;return}
@@ -2605,15 +2678,15 @@ async function paintFr(){
   box.querySelectorAll('[data-vw]').forEach(b=>b.onclick=()=>viewFriend(b.dataset.vw))}
 async function viewFriend(id){
   const root=$('pfRoot');root.innerHTML='<p class="pfHint">Loading profile…</p>';
-  let p;try{p=await FR.profile(id)}catch(x){root.innerHTML=`<p class="pfHint">${esc(x.message||'Could not load that profile.')}</p><button class="acctGo ghost" id="frBack" type="button">← Back to my profile</button>`;$('frBack').onclick=()=>{paintProfile();$('pfFrSec').open=true;paintFr()};return}
+  let p;try{p=await FR.profile(id)}catch(x){root.innerHTML=`<p class="pfHint">${esc(x.message||'Could not load that profile.')}</p><button class="acctGo ghost" id="frBack" type="button">← Back to my profile</button>`;$('frBack').onclick=()=>{paintProfile();pfTab('friends')};return}
   $('pfTitle').innerHTML=window.wordsHTML?wordsHTML(p.username):esc(p.username);
   const sc=GAMES.map(([g,n])=>`<tr><td>${esc(n)}</td><td>${p.scores[g]==null?'No score yet':Number(p.scores[g]).toLocaleString()}</td></tr>`).join('');
-  root.innerHTML=`<button class="acctGo ghost" id="frBack" type="button" style="margin-bottom:10px">← Back to my profile</button>
-   <div class="pfCard"><div class="pfBanner">${bannerHTML(p.banner)}</div><div class="pfHead">${avHTML(p)}<div><b class="pfName">${esc(p.username)}</b><small>Joined ${when(p.created)} · your friend</small></div></div></div>
-   <details class="pfSec" open><summary>Best scores</summary><div class="pfBody"><table class="pfTbl"><tr><th>Game</th><th>Best score</th></tr>${sc}</table></div></details>
-   <details class="pfSec" open><summary>Last.fm</summary><div class="pfBody" id="frLf"><p class="pfHint">${p.lastfm?'Loading…':'This friend has not connected Last.fm.'}</p></div></details>`;
-  $('frBack').onclick=()=>{paintProfile();$('pfFrSec').open=true;paintFr()};
-  if(p.lastfm){const b=$('frLf');try{const d=await lfGet(p.lastfm);b.innerHTML=`<div class="lfTop"><div><b>${esc(d.name)}</b><small>${Number(d.scrobbles).toLocaleString()} scrobbles</small></div></div><div class="lfList">${lfRows(d.tracks)}</div>${d.demo?'<p class="pfHint">Preview data, not real Last.fm data.</p>':''}`}catch(x){b.innerHTML=`<p class="pfHint">Could not load Last.fm data (${esc(x.message)}).</p>`}}}
+  pfApply(root,p.custom||{});root.innerHTML=`<button class="acctGo ghost" id="frBack" type="button" style="margin-bottom:10px">← Back to my profile</button>
+   ${pfHero(p,p.custom||{},false)}
+   ${(p.custom||{}).showScores===false?'':`<details class="pfSec" open><summary>Best scores</summary><div class="pfBody"><table class="pfTbl"><tr><th>Game</th><th>Best score</th></tr>${sc}</table></div></details>`}
+   ${(p.custom||{}).showLastfm===false?'':`<details class="pfSec" open><summary>Last.fm</summary><div class="pfBody" id="frLf"><p class="pfHint">${p.lastfm?'Loading…':'This friend has not connected Last.fm.'}</p></div></details>`}`;
+  $('frBack').onclick=()=>{paintProfile();pfTab('friends')};
+  if(p.lastfm&&$('frLf')){const b=$('frLf');try{const d=await lfGet(p.lastfm);b.innerHTML=`<div class="lfTop"><div><b>${esc(d.name)}</b><small>${Number(d.scrobbles).toLocaleString()} scrobbles</small></div></div><div class="lfList">${lfRows(d.tracks)}</div>${d.demo?'<p class="pfHint">Preview data, not real Last.fm data.</p>':''}`}catch(x){b.innerHTML=`<p class="pfHint">Could not load Last.fm data (${esc(x.message)}).</p>`}}}
 
 window.Acct={toggle:open,paintProfile,get me(){return me}};
 paintBtn();
