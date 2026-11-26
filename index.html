@@ -486,7 +486,7 @@ header{position:relative;z-index:auto}
 .pfLbl input:focus,.pfLbl textarea:focus,.pfLbl select:focus{outline:0;border-color:var(--pa)}.pfLbl select option{background:#111}
 .pfSw{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.pfSw button{width:32px;height:32px;border-radius:50%;border:2px solid transparent;background:var(--c);cursor:pointer;box-shadow:inset 0 0 0 1px #0006}.pfSw button.on{border-color:#fff;outline:2px solid var(--c);outline-offset:2px}.pfWrap .pfSw input[type=color]{width:38px!important;min-width:38px;flex:none;height:32px;border:0!important;background:none!important;padding:0!important;cursor:pointer}
 .pfSeg{display:inline-flex;background:#ffffff0f;border-radius:999px;padding:3px;align-self:flex-start}.pfSeg button{border:0;background:none;color:#fffc;padding:7px 16px;border-radius:999px;font:700 13px inherit;cursor:pointer}.pfSeg button.on{background:var(--pa);color:#000}
-.pfTog{display:flex;gap:10px;align-items:center;padding:8px 0;cursor:pointer;font-size:14px}.pfTog input{width:18px;height:18px;accent-color:var(--pa)}
+.pfBlock .pfTog{display:flex;flex-direction:row;justify-content:flex-start;gap:12px;align-items:center;padding:9px 0;cursor:pointer;font:500 14px 'Hanken Grotesk',inherit;letter-spacing:0;text-align:left;width:100%;margin:0}.pfBlock .pfTog input{flex:none;width:18px;height:18px;margin:0;padding:0;accent-color:var(--pa)}.pfBlock .pfTog span{flex:1;min-width:0;text-align:left}
 .pfSave{position:sticky;bottom:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:12px 16px;border-radius:16px;background:#000d;backdrop-filter:blur(12px);border:1px solid #ffffff1f;margin-top:12px}
 @media(max-width:760px){.pfAbout,.pfHead{padding-left:16px;padding-right:16px}}
 .pfSec{border-radius:16px;background:#0009;border:1px solid #ffffff1f;margin:10px 0;overflow:hidden}
@@ -496,8 +496,8 @@ header{position:relative;z-index:auto}
 .pfRow{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.pfRow input{flex:1;min-width:160px;margin:0!important}
 .pfHint{font-size:13px;opacity:.7;margin:10px 0 0;line-height:1.45}
 .pfBans{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
-.pfBan{height:58px;border-radius:12px;border:2px solid transparent;cursor:pointer;color:#fff;font:700 11px 'Hanken Grotesk',inherit;text-shadow:0 1px 6px #000c;padding:6px;display:flex;align-items:flex-end;text-align:left}
-.pfBan.on{border-color:#fff}.pfBan:focus-visible{outline:3px solid #fff}
+.pfBan{height:58px;border-radius:12px;border:0;background-origin:border-box;background-repeat:no-repeat;background-size:100% 100%;overflow:hidden;box-shadow:inset 0 0 0 1px #ffffff26;cursor:pointer;color:#fff;font:700 11px 'Hanken Grotesk',inherit;text-shadow:0 1px 6px #000c;padding:6px;display:flex;align-items:flex-end;text-align:left}
+.pfBan.on{box-shadow:inset 0 0 0 2px #fff}.pfBan:focus-visible{outline:3px solid #fff}
 .pfTbl{width:100%;border-collapse:collapse}.pfTbl th,.pfTbl td{text-align:left;padding:10px 6px;border-bottom:1px solid #ffffff1f}.pfTbl th{font-size:12px;opacity:.6;letter-spacing:.08em;text-transform:uppercase}
 .lfTop{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:12px}.lfTop small{display:block;opacity:.7}.lfTop .sp{flex:1}
 .frRow{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #ffffff17;flex-wrap:wrap}.frRow .acctGo{padding:6px 12px;font-size:12px}.frName{font-size:14px}.frH{margin:16px 0 4px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.7}.frBadge{display:inline-block;min-width:18px;padding:0 6px;margin-left:6px;border-radius:99px;background:var(--accent2,#fff);color:#000;font-size:11px;text-align:center}.hostedDriveOpen{display:inline-block;margin-top:8px;font-size:12px;color:var(--accent2,#fff)}.lfRow{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:14px;align-items:center;padding:10px 0;border-bottom:1px solid #ffffff17}
