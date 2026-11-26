@@ -3,7 +3,7 @@
 (()=>{
 const pg=document.getElementById('pg-instagram'),root=document.getElementById('igScreen');if(!pg||!root)return;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const PFP="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Crect width=%2740%27 height=%2740%27 fill=%27%23242424%27/%3E%3Ctext x=%2720%27 y=%2726%27 font-size=%2716%27 font-weight=%27800%27 fill=%27%23fff%27 text-anchor=%27middle%27 font-family=%27Arial%27%3Eye%3C/text%3E%3C/svg%3E";
+const PFP='assets/ye-white-pfp.jpg';
 const FB="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Crect width=%2740%27 height=%2740%27 fill=%27%23222%27/%3E%3Ctext x=%2720%27 y=%2726%27 font-size=%2716%27 font-weight=%27800%27 fill=%27%23fff%27 text-anchor=%27middle%27 font-family=%27Arial%27%3Eye%3C/text%3E%3C/svg%3E";
 const FILTERS=[['all','All'],['image','Photos'],['video','Videos'],['carousel','Carousels']];
 const PAGE=60,VID=/\.(mp4|webm|mov)$/i,COV=/_cover\.(jpg|jpeg|png)$/i;
@@ -15,7 +15,7 @@ const st0=document.createElement('style');st0.textContent=`
 .igScreen .eyebrow{color:var(--accent2);font-weight:800;letter-spacing:.18em;font-size:12px}
 .igScreen h1.title{font-size:clamp(34px,6vw,56px);font-weight:900;letter-spacing:-.05em;margin:4px 0 18px}
 .igProf{display:flex;gap:clamp(18px,5vw,64px);align-items:center;margin-bottom:22px}
-.igProf img{width:clamp(78px,18vw,150px);aspect-ratio:1;border-radius:50%;object-fit:cover;background:#222;flex:none}
+.igProf img{width:clamp(78px,18vw,150px);aspect-ratio:1;border-radius:50%;object-fit:cover;background:#fff;flex:none;box-shadow:0 0 0 3px #000,0 0 0 4px #363636}
 .igProf h2{margin:0;font-size:20px;font-weight:500;display:flex;gap:8px;align-items:center}
 .igStats{display:flex;gap:clamp(14px,4vw,36px);margin:14px 0;font-size:15px;flex-wrap:wrap}
 .igStats b{font-weight:700}

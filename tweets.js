@@ -3,7 +3,7 @@
 (()=>{
 const pg=document.getElementById('pg-tweets'),root=document.getElementById('twScreen');if(!pg||!root)return;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const AV="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Crect width=%2740%27 height=%2740%27 fill=%27%23242424%27/%3E%3Ctext x=%2720%27 y=%2726%27 font-size=%2716%27 font-weight=%27800%27 fill=%27%23fff%27 text-anchor=%27middle%27 font-family=%27Arial%27%3Eye%3C/text%3E%3C/svg%3E";
+const AV='assets/ye-white-pfp.jpg';
 const SORTS=[['new','Newest'],['old','Oldest'],['likes','Most liked'],['rts','Most retweeted'],['replies','Most replies'],['views','Most views']];
 const FILTERS=[['all','All'],['posts','Posts'],['replies','Replies'],['media','Media'],['quotes','Quotes'],['polls','Polls'],['bangers','Bangers']];
 const PAGE=40;
@@ -71,6 +71,35 @@ const st0=document.createElement('style');st0.textContent=`
 .twEmpty{padding:60px 16px;text-align:center;color:#71767b}
 @media(max-width:700px){.twScreen{padding-top:76px}}
 @media(prefers-reduced-motion:reduce){.tw{animation:none}}
+`;st0.textContent+=`
+.twScreen{max-width:1020px;padding:84px 16px 100px}
+.twLayout{display:grid;grid-template-columns:minmax(0,600px) 300px;gap:24px;justify-content:center;align-items:start}
+.twMain{border-inline:1px solid #2f3336;min-width:0;background:#000a;border-radius:2px}
+.twSide{position:sticky;top:84px;display:flex;flex-direction:column;gap:14px}
+.twBan{height:150px;background:linear-gradient(120deg,#1a1a1a,#3a3a3a 45%,#111),radial-gradient(600px 160px at 70% 0,#ffffff22,transparent);position:relative}
+.twBan::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,#ffffff06 0 1px,transparent 1px 22px)}
+.twProf{display:block;padding:0 16px 12px;margin:0;border:0;background:none;position:relative}
+.twProf .twAv{width:112px;height:112px;border-radius:50%;border:4px solid #000;background:#fff;margin-top:-56px;display:block;object-fit:cover;box-shadow:0 0 0 1px #2f3336}
+.twProf .twNm{display:flex;align-items:center;gap:6px;font:800 22px/1.2 system-ui,sans-serif;margin-top:10px}
+.twProf .twHd{color:#71767b;font-size:15px;margin-top:2px}
+.twProf .twBio{margin:12px 0 10px;font-size:15px;line-height:1.4}
+.twStats{display:flex;gap:18px;flex-wrap:wrap;color:#71767b;font-size:14px}.twStats b{color:#e7e9ea;font-weight:800}
+.twFollow{position:absolute;right:16px;top:12px;border:1px solid #536471;background:none;color:#e7e9ea;border-radius:999px;padding:8px 18px;font:700 14px system-ui,sans-serif;cursor:default}
+.twTabs{display:flex;border-bottom:1px solid #2f3336;overflow-x:auto;scrollbar-width:none}.twTabs::-webkit-scrollbar{display:none}
+.twTabs button{flex:1 0 auto;position:relative;border:0;background:none;color:#71767b;padding:15px 16px;font:600 15px system-ui,sans-serif;cursor:pointer;transition:background .2s}
+.twTabs button:hover{background:#ffffff0a}.twTabs button.on{color:#e7e9ea;font-weight:800}
+.twTabs button.on::after{content:"";position:absolute;left:50%;bottom:0;translate:-50% 0;width:min(56px,70%);height:4px;border-radius:4px;background:#1d9bf0}
+.twBar{display:flex;gap:8px;padding:10px 16px;border-bottom:1px solid #2f3336;flex-wrap:wrap;align-items:center}
+.twBar input[type=search]{flex:1 1 160px;background:#202327;border:1px solid transparent;border-radius:999px;padding:10px 16px;color:#e7e9ea;font:400 15px system-ui,sans-serif;outline:0;min-width:0}
+.twBar input[type=search]:focus{background:#000;border-color:#1d9bf0}
+.twBar select{background:#202327;border:0;color:#e7e9ea;border-radius:999px;padding:10px 14px;font:600 14px system-ui,sans-serif;cursor:pointer;outline:0}
+.twCount{border-top:0}
+.twCard{background:#16181c;border-radius:16px;padding:14px 16px}.twCard h3{margin:0 0 10px;font:800 19px system-ui,sans-serif}
+.twYr{display:grid;grid-template-columns:44px 1fr 40px;gap:8px;align-items:center;padding:4px 0;border:0;background:none;color:#e7e9ea;cursor:pointer;width:100%;font:500 13px system-ui,sans-serif;text-align:left}
+.twYr i{display:block;height:8px;border-radius:4px;background:#1d9bf0;opacity:.8;transition:opacity .2s,width .4s}.twYr:hover i,.twYr.on i{opacity:1}.twYr.on span{font-weight:800}.twYr em{font-style:normal;color:#71767b;text-align:right}
+.twTop5{display:flex;flex-direction:column}.twTop5 button{border:0;background:none;color:#e7e9ea;text-align:left;padding:9px 0;border-top:1px solid #2f3336;cursor:pointer;font:400 14px/1.35 system-ui,sans-serif}.twTop5 button:first-of-type{border-top:0}.twTop5 button:hover{color:#1d9bf0}.twTop5 small{display:block;color:#71767b;margin-top:2px}
+@media(max-width:1000px){.twLayout{grid-template-columns:minmax(0,600px)}.twSide{display:none}}
+@media(max-width:700px){.twScreen{padding-inline:0}.twMain{border-inline:0}}
 `;document.head.appendChild(st0);
 const VER='<svg class="twV" viewBox="0 0 22 22"><path fill="#f1c40f" d="M20.4 11l-1.6-1.9.2-2.5-2.5-.6-1.3-2.2-2.3 1-2.3-1-1.3 2.2-2.5.6.2 2.5L3.4 11l1.7 1.9-.2 2.5 2.5.6 1.3 2.2 2.3-1 2.3 1 1.3-2.2 2.5-.6-.2-2.5z"/><path fill="#000" d="M9.7 14.7l-2.6-2.6 1-1 1.6 1.6 4.2-4.2 1 1z"/></svg>';
 const IC={rep:'<svg viewBox="0 0 24 24"><path d="M1.75 10.5c0-4.7 3.8-8.5 8.5-8.5h3.5c4.7 0 8.5 3.8 8.5 8.5 0 3.9-2.7 7.2-6.3 8.2L12 22.5v-3.8h-1.75c-4.7 0-8.5-3.8-8.5-8.2z"/></svg>',rt:'<svg viewBox="0 0 24 24"><path d="M4.5 3.9l4 4m-4-4l-4 4m4-4v11.6c0 2.2 1.8 4 4 4h5m6-.9l-4-4m4 4l4-4m-4 4V8.6c0-2.2-1.8-4-4-4h-5"/></svg>',lk:'<svg viewBox="0 0 24 24"><path d="M12 21c-5.5-4.2-9-7.4-9-11.2C3 6.6 5.2 4.5 7.8 4.5c1.6 0 3.2.9 4.2 2.4 1-1.5 2.6-2.4 4.2-2.4 2.6 0 4.8 2.1 4.8 5.3 0 3.8-3.5 7-9 11.2z"/></svg>',vw:'<svg viewBox="0 0 24 24"><path d="M3 20V10m6 10V4m6 16v-8m6 8V8"/></svg>'};
@@ -125,15 +154,28 @@ function more(){
 }
 function refresh(){const list=document.getElementById('twList');if(!list)return;const deep=scrollY>400;compute();list.innerHTML='';more();if(deep){const up=()=>{const c=document.getElementById('twCount');if(c)c.scrollIntoView({block:'start'})};requestAnimationFrame(up);setTimeout(up,450)}}
 function shell(){
-  const years=[...new Set(ALL.map(t=>t.created_at.slice(0,4)))].sort().reverse();
-  root.innerHTML=`<div class="twHead"><div class="eyebrow">ARCHIVE</div><h1 class="title">Tweets</h1></div>
-  <div class="twProf"><img src="${AV}" alt="" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Crect width=%2740%27 height=%2740%27 fill=%27%23222%27/%3E%3Ctext x=%2720%27 y=%2726%27 font-size=%2716%27 font-weight=%27800%27 fill=%27%23fff%27 text-anchor=%27middle%27 font-family=%27Arial%27%3Eye%3C/text%3E%3C/svg%3E'"><div><b>ye ${VER}</b><small>@kanyewest · ${ALL.length.toLocaleString()} archived posts · ${years[years.length-1]}–${years[0]}</small></div></div>
-  <div class="twTools"><div class="twRow"><input id="twQ" type="search" placeholder="Search tweets" aria-label="Search tweets"><select id="twSort" aria-label="Sort">${SORTS.map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select><select id="twYear" aria-label="Year"><option value="all">All years</option>${years.map(y=>`<option>${y}</option>`).join('')}</select></div>
-  <div class="twChips" id="twChips">${FILTERS.map(([v,l])=>`<button type="button" data-f="${v}"${v==='all'?' class="on"':''}>${l}</button>`).join('')}</div></div>
-  <div class="twCount" id="twCount"></div><div id="twList"></div><button class="twMore" id="twMore" type="button">Show more</button>`;
+  const counts={};ALL.forEach(t=>{const y=t.created_at.slice(0,4);counts[y]=(counts[y]||0)+1});
+  const years=Object.keys(counts).sort().reverse(),maxC=Math.max(...Object.values(counts));
+  const likes=ALL.reduce((a,t)=>a+(+t.likes||0),0);
+  root.innerHTML=`<div class="twLayout"><div class="twMain">
+  <div class="twBan"></div>
+  <div class="twProf"><img class="twAv" src="${AV}" alt=""><button class="twFollow" type="button" tabindex="-1">Archive</button>
+   <div class="twNm">ye ${VER}</div><div class="twHd">@kanyewest</div>
+   <p class="twBio">Every post from 2010 to 2026, in one place. Sort, filter and search the whole timeline.</p>
+   <div class="twStats"><span><b>${ALL.length.toLocaleString()}</b> Posts</span><span><b>${years.length}</b> Years</span><span><b>${nf(likes)}</b> Likes</span></div></div>
+  <div class="twTabs" id="twChips" role="tablist">${FILTERS.map(([v,l])=>`<button type="button" role="tab" data-f="${v}"${v==='all'?' class="on"':''}>${l}</button>`).join('')}</div>
+  <div class="twBar"><input id="twQ" type="search" placeholder="Search posts" aria-label="Search posts"><select id="twSort" aria-label="Sort">${SORTS.map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select><select id="twYear" aria-label="Year"><option value="all">All years</option>${years.map(y=>`<option>${y}</option>`).join('')}</select></div>
+  <div class="twCount" id="twCount"></div><div id="twList"></div><button class="twMore" id="twMore" type="button">Show more</button></div>
+  <aside class="twSide"><div class="twCard"><h3>Posts by year</h3>${years.map(y=>`<button class="twYr" type="button" data-y="${y}"><span>${y}</span><i style="width:${Math.max(3,counts[y]/maxC*100)}%"></i><em>${counts[y].toLocaleString()}</em></button>`).join('')}</div>
+  <div class="twCard"><h3>Most liked</h3><div class="twTop5" id="twTop5"></div></div></aside></div>`;
+  const top=ALL.slice().sort((a,b)=>(b.likes||0)-(a.likes||0)).slice(0,5);
+  document.getElementById('twTop5').innerHTML=top.map(t=>`<button type="button" data-q="${esc(t.id)}">${esc(dec(String(t.text||'(media)')).replace(/https?:\/\/\S+/g,'').trim().slice(0,90)||'(media)')}<small>${fmt(t.created_at)} · ${nf(t.likes)} likes</small></button>`).join('');
+  const setYear=y=>{st.year=y;document.getElementById('twYear').value=y;document.querySelectorAll('.twYr').forEach(b=>b.classList.toggle('on',b.dataset.y===y));refresh()};
   let tm;document.getElementById('twQ').oninput=e=>{clearTimeout(tm);tm=setTimeout(()=>{st.q=e.target.value;refresh()},180)};
   document.getElementById('twSort').onchange=e=>{st.sort=e.target.value;refresh()};
-  document.getElementById('twYear').onchange=e=>{st.year=e.target.value;refresh()};
+  document.getElementById('twYear').onchange=e=>setYear(e.target.value);
+  document.querySelectorAll('.twYr').forEach(b=>b.onclick=()=>setYear(st.year===b.dataset.y?'all':b.dataset.y));
+  document.querySelectorAll('#twTop5 button').forEach(b=>b.onclick=()=>{st.sort='likes';document.getElementById('twSort').value='likes';st.filter='all';document.querySelectorAll('#twChips button').forEach(x=>x.classList.toggle('on',x.dataset.f==='all'));setYear('all');scrollTo({top:0,behavior:'smooth'})});
   document.getElementById('twChips').onclick=e=>{const b=e.target.closest('button[data-f]');if(!b)return;st.filter=b.dataset.f;document.querySelectorAll('#twChips button').forEach(x=>x.classList.toggle('on',x===b));refresh()};
   document.getElementById('twMore').onclick=more;
   let tk=0;const chk=()=>{tk=0;const m=document.getElementById('twMore');if(m&&!m.hidden&&pg.hidden===false&&m.getBoundingClientRect().top<innerHeight+900)more()};window.addEventListener('scroll',()=>{if(!tk)tk=requestAnimationFrame(chk)},{passive:true});
