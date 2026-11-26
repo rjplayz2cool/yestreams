@@ -107,7 +107,7 @@ header{display:flex;justify-content:space-between;align-items:center;padding:18p
 .prog{height:6px;border-radius:9px;background:#fff2;margin-top:9px;overflow:hidden}
 .prog i{display:block;height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,#fff,var(--b));filter:brightness(1.3);transition:width 1.2s var(--ease)}
 .st{text-align:right;font-variant-numeric:tabular-nums}
-.st b{font:900 28px/1 'Big Shoulders Display';display:block}
+.st b{font:900 28px/1 'Big Shoulders Display';display:block}.prodRow{text-decoration:none;color:inherit}.prodRow .st span{font:600 13px system-ui,sans-serif;opacity:.7;white-space:nowrap}
 .st span{font-size:13px;opacity:.75}
 .up{color:#3dff7a;font-weight:600}
 .more{justify-self:center;margin-top:12px;padding:14px 28px}
@@ -826,9 +826,10 @@ select:disabled{opacity:.5;cursor:not-allowed}
     <button class="edge left" type="button" data-go="streams" aria-label="Back to Streams"><b aria-hidden="true">‹</b><span>Streams</span></button>
     <button class="edge" type="button" data-go="all" aria-label="All songs"><b aria-hidden="true">›</b><span>All Songs</span></button>
     <h1 class="era long" id="sfTitle"></h1>
-    <div class="tabs" role="group" aria-label="Singles or Features">
+    <div class="tabs" role="group" aria-label="Singles, Features or Produced">
       <button class="tab" type="button" data-t="singles" aria-pressed="true">Singles<em id="nSingles"></em></button>
       <button class="tab" type="button" data-t="features" aria-pressed="false">Features<em id="nFeat"></em></button>
+      <button class="tab" type="button" data-t="produced" aria-pressed="false">Produced<em id="nProd"></em></button>
     </div>
     <div class="total"><b id="sfTotal">0</b><small id="sfNote"></small></div>
   </section>
@@ -2151,10 +2152,28 @@ function sfSets(){const songs=(DB.songs||[]).filter(x=>x.kind==='song'&&x.stream
   if(C)for(const a of (DB.albums||[])){try{for(const t of C.songsForAlbum(a))if(!t._missing&&t.spotify)on.add(t.spotify)}catch(e){}}
   return {features:songs.filter(x=>x.feature),singles:songs.filter(x=>!x.feature&&!on.has(x.spotify))}}
 const sfData=()=>SF||(SF=sfSets());
+const PR={sort:'name',list:null};
+function loadProd(){return window.PRODUCED?Promise.resolve():new Promise(r=>{const x=document.createElement('script');x.src='data/produced.js?v='+(window.__PV||'1795710533');x.onload=r;x.onerror=r;document.head.appendChild(x)})}
+function renderProduced(){
+  const q=sfQ,box=$('sfList');
+  loadProd().then(()=>{
+    const all=(window.PRODUCED||[]).map(r=>({n:r[0],a:r[1],al:r[2],id:r[3],c:r[4]}));PR.list=all;$('nProd').textContent=all.length;
+    if(sfTab!=='produced')return;
+    $('sfTotal').textContent=String(all.length);$('sfNote').textContent='songs Ye produced for other artists, not credited as an artist';
+    const f=all.filter(x=>!q||(x.n+' '+x.a+' '+x.al).toLowerCase().includes(q)),k=PR.sort,cmp=(x,y)=>String(x[k==='name'?'n':k==='artist'?'a':'al']).localeCompare(String(y[k==='name'?'n':k==='artist'?'a':'al']));
+    f.sort(cmp);
+    if(!f.length){box.innerHTML='<div class="empty">No songs match that search.</div>';return}
+    box.innerHTML=f.slice(0,sfShown).map((x,i)=>`<a class="row prodRow" href="https://open.spotify.com/track/${esc(x.id)}" target="_blank" rel="noopener noreferrer"><div class="rk">${i+1}</div><div class="art"><span>${esc((x.n||'?')[0])}</span>${x.c?`<img src="https://i.scdn.co/image/${esc(x.c)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`:''}</div><div><div class="nm">${esc(x.n)}</div><div class="sub">${esc(x.a)} · ${esc(x.al)}</div></div><div class="st"><span>Produced ↗</span></div></a>`).join('')+(f.length>sfShown?`<button class="chip more" type="button">Show more (${f.length-sfShown} left)</button>`:'');
+    const m=box.querySelector('.more');if(m)m.onclick=()=>{sfShown+=60;renderProduced()}})}
+function sfChips(){const p=sfTab==='produced',L=p?[['name','A–Z'],['artist','Artist'],['album','Album']]:SORTS.filter(x=>x[0]!=='track'),cur=p?PR.sort:sfSort;
+  $('sfSorts').innerHTML=L.map(([k,l])=>`<button type="button" class="chip" data-k="${k}" aria-pressed="${k===cur}">${l}</button>`).join('')}
 function renderSF(countUp){
-  const all=sfData(),set=all[sfTab];sfCur=set;
-  $('nSingles').textContent=all.singles.length;$('nFeat').textContent=all.features.length;
+  const all=sfData();$('nSingles').textContent=all.singles.length;$('nFeat').textContent=all.features.length;
+  if(PR.list)$('nProd').textContent=PR.list.length;
   document.querySelectorAll('#pg-sf .tab').forEach(b=>b.setAttribute('aria-pressed',b.dataset.t===sfTab));
+  sfChips();
+  if(sfTab==='produced'){cancelAnimationFrame(sfAnim);sfAnim=0;sfHero.t=0;sfCur=[];renderProduced();return}
+  const set=all[sfTab];sfCur=set;
   const tot=set.reduce((n,x)=>n+x.streams,0),dly=set.reduce((n,x)=>n+(x.daily||0),0),from=sfHero.t?sfHero.streams+sfHero.daily*(performance.now()-sfHero.t)/864e5:0;
   sfHero={streams:tot,daily:dly,t:performance.now()};
   $('sfNote').textContent='streams across '+set.length+' '+sfTab+' · +'+full(dly)+' a day';
@@ -2163,8 +2182,8 @@ function renderSF(countUp){
   const q=sfQ,t=x=>x.name||'';
   const a=set.filter(x=>!q||t(x).toLowerCase().includes(q)).sort(cmpFor(sfSort));
   paint($('sfList'),a,sfShown,false,()=>{sfShown+=40;renderSF(false)},q?'No songs match that search.':(window.KWORB_DB&&C?'Nothing here yet.':'Needs your real data to show singles and features.'))}
-$('sfSorts').innerHTML=SORTS.filter(x=>x[0]!=='track').map(([k,l])=>`<button type="button" class="chip" data-k="${k}" aria-pressed="${k===sfSort}">${l}</button>`).join('');
-$('sfSorts').onclick=e=>{const b=e.target.closest('button');if(!b)return;sfSort=b.dataset.k;sfShown=40;document.querySelectorAll('#sfSorts .chip').forEach(c=>c.setAttribute('aria-pressed',c===b));renderSF(false)};
+sfChips();
+$('sfSorts').onclick=e=>{const b=e.target.closest('button');if(!b)return;if(sfTab==='produced')PR.sort=b.dataset.k;else sfSort=b.dataset.k;sfShown=40;document.querySelectorAll('#sfSorts .chip').forEach(c=>c.setAttribute('aria-pressed',c===b));renderSF(false)};
 $('sfq').oninput=e=>{sfQ=e.target.value.toLowerCase().trim();sfShown=40;renderSF(false)};
 let alSort='streams',alQ='',alShown=40,alCur=[];
 function renderAll(countUp){const seen=new Set(),set=(DB.songs||[]).filter(x=>{if(x.kind!=='song'||x.streams==null)return false;const k=x.spotify||x.name;if(seen.has(k))return false;seen.add(k);return true});alCur=set;
