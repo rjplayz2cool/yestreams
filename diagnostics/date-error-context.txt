@@ -1,0 +1,213 @@
+=== LINES 700-755 ===
+700: // Exact-release artist credits for collisions and catalog rows that title matching cannot safely resolve.
+701: const ID_CREDITS={
+702: '4O3nAQfOC9PN5ElMEcAJb9':'Drake, Kanye West, Lil Wayne, Eminem',
+703: '2yBb1CRq98SSWRuDSn36SZ':'Kanye West, André 3000',
+704: '2tPNj9sUt3FbjEUqBzZazv':'¥$, Kanye West, Ty Dolla $ign',
+705: '79mEFisvTUZcVGUxPM0dYc':'Ye, DONDA',
+706: '1Cxq3u0RQ0tEBbVofZ9Mma':'¥$, Kanye West, Ty Dolla $ign',
+707: '3Z3Fs0QhlvrJVRBHwzAFnQ':'Slum Village, Kanye West, John Legend',
+708: '2CTwK5KZryhCTxLwv0TAJg':'The Game, Kanye West',
+709: '4mVBfQgc0bpA3eLNEpzv2F':'Sean Leon, Kanye West',
+710: '06JvOZ39sK8D8SqiqfaxDU':'Kanye West, XXXTENTACION',
+711: '3WbuQIjkR1mIKdwSNlgqpp':'Ye, XXXTENTACION, DONDA',
+712: '2gAGWaK4wvt2xrFUlR4mK8':'A$AP Rocky, Joe Fox, Kanye West',
+713: '5JDu5HkUyhcwJHU69ysMvD':'Ye, DONDA',
+714: '4lUBWLqTFEWx3X6qcjWN2A':'Ye, DONDA',
+715: '7aUzsxDB0DYz7IHX83b2b4':'Ye, DONDA',
+716: '1FwCGiIiWy3zpLavmMYQfD':'Ye, DONDA',
+717: '3OEvHAJQiJSxw076rUF1SN':'Ye, Sean Leon, DONDA',
+718: '2SjnvpedDUU0Ga69bxnoCa':'Kanye West, Ye, Andre Troutman',
+719: '41e8XO5tcG6Uesk2FhdsWm':'Kanye West, Ye',
+720: '1FpjiEapAG8XJdVSI0tvdc':'Kanye West, Ye',
+721: '4dOIsPkLABpsM0LZz2Ymxo':'¥$, Kanye West, Ty Dolla $ign, Bump J, Lil Durk',
+722: '3w9WvHLKSXOsW6aAw0yr1n':'¥$, Kanye West, Ty Dolla $ign, Bump J',
+723: '1AmRnoLEaq7E38IlFDjQRl':'¥$, Kanye West, Ty Dolla $ign, Bump J, Lil Durk',
+724: '2McT2fkH0VDqPsbiB9HWPq':'¥$, Kanye West, Ty Dolla $ign, Rich The Kid, Playboi Carti',
+725: '3lsdkkYWt2VRSxrFkKE3F5':'¥$, Kanye West, Ty Dolla $ign, Playboi Carti, Rich The Kid',
+726: '6ImNhLq3RabOnEHfoRdvd4':'Kanye West, Ye, Ms. Lauryn Hill',
+727: '163l4Itf8oDEK7ZYdVm22N':'Kanye West, Ye'
+728: };
+729: if(projectFor(x)===PROJECTS[2])return 'DONDA, Kanye West, Ye';
+730: if(ID_CREDITS[id])return ID_CREDITS[id];
+731: if(id==='0KXIsj1KjSNlGvNora6BA4')return '¥$, Kanye West, Ty Dolla $ign';
+732: if(id==='4LP6bmyAxdMNrqUrMpaVQ8')return 'Kanye West, Ye';
+733: let md={...(META[x.spotify]||{}),...(window.CARD_METADATA?.[(x.spotify||'').split('/').pop()]||{})},exact=exactCredits(x);if(exact)return exact;if(md.artists&&md.artists!=='Kanye West')return md.artists;
+734: if(x.kind==='album'){if(id==='5poA9SAx0Xiz1cf17fWBLS')return 'Kanye West, Ye';if(/^VULTURES [12]$/i.test(x.name))return '¥$, Kanye West, Ty Dolla $ign';if(/^DONDA 2$/i.test(x.name))return 'DONDA, Kanye West, Ye';if(/^BULLY/i.test(x.name))return 'Kanye West, Ye';if(/^Watch The Throne/i.test(x.name))return 'JAY-Z, Kanye West';return 'Kanye West'}
+735: let p=projectFor(x),base=p?p.artists:'Kanye West',extras=featureArtists(x.name),arr=base.split(', ').concat(extras);return [...new Set(arr)].join(', ')
+736: }
+737: function cover(x,cls=''){let img=localCover(x);return `<div class="cover ${cls}">${img?`<img src="${esc(img)}" onerror="this.remove()">`:esc(initials(displayTitle(x)))}</div>`}
+738: function milestoneProjection(x,target=nextM(x.streams),now=new Date()){if(x.streams==null||!x.daily||x.daily<=0)return null;let days=Math.ceil((target-x.streams)/x.daily);if(!Number.isFinite(days)||days<0)return null;let parts=new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(now),o={};parts.forEach(p=>o[p.type]=p.value);let date=new Date(Date.UTC(Number(o.year),Number(o.month)-1,Number(o.day)+days,12));return{days,date,key:
+739: function estimate(x){let m=nextM(x.streams),p=milestoneProjection(x,m);if(!p)return 'Projection unavailable';return `Estimated ${short(m)}: <b>${p.date.toLocaleDateString(undefined,{timeZone:'America/New_York',month:'short',day:'numeric',year:'numeric'})}</b> · ~${fmt(p.days)} days`}
+740: function parseTarget(v){let z=String(v||'').trim().toUpperCase().replace(/,/g,'');if(!z)return null;let mult=1;if(z.endsWith('B')){mult=1e9;z=z.slice(0,-1)}else if(z.endsWith('M')){mult=1e6;z=z.slice(0,-1)}else if(z.endsWith('K')){mult=1e3;z=z.slice(0,-1)}let n=Number(z)*mult;return Number.isFinite(n)&&n>=0?Math.round(n):null}
+741: function targetEstimate(x,target){if(x.streams==null)return 'Stream total unavailable';if(target==null)return 'Enter a stream target';if(!x.daily||x.daily<=0)return 'No daily rate available';let diff=target-x.streams,days=Math.abs(diff)/x.daily,d=new Date();if(diff<=0){d.setDate(d.getDate()-Math.ceil(days));return 'Estimated hit '+d.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'})+' · '+Math.ceil(days).toLocaleString()+' days ago'}d.setDate(d.getDate()+Math.ceil(days));
+742: function runTarget(ev,x,card){ev.stopPropagation();let inp=card.querySelector('.targetInput'),out=card.querySelector('.targetResult'),t=parseTarget(inp.value);out.textContent=targetEstimate(x,t)}
+743: function albumProject(x){let img=localCover(x);if(!img)return null;let file=img.split('/').pop();return PROJECTS.find(p=>p.cover===file)||null}
+744: function albumKey(a){return a.spotify==='local:album:cruel-summer'?'cruel-summer':(a.spotify||'').split('/').pop()}
+745: function albumMatchTitle(s){return String(s||'').toUpperCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[’‘]/g,"'").replace(/\s*\(FEAT\.[^)]+\)/g,'').replace(/\s*\(WITH [^)]+\)/g,'').replace(/\s*\(KANYE WEST\/LATE REGISTRATION\)/g,'').replace(/[^A-Z0-9]+/g,' ').trim()}
+746: const ALBUM_TRACK_OVERRIDES={
+747:  // Late Registration: Skit #3 is not represented on Kworb.
+748:  '0Ds6i3h0F9RcYIKAD5Olum':{15:{unavailable:true}},
+749:  // Watch the Throne Deluxe: exact H•A•M entry.
+750:  '1YwzJz7CrV9fd9Qeb6oo1d':{14:{sourceId:'2TK4NQXWehLphjpXTYxu1H'}},
+751:  // Donda: Jail pt 2 is the second Jail entry in Kworb.
+752:  '5CnpZV3q5BcESefcB3WJmz':{24:{sourceId:'0pZjPa9tKXRF3j4Y9IqhTJ'}},
+753:  // Donda Deluxe: same Jail pt 2 mapping; KMSA pt 2 intentionally uses the same current numbers as KMSA.
+754:  '2Wiyo7LzdeBCsVZiRA6vVZ':{31:{sourceId:'0pZjPa9tKXRF3j4Y9IqhTJ'},32:{sourceId:'5zO3iS6KgrXA20ZXc9zMdI',allowReuse:true}},
+755:  // DONDA 2: these three entries are unavailable on Spotify.
+=== LINES 915-970 ===
+915:  if(!supa||!currentUser){grantedSpins=0;spinStateUser=null;renderGrantedSpins();return}
+916:  const uid=currentUser.id;
+917:  if(spinStateUser!==uid){grantedSpins=0;spinStateUser=uid}
+918:  if(spinRefreshInFlight)return spinRefreshInFlight;
+919:  spinRefreshInFlight=(async()=>{const {data,error}=await supa.rpc('free_spin_balance');if(currentUser?.id!==uid)return;if(!error)grantedSpins=Math.max(0,Number(data)||0);else grantedSpins=0;renderGrantedSpins()})();
+920:  try{await spinRefreshInFlight}finally{spinRefreshInFlight=null}
+921: }
+922: async function adminGrantSpins(){
+923:  const username=document.getElementById('adminUser').value.trim(),amount=Number(document.getElementById('adminSpins').value),msg=document.getElementById('adminMsg');
+924:  if(!username||!Number.isSafeInteger(amount)||amount<1){msg.textContent='Enter a username and a positive whole number of spins.';return}
+925:  const b=document.getElementById('adminGrantSpins');b.disabled=true;
+926:  try{const {data,error}=await supa.rpc('admin_grant_spins',{p_username:username,p_amount:amount});msg.textContent=error?error.message:`Gave ${amount} spins to ${username}. They now have ${data} Free Spins.`;if(!error)await refreshGrantedSpins()}finally{b.disabled=false}
+927: }
+928: async function doGrantedSpin(){
+929:  if(grantedSpinBusy||!supa||!currentUser)return;
+930:  grantedSpinBusy=true;const btn=document.getElementById('rollButton');btn.disabled=true;btn.classList.add('spinning');btn.textContent='ROLLING…';
+931:  try{
+932:  const {data,error}=await supa.rpc('use_free_spin');
+933:  if(error){document.getElementById('rollStatus').textContent=error.message;return}
+934:  await refreshRollLuck();const result=canonicalServerRecord(data),display={...result,cover:serverCoverSrc(result.cover),_ebk:result.rarity==='EBK',_unreleased:result.rarity==='Unreleased'};
+935:  await animateDailyRoll(display);document.getElementById('rollReveal').innerHTML=rollCardHTML({...display,pulledAt:result.acquired_at||new Date().toISOString(),day:localDayKey()});
+936:  document.getElementById('rollStatus').textContent='Free spin added to your inventory.';await renderServerInventory();await loadProfile();
+937:  }finally{grantedSpinBusy=false;btn.classList.remove('spinning');await refreshGrantedSpins()}
+938: }
+939: async function expireMarketListings(){if(!supa)return;const {error}=await supa.rpc('expire_market_listings');if(error)console.warn('Market expiration:',error.message)}
+940: function marketTimeLeft(created){const min=Math.max(0,Math.ceil((Date.parse(created)+86400000-Date.now())/60000));return `${Math.floor(min/60)}h ${min%60}m`}
+941: setInterval(()=>{if(document.hidden)return;refreshGrantedSpins();if(document.getElementById('rollMarket')?.classList.contains('active')&&document.getElementById('rollScreen')?.classList.contains('activeScreen'))loadMarket()},15000);
+942: document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshGrantedSpins()});
+943: 
+944: async function updateDailyRoll(){if(SUPA_READY&&currentUser)await syncDailyRollState();let h=rollHistoryData(),today=h.find(r=>r.day===localDayKey()),btn=document.getElementById('rollButton'),status=document.getElementById('rollStatus'),reveal=document.getElementById('rollReveal');if(today){btn.disabled=true;btn.textContent='COME BACK TOMORROW';status.textContent=today.paidReroll?"Today's paid Roll Again is locked in.":"Today's roll is already locked in.";reveal.innerHTML=today.serverLocked?'':r
+945: function animateDailyRoll(finalSong){return new Promise(resolve=>{let reel=document.getElementById('slotReel'),ticks=0,max=34;function tick(){ticks++;let rows=[];for(let i=0;i<8;i++)rows.push(randomSlotCandidate());if(ticks===max)rows[4]=slotCandidateRecord(finalSong);reel.style.transition=ticks>27?'transform .16s cubic-bezier(.2,.8,.2,1)':'transform .075s linear';reel.innerHTML=rows.map((r,i)=>slotItemHTML(r).replace('class="slotItem"','class="slotItem'+(i===4?' centerish':'')+'"')).join('');re
+946: async function refreshRerollButton(){let b=document.getElementById('rerollButton');if(!b)return;if(!SUPA_READY||!currentUser){b.style.display='none';return}let today=rollHistoryData().find(r=>r.day===localDayKey());if(!today){b.style.display='none';return}let {data,error}=await supa.rpc('daily_reroll_status');if(error){b.style.display='none';return}b.style.display='inline-flex';b.disabled=!data?.available;b.innerHTML=data?.used?'ROLL AGAIN USED TODAY':data?.balance<5000?'NEED 5,000 YZYMNY':'ROLL
+947: async function doDailyReroll(){let b=document.getElementById('rerollButton');if(!b||b.disabled||b.classList.contains('spinning'))return;if(!currentUser){openAuth();return}b.classList.add('spinning');b.disabled=true;b.textContent='ROLLING AGAIN…';document.getElementById('rollStatus').textContent='Spending 5,000 YZYMNY and spinning again…';let {data,error}=await supa.rpc('daily_reroll');await refreshRollLuck();if(error){b.classList.remove('spinning');document.getElementById('rollStatus').textConte
+948: async function doDailyRoll(){if(SUPA_READY&&currentUser&&rollHistoryData().some(r=>r.day===localDayKey())&&grantedSpins>0)return doGrantedSpin();let btn=document.getElementById('rollButton');if(btn.classList.contains('spinning'))return;if(SUPA_READY){if(!currentUser){openAuth();return}btn.classList.add('spinning');btn.disabled=true;btn.textContent='ROLLING…';document.getElementById('rollStatus').textContent='The reel is spinning…';let result=await serverDailyRoll();if(result)result=canonicalServ
+949: let h=rollHistoryData();if(h.some(r=>r.day===localDayKey()))return updateDailyRoll();let x=weightedSong();btn.classList.add('spinning');btn.disabled=true;btn.textContent='ROLLING…';document.getElementById('rollStatus').textContent='The reel is spinning…';document.getElementById('rollReveal').innerHTML='';await animateDailyRoll(x);let r=rollRecord(x);h.unshift(r);saveRollHistory(h);updateDailyRoll()}
+950: function renderRollHistory(){let h=sortMyPulls(rollHistoryData()),g=document.getElementById('rollHistoryGrid');g.innerHTML=h.length?h.map(r=>rollCardHTML(r,true)).join(''):'<div class="rollEmpty">No rolls yet. Your pulls will be saved here.</div>'}
+951: function setMainMode(mode){closeD();document.getElementById('yeTrackerScreen').classList.toggle('activeScreen',mode==='yeTracker');if(mode==='yeTracker')window.initYeTracker?.();document.getElementById('gamesScreen').classList.toggle('activeScreen',mode==='games');document.getElementById('worldTourScreen').classList.toggle('activeScreen',mode==='worldTour');document.getElementById('statsScreen').classList.toggle('activeScreen',mode==='stats');document.getElementById('rollScreen').classList.toggl
+952: function openDetail(x){document.body.classList.add('detailOpen');document.getElementById('modePanel')?.classList.remove('open');document.getElementById('themePanel')?.classList.remove('open');if(x.kind==='album'&&(!selected||selected.spotify!==x.spotify))albumTrackSortMode='tracklist';selected=x;let md={...(META[x.spotify]||{}),...(window.CARD_METADATA?.[(x.spotify||'').split('/').pop()]||{})},m=nextM(x.streams);detail.innerHTML=`<div class="hero">${cover(x)}<div><h2>${esc(displayTitle(x))}</h2>
+953: function closeD(){document.body.classList.remove('detailOpen');drawer.classList.remove('open');shade.classList.remove('open')}const closeBtn=document.getElementById('close'),shadeEl=document.getElementById('shade');closeBtn.addEventListener('click',closeD);shadeEl.addEventListener('click',closeD);document.addEventListener('keydown',e=>{if(e.key==='Escape')closeD()});document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active
+954: const SUPA_CFG=window.YE_SUPABASE||{},SUPA_READY=!!(SUPA_CFG.url&&SUPA_CFG.anonKey&&!SUPA_CFG.url.includes('YOUR_'));
+955: const supa=SUPA_READY?supabase.createClient(SUPA_CFG.url,SUPA_CFG.anonKey):null;
+956: let currentUser=null,currentProfile=null,authMode='signin';
+957: function moneyFmt(n){return Number(n||0).toLocaleString()}
+958: function setMoneyUI(){let visible=!!currentUser,pill=document.getElementById('moneyPill'),reward=document.getElementById('dailyRewardBtn');pill.classList.toggle('show',visible);reward?.classList.toggle('show',visible&&document.getElementById('rollScreen').classList.contains('activeScreen'));document.getElementById('moneyBalance').textContent=moneyFmt(currentProfile?.yzymny||0);document.getElementById('accountBtn').textContent=currentProfile?.username||'Account';document.getElementById('adminTabB
+959: function setAuthMode(mode){authMode=mode;document.getElementById('authTitle').textContent=authMode==='signup'?'YZYMNY ACCOUNT':'WELCOME BACK';document.getElementById('authSubmit').textContent=authMode==='signup'?'Create account':'Sign in';document.getElementById('authSwitch').textContent=authMode==='signup'?'Already have an account? Sign in':'Need an account? Create one';document.getElementById('authUser').style.display=authMode==='signup'?'block':'none';document.getElementById('authMsg').textCo
+960: function openAuth(){if(!currentUser)setAuthMode('signin');document.getElementById('authShade').classList.add('open');document.getElementById('signOutBtn').style.display=currentUser?'block':'none';document.getElementById('authSubmit').style.display=currentUser?'none':'block';document.getElementById('authSwitch').style.display=currentUser?'none':'block'}
+961: async function loadProfile(){if(!supa||!currentUser){currentProfile=null;grantedSpins=0;renderGrantedSpins();setMoneyUI();return}let {data}=await supa.from('profiles').select('*').eq('id',currentUser.id).single();currentProfile=data;setMoneyUI()}
+962: async function updateDailyReward(){let b=document.getElementById('dailyRewardBtn');if(!b)return;if(!supa||!currentUser){b.disabled=true;b.textContent='Daily Reward';return}let {data,error}=await supa.rpc('daily_reward_status');if(error){b.disabled=true;b.textContent='Daily Reward';return}let claimed=!!(Array.isArray(data)?data[0]?.claimed:data?.claimed);b.disabled=claimed;b.textContent=claimed?'Claimed Today':'Daily Reward · +100'}
+963: async function claimDailyReward(){let b=document.getElementById('dailyRewardBtn');if(!b||b.disabled||!currentUser)return;b.disabled=true;b.textContent='Claiming…';let {error}=await supa.rpc('claim_daily_reward');if(error){b.disabled=false;b.textContent='Daily Reward · +100';return alert(error.message)}await loadProfile();await updateDailyReward()}
+964: 
+965: let calendarView=new Date();
+966: function etTodayParts(){let p=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date()),o={};p.forEach(x=>o[x.type]=+x.value);return o}
+967: const CALENDAR_ANNUAL_EVENTS=[
+968: {"month": 10, "day": 16, "title": "Ye Performs \"Come To Life\" For 1st Time At Wedding", "releaseYear": 2021, "cover": "assets/calendar/venice-wedding.webp", "event": true},
+969: {"month": 10, "day": 16, "title": "Hip-Hop Summit Action Network Honors Ye During Awards", "releaseYear": 2006, "cover": "covers/late-registration.jpg", "event": true},
+970: {"month": 10, "day": 17, "title": "Ye Tweets His Cover Was Banned", "releaseYear": 2010, "cover": "covers/mbdtf.jpg", "event": true},
+=== LINES 1070-1115 ===
+1070: {month:9,day:30,title:"Wouldn't You Like To... (Ft Ye) Release",cover:'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAUFBQkGCQkJCQwTDg4MDg4ZEg4SEBcOEBAXEBcXEBQXFBQaFxMTFxoUFxgjGBwZHxoYIRgjGCMiIiQnKCMXJzUBCQkFCQkJDAkJEyEXDhoiHAwYKSIoGiIkIiIZLCIoISIUIyIaHx8aGhwYHCIaJCQjDhkkIRcvGRoXIiEnHxckKv/CABEIAfQB9AMBIgACEQEDEQH/xAA1AAABBAMBAQAAAAAAAAAAAAAGAwQFBwABAggJAQACAwEBAAAAAAAAAAAAAAACBAABAwUG/9oADAMBAAIQAxAAAADzptNHrtuuWvci+0MuONN9VS/bLq47026lL7R4kc7aZI7xpuo4xtuRx03y7dcJJynWNuZTvGe5Heme6jvTTm
+1071: 
+1072: {month:6,day:8,title:"Ye's Birthday",birthYear:1977,birthday:true},
+1073: {month:6,day:15,title:"North's Birthday",birthYear:2013,birthday:true},
+1074: {month:12,day:5,title:"Saint's Birthday",birthYear:2015,birthday:true},
+1075: {month:1,day:15,title:"Chicago's Birthday",birthYear:2018,birthday:true},
+1076: {month:5,day:9,title:"Psalm's Birthday",birthYear:2019,birthday:true},
+1077: {month:7,day:12,title:"Donda's Birthday",birthYear:1949,birthday:true,deceased:true},
+1078: {month:1,day:5,title:"Bianca's Birthday",birthYear:1995,birthday:true},
+1079: 
+1080: {month:9,day:29,title:'Yandhi Release Date',cover:'covers/unreleased-yandhi.webp'},
+1081: {month:2,day:22,title:'DONDA 2 Original Release Date',cover:'covers/donda-2.jpg'},
+1082: {month:4,day:25,title:'CUCK Release Date',cover:'covers/unreleased-cuck.jpg'}
+1083: ];
+1084: const CALENDAR_DATED_EVENTS=[{year:2026,month:10,day:24,title:'Ye Live In Jakarta'},{year:2026,month:10,day:31,title:'Ye Live In Houston'},{year:2026,month:11,day:7,title:'Ye Live In Dallas'},{year:2026,month:11,day:21,title:'Ye Live In Phoenix'}];
+1085: function addCalendarFixedEvents(out,year){for(const e of CALENDAR_ANNUAL_EVENTS){let key=`${year}-${String(e.month).padStart(2,'0')}-${String(e.day).padStart(2,'0')}`,subtitle='Calendar event';if(e.releaseYear){let n=year-e.releaseYear;subtitle=n<0?`Releases in ${e.releaseYear}`:n===0?(e.event?`${e.releaseYear} event`:'Release Day'):`${n} Year Anniversary`}else if(e.birthday){let age=year-e.birthYear;subtitle=e.deceased?`Born ${e.birthYear} · Would be ${age}`:`${ordinalSuffix(age)} Birthday · Bo
+1086: function ordinalSuffix(n){let v=n%100;return n+(v>=11&&v<=13?'th':({1:'st',2:'nd',3:'rd'}[n%10]||'th'))}
+1087: const CALENDAR_ACHIEVED_MILESTONES=[{"date":"2026-10-05","spotify":"https://open.spotify.com/track/5pfn68duSmBKo4FhYknOms","title":"FATHER (feat. Travis Scott)","target":100000000}];
+1088: function recordedMilestoneEvents(){
+1089:  const found=new Map(CALENDAR_ACHIEVED_MILESTONES.map(e=>[e.spotify+'|'+e.target,e]));
+1090:  const history=[...(window.KWORB_HISTORY||[])];if(DB.updated)history.push({updated:DB.updated,songs:DB.songs});
+1091:  const dateKey=value=>{const m=String(value||'').match(/^(\d{4})[/-](\d{1,2})[/-](\d{1,2})/);return m?`${m[1]}-${m[2].padStart(2,'0')}-${m[3].padStart(2,'0')}`:null};
+1092:  const snapshots=history.map(d=>({...d,date:dateKey(d.updated)})).filter(d=>d.date).sort((a,b)=>a.date.localeCompare(b.date)),previous=new Map();
+1093:  for(const d of snapshots)for(const x of d.songs||[]){if(!x.spotify||!Number.isFinite(x.streams))continue;const old=previous.get(x.spotify);if(old&&old.date<d.date){const targets=[...marks];for(let t=(Math.floor(old.streams/1e9)+1)*1e9;t<=x.streams;t+=1e9){targets.push(t);if(targets.length>1000)break}for(const target of targets)if(old.streams<target&&x.streams>=target){const id=x.spotify+'|'+target;if(!found.has(id))found.set(id,{date:d.date,spotify:x.spotify,title:x.name,target})}}previous.set(
+1094:  return [...found.values()];
+1095: }
+1096: function milestoneCalendarEvents(){let now=Date.now(),out={};const imageFor=x=>{try{return localCover(x)||''}catch{return''}};
+1097:  for(const e of recordedMilestoneEvents()){const x=DB.songs.find(x=>x.spotify===e.spotify)||{name:e.title,spotify:e.spotify,kind:'song'};(out[e.date]||(out[e.date]=[])).push({title:displayTitle(x),target:e.target,cover:imageFor(x),achieved:true})}
+1098:  for(const x of DB.songs){if(x.streams==null||!x.daily||x.daily<=0)continue;let target=nextM(x.streams),projection=milestoneProjection(x,target,new Date(now));if(!projection||projection.days>730)continue;let key=projection.key;(out[key]||(out[key]=[])).push({title:displayTitle(x),target,cover:imageFor(x)})}return out}
+1099: 
+1100: function renderMilestoneCalendar(){let grid=document.getElementById('calendarGrid'),title=document.getElementById('calMonth');if(!grid||!title)return;let y=calendarView.getFullYear(),m=calendarView.getMonth(),first=new Date(y,m,1),start=new Date(y,m,1-first.getDay()),events=milestoneCalendarEvents(),today=etTodayParts();for(const yy of new Set(Array.from({length:42},(_,i)=>{let q=new Date(start);q.setDate(start.getDate()+i);return q.getFullYear()})))addCalendarFixedEvents(events,yy);title.textCo
+1101: function refreshCalendarPans(){const grid=document.getElementById('calendarGrid');if(!grid||!grid.clientWidth)return;grid.querySelectorAll('.calendarEventsViewport').forEach(view=>{const move=view.firstElementChild,items=move.children;view.style.height='';view.classList.remove('isOverflowing');if(items.length>4){const height=items[3].offsetTop+items[3].offsetHeight,overflow=Math.ceil(move.scrollHeight-height);if(overflow>0){view.style.height=height+'px';view.style.setProperty('--events-pan-dista
+1102: window.addEventListener('resize',()=>requestAnimationFrame(refreshCalendarPans));
+1103: async function initAuth(){if(!SUPA_READY){document.getElementById('accountBtn').title='Finish Supabase setup to enable accounts';return}let {data:{session}}=await supa.auth.getSession();currentUser=session?.user||null;window.yeArcadeSync?.accountChanged();await loadProfile();if(currentUser){await updateDailyRoll();await updateDailyReward();await refreshRollLuck();}supa.auth.onAuthStateChange(async(_e,session)=>{document.getElementById('shopGrid').innerHTML='';currentUser=session?.user||null;wind
+1104: async function submitAuth(){if(!supa)return document.getElementById('authMsg').textContent='Supabase is not configured yet.';let email=document.getElementById('authEmail').value.trim(),password=document.getElementById('authPass').value,username=document.getElementById('authUser').value.trim();document.getElementById('authMsg').textContent='Working…';let res;if(authMode==='signup')res=await supa.auth.signUp({email,password,options:{data:{username},emailRedirectTo:'https://rjplayz2cool.github.io/y
+1105: async function serverDailyRoll(){if(!supa||!currentUser)return null;let {data,error}=await supa.rpc('daily_roll');if(error){document.getElementById('rollStatus').textContent=error.message;return null}await loadProfile();return data}
+1106: // serverCoverSrc is supplied by the shared card resolver
+1107: // specialRollByRecord is supplied by the shared card resolver
+1108: // canonicalServerRecord is supplied by the shared card resolver
+1109: function specialRollByRecord(r){const all=[...EBK_ROLLS,...UNRELEASED_ROLLS],key=String(r?.catalog_key||r?.key||r?.spotify||'').trim();return all.find(x=>x.id===key)||((r?.unreleased||['Unreleased','EBK'].includes(String(r?.rarity)))?all.find(x=>normTitle(x.title)===normTitle(r?.title||'')):null)||null}
+1110: function serverCoverSrc(v){v=String(v||'').trim();if(!v)return'';if(/^(?:https?:\/\/|data:|blob:)/i.test(v))return v;v=v.replace(/^\.\//,'').replace(/^\/+/, '');return /^(?:covers|assets|snake|media)\//.test(v)?v:'covers/'+v}
+1111: function serverItemInfo(r){
+1112:  const sp=specialRollByRecord(r),special=!!sp||r?.unreleased||['Unreleased','EBK'].includes(String(r?.rarity||'')),x=special?null:trackerSongForServer(r),key=String(r?.catalog_key||r?.key||r?.spotify||x?.spotify||'').split('/').pop(),md=window.CARD_METADATA?.[key]||window.CARD_METADATA?.[(x?.spotify||'').split('/').pop()]||{},existing=x?(META[x.spotify]||{}):{};
+1113:  const known=value=>value&&!/^(?:unknown|tracker|n\/?a)$/i.test(String(value));
+1114:  const project=x?projectLabelFor(x):'',album=sp?.album||(known(project)?project:'')||md.album||(known(r?.album)?r.album:'')||'Single';
+1115:  const cover=serverCoverSrc(sp?.cover)||(x?localCover(x):'')||serverCoverSrc(md.cover)||serverCoverSrc(r?.cover);
+=== LINES 1180-1230 ===
+1180: async function loadAdminInventories(){let box=document.getElementById('adminInventories');if(currentProfile?.role!=='admin'){box.innerHTML='';return}box.innerHTML='<div class="muted">Loading inventories…</div>';let {data,error}=await supa.rpc('admin_list_inventories');if(error){box.innerHTML='<div class="backendNotice">'+esc(error.message)+' — run the included SQL migration first.</div>';return}let items=(data||[]).map(canonicalServerRecord),groups={};items.forEach(r=>{let u=r.username||'Unknown
+1181: async function adminDeleteInventory(id,title,username){if(!confirm(`Permanently remove ${title} from ${username}'s inventory?`))return;let {error}=await supa.rpc('admin_delete_inventory',{p_inventory_id:id});if(error)return alert(error.message);await loadAdminInventories()}
+1182: function tradePickerHTML(id,items,label){return `<div class="tradePicker" id="${id}Picker"><button class="tradePickerBtn" type="button" onclick="toggleTradePicker('${id}')"><span>${esc(label)}</span><span class="tradeSelectedCount" id="${id}Count">0 selected ▾</span></button><div class="tradePickerMenu">${items.map(r=>`<label class="tradePickerOption"><input type="checkbox" value="${esc(r.id)}" onchange="tradePickChanged('${id}',this)"><span>${esc(r.title)} · ${esc(r.rarity)} ${alreadyOwnedBadge
+1183: function toggleTradePicker(id){let p=document.getElementById(id+'Picker');document.querySelectorAll('.tradePicker.open').forEach(x=>{if(x!==p)x.classList.remove('open')});p?.classList.toggle('open')}
+1184: function tradePickChanged(id,input){input.closest('.tradePickerOption')?.classList.toggle('selected',input.checked);let picked=[...document.querySelectorAll(`#${id}Picker input:checked`)],count=document.getElementById(id+'Count'),sum=document.getElementById(id+'Summary');if(count)count.textContent=`${picked.length} selected ▾`;if(sum)sum.innerHTML=picked.map(x=>`<span class="tradeChip">${esc(x.closest('label')?.innerText||'Song')}</span>`).join('')}
+1185: function tradeSelected(id){return [...document.querySelectorAll(`#${id}Picker input:checked`)].map(x=>x.value)}
+1186: async function loadTradeTarget(){let username=document.getElementById('tradeUser').value.trim(),box=document.getElementById('tradeBuilder');if(!currentUser)return openAuth();if(!username)return;box.innerHTML='<div class="muted">Loading…</div>';let [{data:mine},{data:theirs,error}]=await Promise.all([supa.from('inventory').select('*').eq('owner_id',currentUser.id).order('acquired_at',{ascending:false}),supa.rpc('trade_user_inventory',{p_username:username})]);if(error){box.innerHTML='<div class="b
+1187: async function sendTrade(username){let offered=tradeSelected('tradeMine'),requested=tradeSelected('tradeTheirs');if(!offered.length||!requested.length)return alert('Choose at least one song on each side.');let {error}=await supa.rpc('create_multi_trade_offer',{p_to_username:username,p_offered_inventory_ids:offered,p_requested_inventory_ids:requested});if(error)return alert(error.message);alert('Trade offer sent.');loadTrades()}
+1188: 
+1189: function tradeItemsHTML(items){return (items||[]).map(x=>`<div class="tradeChip">${esc(x.title||'Unknown')} · ${esc(x.rarity||'Unknown')} ${alreadyOwnedBadge(x)}</div>`).join('')}
+1190: async function loadTrades(){let g=document.getElementById('tradeOffers');if(!g||!currentUser)return;if(!supa){g.innerHTML='<div class="rollEmpty">Connect Supabase to trade.</div>';return}let {data,error}=await supa.rpc('list_my_multi_trade_offers');if(error){g.innerHTML='<div class="backendNotice">'+esc(error.message)+' — run the multi-trade SQL migration first.</div>';return}await refreshOwnedInventory();g.innerHTML=(data||[]).length?data.map(t=>`<div class="tradeOffer"><div class="muted">${t.d
+1191: async function acceptTrade(id){if(!confirm('Accept this trade? All selected songs will swap owners.'))return;let {error}=await supa.rpc('accept_multi_trade_offer',{p_trade_id:id});if(error)return alert(error.message);await renderServerInventory();loadTrades()}
+1192: async function declineTrade(id){let {error}=await supa.rpc('decline_multi_trade_offer',{p_trade_id:id});if(error)return alert(error.message);loadTrades()}
+1193: async function cancelTrade(id){let {error}=await supa.rpc('cancel_multi_trade_offer',{p_trade_id:id});if(error)return alert(error.message);loadTrades()}
+1194: 
+1195: function logActionName(t){return({'business_pull':'Pull','business_listing':'Listing','business_sale':'Sale','business_quicksell':'Quicksell','business_trade':'Trade'})[t]||String(t||'').replace(/^business_/,'').replaceAll('_',' ')}
+1196: function logSongText(x){let d=x?.details||{};if(x.event_type==='business_trade')return `${d.offered_song||x.title||'Unknown'} (${d.offered_rarity||'Unknown'}) ⇄ ${d.requested_song||'Unknown'} (${d.requested_rarity||'Unknown'})`;let song=d.song||x.title||'—',rar=d.rarity;return rar?`${song} (${rar})`:song}
+1197: function logMoneyText(x){let d=x?.details||{};if(x.event_type==='business_sale')return `${x.username||'Seller'} +${moneyFmt(Number(d.seller_delta??x.yzymny_amount??0))} / ${x.other_username||'Buyer'} ${moneyFmt(Number(d.buyer_delta??-(x.yzymny_amount||0)))}`;if(x.yzymny_amount==null)return '—';let n=Number(x.yzymny_amount);return `${n>0?'+':''}${moneyFmt(n)}`}
+1198: function logSummary(x){let d=x?.details||{};if(d.summary)return String(d.summary);let song=logSongText(x);switch(x.event_type){case'business_pull':return `${x.username} pulled ${song}`;case'business_listing':return `${x.username} listed ${song}${d.price?` for ${moneyFmt(Number(d.price))} YZYMNY`:''}`;case'business_sale':return `${x.username} sold ${song} to ${x.other_username} for ${moneyFmt(Number(d.price||x.yzymny_amount||0))} YZYMNY`;case'business_quicksell':return `${x.username} quicksold ${
+1199: async function loadTransactionLogs(){let box=document.getElementById('transactionLogs');if(!box)return;if(currentProfile?.role!=='admin'){box.innerHTML='';return}box.innerHTML='<div class="muted">Loading transaction logs…</div>';let {data,error}=await supa.rpc('admin_transaction_logs');if(error){box.innerHTML='<div class="backendNotice">'+esc(error.message)+' — run logs_business_events.sql in Supabase first.</div>';return}box.innerHTML=(data||[]).length?`<div class="transactionLogGrid">${data.ma
+1200: async function adminGrant(){let username=document.getElementById('adminUser').value.trim(),title=document.getElementById('adminItem').value.trim();let {data,error}=await supa.rpc('admin_grant_item',{p_username:username,p_title:title});document.getElementById('adminMsg').textContent=error?error.message:'Granted '+title+' to '+username}
+1201: async function adminRemove(){let username=document.getElementById('adminUser').value.trim(),title=document.getElementById('adminItem').value.trim();if(!username||!title)return document.getElementById('adminMsg').textContent='Enter a username and song title.';if(!confirm('Remove one copy of '+title+' from '+username+'?'))return;let {data,error}=await supa.rpc('admin_remove_item',{p_username:username,p_title:title});document.getElementById('adminMsg').textContent=error?error.message:'Removed '+tit
+1202: async function adminMoney(){let username=document.getElementById('adminUser').value.trim(),amount=Number(document.getElementById('adminMoney').value);let {data,error}=await supa.rpc('admin_adjust_yzymny',{p_username:username,p_amount:amount});document.getElementById('adminMsg').textContent=error?error.message:'Balance updated.'}
+1203: qel=document.querySelector('#q');qel.oninput=render;sort.onchange=render;updatedLabel.textContent=DB.updated;document.getElementById('songStat').textContent=DB.songs.length+' songs';document.getElementById('albumStat').textContent=DB.albums.length+' albums';buildThemes();
+1204: const settingsBtn=document.getElementById('settingsBtn'),themePanel=document.getElementById('themePanel'),modeBtn=document.getElementById('modeBtn'),modePanel=document.getElementById('modePanel'),sortBtn=document.getElementById('sortBtn'),sortPanel=document.getElementById('sortPanel');
+1205: settingsBtn.onclick=e=>{e.stopPropagation();themePanel.classList.toggle('open');modePanel.classList.remove('open');sortPanel.classList.remove('open')};
+1206: modeBtn.onclick=e=>{e.stopPropagation();modePanel.classList.toggle('open');themePanel.classList.remove('open');sortPanel.classList.remove('open')};
+1207: sortBtn.onclick=e=>{e.stopPropagation();sortPanel.classList.toggle('open');themePanel.classList.remove('open');modePanel.classList.remove('open')};
+1208: document.querySelectorAll('[data-sort]').forEach(b=>b.onclick=e=>{e.stopPropagation();sort.value=b.dataset.sort;sortBtn.innerHTML=esc(b.textContent)+' <span>⌄</span>';document.querySelectorAll('[data-sort]').forEach(x=>x.classList.toggle('active',x===b));sortPanel.classList.remove('open');render()});
+1209: document.querySelectorAll('.modeChoice').forEach(b=>b.onclick=e=>{e.stopPropagation();setMainMode(b.dataset.mode)});
+1210: document.getElementById('customThemeBtn').onclick=e=>{e.stopPropagation();document.getElementById('customThemePanel').classList.toggle('open')};
+1211: const custom1=document.getElementById('customColor1'),custom2=document.getElementById('customColor2');[custom1,custom2].forEach(inp=>inp.addEventListener('input',()=>applyCustomTheme(custom1.value,custom2.value)));document.getElementById('applyCustomTheme').onclick=e=>{e.preventDefault();e.stopPropagation();applyCustomTheme(custom1.value,custom2.value);document.getElementById('customThemePanel').classList.remove('open');themePanel.classList.remove('open')};
+1212: const myPullsSortBtn=document.getElementById('myPullsSortBtn'),myPullsSortMenu=document.getElementById('myPullsSortMenu'),myPullsSortLabel=document.getElementById('myPullsSortLabel');
+1213: myPullsSortBtn?.addEventListener('click',e=>{e.stopPropagation();myPullsSortMenu?.classList.toggle('open')});
+1214: myPullsSortMenu?.querySelectorAll('[data-pullsort]').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();myPullsSortMode=b.dataset.pullsort;myPullsSortLabel.textContent=b.textContent;myPullsSortMenu.querySelectorAll('button').forEach(x=>x.classList.toggle('active',x===b));myPullsSortMenu.classList.remove('open');if(SUPA_READY&&currentUser)renderServerInventory();else renderRollHistory()}));
+1215: document.addEventListener('click',()=>myPullsSortMenu?.classList.remove('open'));
+1216: document.getElementById('dailyRewardBtn')?.addEventListener('click',claimDailyReward);document.getElementById('rollButton').onclick=doDailyRoll;document.getElementById('rerollButton').onclick=doDailyReroll;
+1217: document.querySelectorAll('.rollTab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.rollTab').forEach(x=>x.classList.toggle('active',x===b));['roll','history','collections','shop','market','trades','admin','logs'].forEach(k=>document.getElementById(k==='roll'?'rollHome':'roll'+k[0].toUpperCase()+k.slice(1)).classList.toggle('active',b.dataset.rolltab===k));if(b.dataset.rolltab==='history'){if(SUPA_READY&&currentUser)renderServerInventory();else renderRollHistory()}if(b.dataset.rolltab===
+1218: document.getElementById('calPrev')?.addEventListener('click',()=>{calendarView=new Date(calendarView.getFullYear(),calendarView.getMonth()-1,1);renderMilestoneCalendar()});document.getElementById('calNext')?.addEventListener('click',()=>{calendarView=new Date(calendarView.getFullYear(),calendarView.getMonth()+1,1);renderMilestoneCalendar()});document.getElementById('accountBtn').onclick=openAuth;document.getElementById('authClose').onclick=()=>document.getElementById('authShade').classList.remov
+1219: document.addEventListener('click',e=>{if(!e.target.closest('.settingsWrap'))themePanel.classList.remove('open');if(!e.target.closest('.modeWrap'))modePanel.classList.remove('open');if(!e.target.closest('.sortWrap'))sortPanel.classList.remove('open');if(!e.target.closest('.myPullsSortWrap'))document.getElementById('myPullsSortMenu')?.classList.remove('open');if(!e.target.closest('.tradePicker'))document.querySelectorAll('.tradePicker.open').forEach(x=>x.classList.remove('open'))});document.queryS
+1220: render();updateDailyRoll();initAuth();let dailyRewardDay=localDayKey();setInterval(()=>{let d=localDayKey();if(d!==dailyRewardDay){dailyRewardDay=d;updateDailyReward();updateDailyRoll();if(document.getElementById('rollShop')?.classList.contains('active'))loadShop()}},60000);
+1221: 
+1222: function syncFloatingPlayerForView(){
+1223:   if(!activeSnippetAudio){hideFloatingPlayer();return}
+1224:   const collections=document.getElementById('rollCollections');
+1225:   const onCollections=!!collections&&collections.classList.contains('active');
+1226:   if(onCollections)hideFloatingPlayer();else showFloatingPlayer();
+1227: }
+1228: document.addEventListener('click',function(e){
+1229:   const mode=e.target.closest('.modeChoice[data-mode]');
+1230:   const roll=e.target.closest('.rollTab[data-rolltab]');

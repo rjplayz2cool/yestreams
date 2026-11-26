@@ -1,0 +1,46 @@
+name: Install World Tour tab
+on:
+  push:
+    paths:
+      - .github/workflows/install-world-tour.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Add World Tour tab to homepage
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          nav='<button data-mode="yeTracker" class="modeChoice">Ye Tracker</button>'
+          toggle="document.getElementById('gamesScreen').classList.toggle('activeScreen',mode==='games');"
+          marker='<main id="gamesScreen" class="wrap screen gamesScreen">'
+          if 'id="worldTourScreen"' in s:
+              print('World Tour already installed')
+              raise SystemExit(0)
+          for item in (nav,toggle,marker):
+              assert s.count(item)==1, 'Missing or duplicate anchor'
+          assert 'id="yeTrackerArchive"' in s and s.rstrip().endswith('</script></body></html>'), 'Tracker archive validation failed'
+          s=s.replace(nav,nav+'<button data-mode="worldTour" class="modeChoice">World Tour</button>',1)
+          s=s.replace(toggle,toggle+"document.getElementById('worldTourScreen').classList.toggle('activeScreen',mode==='worldTour');",1)
+          frame='<main id="worldTourScreen" class="screen" style="width:100%;max-width:none;padding:0;min-height:calc(100vh - 80px)"><iframe src="ye-world-tour.html" title="Ye World Tour" loading="lazy" style="display:block;width:100%;height:calc(100vh - 80px);min-height:650px;border:0;background:#070a13"></iframe></main>'
+          s=s.replace(marker,frame+marker,1)
+          p.write_text(s,encoding='utf-8')
+          print('Installed World Tour tab')
+          PY
+      - name: Commit website change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Add World Tour tab to Ye Tracker homepage"
+            git push
+          fi

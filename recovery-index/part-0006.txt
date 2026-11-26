@@ -1,0 +1,169 @@
+h The Wire - Live At Abbey Road Studios","Workout Plan - Live At Abbey Road Studios","Heard 'Em Say - Live At Abbey Road Studios","All Falls Down - Live At Abbey Road Studios","Bring Me Down - Live At Abbey Road Studios","Gone - Live At Abbey Road Studios","Late - Live At Abbey Road Studios","Jesus Walks - Live At Abbey Road Studios","Gold Digger"],"3WFTGIO6E3Xh4paEOBY9OU":["Say You Will","Welcome To Heartbreak","Heartless","Amazing","Love Lockdown","Paranoid","RoboCop","Street Lights","Bad News","See You In My Nightmares","Coldest Winter","Pinocchio Story"],"6pwuKxMUkNg673KETsXPUV":["Feel The Love","Fire","4th Dimension","Freeee (Ghost Town Pt. 2)","Reborn","Kids See Ghosts","Cudi Montage"],"cruel-summer":["To The World","Clique","Mercy.1","New God Flow.1","The Morning","Cold.1","Higher","Sin City","The One","Creepers","Bliss","Don't Like.1"]};
+let albumTrackSortMode='tracklist';
+function normTitle(s){return String(s||'').replace(/[’‘]/g,"'").toUpperCase().replace(/\s*\(FEAT\.[^)]+\)/g,'').replace(/\s*-\s*(INSTRUMENTAL|ACAPELLA|HOOLIGANS VERSION|HAVOC VERSION)$/g,'').trim()}
+const SONG_DISPLAY_OVERRIDES={
+'2yBb1CRq98SSWRuDSn36SZ':{title:'Life Of The Party (with André 3000)',cover:'donda.jpg'},
+'6ImNhLq3RabOnEHfoRdvd4':{title:'I CAN’T WAIT (feat. Ms. Lauryn Hill)',cover:'bully-deluxe.jpg'},
+'25fLIFbAV7zBetOH077pDl':{title:"MAMA'S FAVORITE (feat. Nine Vicious)",cover:'bully.jpg'},
+'163l4Itf8oDEK7ZYdVm22N':{title:'I CAN’T WAIT',cover:'bully.jpg'},
+'2TK4NQXWehLphjpXTYxu1H':{title:'HAM',cover:'watch-the-throne.jpg'},
+'040LDuJ8MWKKhV9Fdwc64N':{cover:'bully-deluxe.jpg'},
+'5UNo2nitxVTkBA9QYmnHJx':{cover:'bully-deluxe.jpg'},
+'4qikXelSRKvoCqFcHLB2H2':{cover:'cruel-summer.jpg'},
+'65rRB2mspD309xE6YimZTl':{cover:'cruel-summer.jpg'},
+'1DbeslBYnckTqqTcc1Y2Tg':{cover:'cruel-summer.jpg'},
+'62h8709cQe3S3nOWvFExpN':{cover:'cruel-summer.jpg'},
+'3YqJ0iaDWM0aqEDQExd2j3':{cover:'cruel-summer.jpg'},
+'1ZnA4VYOlYIShuGt60LmCs':{cover:'tlop.jpg'},
+'4DOoissGiO2oc7vtGkhAib':{cover:'watch-the-throne.jpg'},
+'7t259tTXkuNVfxdQcnEagh':{cover:'watch-the-throne.jpg'},
+'360VkSTITvF55weIKoaNTw':{cover:'donda-deluxe.jpg'},
+'3UlYBTkShcEsMYSXtC5Vu1':{cover:'donda-deluxe.jpg'},
+'1jxtPdcRycy87IAnkq2HT3':{cover:'donda-deluxe.jpg'},
+'3zUNCyezZQ7Wg2wYcsjGN4':{cover:'bully.jpg'},
+'46qZ2dq0jsXHtwsLaI9tl1':{cover:'gemini-season.jpeg'},
+'78TTtXnFQPzwqlbtbwqN0y':{cover:'fourfiveseconds.png'},
+'6etwirSInfuJrSOlogS6Sh':{cover:'american-boy.jpg'},
+'7LR85XLWw2yXqKBSI5brbG':{cover:'run-this-town.jpg'},
+'4O3nAQfOC9PN5ElMEcAJb9':{cover:'forever-single.jpg'},
+'4S8d14HvHb70ImctNgVzQQ':{cover:'i-love-it.webp'},
+'6vWEAOUSxohKxhp0K1BsxL':{cover:'mixed-personalities.jpg'},
+'4sHCzDfrrc3Xs47xbGIrSp':{cover:'knock-you-down.jpg'},
+'06JvOZ39sK8D8SqiqfaxDU':{cover:'true-love-single.png'},
+'6XkuklKiHYVTlVvWlTgQYP':{cover:'erase-me.jpg'},
+'1CUk09iecf4kLvLuhxerdS':{cover:'et.png'},
+'2dwkQCPCzhQZ65zM1mlU8I':{cover:'put-on.jpg'},
+'1fBKBZ3EibF2IT5hMIVlLg':{cover:'put-on.jpg'},
+'2gAGWaK4wvt2xrFUlR4mK8':{cover:'jukebox.jpg'},
+'2nBI3iWLhupR7LyAJ5GGkE':{cover:'champions.jpg'},
+'2yJ9GVCLMmzBBfQAnfzlwr':{cover:'that-part.jpg'},
+'3DoBTwfr8yi2LN08SBpFkN':{cover:'watch.jpg'},
+'1mtLPUyH34kolgEy1VOBc0':{cover:'ego-death.png'},
+'078C2jXg7XsMgW78Gfx1JA':{cover:'smuckers.png'},
+'0F13K9dwYH2zpTWiR8d628':{cover:'go2damoon.png'},
+'4huBDGP4I3S0pYI0EaRN1c':{cover:'city-of-gods.png'},
+'0j35X8cTq543QDYLOyqB8W':{cover:'only-one.png'}
+};
+function displayTitle(x){let id=(x.spotify||'').split('/').pop();return SONG_DISPLAY_OVERRIDES[id]?.title||x.name}
+function projectFor(x){if(x.kind!=='song')return null;let id=(x.spotify||'').split('/').pop();
+// Same-title releases must be identified by the exact Kworb Spotify entry, never title alone.
+if(id==='6QytYtRN1xFId83ALPtsW8')return null; // removed/unavailable duplicate VULTURES 2 FOREVER
+if(id==='4O3nAQfOC9PN5ElMEcAJb9')return null; // Drake – Forever (2009 single)
+if(id==='0KXIsj1KjSNlGvNora6BA4')return PROJECTS[0]; // VULTURES 1 – KING
+if(id==='4LP6bmyAxdMNrqUrMpaVQ8')return PROJECTS[3]; // BULLY – KING
+// Duplicate-title releases: exact Spotify IDs always win over title matching.
+if(id==='2tPNj9sUt3FbjEUqBzZazv')return PROJECTS[1]; // VULTURES 2 – 530
+if(id==='79mEFisvTUZcVGUxPM0dYc')return PROJECTS[2]; // DONDA 2 – 530
+if(id==='1Cxq3u0RQ0tEBbVofZ9Mma')return PROJECTS[1]; // VULTURES 2 – FOREVER
+if(id==='3Z3Fs0QhlvrJVRBHwzAFnQ')return null; // Slum Village – Selfish
+if(id==='06JvOZ39sK8D8SqiqfaxDU')return null; // True Love single
+if(id==='3WbuQIjkR1mIKdwSNlgqpp')return PROJECTS[2]; // DONDA 2 – TRUE LOVE
+let n=normTitle(x.name);for(const p of PROJECTS){if(p.songs.split('|').some(t=>normTitle(t)===n))return p}return null}
+/* custom-song-covers:start */
+const CUSTOM_SONG_COVERS={"7CwRY5cWBqNblDqu9EoOzD": "assets/era-covers/song-cover-01.webp", "4I2ENHg65RuKifEHdD0kMu": "assets/era-covers/song-cover-02.webp", "2DCCA7AwEslJ7jEaEX4Frf": "assets/era-covers/song-cover-03.webp", "29u1m2qYmOheREg0yL1Zcb": "assets/era-covers/song-cover-04.webp", "72nLaDnt2dfxCA3ZAiEC2c": "assets/era-covers/song-cover-05.webp", "5vnuJ8EopkP5dHukpOmT3L": "assets/era-covers/song-cover-06.webp", "6oHpLl0XdlbYJuGLDiREfe": "assets/era-covers/song-cover-07.webp", "4WLrIia6HbBFr5yi4E7fcg": "assets/era-covers/song-cover-08.webp", "3Z3Fs0QhlvrJVRBHwzAFnQ": "assets/era-covers/song-cover-09.webp", "4L0dkLS6mpsf6zRKVSwfWY": "assets/era-covers/song-cover-10.webp", "5qkWTBmDmZjogwIvbKtJQv": "assets/era-covers/song-cover-11.webp", "7dZAPeA3Of5j5Vaef0DQ6M": "assets/era-covers/song-cover-12.webp", "2KWKlNrgm3UNE65W6TumF6": "assets/era-covers/song-cover-13.webp", "0puFmcIvB53ZUtvVP78o0e": "assets/era-covers/song-cover-14.webp", "5nEQdBH5SryRPFolMZZWDm": "assets/era-covers/song-cover-15.webp", "0a6q5XK264I3qDt5gmFNSf": "assets/era-covers/song-cover-16.webp", "16Dh2buZVDH3XTBRXJp8f0": "assets/era-covers/song-cover-12.webp"};
+/* custom-song-covers:end */
+function localCover(x){if(x.kind==='song'){const custom=CUSTOM_SONG_COVERS[(x.spotify||'').split('/').pop()];if(custom)return custom;}if(x.kind==='album'){for(const [r,k] of ALBUM_COVERS)if(r.test(x.name))return 'covers/'+k}if(x.kind==='song'){let id=(x.spotify||'').split('/').pop(),o=SONG_DISPLAY_OVERRIDES[id];if(o?.cover)return 'covers/'+o.cover;if(/^ALL DAY$/i.test(x.name))return 'covers/all-day.jpg';let p=projectFor(x);if(p)return 'covers/'+p.cover}return null}
+function initials(s){return s.split(/\s+/).slice(0,2).map(x=>x[0]).join('').toUpperCase()}
+const TRACK_CREDITS={
+// College Dropout / Late Registration / Graduation
+"ALL FALLS DOWN":"Kanye West, Syleena Johnson","SPACESHIP":"Kanye West, GLC, Consequence","NEVER LET ME DOWN":"Kanye West, JAY-Z, J. Ivy","GET EM HIGH":"Kanye West, Talib Kweli, Common","SLOW JAMZ":"Twista, Kanye West, Jamie Foxx","BREATHE IN BREATHE OUT":"Kanye West, Ludacris","TWO WORDS":"Kanye West, Mos Def, Freeway, The Boys Choir of Harlem",
+"HEARD 'EM SAY":"Kanye West, Adam Levine","TOUCH THE SKY":"Kanye West, Lupe Fiasco","GOLD DIGGER":"Kanye West, Jamie Foxx","DRIVE SLOW":"Kanye West, Paul Wall, GLC","MY WAY HOME":"Common, Kanye West","CRACK MUSIC":"Kanye West, The Game","BRING ME DOWN":"Kanye West, Brandy","DIAMONDS FROM SIERRA LEONE - REMIX":"Kanye West, JAY-Z","WE MAJOR":"Kanye West, Nas, Really Doe","GONE":"Kanye West, Consequence, Cam'ron",
+"GOOD LIFE":"Kanye West, T-Pain","BARRY BONDS":"Kanye West, Lil Wayne","DRUNK AND HOT GIRLS":"Kanye West, Mos Def","HOMECOMING":"Kanye West, Chris Martin","GOOD NIGHT":"Kanye West, Mos Def, Al Be Back",
+// 808s / MBDTF
+"WELCOME TO HEARTBREAK":"Kanye West, Kid Cudi","AMAZING":"Kanye West, Jeezy","PARANOID":"Kanye West, Mr Hudson","SEE YOU IN MY NIGHTMARES":"Kanye West, Lil Wayne",
+"GORGEOUS":"Kanye West, Kid Cudi, Raekwon","ALL OF THE LIGHTS":"Kanye West","MONSTER":"Kanye West, JAY-Z, Rick Ross, Nicki Minaj, Bon Iver","SO APPALLED":"Kanye West, JAY-Z, Pusha T, CyHi, Swizz Beatz, RZA","DEVIL IN A NEW DRESS":"Kanye West, Rick Ross","BLAME GAME":"Kanye West, John Legend","LOST IN THE WORLD":"Kanye West, Bon Iver",
+// Yeezus / Pablo / ye
+"I AM A GOD":"Kanye West, God","HOLD MY LIQUOR":"Kanye West","GUILT TRIP":"Kanye West","ULTRALIGHT BEAM":"Kanye West, Chance the Rapper, Kirk Franklin, The-Dream, Kelly Price","FATHER STRETCH MY HANDS PT. 1":"Kanye West","PT. 2":"Kanye West","FAMOUS":"Kanye West","HIGHLIGHTS":"Kanye West","WAVES":"Kanye West","FML":"Kanye West, The Weeknd","REAL FRIENDS":"Kanye West, Ty Dolla $ign","WOLVES":"Kanye West","NO MORE PARTIES IN LA":"Kanye West, Kendrick Lamar","FADE":"Kanye West","GHOST TOWN":"Kanye West, PARTYNEXTDOOR","WOULDN'T LEAVE":"Kanye West, PARTYNEXTDOOR",
+// KSG / JIK / Donda
+"FEEL THE LOVE":"KIDS SEE GHOSTS, Pusha T","4TH DIMENSION":"KIDS SEE GHOSTS, Louis Prima","KIDS SEE GHOSTS":"KIDS SEE GHOSTS, Yasiin Bey","EVERY HOUR":"Kanye West, Sunday Service Choir","WATER":"Kanye West, Ant Clemons","USE THIS GOSPEL":"Kanye West, Clipse, Kenny G",
+"JAIL":"Kanye West, JAY-Z","OFF THE GRID":"Kanye West, Playboi Carti, Fivio Foreign","HURRICANE":"Kanye West, The Weeknd, Lil Baby","PRAISE GOD":"Kanye West, Travis Scott, Baby Keem","JONAH":"Kanye West, Vory, Lil Durk","OK OK":"Kanye West, Lil Yachty, Rooga","JUNYA":"Kanye West, Playboi Carti","REMOTE CONTROL":"Kanye West, Young Thug","MOON":"Kanye West, Don Toliver, Kid Cudi","KEEP MY SPIRIT ALIVE":"Kanye West, Westside Gunn, Conway the Machine","JESUS LORD":"Kanye West, Jay Electronica","PURE SOULS":"Kanye West, Roddy Ricch, Shenseea","LIFE OF THE PARTY":"Kanye West, André 3000",
+// Vultures / Donda 2 / Bully examples
+"BACK TO ME":"¥$, Kanye West, Ty Dolla $ign, Freddie Gibbs","DO IT":"¥$, Kanye West, Ty Dolla $ign, YG","FUK SUMN":"¥$, Kanye West, Ty Dolla $ign, Playboi Carti, Travis Scott","VULTURES":"¥$, Kanye West, Ty Dolla $ign, Bump J, Lil Durk","CARNIVAL":"¥$, Kanye West, Ty Dolla $ign, Rich The Kid, Playboi Carti","FIELD TRIP":"¥$, Kanye West, Ty Dolla $ign, Don Toliver, Playboi Carti, Kodak Black","PROMOTION":"¥$, Kanye West, Ty Dolla $ign, Future","DEAD":"¥$, Kanye West, Ty Dolla $ign, Future, Lil Durk","FOREVER ROLLING":"¥$, Kanye West, Ty Dolla $ign, Lil Baby","RIVER":"¥$, Kanye West, Ty Dolla $ign, Young Thug","SKY CITY":"¥$, Kanye West, Ty Dolla $ign, 070 Shake, CyHi","MY SOUL":"¥$, Kanye West, Ty Dolla $ign, Big TC","TRUE LOVE":"Ye, XXXTENTACION, DONDA","WE DID IT KID":"Ye, Baby Keem, Migos, DONDA","PABLO":"Ye, Future, Travis Scott, DONDA","LOUIE BAGS":"Ye, Jack Harlow, DONDA","HAPPY":"Ye, Future, DONDA","SCI FI":"Ye, Sean Leon, DONDA","SELFISH":"Ye, XXXTENTACION, DONDA","KEEP IT BURNIN":"Future, Ye","CITY OF GODS":"Fivio Foreign, Kanye West, Alicia Keys","MAMA'S FAVORITE":"Kanye West, Ye, Nine Vicious","MAMA’S FAVORITE":"Kanye West, Ye, Nine Vicious","FATHER":"Kanye West, Ye, Travis Scott","ALL THE LOVE":"Kanye West, Ye, Andre Troutman"
+};
+// Public-release main-artist overrides for feature/remix rows where Kworb only exposes the title + Spotify URL.
+// These are artist-line credits only (not writers/producers/personnel).
+Object.assign(TRACK_CREDITS,{
+"MIXED PERSONALITIES (FEAT. KANYE WEST)":"YNW Melly, Kanye West",
+"JUKEBOX JOINTS (FEAT. JOE FOX & KANYE WEST)":"A$AP Rocky, Joe Fox, Kanye West",
+"WATCH (FEAT. LIL UZI VERT & KANYE WEST)":"Travis Scott, Lil Uzi Vert, Kanye West",
+"EGO DEATH (FEAT. KANYE WEST, FKA TWIGS & SKRILLEX)":"Ty Dolla $ign, Kanye West, FKA twigs, Skrillex",
+"ALL WE GOT (FEAT. KANYE WEST & CHICAGO CHILDREN'S CHOIR)":"Chance the Rapper, Kanye West, Chicago Children's Choir",
+"SMUCKERS (FEAT. LIL WAYNE & KANYE WEST)":"Tyler, The Creator, Lil Wayne, Kanye West",
+"GO2DAMOON (FEAT. KANYE WEST)":"Playboi Carti, Kanye West",
+"MAMA (FEAT. NICKI MINAJ & KANYE WEST)":"6ix9ine, Nicki Minaj, Kanye West",
+"HOT SHIT (FEAT. YE & LIL DURK)":"Cardi B, Ye, Lil Durk",
+"I WON (FEAT. KANYE WEST)":"Future, Kanye West",
+"ONE MINUTE (FEAT. KANYE WEST & TRAVIS BARKER)":"XXXTENTACION, Kanye West, Travis Barker",
+"DREAMIN OF THE PAST (FEAT. KANYE WEST)":"Pusha T, Kanye West",
+"PISS ON YOUR GRAVE (FEAT. KANYE WEST)":"Travis Scott, Kanye West",
+"KANGA (FEAT. KANYE WEST)":"6ix9ine, Kanye West",
+"CASTRO (FEAT. KANYE WEST, BIG SEAN, QUAVO & 2 CHAINZ)":"Yo Gotti, Kanye West, Big Sean, Quavo, 2 Chainz",
+"PUSSY PRINT (FEAT. KANYE WEST)":"Gucci Mane, Kanye West",
+"ROCK N ROLL (FEAT. KANYE WEST & KID CUDI)":"Pusha T, Kanye West, Kid Cudi",
+"CAN'T STOP (FEAT. KANYE WEST)":"Theophilus London, Kanye West",
+"FEEL ME (FEAT. KANYE WEST)":"Tyga, Kanye West",
+"DEUCES REMIX (FEAT. DRAKE, T.I., KANYE WEST, FABOLOUS, RICK ROSS & ANDRÉ 3000)":"Chris Brown, Tyga, Kevin McCall, Drake, T.I., Kanye West, Fabolous, Rick Ross, André 3000",
+"EGO (FEAT. KANYE WEST) - REMIX":"Beyoncé, Kanye West",
+"FEEL A WAY (FEAT. KANYE WEST & BRENT FAIYAZ)":"2 Chainz, Kanye West, Brent Faiyaz",
+"NUMBER ONE (FEAT. KANYE WEST)":"Pharrell Williams, Kanye West",
+"TRACK 6 (FEAT. KANYE WEST, ANDERSON .PAAK & THUNDERCAT)":"Ty Dolla $ign, Kanye West, Anderson .Paak, Thundercat",
+"CONFESSIONS PART II REMIX (FEAT. SHYNE, TWISTA & KANYE WEST)":"USHER, Shyne, Twista, Kanye West",
+"TALK ABOUT OUR LOVE (FEAT. KANYE WEST)":"Brandy, Kanye West",
+"BILLIE JEAN (2008 KANYE WEST MIX) (FEAT. KANYE WEST) - THRILLER 25TH ANNIVERSARY REMIX":"Michael Jackson, Kanye West",
+"NOBODY (FEAT. KANYE WEST)":"Chief Keef, Kanye West",
+"THE KILLING SEASON (FEAT. KANYE WEST, CONSEQUENCE & TALIB KWELI)":"A Tribe Called Quest, Kanye West, Consequence, Talib Kweli",
+"DOWN (FEAT. KANYE WEST)":"K. Michelle, Kanye West",
+"EGO (FEAT. KANYE WEST)":"Beyoncé, Kanye West",
+"ACT III: ON GOD? (SHE LIKE) (FEAT. KANYE WEST) - REMIX":"4batz, Kanye West",
+"BALLIN (FEAT. KANYE WEST)":"Juicy J, Kanye West",
+"EXTRAVAGANZA (FEAT. KANYE WEST)":"Jamie Foxx, Kanye West",
+"KINDA LIKE A BIG DEAL (FEAT. KANYE WEST)":"Clipse, Kanye West",
+"GUARD DOWN (FEAT. KANYE WEST & DIDDY)":"Ty Dolla $ign, Kanye West, Diddy",
+"IN THE MOOD (FEAT. KANYE WEST & ROY AYERS)":"Talib Kweli, Kanye West, Roy Ayers",
+"DIGITAL GIRL (FEAT. KANYE WEST & THE-DREAM)":"Jamie Foxx, Kanye West, The-Dream",
+"THERAPY (FEAT. KANYE WEST)":"T-Pain, Kanye West",
+"MARVIN & CHARDONNAY (10TH ANNIVERSARY) FEAT. KANYE WEST & ROSCOE DASH":"Big Sean, Kanye West, Roscoe Dash",
+"WHAT IT IS (FEAT. KANYE WEST & LIL WAYNE)":"Sophia Fresh, Kanye West, Lil Wayne",
+"MAMA’S FAVORITE (FEAT. NINE VICIOUS)":"Kanye West, Ye, Nine Vicious",
+"MAMA'S FAVORITE (FEAT. NINE VICIOUS)":"Kanye West, Ye, Nine Vicious",
+"BULLY (FEAT. CEELO GREEN)":"Kanye West, Ye, CeeLo Green",
+"MISSION CONTROL (FEAT. THE WRLDFMS TONY WILLIAMS)":"Kanye West, Ye, The WRLDFMS Tony Williams",
+"LAST BREATH (FEAT. PESO PLUMA)":"Kanye West, Ye, Peso Pluma",
+"ALL THE LOVE (FEAT. ANDRE TROUTMAN)":"Kanye West, Ye, Andre Troutman",
+"WHITE LINES (FEAT. ANDRE TROUTMAN)":"Kanye West, Ye, Andre Troutman",
+"I CAN’T WAIT (FEAT. MS. LAURYN HILL)":"Kanye West, Ye, Ms. Lauryn Hill",
+"I CAN'T WAIT (FEAT. MS. LAURYN HILL)":"Kanye West, Ye, Ms. Lauryn Hill"
+});
+
+// v6.6 verified public-release main-artist corrections. These override broader project fallbacks.
+Object.assign(TRACK_CREDITS,{
+"RUN THIS TOWN":"JAY-Z, Rihanna, Kanye West",
+"AMERICAN BOY":"Estelle, Kanye West",
+"RUNAWAY":"Kanye West, Pusha T",
+"I LOVE IT (& LIL PUMP)":"Kanye West, Lil Pump",
+"I LOVE IT":"Kanye West, Lil Pump",
+"NO CHURCH IN THE WILD":"JAY-Z, Kanye West, Frank Ocean, The-Dream",
+"FOURFIVESECONDS":"Rihanna, Kanye West, Paul McCartney",
+"FOREVER":"Drake, Kanye West, Lil Wayne, Eminem",
+"KNOCK YOU DOWN":"Keri Hilson, Kanye West, Ne-Yo",
+"E.T.":"Katy Perry, Kanye West",
+"OTIS":"JAY-Z, Kanye West, Otis Redding",
+"MERCY":"Kanye West, Big Sean, Pusha T, 2 Chainz",
+"CLIQUE":"Kanye West, JAY-Z, Big Sean",
+"SLOW JAMZ":"Twista, Kanye West, Jamie Foxx",
+"PUT ON - ALBUM VERSION (EDITED)":"Jeezy, Kanye West",
+"ERASE ME - MAIN":"Kid Cudi, Kanye West",
+"MAKE HER SAY":"Kid Cudi, Kanye West, Common",
+"FOREVER - INTERNATIONAL VERSION":"Drake, Kanye West, Lil Wayne, Eminem",
+"THIS WAY":"Dilated Peoples, Kanye West",
+"WOULDNT GET FAR":"The Game, Kanye West",
+"WOULDN'T GET FAR":"The Game, Kanye West",
+"SWAGGA LIKE US":"JAY-Z, T.I., Kanye West, Lil Wayne",
+"LIVE FAST, DIE YOUNG":"Rick Ross, Kanye West",
+"START IT UP":"Lloyd Banks, Kanye West, Swizz Beatz, Fabolous, Ryan Leslie",
+"SANCTIFIED":"Rick Ross, Kanye West, Big Sean",
+"BIRTHDAY SONG":"2 Chainz, Kanye West",
+"NEW GOD FLOW.1":"Pusha T, Kanye West, Ghostface Killah",
+"CHRISTIAN DIOR DENIM FLOW":"Kanye West, Kid Cudi, Pusha T, John Legend, Lloyd Banks, Ryan Leslie"
+});
+const SCREENSHOT_CREDITS={"ALL FALLS DOWN":"Kanye West, Syleena Johnson","SPACESHIP":"Kanye West, GLC, Consequence","NEVER LET ME DOWN":"Kanye West, JAY-Z, J. Ivy","GET EM HIGH":"Kanye West, Talib Kweli, Common","SLOW JAMZ":"Twista, Kanye West, Jamie Foxx","BREATHE IN BREATHE OUT":"Kanye West, Ludacris","TWO WORDS":"Kanye West, Mos Def, Freeway, The Boys Choir of Harlem","HEARD 'EM SAY":"Kanye West, Adam Levine","TOUCH THE SKY":"Kanye West, Lupe Fiasco","GOLD DIGGER":"Kanye West, Jamie Foxx","DRIVE SLOW":"Kanye West, Paul Wall, GLC","MY WAY HOME":"Kanye West, Common","CRACK MUSIC":"Kanye West, The Game","BRING ME DOWN":"Kanye West, Brandy","DIAMONDS FROM SIERRA LEONE (REMIX)":"Kanye West, JAY-Z","WE MAJOR":"Kanye West, Nas, Really Doe","GONE":"Kanye West, Consequence, Cam'ron","GOOD LIFE":"Kanye West, T-Pain","BARRY BONDS":"Kanye West, Lil Wayne","DRUNK AND HOT GIRLS":"Kanye West, Mos Def","FLASHING LIGHTS":"Kanye West, Dwele","EVERYTHING I AM":"Kanye West, DJ Premier","HOMECOMING":"Kanye West, Chris Martin","GOOD NIGHT":"Kanye West, Mos Def, Albe Back","WELCOME TO HEARTBREAK":"Kanye West, Kid Cudi","AMAZING":"Kanye West, Jeezy","PARANOID":"Kanye West, Mr Hudson","SEE YOU IN MY NIGHTMARES":"Kanye West, Lil Wayne","GORGEOUS":"Kanye West, Kid Cudi, Raekwon","MONSTER":"Kanye West, JAY-Z, Rick Ross, Nicki Minaj, Bon Iver","SO APPALLED":"Kanye West, JAY-Z, Pusha T, CyHi, Swizz Beatz, RZA","DEVIL IN A NEW DRESS":"Kanye West, Rick Ross","RUNAWAY":"Kanye West, Pusha T","BLAME GAME":"Kanye West, John Legend","LOST IN THE WORLD":"Kanye West, Bon Iver","NO CHURCH IN THE WILD":"JAY-Z, Kanye West, Fr

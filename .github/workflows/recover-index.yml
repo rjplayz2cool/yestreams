@@ -1,0 +1,37 @@
+name: Recover large website HTML
+on:
+  push:
+    paths:
+      - '.github/workflows/recover-index.yml'
+      - 'recovery-trigger.txt'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  split:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Split index into readable pieces
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          source=Path('index.html')
+          if not source.exists():
+              raise SystemExit('index.html not found')
+          data=source.read_text(encoding='utf-8')
+          folder=Path('recovery-index')
+          folder.mkdir(exist_ok=True)
+          for old in folder.glob('part-*.txt'):
+              old.unlink()
+          chunk=18000
+          for i in range(0,len(data),chunk):
+              (folder/f'part-{i//chunk:04d}.txt').write_text(data[i:i+chunk],encoding='utf-8')
+          print('Split',len(data),'characters into',(len(data)+chunk-1)//chunk,'parts')
+          PY
+      - name: Commit recovery parts
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add recovery-index/
+          git diff --cached --quiet || (git commit -m "Backup readable index chunks" && git push)

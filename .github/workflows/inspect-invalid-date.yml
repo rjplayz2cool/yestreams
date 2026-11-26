@@ -1,0 +1,32 @@
+name: Inspect invalid date source
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/inspect-invalid-date.yml'
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Capture failing JavaScript and relevant call sites
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          lines=Path('index.html').read_text().splitlines()
+          ranges=[(700,755),(915,970),(1070,1115),(1180,1230)]
+          out=[]
+          for a,b in ranges:
+              out.append(f'=== LINES {a}-{b} ===')
+              out.extend(f'{i+1}: {lines[i][:500]}' for i in range(a-1,min(b,len(lines))))
+          Path('diagnostics').mkdir(exist_ok=True)
+          Path('diagnostics/date-error-context.txt').write_text('\n'.join(out))
+          PY
+      - name: Commit diagnostic snippets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add diagnostics/date-error-context.txt
+          git diff --cached --quiet || (git commit -m "Capture invalid date error context" && git push)

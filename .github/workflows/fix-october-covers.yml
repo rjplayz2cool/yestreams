@@ -1,0 +1,66 @@
+name: Fix October calendar artwork
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-october-covers.yml'
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install supplied calendar images and update events
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPOSITORY: ${{ github.repository }}
+        run: |
+          python3 - <<'PY'
+          import os,json,base64,urllib.request
+          from pathlib import Path
+          assets={
+            'assets/calendar/bbp-2026.jpg':'53381c3143b19105419b11d4c3f72530971fa10d',
+            'assets/calendar/hollywood-bowl-2015.jpg':'3d8a6f1912b4cd767e80b916cb3979cbebfe0a11',
+            'assets/calendar/when-i-see-it-2015.jpg':'eaa4cef290426ab492f4c88de9e61ac1c46510a9'
+          }
+          for path,sha in assets.items():
+              url='https://api.github.com/repos/'+os.environ['GH_REPOSITORY']+'/git/blobs/'+sha
+              request=urllib.request.Request(url,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'})
+              with urllib.request.urlopen(request) as response: blob=json.load(response)
+              data=base64.b64decode(blob['content'])
+              assert data[:3]==b'\xff\xd8\xff','Expected JPEG'
+              target=Path(path);target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(data)
+              print('Installed',path,len(data),'bytes')
+          file=Path('index.html')
+          text=file.read_text(encoding='utf-8')
+          replacements={
+            'WHAT AM I MISSING':'assets/calendar/bbp-2026.jpg',
+            'This One Here':'assets/calendar/bbp-2026.jpg',
+            'HONOR ROLL V10':'assets/calendar/bbp-2026.jpg',
+            'Say You Will - Remix':'assets/calendar/hollywood-bowl-2015.jpg',
+            'When I See It':'assets/calendar/when-i-see-it-2015.jpg'
+          }
+          lines=text.splitlines(keepends=True)
+          changed=set()
+          for i,line in enumerate(lines):
+              if '"month": 10' not in line or '"day": 17' not in line:continue
+              for phrase,cover in replacements.items():
+                  if phrase not in line:continue
+                  ending='\n' if line.endswith('\n') else ''
+                  item=json.loads(line.strip().rstrip(','))
+                  item['cover']=cover
+                  lines[i]=json.dumps(item,ensure_ascii=False)+','+ending
+                  changed.add(phrase)
+                  break
+          assert changed==set(replacements), 'Missing calendar titles: '+repr(set(replacements)-changed)
+          file.write_text(''.join(lines),encoding='utf-8')
+          print('Updated artwork for',len(changed),'calendar events')
+          PY
+      - name: Commit and publish fixes
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add index.html assets/calendar/bbp-2026.jpg assets/calendar/hollywood-bowl-2015.jpg assets/calendar/when-i-see-it-2015.jpg
+          git diff --cached --quiet || (git commit -m "Fix Ty, Hollywood Bowl and When I See It calendar covers" && git pull --rebase && git push)

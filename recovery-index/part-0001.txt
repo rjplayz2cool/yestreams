@@ -1,0 +1,224 @@
+oneyPill.show~.accountBtn{right:286px}.adminOnly{display:none!important}.adminOnly.show{display:block!important}
+.authShade{position:fixed;inset:0;background:#000b;backdrop-filter:blur(10px);z-index:100;display:none;place-items:center;padding:20px}.authShade.open{display:grid}.authCard{width:min(390px,100%);background:#101014;border:1px solid #303038;border-radius:24px;padding:26px;display:grid;gap:11px;position:relative;box-shadow:0 30px 100px #000}.authCard input,.adminPanel input,.adminPanel select{background:#18181d;border:1px solid #303038;border-radius:12px;padding:12px;color:#fff;outline:0}.authCard>button:not(.authClose):not(.authSwitch),.adminActions button,.marketBtn,.sellBtn,.buyBtn{border:0;border-radius:12px;padding:11px 14px;background:linear-gradient(135deg,var(--accent1),var(--accent2));color:#fff;font-weight:900;cursor:pointer}.authClose{position:absolute;right:14px;top:12px;border:0;background:transparent;color:#aaa;font-size:24px;cursor:pointer}.authSwitch{border:0;background:transparent;color:#999;cursor:pointer}.authMoney{height:80px;width:80px;object-fit:contain;margin:auto}.marketBar{display:flex;align-items:center;gap:14px;margin-top:25px}.marketPrice{font-size:18px;font-weight:950;margin-top:10px}.marketActions{display:flex;gap:8px;margin-top:12px}.sellControls{display:flex;gap:8px;margin-top:12px}.sellControls input{min-width:0;flex:1;background:#17171b;border:1px solid #303038;border-radius:10px;color:#fff;padding:9px}.adminPanel{margin-top:28px;background:#101014;border:1px solid #29292f;border-radius:22px;padding:22px;display:grid;gap:12px;max-width:700px}.adminActions{display:flex;gap:10px}.backendNotice{margin:12px 0;padding:12px 14px;border:1px solid #4b3c18;background:#1b1609;border-radius:12px;color:#d8c582;font-size:12px}
+.quickSellBtn{border:1px solid #3a3a40;background:#17171b;color:#eee;border-radius:10px;padding:9px 11px;font-weight:850;cursor:pointer;white-space:nowrap}.quickSellBtn:hover{border-color:rgba(var(--accent2rgb),.7);transform:translateY(-1px)}.sellControls{flex-wrap:wrap}.quickValue{font-size:11px;color:#85858d;font-weight:750}
+@media(max-width:760px){.accountBtn{top:62px;right:10px}.moneyPill,.moneyPill.show{top:62px;right:100px}.moneyPill.show~.accountBtn{right:10px}.rollTabs{overflow-x:auto}}
+
+.adminInventoryToolbar,.tradeToolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0}.adminInventoryToolbar input,.tradeToolbar input,.tradeToolbar select{background:#18181d;border:1px solid #303038;border-radius:12px;padding:11px;color:#fff;min-width:180px}.dangerBtn{border:1px solid #6b2525;background:#261010;color:#ffb3b3;border-radius:10px;padding:9px 11px;font-weight:900;cursor:pointer}.dangerBtn:hover{background:#3a1212}.tradeBtn{border:0;border-radius:10px;padding:9px 11px;background:linear-gradient(135deg,var(--accent1),var(--accent2));color:#fff;font-weight:900;cursor:pointer}.tradeOffer{background:#101012dc;border:1px solid #242428;border-radius:20px;padding:16px}.tradeSides{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center}.tradeSide{background:#0d0d10;border-radius:14px;padding:12px}.tradeArrow{font-size:24px;color:#777}.tradeActions{display:flex;gap:8px;margin-top:12px}.adminUserBlock{margin-top:18px}.adminUserHead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:9px}.cover img{display:block}@media(max-width:700px){.tradeSides{grid-template-columns:1fr}.tradeArrow{text-align:center;transform:rotate(90deg)}}
+
+.collectionList{display:grid;gap:14px;margin-top:28px}.collectionAlbum{background:#101012dc;border:1px solid #29292f;border-radius:22px;overflow:hidden}.collectionHead{display:grid;grid-template-columns:86px 1fr auto;gap:16px;align-items:center;padding:16px;cursor:pointer;transition:.18s}.collectionHead:hover{background:#ffffff05}.collectionCover{width:86px;height:86px;border-radius:14px;overflow:hidden;background:#18181c}.collectionCover img{width:100%;height:100%;object-fit:cover}.collectionTitle{font-size:20px;font-weight:950}.collectionProgress{color:#999;font-size:13px;margin-top:5px}.collectionBar{height:7px;background:#24242a;border-radius:99px;overflow:hidden;margin-top:10px;max-width:430px}.collectionBar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2));border-radius:99px}.collectionChevron{font-size:24px;color:#777;transition:.2s}.collectionAlbum.open .collectionChevron{transform:rotate(180deg)}.collectionBody{display:none;border-top:1px solid #242428;padding:16px}.collectionAlbum.open .collectionBody{display:block}.collectionTracks{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}.collectionTrack{display:grid;grid-template-columns:48px 1fr;gap:10px;align-items:center;padding:10px;background:#0c0c0f;border:1px solid #24242a;border-radius:14px;opacity:.28;filter:grayscale(1);transition:.18s}.collectionTrack.owned{opacity:1;filter:none;border-color:#ffffff2e}.collectionTrack .cover{width:48px;height:48px;border-radius:9px}.collectionTrackName{font-weight:850;font-size:13px}.collectionOwned{font-size:10px;color:#999;margin-top:3px}.collectionReward{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:16px;padding:14px;border-radius:14px;background:#15151a}.collectionReward b{font-size:14px}.collectionReward img{width:20px;vertical-align:middle}.collectionClaim{border:0;border-radius:11px;padding:11px 15px;font-weight:900;background:linear-gradient(135deg,var(--accent1),var(--accent2));color:white;cursor:pointer}.collectionClaim:disabled{opacity:.38;cursor:not-allowed}.collectionDone{font-weight:900;color:#aaa}@media(max-width:600px){.collectionHead{grid-template-columns:68px 1fr auto}.collectionCover{width:68px;height:68px}.collectionTracks{grid-template-columns:1fr}}
+
+.myPullsSortBar{justify-content:flex-end;gap:10px;margin-bottom:14px}.myPullsSortWrap{min-width:250px}.myPullsSortWrap .sortBtn{width:100%}.myPullsSortWrap .sortMenu{min-width:100%;width:max-content;right:0;left:auto}
+
+
+.adminInventoryGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:14px;margin-top:16px}
+.adminInventoryCard{min-width:0}
+.adminOwner{display:inline-flex;align-items:center;max-width:100%;padding:5px 9px;margin-bottom:10px;border:1px solid #303038;border-radius:999px;font-size:12px;font-weight:800;color:#ddd;background:#111116;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.transactionLogGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;margin-top:14px}
+.transactionLogCard{min-width:0;border:1px solid #292930;background:#111115;border-radius:16px;padding:15px;overflow:hidden}
+.transactionLogTop{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:10px;border-bottom:1px solid #292930}
+.transactionLogTop time{font-size:11px;color:#888;white-space:nowrap}
+.transactionType{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+.transactionSummary{font-size:14px;line-height:1.45;color:#ddd;padding:12px 0;overflow-wrap:anywhere;word-break:break-word}
+.transactionMeta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.transactionMeta>div{min-width:0;background:#0d0d11;border:1px solid #232329;border-radius:10px;padding:9px}
+.transactionMeta small{display:block;color:#777;font-size:10px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.transactionMeta b{display:block;font-size:12px;line-height:1.35;overflow-wrap:anywhere;word-break:break-word}
+.transactionMoney{color:#f0d56d}
+@media(max-width:620px){.adminInventoryGrid,.transactionLogGrid{grid-template-columns:1fr}.transactionMeta{grid-template-columns:1fr}}
+
+.myPullsSortWrap{position:relative;min-width:260px}
+.myPullsSortWrap .sortBtn{width:100%;min-width:260px}
+.myPullsSortWrap .sortMenu{display:none;position:absolute;top:calc(100% + 8px);right:0;left:auto;width:100%;min-width:260px;z-index:80}
+.myPullsSortWrap .sortMenu.open{display:grid}
+.tradePicker{position:relative;width:100%}
+.tradePickerBtn{width:100%;min-height:44px;border:1px solid #303038;background:#121215;color:#eee;border-radius:12px;padding:0 14px;font:inherit;font-weight:750;display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;text-align:left}
+.tradePickerBtn:hover{background:#17171b;border-color:rgba(var(--accent2rgb),.55)}
+.tradePickerMenu{display:none;position:absolute;z-index:90;top:calc(100% + 8px);left:0;width:100%;max-height:360px;overflow:auto;background:#101014;border:1px solid #303038;border-radius:14px;padding:7px;box-shadow:0 18px 55px #000a}
+.tradePicker.open .tradePickerMenu{display:grid;gap:3px}
+.tradePickerOption{display:flex;align-items:center;gap:10px;width:100%;border:0;background:transparent;color:#ddd;border-radius:9px;padding:9px 10px;text-align:left;cursor:pointer;font:inherit}
+.tradePickerOption:hover{background:#1b1b21}
+.tradePickerOption.selected{background:#222229;color:#fff}
+.tradePickerOption input{accent-color:var(--accent2);pointer-events:none}
+.tradePickerOption span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tradeSelectedCount{font-size:11px;color:#888;font-weight:700;white-space:nowrap}
+.tradeMultiSummary{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.tradeChip{font-size:11px;padding:5px 8px;border:1px solid #303038;border-radius:999px;background:#101014;color:#bbb}
+
+/* Trade picker layout fix */
+.tradeSides{align-items:flex-start!important;overflow:visible!important}
+.tradeSide{min-width:0;overflow:visible!important}
+.tradePicker{position:relative;width:100%;z-index:1}
+.tradePicker.open{z-index:120}
+.tradePickerMenu{box-sizing:border-box!important;left:0!important;right:auto!important;width:100%!important;min-width:100%!important;max-width:100%!important;max-height:310px!important;overflow-y:auto!important;overflow-x:hidden!important;padding:7px!important}
+.tradePickerOption{box-sizing:border-box!important;display:grid!important;grid-template-columns:20px minmax(0,1fr)!important;align-items:center!important;gap:9px!important;width:100%!important;min-width:0!important;padding:9px 10px!important}
+.tradePickerOption input{width:15px!important;height:15px!important;margin:0!important;justify-self:center}
+.tradePickerOption span{display:block!important;min-width:0!important;max-width:100%!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;text-align:left!important}
+.tradeOffer{overflow:visible!important}
+#tradeBuilder{overflow:visible!important}
+@media(max-width:850px){.tradeSides{grid-template-columns:1fr!important}.tradeArrow{transform:rotate(90deg);justify-self:center}.tradePickerMenu{position:absolute!important}}
+
+/* Admin inventory = My Rolls-style card grid */
+#adminInventories{margin-top:16px}
+.adminInventoryGrid{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))!important;gap:14px!important;width:100%!important}
+.adminInventoryCard{width:auto!important;min-width:0!important;margin:0!important}
+.adminInventoryCard .row{align-items:flex-start}
+.adminInventoryCard .cover{flex:0 0 auto}
+.adminInventoryCard .dangerBtn{width:100%;margin-top:10px}
+
+/* My Rolls sort: match Streaming Stats dropdown exactly */
+.myPullsSortBar{overflow:visible!important}
+.myPullsSortWrap{position:relative!important;min-width:260px!important}
+.myPullsSortWrap .sortBtn{width:100%!important;min-width:260px!important}
+#myPullsSortMenu.sortMenu{
+  display:none!important;
+  position:absolute!important;
+  top:calc(100% + 8px)!important;
+  right:0!important;
+  left:auto!important;
+  width:100%!important;
+  min-width:260px!important;
+  padding:7px!important;
+  background:#101014!important;
+  border:1px solid #303038!important;
+  border-radius:14px!important;
+  box-shadow:0 18px 55px #000a!important;
+  z-index:100!important;
+}
+#myPullsSortMenu.sortMenu.open{display:flex!important}
+#myPullsSortMenu.sortMenu button{
+  width:100%!important;
+  border:0!important;
+  border-radius:9px!important;
+  background:transparent!important;
+  color:#cfcfd4!important;
+  padding:10px 12px!important;
+  text-align:left!important;
+  font:inherit!important;
+  font-weight:750!important;
+  cursor:pointer!important;
+}
+#myPullsSortMenu.sortMenu button:hover,
+#myPullsSortMenu.sortMenu button.active{background:#1c1c22!important;color:#fff!important}
+
+/* Admin: full-width My Rolls-style inventory card grid */
+#rollAdmin .adminPanel{max-width:none!important;width:100%!important;box-sizing:border-box}
+#adminInventories{width:100%!important}
+#adminInventories .adminInventoryGrid{
+  display:grid!important;
+  grid-template-columns:repeat(auto-fill,minmax(285px,1fr))!important;
+  gap:14px!important;
+  width:100%!important;
+  align-items:stretch!important;
+}
+#adminInventories .adminInventoryCard{
+  display:flex!important;
+  flex-direction:column!important;
+  width:auto!important;
+  min-width:0!important;
+  margin:0!important;
+}
+#adminInventories .adminInventoryCard .dangerBtn{margin-top:auto!important;width:100%!important}
+
+/* My Pulls sorter — vertical Stats-style dropdown */
+#myPullsSortMenu.sortMenu{
+  display:none!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  gap:2px!important;
+  width:260px!important;
+  min-width:260px!important;
+  padding:7px!important;
+}
+#myPullsSortMenu.sortMenu.open{display:flex!important}
+#myPullsSortMenu.sortMenu button{
+  display:block!important;
+  flex:none!important;
+  width:100%!important;
+  min-width:0!important;
+  white-space:nowrap!important;
+  padding:10px 12px!important;
+  text-align:left!important;
+}
+#myPullsSortMenu.sortMenu button.active{background:#1c1c22!important}
+
+/* Admin grouped by player */
+#rollAdmin .adminPanel{max-width:none!important;width:100%!important}
+.adminUserInventoryGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:16px;margin-top:16px}
+.adminUserInventoryBox{min-width:0;background:#111115;border:1px solid #292930;border-radius:18px;padding:15px}
+.adminUserInventoryHead{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid #292930}
+.adminUserInventoryHead b{font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.adminUserInventoryHead span{font-size:11px;color:#888;white-space:nowrap}
+.adminUserSongs{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:9px}
+.adminUserSong{min-width:0;background:#0d0d11;border:1px solid #232329;border-radius:12px;padding:9px}
+.adminUserSongTop{display:flex;gap:8px;align-items:center;min-width:0}
+.adminUserSong .miniCover{width:42px;height:42px;border-radius:8px;overflow:hidden;flex:0 0 42px;background:#17171c;display:grid;place-items:center;font-weight:900}
+.adminUserSong .miniCover img{width:100%;height:100%;object-fit:cover}
+.adminUserSongText{min-width:0}
+.adminUserSongTitle{font-size:12px;font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.adminUserSongMeta{font-size:10px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.adminUserSong .dangerBtn{width:100%;margin-top:8px;padding:7px 8px;font-size:11px}
+@media(max-width:650px){.adminUserInventoryGrid{grid-template-columns:1fr}.adminUserSongs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Admin inventory sizing: each player box fits its own inventory */
+.adminUserInventoryGrid{
+  align-items:start!important;
+  grid-auto-flow:row!important;
+}
+.adminUserInventoryBox{
+  align-self:start!important;
+  height:auto!important;
+  min-height:0!important;
+}
+.adminUserSongs{
+  align-content:start!important;
+}
+
+/* Admin rarity badges: same rarity colors/badges as My Pulls */
+.adminUserSongRarity{
+  margin-top:5px;
+}
+.adminUserSongRarity .rarity{
+  display:inline-flex!important;
+  width:max-content!important;
+  max-width:100%!important;
+}
+
+/* Admin player inventories: compact masonry layout */
+.adminUserInventoryGrid{
+  display:block!important;
+  columns:3 300px!important;
+  column-gap:12px!important;
+  margin-top:12px!important;
+}
+.adminUserInventoryBox{
+  display:inline-block!important;
+  width:100%!important;
+  box-sizing:border-box!important;
+  break-inside:avoid!important;
+  -webkit-column-break-inside:avoid!important;
+  page-break-inside:avoid!important;
+  margin:0 0 12px!important;
+  vertical-align:top!important;
+  height:auto!important;
+  min-height:0!important;
+}
+.adminUserSongs{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:8px!important;
+  align-content:start!important;
+}
+@media(max-width:900px){
+  .adminUserInventoryGrid{columns:2 280px!important}
+}
+@media(max-width:620px){
+  .adminUserInventoryGrid{columns:1!important}
+  .adminUserSongs{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+.dailyRewardBtn{display:none;position:fixed;right:36px;top:66px;min-width:126px;height:34px;border:1px solid #34343a;border-radius:11px;background:#101014e8;color:#eee;z-index:31;box-shadow:0 8px 28px #0006;font:inherit;font-size:11px;font-weight:900;cursor:pointer;transition:.16s ease}.dailyRewardBtn.show{display:block}.dailyRewardBtn:hover:not(:disabled){transform:translateY(-1px);border-color:rgba(var(--accent2rgb),.65);background:#17171b}.dailyRewardBtn:disabled{cursor:default;opacity:.58}
+.buyFinishedWatch{width:min(620px,calc(100% - 24px));margin:38px auto 8px;padding:18px 20px;text-align:center;border:1px solid #303038;border-radius:18px;background:#101014b8;box-shadow:0 14px 40px #0005}
+.buyFinishedLabel{font-size:11px;font-weight:950;letter-spacing:.12em;color:#888}
+.buyFinishedTimer{margin-top:6px;font-size:clamp(24px,4vw,38px);font-weight:950;letter-spacing:-.03em;color:#fff}
+.buyFinishedSince{margin-top:5px;font-size:10px;color:#666}
+
+.calendarHead{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:6px 0 18px}.calendarHead>div{text-align:center;flex:1}.calendarMonth{font-size:25px;font

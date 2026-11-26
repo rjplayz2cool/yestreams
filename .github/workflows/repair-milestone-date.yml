@@ -1,0 +1,36 @@
+name: Repair invalid milestone dates
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/repair-milestone-date.yml'
+permissions:
+  contents: write
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Guard invalid projection dates
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          old='return{days,date,key:'
+          new='if(!Number.isFinite(date.getTime()))return null;return{days,date,key:'
+          if new in s:
+              print('Already repaired')
+          elif old in s:
+              s=s.replace(old,new,1)
+              p.write_text(s)
+              print('Added invalid-date guard')
+          else:
+              raise SystemExit('Could not locate milestone projection return')
+          PY
+      - name: Commit repair
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet || (git commit -m "Prevent invalid milestone dates from crashing calendar" && git pull --rebase && git push)

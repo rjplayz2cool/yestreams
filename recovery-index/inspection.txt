@@ -1,0 +1,124 @@
+total characters: 12954703
+TERM LET GO V16 OFFSET 1110539
+, "cover": "assets/calendar/take-one-for-the-team.webp", "event": true},
+{"month": 10, "day": 15, "title": "Ye Gifts President Of Uganda Yeezy Boots", "releaseYear": 2018, "cover": "assets/calendar/uganda-boots.webp", "event": true},
+{"month": 10, "day": 15, "title": "Billboard Reports Ye And Ty To Perform ¥$ In Italy (Cancelled)", "releaseYear": 2023, "cover": "assets/calendar/ys-italy.webp", "event": true},
+{"month": 10, "day": 16, "title": "\"LET GO V16\" Leaked", "releaseYear": 2024, "cover": "covers/vultures-2.jpg", "event": true},
+{"month": 10, "day": 16, "title": "\"Nah Nah Nah\" Released", "releaseYear": 2020, "cover": "assets/calendar/nah-nah-nah.webp", "event": true},
+{"month": 10, "day": 16, "title": "\"Rich Nigga Drunk V9\" Leaked", "releaseYear": 2018, "cover": "assets/era-covers/swish.webp?v=oct16", "event": true},
+{"month": 10, "day": 16, "title": "Ye Performs At A Wedding In Venice", "releaseYear": 2021, "cover": "assets/calendar/venice-wedding.webp", "event": true},
+{"month":10,"day":12,"title":"Ye Releases First Presidential Campaign Ad","releaseYear":2020,"cover":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA6IAAAMOCAYAAAAEJrsSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAP+lSURBVHhe7P2JliQ3kiwKOpnct1p7eW8+cc6cM5/wPvHOvdP3TVd1F6uK+74zM5mZ5KiIqAAKmJkvEeERQaaLO0wXKBQKGMzcNMzc44X/+B9/+WV3
+TERM calendarEvents OFFSET 38149
+}
+@media(max-width:700px){.calendarEventCover{width:20px;height:20px;flex-basis:20px}.calendarScreen{padding-top:72px}}
+
+.alreadyOwnedBadge{display:inline-block;padding:3px 7px;margin-top:5px;border:1px solid #38c97666;border-radius:7px;background:#38c97614;color:#71dda1;font-size:11px;font-weight:800}
+.calendarEvent.achieved{border-color:#38c976;box-shadow:inset 0 0 0 1px #38c97655}.calendarEvent.achieved .calendarEventText>span{color:#71dda1}
+.calendarEventsViewport{overflow:hidden;position:relative}
+.calendarEventsMove{display:flow-root}
+.calendarEventsViewport.isOverflowing .calendarEventsMove{animation:calendarEventsPan var(--events-pan-duration,16s) linear infinite;will-change:transform}
+.calendarEventsViewport:hover .calendarEventsMove,.calendarEventsViewport:focus-within .calendarEventsMove{animation-play-state:paused}
+@keyframes calendarEventsPan{0%,15%{transform:translateY(0)}45%,60%{transform:translateY(var(--events-pan-distance,0px))}90%,100%{transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.calendarEventsViewport.isOverflowing{overflow-y:auto}.calendarEventsViewport.isOverflowing .calendarEventsMove{animation:none}}
+.calendarEventTitleClip{display:block;overflow:hidden;white-space:nowrap;min-width:0}
+.calendarEventTitleMove{display:inline-block;white-space:nowrap;transform:translateX(0);will-change:tr
+TERM calendarEvents OFFSET 38208
+ight:20px;flex-basis:20px}.calendarScreen{padding-top:72px}}
+
+.alreadyOwnedBadge{display:inline-block;padding:3px 7px;margin-top:5px;border:1px solid #38c97666;border-radius:7px;background:#38c97614;color:#71dda1;font-size:11px;font-weight:800}
+.calendarEvent.achieved{border-color:#38c976;box-shadow:inset 0 0 0 1px #38c97655}.calendarEvent.achieved .calendarEventText>span{color:#71dda1}
+.calendarEventsViewport{overflow:hidden;position:relative}
+.calendarEventsMove{display:flow-root}
+.calendarEventsViewport.isOverflowing .calendarEventsMove{animation:calendarEventsPan var(--events-pan-duration,16s) linear infinite;will-change:transform}
+.calendarEventsViewport:hover .calendarEventsMove,.calendarEventsViewport:focus-within .calendarEventsMove{animation-play-state:paused}
+@keyframes calendarEventsPan{0%,15%{transform:translateY(0)}45%,60%{transform:translateY(var(--events-pan-distance,0px))}90%,100%{transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.calendarEventsViewport.isOverflowing{overflow-y:auto}.calendarEventsViewport.isOverflowing .calendarEventsMove{animation:none}}
+.calendarEventTitleClip{display:block;overflow:hidden;white-space:nowrap;min-width:0}
+.calendarEventTitleMove{display:inline-block;white-space:nowrap;transform:translateX(0);will-change:transform}
+.calendarEventTitleMove.isOverflowing{animation:ca
+TERM calendarEvents OFFSET 38247
+en{padding-top:72px}}
+
+.alreadyOwnedBadge{display:inline-block;padding:3px 7px;margin-top:5px;border:1px solid #38c97666;border-radius:7px;background:#38c97614;color:#71dda1;font-size:11px;font-weight:800}
+.calendarEvent.achieved{border-color:#38c976;box-shadow:inset 0 0 0 1px #38c97655}.calendarEvent.achieved .calendarEventText>span{color:#71dda1}
+.calendarEventsViewport{overflow:hidden;position:relative}
+.calendarEventsMove{display:flow-root}
+.calendarEventsViewport.isOverflowing .calendarEventsMove{animation:calendarEventsPan var(--events-pan-duration,16s) linear infinite;will-change:transform}
+.calendarEventsViewport:hover .calendarEventsMove,.calendarEventsViewport:focus-within .calendarEventsMove{animation-play-state:paused}
+@keyframes calendarEventsPan{0%,15%{transform:translateY(0)}45%,60%{transform:translateY(var(--events-pan-distance,0px))}90%,100%{transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.calendarEventsViewport.isOverflowing{overflow-y:auto}.calendarEventsViewport.isOverflowing .calendarEventsMove{animation:none}}
+.calendarEventTitleClip{display:block;overflow:hidden;white-space:nowrap;min-width:0}
+.calendarEventTitleMove{display:inline-block;white-space:nowrap;transform:translateX(0);will-change:transform}
+.calendarEventTitleMove.isOverflowing{animation:calendarTitlePan var(--pan-duration,7s) e
+TERM calendarEvents OFFSET 38285
+dge{display:inline-block;padding:3px 7px;margin-top:5px;border:1px solid #38c97666;border-radius:7px;background:#38c97614;color:#71dda1;font-size:11px;font-weight:800}
+.calendarEvent.achieved{border-color:#38c976;box-shadow:inset 0 0 0 1px #38c97655}.calendarEvent.achieved .calendarEventText>span{color:#71dda1}
+.calendarEventsViewport{overflow:hidden;position:relative}
+.calendarEventsMove{display:flow-root}
+.calendarEventsViewport.isOverflowing .calendarEventsMove{animation:calendarEventsPan var(--events-pan-duration,16s) linear infinite;will-change:transform}
+.calendarEventsViewport:hover .calendarEventsMove,.calendarEventsViewport:focus-within .calendarEventsMove{animation-play-state:paused}
+@keyframes calendarEventsPan{0%,15%{transform:translateY(0)}45%,60%{transform:translateY(var(--events-pan-distance,0px))}90%,100%{transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.calendarEventsViewport.isOverflowing{overflow-y:auto}.calendarEventsViewport.isOverflowing .calendarEventsMove{animation:none}}
+.calendarEventTitleClip{display:block;overflow:hidden;white-space:nowrap;min-width:0}
+.calendarEventTitleMove{display:inline-block;white-space:nowrap;transform:translateX(0);will-change:transform}
+.calendarEventTitleMove.isOverflowing{animation:calendarTitlePan var(--pan-duration,7s) ease-in-out infinite}
+@keyframes calend
+TERM calendarEvents OFFSET 38314
+ing:3px 7px;margin-top:5px;border:1px solid #38c97666;border-radius:7px;background:#38c97614;color:#71dda1;font-size:11px;font-weight:800}
+.calendarEvent.achieved{border-color:#38c976;box-shadow:inset 0 0 0 1px #38c97655}.calendarEvent.achieved .calendarEventText>span{color:#71dda1}
+.calendarEventsViewport{overflow:hidden;position:relative}
+.calendarEventsMove{display:flow-root}
+.calendarEventsViewport.isOverflowing .calendarEventsMove{animation:calendarEventsPan var(--events-pan-duration,16s) linear infinite;will-change:transform}
+.calendarEventsViewport:hover .calendarEventsMove,.calendarEventsViewport:focus-within .calendarEventsMove{animation-play-state:paused}
+@keyframes calendarEventsPan{0%,15%{transform:translateY(0)}45%,60%{transform:translateY(var(--events-pan-distance,0px))}90%,100%{transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.calendarEventsViewport.isOverflowing{overflow-y:auto}.calendarEventsViewport.isOverflowing .calendarEventsMove{animation:none}}
+.calendarEventTitleClip{display:block;overflow:hidden;white-space:nowrap;min-width:0}
+.calendarEventTitleMove{display:inline-block;white-space:nowrap;transform:translateX(0);will-change:transform}
+.calendarEventTitleMove.isOverflowing{animation:calendarTitlePan var(--pan-duration,7s) ease-in-out infinite}
+@keyframes calendarTitlePan{0%,22%{transform:t
+TERM worldTour OFFSET 66570
+"modeBtn" class="topIconBtn" title="Switch section">◫</button><div id="modePanel" class="miniPanel"><button data-mode="stats" class="modeChoice active">Streaming Stats</button><button data-mode="roll" class="modeChoice">Daily Roll</button><button data-mode="calendar" class="modeChoice">Calendar</button><button data-mode="games" class="modeChoice">Games</button><button data-mode="yeTracker" class="modeChoice">Ye Tracker</button><button data-mode="worldTour" class="modeChoice">World Tour</button></div></div><div class="settingsWrap"><button id="settingsBtn" class="settingsBtn" title="Album theme">⚙</button><div id="themePanel" class="themePanel"><div class="themeTitle">Background theme</div><div id="themeGrid" class="themeGrid"></div><button id="customThemeBtn" class="customThemeBtn">Custom Theme</button><div id="customThemePanel" class="customThemePanel"><label>Color 1 <input id="customColor1" type="color" value="#8b5cf6"></label><label>Color 2 <input id="customColor2" type="color" value="#b6ff39"></label><button id="applyCustomTheme">Apply Custom Theme</button></div></div></div></div><main id="yeTrackerScreen" class="wrap screen yeTrackerScreen" aria-label="Ye Tracker">
+ <div class="yeTrackerHeader"><div><div class="eyebrow">DISCOGRAPHY & ARCHIVE</div><h1>YE TRACKER</h1><p>Explore songs, sessions, artwork, tracklists, and groupb
+TERM worldTour OFFSET 1102760
+Id('rollHistoryGrid');g.innerHTML=h.length?h.map(r=>rollCardHTML(r,true)).join(''):'<div class="rollEmpty">No rolls yet. Your pulls will be saved here.</div>'}
+function setMainMode(mode){closeD();document.getElementById('yeTrackerScreen').classList.toggle('activeScreen',mode==='yeTracker');if(mode==='yeTracker')window.initYeTracker?.();document.getElementById('gamesScreen').classList.toggle('activeScreen',mode==='games');document.getElementById('worldTourScreen').classList.toggle('activeScreen',mode==='worldTour');document.getElementById('statsScreen').classList.toggle('activeScreen',mode==='stats');document.getElementById('rollScreen').classList.toggle('activeScreen',mode==='roll');document.getElementById('calendarScreen').classList.toggle('activeScreen',mode==='calendar');document.querySelectorAll('.modeChoice').forEach(b=>b.classList.toggle('active',b.dataset.mode===mode));document.getElementById('modePanel').classList.remove('open');if(mode==='roll'){updateDailyRoll();if(SUPA_READY&&currentUser)renderServerInventory()}if(mode==='calendar')renderMilestoneCalendar();setMoneyUI()}
+function openDetail(x){document.body.classList.add('detailOpen');document.getElementById('modePanel')?.classList.remove('open');document.getElementById('themePanel')?.classList.remove('open');if(x.kind==='album'&&(!selected||selected.spotify!==x.spoti
+TERM worldTour OFFSET 1102818
+rdHTML(r,true)).join(''):'<div class="rollEmpty">No rolls yet. Your pulls will be saved here.</div>'}
+function setMainMode(mode){closeD();document.getElementById('yeTrackerScreen').classList.toggle('activeScreen',mode==='yeTracker');if(mode==='yeTracker')window.initYeTracker?.();document.getElementById('gamesScreen').classList.toggle('activeScreen',mode==='games');document.getElementById('worldTourScreen').classList.toggle('activeScreen',mode==='worldTour');document.getElementById('statsScreen').classList.toggle('activeScreen',mode==='stats');document.getElementById('rollScreen').classList.toggle('activeScreen',mode==='roll');document.getElementById('calendarScreen').classList.toggle('activeScreen',mode==='calendar');document.querySelectorAll('.modeChoice').forEach(b=>b.classList.toggle('active',b.dataset.mode===mode));document.getElementById('modePanel').classList.remove('open');if(mode==='roll'){updateDailyRoll();if(SUPA_READY&&currentUser)renderServerInventory()}if(mode==='calendar')renderMilestoneCalendar();setMoneyUI()}
+function openDetail(x){document.body.classList.add('detailOpen');document.getElementById('modePanel')?.classList.remove('open');document.getElementById('themePanel')?.classList.remove('open');if(x.kind==='album'&&(!selected||selected.spotify!==x.spotify))albumTrackSortMode='tracklist';selected=x;let md={...(
+TERM worldTour OFFSET 12750106
+iv class="floatingInfo"><b id="floatingTitle"></b><span id="floatingAlbum"></span><small id="floatingCredits"></small></div>
+  <div class="floatingTrack"><div class="floatingWave" id="floatingWave" onclick="seekFloatingSong(event)"><div class="floatingWaveBars"></div><div class="floatingPlayed" id="floatingPlayed"></div><div class="floatingNeedle" id="floatingNeedle"></div></div><span id="floatingTime">0:00 / --:--</span></div>
+</div>
+
+<main id="worldTourScreen" class="screen" aria-label="Ye World Tour" style="padding:0;max-width:none;width:100%;height:calc(100dvh - 92px);min-height:0;overflow:hidden">
+<iframe src="ye-world-tour.html" title="Ye World Tour globe and concert dates" loading="lazy" style="display:block;width:100%;height:100%;min-height:0;border:0;background:#070b12"></iframe>
+</main><main id="gamesScreen" class="wrap screen gamesScreen"><div class="eyebrow">YE ARCADE</div><h1 class="title">GAMES</h1><div class="muted">Pick a game and play.</div><div class="arcadeTabs"><button class="marketBtn active" data-arcade-game="snake">Ye Snake</button><button class="marketBtn" data-arcade-game="clicker">Ye Clicker</button><button class="marketBtn" data-arcade-game="runner">Ye Runner</button><button class="marketBtn" data-arcade-game="pacman">Ye Pac-Man</button><button class="marketBtn" data-arcade-game="crossword">Ye Crosswor
+TERM Heartless OFFSET 95145
+ SIGHT|BLACK SKINHEAD|I AM A GOD|NEW SLAVES|HOLD MY LIQUOR|I'M IN IT|BLOOD ON THE LEAVES|GUILT TRIP|SEND IT UP|BOUND 2`},
+{cover:'mbdtf.jpg',artists:'Kanye West',songs:`DARK FANTASY|GORGEOUS|POWER|ALL OF THE LIGHTS (INTERLUDE)|ALL OF THE LIGHTS|MONSTER|SO APPALLED|DEVIL IN A NEW DRESS|RUNAWAY|HELL OF A LIFE|BLAME GAME|LOST IN THE WORLD|WHO WILL SURVIVE IN AMERICA`},
+{cover:'808s.jpg',artists:'Kanye West',songs:`SAY YOU WILL|WELCOME TO HEARTBREAK|HEARTLESS|AMAZING|LOVE LOCKDOWN|PARANOID|ROBOCOP|STREET LIGHTS|BAD NEWS|SEE YOU IN MY NIGHTMARES|COLDEST WINTER|PINOCCHIO STORY`},
+{cover:'graduation.jpg',artists:'Kanye West',songs:`GOOD MORNING|CHAMPION|STRONGER|I WONDER|GOOD LIFE|CAN'T TELL ME NOTHING|BARRY BONDS|DRUNK AND HOT GIRLS|FLASHING LIGHTS|EVERYTHING I AM|THE GLORY|HOMECOMING|BIG BROTHER|GOOD NIGHT|BITTERSWEET POETRY`},
+{cover:'late-registration.jpg',artists:'Kanye West',songs:`WAKE UP MR. WEST|HEARD 'EM SAY|TOUCH THE SKY|GOLD DIGGER|SKIT #1|DRIVE SLOW|MY WAY HOME|CRACK MUSIC|ROSES|BRING ME DOWN|ADDICTION|SKIT #2|DIAMONDS FROM SIERRA LEONE - REMIX|WE MAJOR|SKIT #3|HEY MAMA|CELEBRATION|SKIT #4|GONE|DIAMONDS FROM SIERRA LEONE|LATE`},
+{cover:'college-dropout.jpg',artists:'Kanye West',songs:`INTRO|WE DON'T CARE|GRADUATION DAY|ALL FALLS DOWN|I'LL FLY AWAY|SPACESHIP|JESUS WALKS|NEVER LET ME DOWN|GET EM HIGH|WORKOUT PLAN|THE NEW WOR
+TERM Heartless OFFSET 108417
+ve At Abbey Road Studios","Through The Wire - Live At Abbey Road Studios","Workout Plan - Live At Abbey Road Studios","Heard 'Em Say - Live At Abbey Road Studios","All Falls Down - Live At Abbey Road Studios","Bring Me Down - Live At Abbey Road Studios","Gone - Live At Abbey Road Studios","Late - Live At Abbey Road Studios","Jesus Walks - Live At Abbey Road Studios","Gold Digger"],"3WFTGIO6E3Xh4paEOBY9OU":["Say You Will","Welcome To Heartbreak","Heartless","Amazing","Love Lockdown","Paranoid","RoboCop","Street Lights","Bad News","See You In My Nightmares","Coldest Winter","Pinocchio Story"],"6pwuKxMUkNg673KETsXPUV":["Feel The Love","Fire","4th Dimension","Freeee (Ghost Town Pt. 2)","Reborn","Kids See Ghosts","Cudi Montage"],"cruel-summer":["To The World","Clique","Mercy.1","New God Flow.1","The Morning","Cold.1","Higher","Sin City","The One","Creepers","Bliss","Don't Like.1"]};
+let albumTrackSortMode='tracklist';
+function normTitle(s){return String(s||'').replace(/[’‘]/g,"'").toUpperCase().replace(/\s*\(FEAT\.[^)]+\)/g,'').replace(/\s*-\s*(INSTRUMENTAL|ACAPELLA|HOOLIGANS VERSION|HAVOC VERSION)$/g,'').trim()}
+const SONG_DISPLAY_OVERRIDES={
+'2yBb1CRq98SSWRuDSn36SZ':{title:'Life Of The Party (with André 3000)',cover:'donda.jpg'},
+'6ImNhLq3RabOnEHfoRdvd4':{title:'I CAN’T WAIT (feat. Ms. Lauryn Hill)',cover:'bully-deluxe.jpg'},
+'25fL
+TERM Heartless OFFSET 1109406
+);if(error){b.disabled=false;b.textContent='Daily Reward · +100';return alert(error.message)}await loadProfile();await updateDailyReward()}
+
+let calendarView=new Date();
+function etTodayParts(){let p=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date()),o={};p.forEach(x=>o[x.type]=+x.value);return o}
+const CALENDAR_ANNUAL_EVENTS=[
+{"month": 10, "day": 15, "title": "\"Heartless\" Released Ahead Of 808’s And Heartbreak", "releaseYear": 2008, "cover": "covers/808s.jpg", "event": true},
+{"month": 10, "day": 15, "title": "The Yeezy Boost 750 \"Chocolate\" Released", "releaseYear": 2016, "cover": "assets/calendar/chocolate-750.webp", "event": true},
+{"month": 10, "day": 15, "title": "\"My Choice\" Leaked", "releaseYear": 2019, "cover": "assets/era-covers/love-everyone.webp?v=oct16b", "event": true},
+{"month": 10, "day": 15, "title": "\"Last Name V4\" Leaked", "releaseYear": 2019, "cover": "covers/unreleased-yandhi.webp", "event": true},
+{"month": 10, "day": 15, "title": "\"Take One For The Team\" Released For GOOD Fridays", "releaseYear": 2010, "cover": "assets/calendar/take-one-for-the-team.webp", "event": true},
+{"month": 10, "day": 15, "title": "Ye Gifts President Of Uganda Yeezy Boots", "releaseYear": 2018, "cover": "assets/calendar/uganda-boots.webp",

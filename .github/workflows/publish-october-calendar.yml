@@ -1,0 +1,47 @@
+name: Publish October calendar entries
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-october-calendar.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Insert October 16 and 17 events
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          path=Path('index.html')
+          s=path.read_text(encoding='utf-8')
+          anchor='const CALENDAR_ANNUAL_EVENTS=['
+          assert s.count(anchor)==1,'Calendar array not found uniquely'
+          entries=[
+          (16,'Ye Performs "Come To Life" For 1st Time At Wedding',2021,'assets/calendar/venice-wedding.webp'),
+          (16,'Hip-Hop Summit Action Network Honors Ye During Awards',2006,'covers/late-registration.jpg'),
+          (17,'Ye Tweets His Cover Was Banned',2010,'covers/mbdtf.jpg'),
+          (17,'"Say You Will - Remix" Released',2015,'covers/808s.jpg'),
+          (17,'"When I See It" (Also Known As "Tell Your Friends") Demo Released',2015,'covers/mbdtf.jpg'),
+          (17,'Syl Johnson’s Sue Over "The Joy" Makes Headlines',2011,'covers/watch-the-throne.jpg'),
+          (17,'Ty Previews "WHAT AM I MISSING" On Stream',2025,'assets/era-covers/bad-bitch-playbook.webp'),
+          (17,'Ty Previews His Version Of "This One Here" On Stream',2025,'assets/era-covers/bad-bitch-playbook.webp'),
+          (17,'Ty Previews 12 Files, Including "HONOR ROLL V10" "Love Me The Most V6" And More',2025,'assets/era-covers/bad-bitch-playbook.webp')
+          ]
+          additions=[]
+          for day,title,year,cover in entries:
+              if title in s:continue
+              additions.append(json.dumps(dict(month=10,day=day,title=title,releaseYear=year,cover=cover,event=True),ensure_ascii=False)+',')
+          if additions:
+              s=s.replace(anchor,anchor+'\n'+'\n'.join(additions),1)
+              path.write_text(s,encoding='utf-8')
+          print('Added',len(additions),'events')
+          PY
+      - name: Commit calendar updates
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add index.html
+          git diff --cached --quiet || (git commit -m "Publish October 16 and 17 calendar events" && git push)

@@ -1,0 +1,60 @@
+name: Update streams and deploy website
+
+on:
+  push:
+    branches: ["main"]
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Update Kworb snapshot
+        run: python3 update_kworb.py
+
+      - name: Save new stream data/history
+        run: |
+          git config user.name "ye-streams-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/card-metadata.js data/card-public-cache.json data/card-metadata-unresolved.json data/card-seed.json data/current.js data/history.js data/history data/last-update.txt index.html data/hosted-audio.json
+          git diff --cached --quiet || git commit -m "Update stream data"
+          git pull --rebase origin main
+          git push
+
+  deploy:
+    needs: update
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out latest repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

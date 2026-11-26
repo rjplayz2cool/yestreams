@@ -1,0 +1,42 @@
+name: Inspect calendar cover mappings
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/inspect-calendar-covers.yml'
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract matching cover paths and calendar structure
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          s=Path('index.html').read_text()
+          needles=['happy','yebu','bad bitch playbook','bbp','vultures 1','vultures 2','bully','love everyone','swish','before the college dropout','october','CALENDAR_ANNUAL_EVENTS']
+          out=['=== Relevant image files ===']
+          for p in sorted(Path('.').rglob('*')):
+            if p.is_file() and p.suffix.lower() in ('.jpg','.jpeg','.png','.webp') and any(x in str(p).lower() for x in ['yebu','bbp','vultures','bully','love-everyone','swish','before','college']):
+              out.append(str(p))
+          out.append('=== HTML snippets ===')
+          for needle in needles:
+            out.append('--- '+needle+' ---')
+            matches=list(re.finditer(re.escape(needle),s,re.I))
+            for m in matches[:12]:
+              out.append(s[max(0,m.start()-170):m.end()+180].replace('\n',' ')[:400])
+          start=s.find('const CALENDAR_ANNUAL_EVENTS=[')
+          out.append('=== Calendar array head ===')
+          out.append(s[start:start+3400] if start>=0 else 'not found')
+          Path('diagnostics').mkdir(exist_ok=True)
+          Path('diagnostics/calendar-cover-mappings.txt').write_text('\n'.join(out))
+          PY
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add diagnostics/calendar-cover-mappings.txt
+          git diff --cached --quiet || (git commit -m "Inspect calendar cover paths" && git pull --rebase && git push)

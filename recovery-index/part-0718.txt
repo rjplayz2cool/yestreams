@@ -1,0 +1,125 @@
++.5)*TILE,model.fright>0&&!g.eyes,g.eyes)}const [x,y]=model.point(model.player);ctx.globalAlpha=model.invincible>0&&Math.floor(model.clock*8)%2?.55:1;sprite(0,(x+.5)*TILE,(y+.5)*TILE);ctx.globalAlpha=1;
+if(!running||paused||model.ready>0){ctx.fillStyle='rgba(0,0,0,.6)';ctx.fillRect(70,278,490,110);ctx.fillStyle='#ffe047';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='900 28px system-ui';ctx.fillText(paused?'PAUSED':model.over?'GAME OVER':running?'READY!':'YE PAC-MAN',315,315);ctx.fillStyle='white';ctx.font='14px system-ui';ctx.fillText(paused?'Resume to keep playing':model.over?'Play again to beat your best':'Arrows / WASD · Swipe or tap directions',315,351)}$('pacScore').textContent=model.score;$('pacLevel').textContent=model.level;$('pacLives').textContent=model.lives;$('pacBest').textContent=best;$('pacStatus').textContent=model.fright>0?'Power mode · '+Math.ceil(model.fright)+'s':model.bonus?'Bonus available · '+Math.ceil(model.bonus.life)+'s':'Collect dots. Power pellets let you eat the collaborators.'}
+function finish(){window.yeArcadeRewards?.progress(rewardRun,model.score,0,false,true);running=false;cancelAnimationFrame(raf);$('pacStart').textContent='Play again';$('pacPause').disabled=true;if(model.score>best){best=model.score;try{localStorage.setItem(recordKey,String(best));window.yeArcadeSync.save('pacman',{score:best},best,recordKey.split(':').pop())}catch{}}draw()}
+function frame(now){if(!running||paused)return;if(!last)last=now;accumulator+=Math.min((now-last)/1000,.05);last=now;while(accumulator>=1/120&&!model.over){model.step(1/120);accumulator-=1/120}window.yeArcadeRewards?.progress(rewardRun,model.score);if(model.over){finish();return}draw();raf=requestAnimationFrame(frame)}
+function start(){window.yeArcadeRewards?.progress(rewardRun,model.score,0,false,true);cancelAnimationFrame(raf);readBest();model.reset();rewardRun=window.yeArcadeRewards?.begin('pacman');running=true;paused=false;last=0;accumulator=0;$('pacStart').textContent='Restart';$('pacPause').textContent='Pause';$('pacPause').disabled=false;canvas.focus();draw();raf=requestAnimationFrame(frame)}
+function pause(){if(!running)return;paused=!paused;cancelAnimationFrame(raf);last=0;$('pacPause').textContent=paused?'Resume':'Pause';if(!paused)raf=requestAnimationFrame(frame);draw()}
+function turn(d){if(!active()||paused)return;if(!running)start();model.input(d);draw()}$('pacStart').onclick=start;$('pacPause').onclick=pause;document.querySelectorAll('[data-pac-dir]').forEach(b=>b.onpointerdown=e=>{e.preventDefault();turn(Number(b.dataset.pacDir))});
+document.addEventListener('keydown',e=>{if(!active()||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;const keys={ArrowRight:0,d:0,ArrowDown:1,s:1,ArrowLeft:2,a:2,ArrowUp:3,w:3};if(keys[e.key]!==undefined){e.preventDefault();turn(keys[e.key])}if(e.code==='Space'||e.code==='KeyP'){e.preventDefault();if(!e.repeat)pause()}});let touch;canvas.addEventListener('touchstart',e=>{touch=[e.touches[0].clientX,e.touches[0].clientY]},{passive:true});canvas.addEventListener('touchend',e=>{if(!touch)return;const dx=e.changedTouches[0].clientX-touch[0],dy=e.changedTouches[0].clientY-touch[1];if(Math.max(Math.abs(dx),Math.abs(dy))>10)turn(Math.abs(dx)>Math.abs(dy)?dx>0?0:2:dy>0?1:3);touch=null},{passive:true});
+function autoPause(){if(!active()&&running&&!paused)pause();if(active()){if(!running)readBest();draw()}}new MutationObserver(autoPause).observe($('pacmanGame'),{attributes:true,attributeFilter:['hidden']});new MutationObserver(autoPause).observe($('gamesScreen'),{attributes:true,attributeFilter:['class']});document.addEventListener('visibilitychange',()=>{if(document.hidden&&running&&!paused)pause()});readBest();draw();
+window.yeArcadeSync.register('pacman',row=>{running=false;paused=false;cancelAnimationFrame(raf);readBest();best=Number(row?.score)||0;draw()});
+})();
+</script><script id="yeTrackerArchive" type="application/octet-stream" data-src="data/ye-tracker-archive.txt?v=a36604197790"></script><script>(()=>{
+'use strict';
+let data=null,loading=null,section=0,shown=0,selectedEra='',results=[],debounce=null;
+const $=id=>document.getElementById(id),escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const names=['Unreleased','Released','Recent','Best Of','Special','Worst Of','Grails/Wanted','Stems','Art','Tracklists','Album Copies','Groupbuys'];
+$('yeTrackerTabs').innerHTML=names.map((name,i)=>`<button type="button" role="tab" aria-controls="yeTrackerTableWrap" aria-selected="${i===0}" data-ye-section="${i}">${escape(name)}</button>`).join('');
+async function load(){
+ if(data)return data;if(loading)return loading;
+ $('yeTrackerStatus').hidden=false;$('yeTrackerStatus').textContent='Loading archive…';
+ loading=(async()=>{
+  if(typeof DecompressionStream==='undefined')throw new Error('This archive needs a current browser. Please update Chrome, Edge, Firefox, or Safari.');
+  const archiveElement=$('yeTrackerArchive');let archiveText=archiveElement.textContent.trim();if(archiveElement.dataset.src){const response=await fetch(archiveElement.dataset.src);if(!response.ok)throw new Error('Tracker data could not load. Check that data/ye-tracker-archive.txt is uploaded.');archiveText=await response.text();}const binary=atob(archiveText),bytes=new Uint8Array(binary.length);for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);
+  const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+  data=JSON.parse(await new Response(stream).text());data.colorKey="<div>Original colors indicate the available portion, quality, era, and entry status.</div><div class=\"yeTrackerLegendGrid\"><span class=\"yeTrackerLegendChip\" style=\"background-color:#990000;color:#ffffff\">Snippet</span><span class=\"yeTrackerLegendChip\" style=\"background-color:#f3f3f3;color:#000000\">Not Available</span><span class=\"yeTrackerLegendChip\" style=\"background-color:#bf9000;color:#ffffff\">Partial</span><span class=\"yeTrackerLegendChip\" style=\"background-color:#000000;color:#ffffff\">Recording</span><span class=\"yeTrackerLegendChip\" style=\"background-color:#8e7cc3;color:#ffffff\">Beat Only</span><span class=\"yeTrackerLegendChip\" style=\"background-color:#e70000;color:#ffffff\">Low Quality</span><span class=\"yeTrackerLegendChip\" style=\"background-color:#274e13;color:#ffffff\">Tagged</span><span class=\"yeTrackerLegendChip\" style=\"background-color:#ffc107;color:#000000\">High Quality</span><span class=\"yeTrackerLegendChip\" style=\"background-color:#bd7bc2;color:#ffffff\">Stem Bounce</span><span class=\"yeTrackerLegendChip\" style=\"background-color:#4caf50;color:#ffffff\">CD Quality</span><span class=\"yeTrackerLegendChip\" style=\"background-color:#073763;color:#ffffff\">Full</span><span class=\"yeTrackerLegendChip\" style=\"background-color:#45bcff;color:#f3f3f3\">Lossless</span><span class=\"yeTrackerLegendChip\" style=\"background-color:#0e9d66;color:#ffffff\">OG File</span><span class=\"yeTrackerLegendChip\" style=\"background-color:#999999;color:#ffffff\">Confirmed</span><span class=\"yeTrackerLegendChip\" style=\"background-color:#f3f3f3;color:#999999\">Rumored</span><span class=\"yeTrackerLegendChip\" style=\"background-color:#434343;color:#ffffff\">Conflicting Sources</span></div>";
+  for(const category of data){for(const row of category.rows){row.era=cleanEra(row.era);row.cells[0][0]=escape(row.era);row._nameInfo=trackerNameInfo(row.cells[1][0]);}}
+  if(data.length!==12)throw new Error('Archive is incomplete.');
+  $('yeTrackerStatus').hidden=true;return data;
+ })().catch(error=>{loading=null;$('yeTrackerStatus').hidden=false;$('yeTrackerStatus').textContent=error.message;throw error;});return loading;
+}
+
+function cleanEra(value){
+ return String(value||'').replace(/\([^)]*\)/g,part=>/^\(\d{4}\)$/.test(part)?part:'').replace(/\s+/g,' ').trim();
+}
+function closeEraMenu(){ $('yeTrackerEraPanel').classList.remove('open');$('yeTrackerEraBtn').setAttribute('aria-expanded','false'); }
+function buildEraMenu(){
+ const eras=[...new Set(data[section].rows.map(r=>r.era).filter(Boolean))];
+ $('yeTrackerEraPanel').innerHTML=['',...eras].map(era=>`<button type="button" role="option" aria-selected="${era===selectedEra}" data-tracker-era="${escape(era)}" class="${era===selectedEra?'active':''}">${escape(era||'All eras')}</button>`).join('');
+ $('yeTrackerEraLabel').textContent=selectedEra||'All eras';
+}
+function switchSection(i){
+ section=i;selectedEra='';$('yeTrackerSearch').value='';closeEraMenu();buildEraMenu();
+ document.querySelectorAll('[data-ye-section]').forEach(b=>b.setAttribute('aria-selected',String(+b.dataset.yeSection===i)));
+ $('yeTrackerLegend').innerHTML=data[section].legend||data.colorKey||'Original colors are preserved from Ye Tracker.';
+ $('yeTrackerHead').innerHTML='<tr>'+data[section].headers.map(h=>`<th scope="col">${escape(h)}</th>`).join('')+'</tr>';
+ filter();
+}
+function normalizeSongName(value){return String(value||'').normalize('NFKD').replace(/\p{M}/gu,'').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim().replace(/\s+/g,' ');}
+function trackerNameInfo(markup){
+ const container=document.createElement('div');container.innerHTML=markup.replace(/<br\s*\/?\s*>/gi,'\n');
+ const text=container.textContent||'',title=text.split('\n')[0].trim();
+ const aliases=[...text.matchAll(/\(((?:[^()]|\([^()]*\))*)\)/g)].map(m=>m[1]).filter(value=>!/^\s*(?:prod\.|feat\.|ref\.|with\b|exec\.|ft\.|additional\b|written\b|mixed\b)/i.test(value));
+ const versionMatch=title.match(/\[\s*v(?:ersion)?\s*(\d+(?:\.\d+)?)/i);
+ const bare=title.replace(/\[\s*v(?:ersion)?[^\]]*\]/gi,'');
+ return {name:normalizeSongName(bare),aliases:aliases.map(normalizeSongName),version:versionMatch?Number(versionMatch[1]):Infinity};
+}
+function matchesSongName(info,query){return [info.name,...info.aliases].some(name=>name.includes(query));}
+function filter(){
+ const query=normalizeSongName($('yeTrackerSearch').value);
+ results=data[section].rows.filter(r=>(!selectedEra||r.era===selectedEra)&&(!query||matchesSongName(r._nameInfo,query)));
+ if(query)results.sort((a,b)=>{const av=a._nameInfo.version,bv=b._nameInfo.version;return (av===bv?0:av<bv?-1:1)||a._nameInfo.name.localeCompare(b._nameInfo.name);});
+ shown=0;$('yeTrackerBody').innerHTML='';$('yeTrackerTableWrap').hidden=false;
+ if(!results.length)$('yeTrackerBody').innerHTML=`<tr><td class="yeTrackerEmpty" colspan="${data[section].headers.length}">No entries match this search.</td></tr>`;
+ $('yeTrackerCount').textContent=`${results.length.toLocaleString()} of ${data[section].rows.length.toLocaleString()} entries · ${names[section]}`;
+ appendRows();
+}
+function appendRows(){
+ if(!data||!$('yeTrackerScreen').classList.contains('activeScreen'))return;
+ const next=results.slice(shown,shown+60);
+ if(next.length){$('yeTrackerBody').insertAdjacentHTML('beforeend',next.map(row=>'<tr>'+row.cells.map(c=>`<td style="${escape(c[1])}">${c[0]||'<span aria-label="Not available">—</span>'}</td>`).join('')+'</tr>').join(''));shown+=next.length;}
+ $('yeTrackerScrollStatus').textContent=shown<results.length?`Scroll for more · ${shown.toLocaleString()} of ${results.length.toLocaleString()} entries loaded`:results.length?'All '+shown.toLocaleString()+' matching entries loaded':'';
+}
+let scrollQueued=false;
+function checkScroll(){
+ if(scrollQueued||!data||shown>=results.length||!$('yeTrackerScreen').classList.contains('activeScreen'))return;
+ scrollQueued=true;requestAnimationFrame(()=>{scrollQueued=false;if($('yeTrackerScrollStatus').getBoundingClientRect().top<window.innerHeight+900)appendRows();});
+}
+window.initYeTracker=async()=>{try{await load();if(!$('yeTrackerHead').children.length)switchSection(section);else if(!shown)appendRows();}catch(e){console.error('Ye Tracker:',e);}};
+$('yeTrackerTabs').addEventListener('click',async e=>{const b=e.target.closest('[data-ye-section]');if(b){try{await load();switchSection(+b.dataset.yeSection);}catch(_){}}});
+$('yeTrackerSearch').addEventListener('input',()=>{clearTimeout(debounce);debounce=setTimeout(()=>{if(data)filter();},180);});
+$('yeTrackerEraBtn').addEventListener('click',e=>{e.stopPropagation();const open=$('yeTrackerEraPanel').classList.toggle('open');$('yeTrackerEraBtn').setAttribute('aria-expanded',String(open));if(open)$('yeTrackerEraPanel').querySelector('button')?.focus();});
+$('yeTrackerEraPanel').addEventListener('click',e=>{const b=e.target.closest('[data-tracker-era]');if(b){selectedEra=b.dataset.trackerEra;closeEraMenu();buildEraMenu();if(data)filter();}});
+document.addEventListener('click',e=>{if(!e.target.closest('#yeTrackerEraWrap'))closeEraMenu();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeEraMenu();if(e.target.closest('#yeTrackerEraPanel')&&['ArrowDown','ArrowUp'].includes(e.key)){e.preventDefault();const options=[...$('yeTrackerEraPanel').querySelectorAll('button')],index=options.indexOf(document.activeElement);options[(index+(e.key==='ArrowDown'?1:-1)+options.length)%options.length]?.focus();}});
+window.addEventListener('scroll',checkScroll,{passive:true});
+if(typeof IntersectionObserver!=='undefined')new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting))appendRows();},{rootMargin:'900px'}).observe($('yeTrackerScrollStatus'));
+})();
+</script><nav id="yeFloatingTrackerTabs" class="yeFloatingTrackerTabs" aria-label="Jump to tracker section" aria-hidden="true" inert></nav><script>(()=>{
+'use strict';
+const original=document.getElementById('yeTrackerTabs'),screen=document.getElementById('yeTrackerScreen'),floating=document.getElementById('yeFloatingTrackerTabs');
+if(!original||!screen||!floating)return;
+let idleTimer=null;
+function hide(){floating.classList.remove('visible');floating.setAttribute('aria-hidden','true');floating.inert=true;}
+function sync(){
+ const source=[...original.querySelectorAll('[data-ye-section]')];
+ if(floating.children.length!==source.length){floating.replaceChildren(...source.map((button,i)=>{const copy=document.createElement('button');copy.type='button';copy.textContent=button.textContent;copy.dataset.floatingSection=String(i);return copy;}));}
+ [...floating.children].forEach((copy,i)=>{copy.classList.toggle('active',source[i].getAttribute('aria-selected')==='true');copy.setAttribute('aria-current',source[i].getAttribute('aria-selected')==='true'?'page':'false');});
+}
+function reveal(){idleTimer=null;if(!screen.classList.contains('activeScreen')||original.getBoundingClientRect().bottom>72||document.hidden)return;sync();floating.inert=false;floating.setAttribute('aria-hidden','false');floating.classList.add('visible');}
+function scrolling(){clearTimeout(idleTimer);hide();if(screen.classList.contains('activeScreen'))idleTimer=setTimeout(reveal,2500);}
+floating.addEventListener('click',event=>{
+ const button=event.target.closest('[data-floating-section]');if(!button)return;
+ const target=original.querySelectorAll('[data-ye-section]')[Number(button.dataset.floatingSection)];if(!target)return;
+ clearTimeout(idleTimer);hide();target.click();
+ requestAnimationFrame(()=>{const top=Math.max(0,window.scrollY+screen.getBoundingClientRect().top-70);window.scrollTo({top,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});
+});
+window.addEventListener('scroll',scrolling,{passive:true});
+// Hide at the start of a new gesture, before the next scroll event arrives.
+window.addEventListener('wheel',()=>{hide();clearTimeout(idleTimer);idleTimer=setTimeout(reveal,2500);},{passive:true});
+window.addEventListener('touchmove',scrolling,{passive:true});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'){clearTimeout(idleTimer);hide();}});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){clearTimeout(idleTimer);hide();}});
+new MutationObserver(()=>{if(!screen.classList.contains('activeScreen')){clearTimeout(idleTimer);hide();}}).observe(screen,{attributes:true,attributeFilter:['class']});
+new MutationObserver(sync).observe(original,{subtree:true,attributes:true,attributeFilter:['aria-selected'],childList:true});
+sync();hide();
+})();
+</script><script>(()=>{
+'use strict';
+const body=document.getElementById('yeTrackerBody'),screen=document.getElementById('yeTrackerScreen');if(!body||!screen)return;
+const DRIVE_TEST_COPIES={"https://imgur.gg/f/tVb4GGe":{"source":"https://imgur.gg/f/tVb4GGe","title":"UNCLE V11","era":"IN A PERFECT WORLD","drivePreview":"https://drive.google.com/file/d/1KVeNiZkrG5KV4lBx5OoVX7uLSWL4Jnz-/preview","src":"https://drive.google.com/uc?export=download&id=1KVeNiZkrG5KV4lBx5OoVX7uLSWL4Jnz-","duration":142.341225,"waveform":[0.31,0.346,0.29,0.3,0.372,0.358,0.299,0.348,0.304,0.296,0.365,0.359,0.306,0.344,0.315,0.286,0.377,0.33,0.314,0.319,0.314,0.306,0.377,0.33,0.308,0.331,0.308,0.326,0.379,0.316,0.327,0.301,0.321,0.34,0.371,0.311,0.364,0.273,0.308,0.357,0.363,0.732,0.758,0.514,0.871,0.934,1,0.856,0.812,0.693,0.829,0.842,0.965,0.83,0.804,0.781,0.835,0.829,0.826,0.1]}};
+let manifest=null,manifestPromise=null,activeAudio=null,activeCard=null;
+const escape=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const time=v=>{v=Math.max(0,Math.floor(Number(v)||0));return Math.floor(v/60)+':'+String(v%60).padStart(2,'0');};
+function stop(){if(activeAudio){activeAudio.pause();activeAudio.removeAttribute('src');activeAudio.load();}if(activeCard){const play=activeCard.querySelector('.hostedPlay'),pause=activeCard.querySelector('.hostedPause');if(play)play.textContent='▶ Play song';if(pause)pause.disabled=true;const mount=activeCard.querySelector('.hostedDriveMount');if(mount){mount.replaceChildren();activeCard.open=false;}}activeAudio=null;activeCard=null;}
+async function files(){if(manifest)return manifest;if(!manifestPromise)manifestPromise=fetch('data/hosted-audio.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{files:{}}).then(data=>(manifest={...DRIVE_TEST_COPIES,...(data.files||{})})).catch(()

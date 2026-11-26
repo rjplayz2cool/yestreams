@@ -1,0 +1,79 @@
+OFFSET 12753263
+nake">Ye Snake</button><button class="marketBtn" data-arcade-game="clicker">Ye Clicker</button><button class="marketBtn" data-arcade-game="runner">Ye Runner</button><button class="marketBtn" data-arcade-game="pacman">Ye Pac-Man</button><button class="marketBtn" data-arcade-game="crossword">Ye Crossword</button><button class="marketBtn" data-arcade-game="leaderboard">Leaderboard</button></div><div class="arcadeSyncBar"><span id="arcadeSyncStatus">Loading game saves…</span> <button id="arcadeSyncRetry" class="marketBtn">Retry sync</button></div><section id="crosswordGame" hidden>
+<div class="snakeCard" style="max-width:1100px">
+<div class="snakeTop"><h2>YE CROSSWORD</h2><span class="pill">Daily · 7–15 songs · 100 YZYMNY</span></div>
+<p class="snakeNote">A new crossword every day. 
+---
+OFFSET 12753277
+</button><button class="marketBtn" data-arcade-game="clicker">Ye Clicker</button><button class="marketBtn" data-arcade-game="runner">Ye Runner</button><button class="marketBtn" data-arcade-game="pacman">Ye Pac-Man</button><button class="marketBtn" data-arcade-game="crossword">Ye Crossword</button><button class="marketBtn" data-arcade-game="leaderboard">Leaderboard</button></div><div class="arcadeSyncBar"><span id="arcadeSyncStatus">Loading game saves…</span> <button id="arcadeSyncRetry" class="marketBtn">Retry sync</button></div><section id="crosswordGame" hidden>
+<div class="snakeCard" style="max-width:1100px">
+<div class="snakeTop"><h2>YE CROSSWORD</h2><span class="pill">Daily · 7–15 songs · 100 YZYMNY</span></div>
+<p class="snakeNote">A new crossword every day. Released Ye al
+---
+OFFSET 12753545
+ossword">Ye Crossword</button><button class="marketBtn" data-arcade-game="leaderboard">Leaderboard</button></div><div class="arcadeSyncBar"><span id="arcadeSyncStatus">Loading game saves…</span> <button id="arcadeSyncRetry" class="marketBtn">Retry sync</button></div><section id="crosswordGame" hidden>
+<div class="snakeCard" style="max-width:1100px">
+<div class="snakeTop"><h2>YE CROSSWORD</h2><span class="pill">Daily · 7–15 songs · 100 YZYMNY</span></div>
+<p class="snakeNote">A new crossword every day. Released Ye album tracks and selected Daily Roll Unreleased songs.</p>
+<iframe id="yeCrosswordFrame" title="Ye Crossword daily game" loading="lazy" src="ye-crossword.html" style="width:100%;height:min(1150px,85vh);min-height:650px;border:1px solid #ffffff25;border-radius:16px;backg
+---
+OFFSET 12753646
+utton></div><div class="arcadeSyncBar"><span id="arcadeSyncStatus">Loading game saves…</span> <button id="arcadeSyncRetry" class="marketBtn">Retry sync</button></div><section id="crosswordGame" hidden>
+<div class="snakeCard" style="max-width:1100px">
+<div class="snakeTop"><h2>YE CROSSWORD</h2><span class="pill">Daily · 7–15 songs · 100 YZYMNY</span></div>
+<p class="snakeNote">A new crossword every day. Released Ye album tracks and selected Daily Roll Unreleased songs.</p>
+<iframe id="yeCrosswordFrame" title="Ye Crossword daily game" loading="lazy" src="ye-crossword.html" style="width:100%;height:min(1150px,85vh);min-height:650px;border:1px solid #ffffff25;border-radius:16px;background:#101019"></iframe>
+<p class="snakeNote">Crossword completion is playable now. The 100 YZYMNY re
+---
+OFFSET 12753751
+"arcadeSyncRetry" class="marketBtn">Retry sync</button></div><section id="crosswordGame" hidden>
+<div class="snakeCard" style="max-width:1100px">
+<div class="snakeTop"><h2>YE CROSSWORD</h2><span class="pill">Daily · 7–15 songs · 100 YZYMNY</span></div>
+<p class="snakeNote">A new crossword every day. Released Ye album tracks and selected Daily Roll Unreleased songs.</p>
+<iframe id="yeCrosswordFrame" title="Ye Crossword daily game" loading="lazy" src="ye-crossword.html" style="width:100%;height:min(1150px,85vh);min-height:650px;border:1px solid #ffffff25;border-radius:16px;background:#101019"></iframe>
+<p class="snakeNote">Crossword completion is playable now. The 100 YZYMNY reward is not yet connected to a verified server-side claim.</p>
+</div></section><section id="leaderboardGa
+---
+OFFSET 12753857
+s="snakeCard" style="max-width:1100px">
+<div class="snakeTop"><h2>YE CROSSWORD</h2><span class="pill">Daily · 7–15 songs · 100 YZYMNY</span></div>
+<p class="snakeNote">A new crossword every day. Released Ye album tracks and selected Daily Roll Unreleased songs.</p>
+<iframe id="yeCrosswordFrame" title="Ye Crossword daily game" loading="lazy" src="ye-crossword.html" style="width:100%;height:min(1150px,85vh);min-height:650px;border:1px solid #ffffff25;border-radius:16px;background:#101019"></iframe>
+<p class="snakeNote">Crossword completion is playable now. The 100 YZYMNY reward is not yet connected to a verified server-side claim.</p>
+</div></section><section id="leaderboardGame" hidden><div class="snakeTop"><h2>TOP 10</h2><button id="arcadeLeaderboardRefresh" class="marketBtn">Re
+---
+OFFSET 12753883
+idth:1100px">
+<div class="snakeTop"><h2>YE CROSSWORD</h2><span class="pill">Daily · 7–15 songs · 100 YZYMNY</span></div>
+<p class="snakeNote">A new crossword every day. Released Ye album tracks and selected Daily Roll Unreleased songs.</p>
+<iframe id="yeCrosswordFrame" title="Ye Crossword daily game" loading="lazy" src="ye-crossword.html" style="width:100%;height:min(1150px,85vh);min-height:650px;border:1px solid #ffffff25;border-radius:16px;background:#101019"></iframe>
+<p class="snakeNote">Crossword completion is playable now. The 100 YZYMNY reward is not yet connected to a verified server-side claim.</p>
+</div></section><section id="leaderboardGame" hidden><div class="snakeTop"><h2>TOP 10</h2><button id="arcadeLeaderboardRefresh" class="marketBtn">Refresh</button></div><div i
+---
+OFFSET 12753928
+OSSWORD</h2><span class="pill">Daily · 7–15 songs · 100 YZYMNY</span></div>
+<p class="snakeNote">A new crossword every day. Released Ye album tracks and selected Daily Roll Unreleased songs.</p>
+<iframe id="yeCrosswordFrame" title="Ye Crossword daily game" loading="lazy" src="ye-crossword.html" style="width:100%;height:min(1150px,85vh);min-height:650px;border:1px solid #ffffff25;border-radius:16px;background:#101019"></iframe>
+<p class="snakeNote">Crossword completion is playable now. The 100 YZYMNY reward is not yet connected to a verified server-side claim.</p>
+</div></section><section id="leaderboardGame" hidden><div class="snakeTop"><h2>TOP 10</h2><button id="arcadeLeaderboardRefresh" class="marketBtn">Refresh</button></div><div id="arcadeLeaderboardContent" class="arcadeLea
+---
+OFFSET 12754100
+ Unreleased songs.</p>
+<iframe id="yeCrosswordFrame" title="Ye Crossword daily game" loading="lazy" src="ye-crossword.html" style="width:100%;height:min(1150px,85vh);min-height:650px;border:1px solid #ffffff25;border-radius:16px;background:#101019"></iframe>
+<p class="snakeNote">Crossword completion is playable now. The 100 YZYMNY reward is not yet connected to a verified server-side claim.</p>
+</div></section><section id="leaderboardGame" hidden><div class="snakeTop"><h2>TOP 10</h2><button id="arcadeLeaderboardRefresh" class="marketBtn">Refresh</button></div><div id="arcadeLeaderboardContent" class="arcadeLeaderboards"></div></section><section id="snakeGame" class="snakeCard"><div class="snakeTop"><h2>YE SNAKE</h2><span class="snakeScore">Score: <b id="snakeScore">0</b> · Best:
+---
+OFFSET 12785562
+cker=game==='clicker';$('leaderboardGame').hidden=game!=='leaderboard';if(game==='leaderboard')window.yeArcadeSync.leaderboard();$('clickerGame').hidden=!clicker;$('snakeGame').hidden=game!=='snake';$('runnerGame').hidden=game!=='runner';$('pacmanGame').hidden=game!=='pacman';$('crosswordGame').hidden=game!=='crossword';document.querySelectorAll('[data-arcade-game]').forEach(x=>x.classList.toggle('active',x===b));if(game!=='snake'&&window.yeSnakeConcept){const state=window.yeSnakeConcept.getState();if(state.running&&!state.paused)$('snakePause').click()}if(clicker){loadUser();render()}});
+async function checkTyGift(active){
+ if(!active){giftChecked=false;return}
+ const uid=currentUser?.id||null;if(uid!==giftUser){giftUser=uid;giftChecked=false;giftRetryAt=0}
+ if(!uid||giftChecke
+---
+OFFSET 12785593
+boardGame').hidden=game!=='leaderboard';if(game==='leaderboard')window.yeArcadeSync.leaderboard();$('clickerGame').hidden=!clicker;$('snakeGame').hidden=game!=='snake';$('runnerGame').hidden=game!=='runner';$('pacmanGame').hidden=game!=='pacman';$('crosswordGame').hidden=game!=='crossword';document.querySelectorAll('[data-arcade-game]').forEach(x=>x.classList.toggle('active',x===b));if(game!=='snake'&&window.yeSnakeConcept){const state=window.yeSnakeConcept.getState();if(state.running&&!state.paused)$('snakePause').click()}if(clicker){loadUser();render()}});
+async function checkTyGift(active){
+ if(!active){giftChecked=false;return}
+ const uid=currentUser?.id||null;if(uid!==giftUser){giftUser=uid;giftChecked=false;giftRetryAt=0}
+ if(!uid||giftChecked||giftBusy||goldenLife>0||Date
+---

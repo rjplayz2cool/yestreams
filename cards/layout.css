@@ -1,0 +1,24 @@
+.siteControls{position:fixed;top:18px;right:18px;z-index:32;display:flex;align-items:flex-start;gap:16px;max-width:calc(100vw - 36px)}
+.siteControls .accountBtn,.siteControls .moneyPill,.siteControls .dailyRewardBtn,.siteControls .modeWrap,.siteControls .settingsWrap{position:static!important;margin:0!important;flex-shrink:0}
+.siteControls .accountBtn{order:0;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.walletControls{order:1;display:flex;flex-direction:column;align-items:stretch;gap:10px;min-width:0}
+.walletControls .moneyPill{justify-content:center}
+.walletControls .dailyRewardBtn{width:100%;min-width:0}
+.siteControls .modeWrap{order:2;position:relative!important;inset:auto!important}
+.siteControls .settingsWrap{order:3;position:relative!important;inset:auto!important}
+.siteControls .miniPanel,.siteControls .themePanel{position:absolute;right:0;top:54px}
+.rollHistoryCard,.shopCard{position:relative}
+.shopCardTop>div:last-child,#marketGrid .row>div:last-child{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:8px;min-width:0}
+.shopCardTop .rarity,#marketGrid .row .rarity{grid-column:1;grid-row:1;justify-self:start;margin:0 0 9px;max-width:100%;box-sizing:border-box;font-size:10px;letter-spacing:.04em;padding:6px 8px}
+.shopCard .alreadyOwnedBadge,#marketGrid .alreadyOwnedBadge{position:static;grid-column:2;grid-row:1;justify-self:end;align-self:center;margin:0 0 9px;white-space:nowrap;font-size:9.5px;padding:3px 5px}
+.shopTitle,.shopCredits,#marketGrid .row .name,#marketGrid .row .artists{grid-column:1/-1}
+.shopCard{display:flex;flex-direction:column}
+.shopCardTop{align-items:start}
+.shopCompare{margin-bottom:14px}
+.shopCard .shopBuy{margin-top:auto}
+.rollTabs,.marketActions,.sellControls,.tradeActions,.rollActions,.snakeActions,.runnerActions,.pacActions{gap:14px}
+.rollTabs{display:flex;flex-wrap:wrap}
+.sellControls{display:flex;flex-wrap:wrap}
+.marketActions,.tradeActions{display:flex;flex-wrap:wrap;margin-top:16px}
+.shopBuy{margin-top:14px}
+@media(max-width:620px){.siteControls{top:12px;right:12px;max-width:calc(100vw - 24px);display:grid;grid-template-columns:minmax(90px,1fr) 42px 42px;column-gap:14px;row-gap:12px}.siteControls .accountBtn{grid-column:1;grid-row:1;max-width:160px}.siteControls .modeWrap{grid-column:2;grid-row:1}.siteControls .settingsWrap{grid-column:3;grid-row:1}.siteControls .walletControls{grid-column:1/4;grid-row:2;justify-self:end}.moneyPill{max-width:100%}.siteControls:has(.moneyPill.show)~.screen.activeScreen{padding-top:160px}.siteControls .themePanel{width:min(470px,calc(100vw - 24px))}}

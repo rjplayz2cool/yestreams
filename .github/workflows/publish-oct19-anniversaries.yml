@@ -1,0 +1,67 @@
+name: Publish October 19 anniversary events
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/publish-oct19-anniversaries.yml'
+permissions:
+  contents: write
+jobs:
+  calendar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Insert October 19 entries
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          marker='const CALENDAR_ANNUAL_EVENTS=['
+          if marker not in s:raise SystemExit('Calendar array missing')
+          assets=[p for p in Path('.').rglob('*') if p.suffix.lower() in ('.jpg','.jpeg','.png','.webp','.svg')]
+          def cover(*names):
+            for name in names:
+              matches=sorted((p for p in assets if name in str(p).lower()),key=lambda p:(0 if str(p).startswith('covers/') else 1,len(str(p))))
+              if matches:return str(matches[0])
+            raise SystemExit('Missing cover: '+repr(names))
+          wtt=cover('watch-the-throne','watch_the_throne','wtt')
+          cruel=cover('cruel-summer','cruel_summer','cruel summer')
+          yeezus=cover('yeezus')
+          swish=cover('swish')
+          # Getty watermark is retained. Use a site image if the owner uploads
+          # a licensed/credited Ellen photo to this location; until then,
+          # display an existing cover rather than silently removing attribution.
+          ellen=Path('assets/calendar/ye-ellen-2010.jpg')
+          ellen_cover=str(ellen) if ellen.is_file() else cover('808s')
+          entries=[
+            ('Ye Reveals There Is No Watch The Throne 2',2016,wtt),
+            ('Ye Announces Cruel Summer Release In Spring 2012',2011,cruel),
+            ('Ye Announces A GOOD Music Album On Twitter',2011,cruel),
+            ('Yeezus Tour Begins, Brings On Jesus Figure In Seattle',2013,yeezus),
+            ('Ye Appears On Ellen Show',2010,ellen_cover),
+            ('Ye Posts "Say You Will" and "When I See It" On SoundCloud',2015,swish)
+          ]
+          new=[]
+          for title,year,art in entries:
+            if title not in s:
+              new.append(json.dumps(dict(month=10,day=19,title=title,releaseYear=year,cover=art,event=True),ensure_ascii=False)+',')
+          if new:s=s.replace(marker,marker+'\n'+'\n'.join(new),1)
+          p.write_text(s,encoding='utf-8')
+          print('Added',len(new),'October 19 entries')
+          PY
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Add October 19 Ye anniversaries"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; exit 1; }
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 4
+          done
+          exit 1
