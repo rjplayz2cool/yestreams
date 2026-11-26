@@ -1327,15 +1327,16 @@ function fdate(x){if(/^\d{4}$/.test(String(x)))return String(x);const t=Date.par
 const ALB_NAMES={'808s':'808s & Heartbreak','bully':'BULLY','collegedropout':'The College Dropout','donda':'Donda','donda2':'DONDA 2','graduation':'Graduation','jesusisking':'Jesus Is King','kidsseeghosts':'Kids See Ghosts','lateregistration':'Late Registration','mbdtf':'My Beautiful Dark Twisted Fantasy','tlop':'The Life Of Pablo','vultures1':'VULTURES 1','vultures2':'VULTURES 2','watchthethrone':'Watch The Throne','ye':'ye','yeezus':'Yeezus','cruelsummer':'Cruel Summer','bullydeluxe':'BULLY (Deluxe)'};
 const albLabel=s=>{s=String(s||'').trim();if(!s)return '';const k=s.toLowerCase().replace(/[^a-z0-9]/g,'');if(ALB_NAMES[k])return ALB_NAMES[k];return s===s.toLowerCase()?s.replace(/\b[a-z]/g,c=>c.toUpperCase()):s};
 function info(x,kind){
+  if(x._pr)return {rel:x._pr.rel||null,peak:null,tracks:[],album:x._pr.al,artist:x._pr.a,title:x.name};
   const m=meta(x),am=(window.ALBUM_META||{})[x.spotify]||null;let rel=m?.releaseDate||am?.releaseDate||null,peak=m?.billboardPeak||am?.billboardPeak||null,tracks=[];
   if(kind==='album'&&C){try{tracks=C.songsForAlbum(x)}catch(e){}
     if(!rel){const ds=tracks.map(t=>meta(t)?.releaseDate).filter(Boolean).sort();rel=ds[0]||null}}
   return {rel,peak,tracks,album:albLabel(m?.album),artist:(window.creditsFor?creditsFor(x):(m?.artist||'')),title:(x._displayTitle||x.name||m?.title||'')};
 }
 
-function lyrBox(x,I){const t=String(I.title||x.name||'').replace(/\s*[\(\[][^\)\]]*[\)\]]/g,'').replace(/\s+-\s+.*$/,'').trim(),q=encodeURIComponent('Kanye West '+t),sp=x.spotify||'',gid=(window.GENIUS_IDS||{})[idOf(x)];
+function lyrBox(x,I){const t=String(I.title||x.name||'').replace(/\s*[\(\[][^\)\]]*[\)\]]/g,'').replace(/\s+-\s+.*$/,'').trim(),q=encodeURIComponent((x._pr?x._pr.a.split(' · ')[0]:'Kanye West')+' '+t),sp=x.spotify||'',gid=(window.GENIUS_IDS||{})[idOf(x)];
   return `<details class="dlyr"${gid?` data-gid="${esc(gid)}"`:''}><summary>Lyrics</summary><div class="dlyrBody">${gid?'<div class="dlyrEmbed"></div>':''}<p>${gid?'Lyrics are provided by Genius.':'Lyrics are licensed, so they open on the source instead of being copied here.'}</p><div class="dlyrBtns"><a class="chip" href="https://genius.com/search?q=${q}" target="_blank" rel="noopener noreferrer">Read on Genius ↗</a>${sp?`<a class="chip" href="${esc(sp)}" target="_blank" rel="noopener noreferrer">Open in Spotify ↗</a>`:''}<a class="chip" href="https://www.musixmatch.com/search/${q}" target="_blank" rel="noopener noreferrer">Musixmatch ↗</a></div></div></details>`}
-function vidBox(x,I){const t=String(I.title||x.name||'').replace(/\s*[\(\[][^\)\]]*[\)\]]/g,'').replace(/\s+-\s+.*$/,'').trim(),q=encodeURIComponent('Kanye West '+t+' official video'),yt=(window.YT_IDS||{})[idOf(x)];
+function vidBox(x,I){const t=String(I.title||x.name||'').replace(/\s*[\(\[][^\)\]]*[\)\]]/g,'').replace(/\s+-\s+.*$/,'').trim(),q=encodeURIComponent((x._pr?x._pr.a.split(' · ')[0]:'Kanye West')+' '+t+' official video'),yt=(window.YT_IDS||{})[idOf(x)];
   return `<details class="dlyr dvid"${yt?` data-yt="${esc(yt)}"`:''}><summary>Music video</summary><div class="dlyrBody">${yt?'<div class="dvidEmbed"></div>':'<p>No official video is linked for this song yet.</p>'}<div class="dlyrBtns"><a class="chip" href="${yt?'https://www.youtube.com/watch?v='+esc(yt):'https://www.youtube.com/results?search_query='+q}" target="_blank" rel="noopener noreferrer">${yt?'Watch on YouTube ↗':'Search on YouTube ↗'}</a></div></div></details>`}
 document.addEventListener('toggle',e=>{const d=e.target;if(!d.classList||!d.classList.contains('dvid')||!d.open||!d.dataset.yt)return;const m=d.querySelector('.dvidEmbed');if(!m||m.firstChild)return;const id=String(d.dataset.yt).replace(/[^\w-]/g,'');if(!id)return;
   const f=document.createElement('iframe');f.className='dvidFrame';f.title='Music video';f.loading='lazy';f.allow='accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';f.src='https://www.youtube-nocookie.com/embed/'+id+'?rel=0';m.append(f)},true);
@@ -1346,7 +1347,7 @@ document.addEventListener('toggle',e=>{const d=e.target;if(!d.classList||!d.clas
 function open(x,kind){
   if(!x)return;ensure();cur={x,kind:kind||'song'};range='ALL';prevFocus=document.activeElement;
   const I=info(x,cur.kind),n=x.streams,d=x.daily,nm=n!=null?nextMark(n):null,eta=(d>0&&nm)?Math.ceil((nm-n)/d):null;
-  const cv=cur.kind==='album'?(C&&C.localCover(x)):window.coverFor(x,null);
+  const cv=cur.kind==='album'?(C&&C.localCover(x)):(x._cover||window.coverFor(x,null));
   const age=days(I.rel),avg=(age>0&&n!=null)?n/age:null;
   const st=(l,v)=>`<div class="dst"><small>${l}</small><b>${v}</b></div>`;
   const best=cur.kind==='album'?I.tracks.filter(t=>!t._missing&&t.streams!=null).sort((a,b)=>b.streams-a.streams)[0]:null;
@@ -2112,15 +2113,15 @@ function renderList(){paint($('list'),items(),shown,sort==='track',()=>{shown+=4
 function paint(L,a,shown,byTrack,moreFn,emptyText,fb){
   if(!a.length){L.innerHTML='<div class="empty">'+esc(emptyText)+'</div>';return}
   L.innerHTML=a.slice(0,shown).map((s,i)=>{
-    const title=s._displayTitle||s.name,has=s.streams!=null&&!s._missing,rk=byTrack?(s._trackNo||i+1):i+1,cv=has?(window.coverFor?coverFor(s,fb):(C?C.localCover(s)||'':'')):'';
+    const title=s._displayTitle||s.name,has=s.streams!=null&&!s._missing,rk=byTrack?(s._trackNo||i+1):i+1,cv=s._cover||(has?(window.coverFor?coverFor(s,fb):(C?C.localCover(s)||'':'')):'');
     const art=`<div class="art"><span>${esc((title||'?')[0])}</span>${cv?`<img src="${esc(cv)}" alt="" loading="lazy" onerror="this.remove()">`:''}</div>`;
-    if(!has)return `<article class="row miss"><div class="rk">${rk}</div>${art}<div><div class="nm">${esc(title)}</div><div class="sub">No stream data for this track</div></div><div class="st"><b>—</b></div></article>`;
+    if(!has)return s._pr?`<article class="row" data-sid="${esc(s.spotify)}" tabindex="0" role="button" aria-label="Details for ${esc(title)}"><div class="rk">${rk}</div>${art}<div><div class="nm">${esc(title)}</div><div class="sub">${esc(s._sub||'')} · No stream data yet</div></div><div class="st"><b>—</b></div></article>`:`<article class="row miss"><div class="rk">${rk}</div>${art}<div><div class="nm">${esc(title)}</div><div class="sub">No stream data for this track</div></div><div class="st"><b>—</b></div></article>`;
     const n=nM(s.streams),pct=Math.min(100,Math.max(4,(s.streams/n)*100));
     const d=s.daily>0?Math.ceil((n-s.streams)/s.daily):null,when=d!=null&&d<5000?new Date(Date.now()+d*864e5).toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}):'';
     const dly=s._displayDaily?esc(s._displayDaily)+' today':s.daily?`<span class="up">+${full(s.daily)}</span> today`:'Daily rate unavailable';
     const ticks=s.spotify&&!s._approx;
     return `<article class="row" data-sid="${esc(s.spotify)}" tabindex="0" role="button" aria-label="Details for ${esc(title)}"><div class="rk">${rk}</div>${art}
-    <div><div class="nm">${esc(title)}</div><div class="sub">${dly} · next stop ${fmt(n)}${when?' on '+when:d!=null?' · 14+ years away':''}</div><div class="prog"><i data-w="${pct}"></i></div></div>
+    <div><div class="nm">${esc(title)}</div><div class="sub">${s._sub?esc(s._sub)+' · ':''}${dly} · next stop ${fmt(n)}${when?' on '+when:d!=null?' · 14+ years away':''}</div><div class="prog"><i data-w="${pct}"></i></div></div>
     <div class="st"><b${ticks?` data-s="${esc(s.spotify)}"`:''}>${s._displayStreams?esc(s._displayStreams):full(s.streams)}</b><span>${fmt(n-s.streams)} to go</span></div></article>`}).join('')
     +(a.length>shown?`<button class="chip more" type="button">Show more (${a.length-shown} left)</button>`:'');
   requestAnimationFrame(()=>requestAnimationFrame(()=>document.querySelectorAll('.prog i').forEach(i=>i.style.width=i.dataset.w+'%')));
@@ -2152,26 +2153,27 @@ function sfSets(){const songs=(DB.songs||[]).filter(x=>x.kind==='song'&&x.stream
   return {features:songs.filter(x=>x.feature),singles:songs.filter(x=>!x.feature&&!on.has(x.spotify))}}
 const sfData=()=>SF||(SF=sfSets());
 const PR={sort:'streams',list:null};
-function loadProd(){return window.PRODUCED?Promise.resolve():new Promise(r=>{const x=document.createElement('script');x.src='data/produced.js?v='+(window.__PV||'1795712882');x.onload=r;x.onerror=r;document.head.appendChild(x)})}
+function loadProd(){return window.PRODUCED?Promise.resolve():new Promise(r=>{const x=document.createElement('script');x.src='data/produced.js?v='+(window.__PV||'1795725616');x.onload=r;x.onerror=r;document.head.appendChild(x)})}
 function renderProduced(){
   const q=sfQ,box=$('sfList');
   loadProd().then(()=>{
-    const all=(window.PRODUCED||[]).map(r=>({n:r[0],a:r[1],al:r[2],id:r[3],c:r[4],s:r[5]||0,d:r[6]||0}));PR.list=all;$('nProd').textContent=all.length;
     if(sfTab!=='produced')return;
-    const withS=all.filter(x=>x.s),tot=withS.reduce((n,x)=>n+x.s,0);$('sfTotal').textContent=full(tot);$('sfNote').textContent='streams across '+withS.length+' of '+all.length+' produced songs · songs Ye made for other artists, not credited as an artist';
-    const f=all.filter(x=>!q||(x.n+' '+x.a+' '+x.al).toLowerCase().includes(q)),k=PR.sort,cmp=(x,y)=>String(x[k==='name'?'n':k==='artist'?'a':'al']).localeCompare(String(y[k==='name'?'n':k==='artist'?'a':'al']));
-    if(k==='streams')f.sort((x,y)=>y.s-x.s||x.n.localeCompare(y.n));else f.sort(cmp);
-    if(!f.length){box.innerHTML='<div class="empty">No songs match that search.</div>';return}
-    box.innerHTML=f.slice(0,sfShown).map((x,i)=>`<a class="row prodRow" href="https://open.spotify.com/track/${esc(x.id)}" target="_blank" rel="noopener noreferrer"><div class="rk">${i+1}</div><div class="art"><span>${esc((x.n||'?')[0])}</span>${x.c?`<img src="https://i.scdn.co/image/${esc(x.c)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`:''}</div><div><div class="nm">${esc(x.n)}</div><div class="sub">${esc(x.a)} · ${esc(x.al)}${x.d?` · <span class="up">+${full(x.d)}</span> today`:''}</div></div><div class="st">${x.s?`<b>${full(x.s)}</b>`:''}<span>${x.s?'streams':'No stream data'} ↗</span></div></a>`).join('')+(f.length>sfShown?`<button class="chip more" type="button">Show more (${f.length-sfShown} left)</button>`:'');
-    const m=box.querySelector('.more');if(m)m.onclick=()=>{sfShown+=60;renderProduced()}})}
-function sfChips(){const p=sfTab==='produced',L=p?[['streams','Most streams'],['name','A–Z'],['artist','Artist'],['album','Album']]:SORTS.filter(x=>x[0]!=='track'),cur=p?PR.sort:sfSort;
+    const all=(window.PRODUCED||[]).map(r=>({kind:'song',name:r[0],_displayTitle:r[0],streams:r[5]||null,daily:r[6]||0,spotify:'https://open.spotify.com/track/'+r[3],_cover:r[4]?'https://i.scdn.co/image/'+r[4]:'',_sub:r[1],_pr:{a:r[1],al:r[2],rel:r[7]||''}}));
+    PR.list=all;$('nProd').textContent=all.length;sfCur=all;
+    const withS=all.filter(x=>x.streams),tot=withS.reduce((n,x)=>n+x.streams,0),dly=withS.reduce((n,x)=>n+x.daily,0);
+    $('sfTotal').textContent=full(tot);$('sfNote').textContent='streams across '+withS.length+' of '+all.length+' produced songs · +'+full(dly)+' a day · songs Ye made for other artists, not credited as an artist';
+    const k=PR.sort,f=all.filter(x=>!q||(x.name+' '+x._pr.a+' '+x._pr.al).toLowerCase().includes(q));
+    const text=(x,y,g)=>String(g(x)).localeCompare(String(g(y)));
+    if(k==='artist')f.sort((x,y)=>text(x,y,z=>z._pr.a)||text(x,y,z=>z.name));else if(k==='album')f.sort((x,y)=>text(x,y,z=>z._pr.al)||text(x,y,z=>z.name));else f.sort(cmpFor(k));
+    paint(box,f,sfShown,false,()=>{sfShown+=40;renderProduced()},'No songs match that search.')})}
+function sfChips(){const p=sfTab==='produced',L=p?[['streams','Most streams'],['least','Least streams'],['name','A–Z'],['milestone','Closest milestone'],['daily','Daily streams'],['artist','Artist'],['album','Album']]:SORTS.filter(x=>x[0]!=='track'),cur=p?PR.sort:sfSort;
   $('sfSorts').innerHTML=L.map(([k,l])=>`<button type="button" class="chip" data-k="${k}" aria-pressed="${k===cur}">${l}</button>`).join('')}
 function renderSF(countUp){
   const all=sfData();$('nSingles').textContent=all.singles.length;$('nFeat').textContent=all.features.length;
   if(PR.list)$('nProd').textContent=PR.list.length;
   document.querySelectorAll('#pg-sf .tab').forEach(b=>b.setAttribute('aria-pressed',b.dataset.t===sfTab));
   sfChips();
-  if(sfTab==='produced'){cancelAnimationFrame(sfAnim);sfAnim=0;sfHero.t=0;sfCur=[];renderProduced();return}
+  if(sfTab==='produced'){cancelAnimationFrame(sfAnim);sfAnim=0;sfHero.t=0;sfCur=PR.list||[];renderProduced();return}
   const set=all[sfTab];sfCur=set;
   const tot=set.reduce((n,x)=>n+x.streams,0),dly=set.reduce((n,x)=>n+(x.daily||0),0),from=sfHero.t?sfHero.streams+sfHero.daily*(performance.now()-sfHero.t)/864e5:0;
   sfHero={streams:tot,daily:dly,t:performance.now()};
