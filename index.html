@@ -1507,7 +1507,6 @@ function css(){if($('rlCss'))return;const s=document.createElement('style');s.id
 function shell(){
   root.innerHTML=`<div class="rl">
   <div class="rlTop"><h1 class="era long" id="rlTitle"></h1><div class="rlWho"><span class="rlPill" id="rlBal"></span><button class="chip" id="rlAcct" type="button"></button></div></div>
-  ${LIVE?'':'<div class="rlDemo">Demo mode: nothing is saved and no account is needed. On your live site this connects to your real Supabase account.</div>'}
   <div class="rlTabs" role="group" aria-label="Daily Roll sections"><button class="chip" data-t="roll" aria-pressed="true">Roll</button><button class="chip" data-t="hist" aria-pressed="false">My Rolls</button><button class="chip" data-t="col" aria-pressed="false">Collections</button><button class="chip" data-t="shop" aria-pressed="false">Shop</button><button class="chip" data-t="mkt" aria-pressed="false">Market</button><button class="chip" data-t="trd" aria-pressed="false">Trades</button><button class="chip" data-t="adm" id="rlAdmTab" aria-pressed="false" hidden>Admin</button><button class="chip" data-t="log" id="rlLogTab" aria-pressed="false" hidden>Logs</button></div>
   <section class="rlPane on" id="rl-roll"><div class="rlStage"><div>
     <div class="rlCab" id="rlCab"><div class="rlWin"><div class="rlStrip" id="rlStrip"></div><div class="rlLine"></div></div>
