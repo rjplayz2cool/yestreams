@@ -5,6 +5,7 @@ const MQ=matchMedia('(max-width:700px)');
 const MON=['January','February','March','April','May','June','July','August','September','October','November','December'];
 const KINDS={release:['Release','#b6ff39'],live:['Live','#ff5a5a'],leak:['Leak / file','#a78bfa'],fashion:['Fashion','#ff7ad9'],family:['Family','#ffb86b'],milestone:['Stream milestone','#6bd0ff'],news:['News','#d4d4d4']};
 const kindOf=e=>e.target?'milestone':e.bd?'family':/\b(Leak|Leaked|Snippet|Snippets|Demo|OG File|Files?)\b/i.test(e.title)?'leak':/\b(Tour|Live|Performs?|Performance|Headlines?|Festival|Concert|Listening|Sunday Service|Show|Opens?)\b/i.test(e.title)?'live':/\b(Release|Releases|Released|Drops?|Album|Single|Peaks|Certified|Debuts?)\b/i.test(e.title)?'release':/\b(Yeezy|Adidas|Gap|Collection|Season|Sneaker|Balenciaga)\b/i.test(e.title)?'fashion':'news';
+const trackerQ=e=>{const t=String(e.title||'');const m=t.match(/["\u201c]([^"\u201d]+)["\u201d]/);let q=m?m[1]:t.replace(/\b(Leaks?|Leaked|Snippets?|Previewed|Demo|OG File|Files?|Created)\b/gi,'');return q.replace(/\s+V\d+.*$/i,'').replace(/\s+/g,' ').trim()};
 const st=document.createElement('style');st.textContent=`
 #calendarGrid .calendarDay.hasEv{cursor:pointer}
 @media(min-width:701px){#calDayPC{position:fixed;inset:0;z-index:10001;background:#0b0b0e;display:none;flex-direction:column;color:#fff}#calDayPC.on{display:flex}}
@@ -88,14 +89,15 @@ function detail(){
   D.innerHTML=`<div class="cdpHero"><div class="cdpImg">${e.cover?`<img src="${esc(e.cover)}" alt="" onerror="this.replaceWith(document.createElement('i'))">`:'<i>♪</i>'}</div>
   <div><span class="cdpTag" style="--c:${kc}">${esc(kl)}</span><h3>${esc(e.title)}</h3><p class="muted" style="color:#ffffffb0;margin:0">${esc(sub(e))}</p>
   <div class="cdpFacts">${facts.map(([a,b],i)=>`<div style="--i:${i}"><small>${esc(a)}</small><span>${esc(b)}</span></div>`).join('')}</div>
-  <div class="cdpActs">${yr&&window.Eras?`<button type="button" data-a="era">See ${yr} in Eras</button>`:''}${al?`<button type="button" class="ghost" data-a="album">View ${esc(al.name)} album</button>`:''}${e.target?`<button type="button" class="ghost" data-a="streams">Go to Streams</button>`:''}</div></div></div>
+  <div class="cdpActs">${yr&&window.Eras?`<button type="button" data-a="era">See ${yr} in Eras</button>`:''}${al?`<button type="button" class="ghost" data-a="album">View ${esc(al.name)} album</button>`:''}${e.target?`<button type="button" class="ghost" data-a="streams">Go to Streams</button>`:''}${k==='leak'&&trackerQ(e)?`<button type="button" data-a="tracker">View In YeTracker</button>`:''}</div></div></div>
 `;
   D.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{const a=b.dataset.a;close();
     if(a==='era'){go('eras');setTimeout(()=>{try{Eras.open(yr)}catch{}},700)}
     else if(a==='album'){go('albums');setTimeout(()=>{try{Albums.open(al.id)}catch{}},500)}
+    else if(a==='tracker'){const q=trackerQ(e);try{window.yeTrackerSearch&&yeTrackerSearch(q)}catch{}go('tracker')}
     else go('streams')});
 }
 function close(){if(!o)return;o.classList.remove('on');document.body.classList.remove('cdpOpen')}
 document.addEventListener('click',e=>{const d=e.target.closest&&e.target.closest('#calendarGrid .calendarDay');if(!d||MQ.matches)return;const k=d.dataset.k;if(!k)return;const ev=(window.__calEv||{})[k]||[];if(ev.length)openDay(k)});
-window.CalendarDay={open:openDay,close};
+window.CalendarDay={open:openDay,close,kindOf,trackerQ};
 })();
