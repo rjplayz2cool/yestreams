@@ -86,7 +86,7 @@ function detail(){
   facts.push(['Type',kl]);
   if(e.target){facts.push(['Milestone',shortN(e.target)+' streams']);facts.push(['Status',e.achieved?'Achieved':'Projected from current daily streams'])}
   const al=findAlbum(e.title);
-  D.innerHTML=`<div class="cdpHero"><div class="cdpImg">${e.cover?`<img src="${esc(e.cover)}" alt="" onerror="this.replaceWith(document.createElement('i'))">`:'<i>♪</i>'}</div>
+  D.innerHTML=`<div class="cdpHero"><div class="cdpImg">${e.cover?`<img src="${esc(String(e.cover).replace('ab67616d00001e02','ab67616d0000b273'))}" alt="" onerror="this.replaceWith(document.createElement('i'))">`:'<i>♪</i>'}</div>
   <div><span class="cdpTag" style="--c:${kc}">${esc(kl)}</span><h3>${esc(e.title)}</h3><p class="muted" style="color:#ffffffb0;margin:0">${esc(sub(e))}</p>
   <div class="cdpFacts">${facts.map(([a,b],i)=>`<div style="--i:${i}"><small>${esc(a)}</small><span>${esc(b)}</span></div>`).join('')}</div>
   <div class="cdpActs">${yr&&window.Eras?`<button type="button" data-a="era">See ${yr} in Eras</button>`:''}${al?`<button type="button" class="ghost" data-a="album">View ${esc(al.name)} album</button>`:''}${e.target?`<button type="button" class="ghost" data-a="streams">Go to Streams</button>`:''}${k==='leak'&&trackerQ(e)?`<button type="button" data-a="tracker">View In YeTracker</button>`:''}</div></div></div>
